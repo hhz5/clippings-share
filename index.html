@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>剪藏分享 · 知识库</title>
+<meta name="description" content="按作者与标签双维度组织的 AI 剪藏知识库">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">剪藏分享</a>
+    <div class="search-box">
+      <input id="search" type="search" placeholder="全文搜索标题与正文…" autocomplete="off">
+    </div>
+    <nav class="header-actions">
+      <button id="theme-toggle" class="icon-btn" title="切换深浅主题" aria-label="切换主题">🌓</button>
+      <button id="admin-open" class="icon-btn" title="后台管理" aria-label="后台管理">⚙</button>
+    </nav>
+  </div>
+</header>
+
+<section class="filters" id="filters">
+  <div class="filter-group">
+    <div class="filter-head">
+      <h2>作者</h2>
+      <button class="link-btn" id="clear-authors" hidden>清除</button>
+    </div>
+    <div class="chip-list" id="author-list"></div>
+  </div>
+  <div class="filter-group">
+    <div class="filter-head">
+      <h2>标签</h2>
+      <button class="link-btn" id="clear-tags" hidden>清除</button>
+    </div>
+    <div class="chip-list" id="tag-list"></div>
+  </div>
+</section>
+
+<main class="content">
+  <div class="result-bar">
+    <span id="result-count">加载中…</span>
+    <div class="sort-toggle">
+      <label><input type="radio" name="sort" value="date" checked> 最新</label>
+      <label><input type="radio" name="sort" value="title"> 标题</label>
+    </div>
+  </div>
+  <div class="card-grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>没有匹配的内容。</p>
+</main>
+
+<footer class="site-footer">
+  <span id="footer-meta"></span>
+</footer>
+
+<!-- 后台管理弹层 -->
+<div class="modal-backdrop" id="admin-modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <h2>后台管理</h2>
+      <button class="icon-btn" id="admin-close" aria-label="关闭">✕</button>
+    </div>
+    <div id="admin-body"></div>
+  </div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

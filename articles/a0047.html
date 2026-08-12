@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>稳定的 Clash Verge 配置指南 · 剪藏分享</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html">剪藏分享</a>
+    <nav class="header-actions">
+      <button id="theme-toggle" class="icon-btn" title="切换主题" aria-label="切换主题">🌓</button>
+      <button id="admin-open" class="icon-btn" title="后台管理" aria-label="后台管理">⚙</button>
+    </nav>
+  </div>
+</header>
+<main class="article-main">
+  <article class="article">
+    <div class="article-meta">
+      <a class="meta-author" href="../index.html?author=%E6%9C%AA%E5%88%86%E7%B1%BB">未分类</a>
+      <span class="meta-date">2026-01-04</span>
+    </div>
+    <h1 class="article-title">稳定的 Clash Verge 配置指南</h1>
+    <div class="article-tags">
+      <a class="tag-chip" href="../index.html?tag=%E6%95%88%E7%8E%87">效率</a><a class="tag-chip" href="../index.html?tag=Clash%20Verge">Clash Verge</a><a class="tag-chip" href="../index.html?tag=DNS%E9%85%8D%E7%BD%AE">DNS配置</a><a class="tag-chip" href="../index.html?tag=%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86">网络代理</a><a class="tag-chip" href="../index.html?tag=%E7%90%A2%E4%B9%88%E7%90%A2%E4%B9%88">琢么琢么</a>
+    </div>
+    <p class="article-source"><a href="https://mp.weixin.qq.com/s/Xk4he-9ODXnwDXtetqm3VQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
+    <div class="article-body">
+<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/gFqMuec2dZLx08XAGS1rnmiaMjVL0x9ld8ybKg31pJGOPzxvbcRx6x32BxIvia187u3lhnv0wHzZ99xibPYicIxLYg/0?wx</em>fmt=jpeg" alt="cover_image" loading="lazy"></p>
+<p>原创 琢么琢么 <a href="https://mp.weixin.qq.com/s/" target="_blank" rel="noopener">琢么琢么</a> <em>2025年12月20日 13:47</em></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuVPTGEcubvs1S5MIkwmspfMWzibe5BCjVkolsdEsFHicQv3sHB3LOCILA/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx<em>lazy=1#imgIndex=0" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz</em>png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuyM2BUQa4VPniaN6cZicQRPI2OHrEz9E8jm54lIgSjoiaW1TBtiaDvx46ibw/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz<em>png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuxGdCo2c7P5aG8RnmuBVwMc3xqKCcdBichyUEuJCm9ESyRibT5weAiaRWQ/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx<em>lazy=1#imgIndex=2" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz</em>png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPu65CQMv7cc9CvZLTPniaibeETJXB2fZMTbjDjX6Dc3fgfy3pf27RWeB4Q/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz<em>png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuTSdrYhbp9pu2BAF6QUAQaDcXsTUbgqm5icV9gJ3yA8ccD344E77D5Cw/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx<em>lazy=1#imgIndex=4" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz</em>png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPur3hOMo5REFhYXV7bicsbrtS9fO8icqLpgiaPtEkF0jW3aBk7LwXrhWo9Q/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz<em>png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuiaaJJ0QhzDRNjh17Dm6EjnwlsPQU7rNYkvF5SySyylIuMxgS26Aq7eg/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx<em>lazy=1#imgIndex=6" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz</em>png/gFqMuec2dZIlaVr1TUh2Gpuia098h4jPuALGfxnsicVjy8YiaBhYBIBTVtbS5V0ia1dt92Qv5O4FMaWicJ5eGG60hWQ/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p>日常版：</p>
+<pre><code>dns:
+  enable: true
+  listen: &#x27;:53&#x27;
+  enhanced-mode: &#x27;fake-ip&#x27;
+  fake-ip-range: &#x27;198.18.0.1/16&#x27;
+  fake-ip-filter-mode: &#x27;blacklist&#x27;
+  prefer-h3: false
+  respect-rules: false
+  use-hosts: false
+  use-system-hosts: false
+  ipv6: false
+  fake-ip-filter:
+    - &#x27;*.lan&#x27;
+    - &#x27;*.local&#x27;
+    - &#x27;*.arpa&#x27;
+    - &#x27;time.*.com&#x27;
+    - &#x27;ntp.*.com&#x27;
+    - &#x27;+.market.xiaomi.com&#x27;
+    - &#x27;localhost.ptlogin2.qq.com&#x27;
+    - &#x27;*.msftncsi.com&#x27;
+    - &#x27;www.msftconnecttest.com&#x27;
+  default-nameserver:
+    - &#x27;223.5.5.5&#x27;
+    - &#x27;119.29.29.29&#x27;
+  nameserver:
+    - &#x27;https://doh.pub/dns-query&#x27;
+    - &#x27;https://dns.alidns.com/dns-query&#x27;
+  direct-nameserver-follow-policy: false
+  fallback-filter:
+    geoip: true
+    geoip-code: &#x27;CN&#x27;
+    ipcidr:
+      - &#x27;240.0.0.0/4&#x27;
+      - &#x27;0.0.0.0/32&#x27;
+    domain:
+      - &#x27;+.google.com&#x27;
+      - &#x27;+.facebook.com&#x27;
+      - &#x27;+.youtube.com&#x27;
+      - &#x27;+.github.com&#x27;
+  fallback:
+    - &#x27;https://8.8.8.8/dns-query&#x27;
+    - &#x27;tls://1.1.1.1:853&#x27;
+    - &#x27;tls://dns.google:853&#x27;
+  proxy-server-nameserver:
+    - &#x27;tls://1.1.1.1:853&#x27;
+  direct-nameserver:
+    - &#x27;223.5.5.5&#x27;
+    - &#x27;119.29.29.29&#x27;
+
+</code></pre>
+<p>纯净版：</p>
+<pre><code class="language-bash">dns:
+  enable: true
+  listen: &#x27;:53&#x27;
+  enhanced-mode: &#x27;fake-ip&#x27;
+  fake-ip-range: &#x27;198.18.0.1/16&#x27;
+  # 关键：停用所有非必要功能，简化配置，减少变量
+  fake-ip-filter-mode: &#x27;blacklist&#x27;
+  prefer-h3: false
+  respect-rules: false
+  use-hosts: false
+  use-system-hosts: false
+  ipv6: false
+  # 精简但必要的 fake-ip-filter，仅保留防止系统误判网络的条目
+  fake-ip-filter:
+    - &#x27;*.msftncsi.com&#x27;
+    - &#x27;www.msftconnecttest.com&#x27;
+  # 默认DNS解析器，仅用于解析下面nameserver/fallback的域名，使用全球通用DNS
+  default-nameserver:
+    - &#x27;8.8.8.8&#x27;
+    - &#x27;1.1.1.1&#x27;
+  # 核心：所有常规查询均使用可信加密DNS
+  nameserver:
+    - &#x27;https://8.8.8.8/dns-query&#x27;   # 谷歌 DNS-over-HTTPS
+    - &#x27;tls://1.1.1.1:853&#x27;           # Cloudflare DNS-over-TLS
+    - &#x27;tls://dns.google:853&#x27;        # 谷歌 DNS-over-TLS (备用)
+  # 关键：必须清空 fallback 和 fallback-filter
+  # 在全局模式下，所有查询无需再分流
+  fallback: []
+  fallback-filter: {}
+  # 代理节点域名也使用纯净DNS解析，防止订阅链接被污染
+  proxy-server-nameserver:
+    - &#x27;tls://1.1.1.1:853&#x27;
+  # 关键：清空直连DNS，因为全局模式下不应有“直连”流量
+  direct-nameserver: []</code></pre>
+<p>\====== 结束 ======</p>
+<p>作者提示: 个人观点，仅供参考</p>
+<p>继续滑动看下一个</p>
+<p>琢么琢么</p>
+<p>向上滑动看下一个</p>
+<p>琢么琢么</p>
+    </div>
+  </article>
+  <footer class="article-footer">
+    <a href="../index.html">← 返回首页</a>
+  </footer>
+</main>
+<script src="../assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "_comment": "标签合并映射表（可维护）。generate.py 在归一化标签时读取本文件。",
+  "remove": [
+    "clippings"
+  ],
+  "aliases": {
+    "Nano-Banana Pro": "Nano Banana Pro",
+    "nano banana pro": "Nano Banana Pro",
+    "NanoBanana": "Nano Banana",
+    "Seedance2.0": "Seedance 2.0",
+    "Vibe coding": "Vibe Coding",
+    "VibeCoding": "Vibe Coding",
+    "GPT-Image-2": "GPT Image 2",
+    "GPT-image2": "GPT Image 2",
+    "GPT-Image 2": "GPT Image 2",
+    "GPT-Image-1.5": "GPT Image 1.5",
+    "Sora2": "Sora 2",
+    "TRAE Work": "Trae Work",
+    "N8N": "n8n",
+    "星流Agent": "星流 Agent",
+    "星流-Agent": "星流 Agent",
+    "飞书Aily": "飞书 aily",
+    "Clawhunt": "ClawHunt",
+    "Touch Edit": "Touch edit",
+    "Prompt工程": "提示词工程"
+  },
+  "_merge_rules": "仅合并真正的同义/格式变体（大小写、空格、标点、跨语言同义如 Prompt工程=提示词工程）。绝不合并不同概念（如 文生图 ≠ 文生视频，AI视频 ≠ AI视频生成）。removed 为剪藏工具自带的元标签。",
+  "_edit_tip": "要新增合并：在 aliases 里加 \"原始标签\": \"规范标签\"；要剔除某标签：加入 remove 数组。改完运行 python3 generate.py 重新生成。"
+}
