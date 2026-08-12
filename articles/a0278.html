@@ -38,10 +38,10 @@
 <hr>
 <p>我们常常看到，有些团队在挑选模式时，只顾着选听起来“高大上”的，却忽略了到底适不适合手头的问题。我们的建议是：<strong>从最简单的、能跑通的模式开始，观察它在哪里会遇到瓶颈，然后再逐步升级。</strong> 今天这篇文章，我们就来拆解五种常见模式的运作原理和局限性：</p>
 <ul><li>• <strong>生成 - 验证者 (Generator-verifier)</strong>：适用于看重输出质量、且有明确评估标准的场景。</li><li>• <strong>调度 - 子智能体 (Orchestrator-subagent)</strong>：适用于任务拆解清晰、子任务边界分明的场景。</li><li>• <strong>智能体团队 (Agent teams)</strong>：适用于可以并行处理、互不干扰且需要长时间运行的子任务。</li><li>• <strong>消息总线 (Message bus)</strong>：适用于事件驱动的流水线作业，以及系统还在不断扩展新智能体的场景。</li><li>• <strong>共享状态 (Shared-state)</strong>：适用于需要高度协作、智能体之间需要互相参考别人发现的场景。</li></ul>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/ZlwY8rlDcFPUYEWK2L7eQYk8Dpic8B39HPssSWFNfianaHia3XqX8AjQuGQ7WQwKn3N2qyeHnPPAeMWbDnP9qqibIODREibOrRgnGoGgqr2DcjNg/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/ZlwY8rlDcFPUYEWK2L7eQYk8Dpic8B39HPssSWFNfianaHia3XqX8AjQuGQ7WQwKn3N2qyeHnPPAeMWbDnP9qqibIODREibOrRgnGoGgqr2DcjNg/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>这是最简单的多智能体模式，也是目前落地应用最广泛的模式之一。在我们之前的文章中，曾将其称为“验证子智能体模式”，这里我们使用更宽泛的“生成 - 验证者”来称呼它，因为这里的“生成者”不一定非得是个指挥全局的调度者。</p>
 <h3>它是如何运作的</h3>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/ZlwY8rlDcFMnwK9PRpUtmuxPcP1pNt0lx3TpLzUyuA81aw2FwB9jiassh3ibl4UOQF16tNG6KFXSVxpls4JiayQY84BocR87P6CqyogvShIJww/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/ZlwY8rlDcFMnwK9PRpUtmuxPcP1pNt0lx3TpLzUyuA81aw2FwB9jiassh3ibl4UOQF16tNG6KFXSVxpls4JiayQY84BocR87P6CqyogvShIJww/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>生成者 (Generator) 接到一个任务后，会先给出一版初步结果，然后把它传给验证者 (Verifier) 去评估。验证者会检查这个结果是否符合规定的标准。如果符合，就盖章通过；如果不符合，验证者会把具体的修改意见（反馈）打回去。生成者拿着这些反馈再重新修改一版。这个“修改 - 审核”的循环会一直进行，直到验证者满意，或者达到了系统设定的最大修改次数限制。</p>
 <h3>它在何时最好用</h3>
 <p>想象一个用来回复客户工单的自动邮件系统。生成者利用产品文档和工单详情写出一封初稿。验证者则充当“质检员”：核对知识库看事实准不准、检查语气符不符合品牌要求、确认客户提到的每个问题是不是都回答了。如果检查没通过，验证者会把具体问题甩回给生成者，比如指出“把某个功能错误地归到了低配版里”或者“漏答了某个问题”。</p>
@@ -53,7 +53,7 @@
 <h2>模式二：调度 - 子智能体 (Orchestrator-subagent)</h2>
 <p>这个模式的核心在于“层级制”。有一个像“团队主管”一样的核心智能体负责规划工作、分发任务，并最终汇总结果；而各个子智能体 (Subagents) 则负责处理具体的分摊工作，做完后向上级汇报。</p>
 <h3>它是如何运作的</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/ZlwY8rlDcFPEnHjxFnLHEDFcxyiag4rGfXcfXrYwwQeG7Y92SxY2uyhxuMkNUg0IclMefz451wNV0FTibKayOanDBC5CfpFiceUMj1z4mCtakk/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/ZlwY8rlDcFPEnHjxFnLHEDFcxyiag4rGfXcfXrYwwQeG7Y92SxY2uyhxuMkNUg0IclMefz451wNV0FTibKayOanDBC5CfpFiceUMj1z4mCtakk/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>主导的调度者 (Orchestrator) 收到任务后，会先思考该怎么动手。它可以自己解决一部分，把剩下的指派给不同的子智能体。等小弟们把活干完、交上结果后，调度者再把这些碎片拼成一份完整的最终答案。</p>
 <p>Claude Code<sup><span leaf="">[1]</span></sup> 用的就是这种模式。主智能体自己负责写代码、改文件、跑命令，但当它需要在庞大的代码库里大范围搜索，或者需要调查一些独立问题时，它就会在后台派发给子智能体。这样主线工作不会停，搜索结果也会源源不断地送回来。每个子智能体都在自己独立的上下文窗口 (Context window) 里工作，只返回精炼后的调查结果。<strong>（注：这就好比老板的脑子（上下文）只需专注于大方向，而查资料等繁杂信息都在员工的大脑里消化，从而保证老板的思路不被琐事塞满。）</strong></p>
 <h3>它在何时最好用</h3>
@@ -65,7 +65,7 @@
 <h2>模式三：智能体团队 (Agent teams)</h2>
 <p>当一份大工作可以被拆成多个并行的子任务，而且这些任务需要花很长时间独立完成时，“组长派活”的层级制就会显得太死板了。</p>
 <h3>它是如何运作的</h3>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ZlwY8rlDcFPcZajRtFWTnK8eE5cphjsv5MA2g4T7Lun2lr6zIqmC2xibzEbqz2SibEuEia6jjSAWCZ1DWymdC811IVMkoQ8CvYuTwibnQkFazzY/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ZlwY8rlDcFPcZajRtFWTnK8eE5cphjsv5MA2g4T7Lun2lr6zIqmC2xibzEbqz2SibEuEia6jjSAWCZ1DWymdC811IVMkoQ8CvYuTwibnQkFazzY/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>一个协调者 (Coordinator) 会创建出多个作为独立进程运行的团队成员 (Teammates)。这些成员会从一个共享的任务队列里自己“抢单”，接单后自主完成多步操作，干完再举手示意。</p>
 <p>它和“调度 - 子智能体”最大的区别在于<strong>成员的持久性</strong>。调度者通常是为了一件小事临时叫出一个子智能体，干完就解散。但在团队模式里，成员们是长期存在的，它们在接手一个个任务的过程中，会不断积累领域知识和上下文，越干越熟练。协调者只管派活和收作业，并不会在每次任务结束后把它们的记忆清空。</p>
 <h3>它在何时最好用</h3>
@@ -78,7 +78,7 @@
 <h2>模式四：消息总线 (Message bus)</h2>
 <p>随着智能体数量增加，大家互动的方式越来越复杂，直接让他们面对面交流会变成一场灾难。这时候，消息总线 (Message bus) 就登场了：它提供了一个共享的通讯大厅，让智能体们通过“发布”和“订阅”来协调工作。</p>
 <h3>它是如何运作的</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ZlwY8rlDcFMreT4TVGQJNicbFXoOZTWlSqDNibd65IHo8FATyrLyicWbEPhV3y6dIyCZ7vRwWwOfyLh9ArTrNalSIVrHBOt07ug2iayMnA7ribmY/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ZlwY8rlDcFMreT4TVGQJNicbFXoOZTWlSqDNibd65IHo8FATyrLyicWbEPhV3y6dIyCZ7vRwWwOfyLh9ArTrNalSIVrHBOt07ug2iayMnA7ribmY/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>智能体只靠两个基本动作交流：发布 (Publish) 和订阅 (Subscribe)。智能体会订阅自己关心的“话题”，一个路由器 (Router) 会把相关的消息精准推给它们。<strong>（注：这就好比在一个大型公司群里，有人在群里发需求，相关部门的人看到了自动领走，你根本不需要知道具体是谁接了单。）</strong> 如果未来有了新功能的智能体加入，它们只要订阅相应的话题就能直接上岗，完全不需要改动现有的网络线路。</p>
 <h3>它在何时最好用</h3>
 <p>自动化安全运营系统是这个模式的完美舞台。各种渠道的警报像雪片一样飞来，一个“分诊智能体”负责评估严重程度和类型，把高危的网络警报推给“网络调查智能体”，把账号相关警报推给“身份分析智能体”。调查智能体在干活时，可能还会发布一条“需要更多背景”的需求，专门负责收集情报的智能体看到后就会去帮忙。最后，所有的发现都会流向“响应协调智能体”，由它来拍板怎么处理。</p>
@@ -88,7 +88,7 @@
 <p>这种事件驱动的通讯过于灵活，导致排查问题非常困难。当一个警报像多米诺骨牌一样触发了五个智能体的连锁反应时，想搞清楚中间到底发生了什么，你必须查阅非常仔细的日志记录并进行关联对比。这可比跟着“调度者”一步步按顺序查 bug 痛苦多了。</p>
 <p>路由器的分发准确性也至关重要。如果路由器把消息分错了类，或者干脆漏发了，系统就会陷入“静默崩溃”——它不报错，没死机，但就是什么也不干。基于大语言模型 (LLM) 的路由器虽然能在理解语义上更灵活，但也带来了 LLM 特有的失灵风险（比如理解偏差或幻觉）。</p>
 <h2>模式五：共享状态 (Shared state)</h2>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ZlwY8rlDcFMibBRVqtibkpz2g4mK6Kgm5icdnfkHtNUR9ByLtMvSvKm7sjPhvsvic7Eyicjg6FghhSgtyxwZsc9hRHnYN8SRG6hFAcyFPH8hQMvQ/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ZlwY8rlDcFMibBRVqtibkpz2g4mK6Kgm5icdnfkHtNUR9ByLtMvSvKm7sjPhvsvic7Eyicjg6FghhSgtyxwZsc9hRHnYN8SRG6hFAcyFPH8hQMvQ/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>在前几种模式里，无论是调度者、协调者还是路由器，本质上都在充当信息流的“中间商”。而共享状态 (Shared state) 模式则彻底干掉了中间商，它让所有智能体共同面对一个持久化的存储区（比如数据库、文件系统或文档），大家可以直接从中读取信息、写入结果。</p>
 <h3>它是如何运作的</h3>
 <p>在这个模式下，没有所谓的“中心指挥官”。智能体们像在一个公共的大黑板前工作：他们看着黑板上有什么线索，拿走自己能处理的去干活，有了新发现再写回黑板上。通常，启动流程就是在黑板上写下一个大问题或放下一堆初始数据；当满足某个结束条件时，工作就停止——比如时间到了、大家很久没新发现了（收敛阈值），或者某个被专门指派的智能体站出来说“黑板上的答案已经足够好了”。</p>
@@ -102,27 +102,27 @@
 <h2>如何在不同模式间选择与进化</h2>
 <p>选哪种模式，取决于你对系统的几个核心结构问题的判断。在我们之前的文章中，我们提倡<strong>围绕“上下文”来拆解工作（Context-centric decomposition）</strong>，即按照每个智能体“需要知道哪些背景信息”来分工，而不是按“它干什么类型的活”来分工。这个原则在这里同样适用。这五种模式最大的区别，就在于它们如何划分上下文的边界，以及如何管理信息的流动。</p>
 <h3>调度 - 子智能体 vs. 智能体团队</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ZlwY8rlDcFMAvibNoTo3UdicRhnvSSszoGyVCictDJkd7N89RghKc2ficY9mBm0vUmMF78ibwSa75Zic01c5QDRSVY4iclvIibhIpia9ibUTuAthQA7us/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ZlwY8rlDcFMAvibNoTo3UdicRhnvSSszoGyVCictDJkd7N89RghKc2ficY9mBm0vUmMF78ibwSa75Zic01c5QDRSVY4iclvIibhIpia9ibUTuAthQA7us/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>两者都有一个“分配工作”的协调者。怎么选？问自己：干活的智能体需要长时间保留记忆（上下文）吗？</p>
 <ul><li>• <strong>选调度 - 子智能体</strong>：如果子任务短平快，目标集中，且输出明确。代码审查系统就适用，因为每次检查都是单次的：跑分析、出报告，直接交差。子智能体不需要在多次任务间保留记忆。</li><li>• <strong>选智能体团队</strong>：如果子任务需要跨越多步、长时间处理才能出成效。代码库迁移适用这个，因为成员们需要长期对付同一个服务模块，慢慢摸透它的依赖关系、测试规律和部署配置。这种积累下来的背景知识，是“用完即走”的调度模式给不了的。</li></ul>
 <p>当子智能体需要在多次被唤醒之间记住以前的状态时，智能体团队是更好的选择。</p>
 <h3>调度 - 子智能体 vs. 消息总线</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ZlwY8rlDcFOdfEqVXqicZfRAV8vkbno6JoBDdWvN3UHcFnA4FHUgtAkuyPlNVz3LBr0lMhRh5qibQcMY5PkhZjyBAUg3wQGgJKyx94JCWodEI/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ZlwY8rlDcFOdfEqVXqicZfRAV8vkbno6JoBDdWvN3UHcFnA4FHUgtAkuyPlNVz3LBr0lMhRh5qibQcMY5PkhZjyBAUg3wQGgJKyx94JCWodEI/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <p>两者都能处理多步工作流。怎么选？问自己：你的工作流程是可以提前预测的吗？</p>
 <ul><li>• <strong>选调度 - 子智能体</strong>：如果步骤早就定好了。就像代码审查系统，永远是那三板斧：接收提交请求、跑检查、汇总结果。</li><li>• <strong>选消息总线</strong>：如果工作流是由突发事件触发的，而且随时可能改变方向。安全运营系统永远猜不到下一秒会来什么警报，或者需要开展什么调查。它甚至需要随时容纳新类型的警报。消息总线通过把事件推给能干活的智能体来适应这种变数，而不是死守着预设的剧本。</li></ul>
 <p>如果为了应付越来越多的特殊情况，你的“调度者”脑子里的“If-Else”判断语句越堆越多，那么是时候换成消息总线，让分发机制变得更加清晰和容易扩展了。</p>
 <h3>智能体团队 vs. 共享状态</h3>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ZlwY8rlDcFPCbyNqUBDlVmncdEMdiazn2Pen6Uy6O5nofP0uuklPzwqRttSOO5YzOnqQTmkzowGPXNOyCXWfUyov2D05WXlu6Ldms4k0G2BU/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ZlwY8rlDcFPCbyNqUBDlVmncdEMdiazn2Pen6Uy6O5nofP0uuklPzwqRttSOO5YzOnqQTmkzowGPXNOyCXWfUyov2D05WXlu6Ldms4k0G2BU/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
 <p>两者里的智能体都是自主干活的。怎么选？问自己：智能体之间需要互相对答案、抄作业吗？</p>
 <ul><li>• <strong>选智能体团队</strong>：如果大家各人自扫门前雪，互不干涉。代码库迁移中，每个人负责自己的服务，最后统一合并就行。</li><li>• <strong>选共享状态</strong>：如果这是一场需要高度协作的任务，且线索需要实时流转。综合研究系统就很合适，看论文的智能体只要有新发现，看行业的智能体立马就能用上。</li></ul>
 <p>一旦团队成员们不再仅仅是交差时汇总结果，而是需要在干活途中频繁互通有无，那赶紧换成共享状态模式吧，它会让交流顺畅得多。</p>
 <h3>消息总线 vs. 共享状态</h3>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ZlwY8rlDcFPN8GCCJR6naGGTIcicMqDpOy3Y9SWPFtE4oqxA3v8wGcxjvbwtO2h5ca1B1E9SjuAibhjAVrhDHHfWUkaGbsUKwYeiasjvmkoSEk/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ZlwY8rlDcFPN8GCCJR6naGGTIcicMqDpOy3Y9SWPFtE4oqxA3v8wGcxjvbwtO2h5ca1B1E9SjuAibhjAVrhDHHfWUkaGbsUKwYeiasjvmkoSEk/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
 <p>两者都擅长处理复杂的多智能体协作。怎么选？问自己：任务是像流水线一样一个个解决事件，还是为了慢慢攒出一个知识库？</p>
 <ul><li>• <strong>选消息总线</strong>：如果智能体是对流水线上的事件做出反应。安全系统就是一环扣一环，处理完上一步才触发下一步。这个模式对“精准派活”非常在行。</li><li>• <strong>选共享状态</strong>：如果智能体是要基于日积月累的线索持续深入。综合研究系统是在不断汇聚知识。智能体们会反复回到黑板前，看看别人发现了什么，然后调整自己的调查方向。</li></ul>
 <p>记住，消息总线里依然有个“路由器”在中心掌控全局决定谁接活。而共享状态是彻头彻尾的去中心化。如果你非常在意消除“单点故障”，共享状态能给你最大的安全感。</p>
 <p>另外，如果你的消息总线系统里，大家发布消息主要只是为了“共享情报”而不是为了“触发别人的动作”，那说明你选错了，这活儿更适合共享状态模式。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/ZlwY8rlDcFPibLZw5Hibz2bu709WYNM9MrHvdOkwlxePiaYqqhgHhxBMbZpPialmcfC4BIl8r7iaodQ5ibQxkam94zwRvtPSzRIyibpkpl6r8bvI2Y/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/ZlwY8rlDcFPibLZw5Hibz2bu709WYNM9MrHvdOkwlxePiaYqqhgHhxBMbZpPialmcfC4BIl8r7iaodQ5ibQxkam94zwRvtPSzRIyibpkpl6r8bvI2Y/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
 <h2>新手指南</h2>
 <p>在真实的商业环境（生产环境）中，我们往往会混搭使用这些模式。一种常见的组合是：大方向的工作流用<strong>调度 - 子智能体</strong>，而在某个需要大量协作的子任务里套用<strong>共享状态</strong>。还有的系统会用<strong>消息总线</strong>来分发事件，而在处理每类事件的末端挂上一个个<strong>智能体团队</strong>。这些模式本质上是积木，并非水火不容。</p>
 <p>下表总结了各种模式的适用场景：</p>

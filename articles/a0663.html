@@ -45,7 +45,7 @@
 <h2>一、五种常见的 Skill 设计模式</h2>
 <p>在讲方法论之前，我们先来了解下 Google 总结出的五种常见 Skill 设计模式。</p>
 <p>我在自己的实践中也验证了这几种模式的有效性，这里结合我的理解，做一个拆解。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPOSbJicgCKmD8hnof3ASnOxTlrsUtRxhSQLibldV1pbOu2vWJRWiav6Q2YiawtKbNOb3Z6aFfxVrf64E9s45Vwbn61MsuoCHl1gkME/640?wx<em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="配图3" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPOSbJicgCKmD8hnof3ASnOxTlrsUtRxhSQLibldV1pbOu2vWJRWiav6Q2YiawtKbNOb3Z6aFfxVrf64E9s45Vwbn61MsuoCHl1gkME/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="配图3" loading="lazy"></p>
 <h3>模式一：知识注入型（Tool Wrapper）</h3>
 <p>解决什么问题： <strong>AI 的通用知识不够精准，需要注入「只有你知道的」专业知识。</strong></p>
 <p>核心思路：把你的专业经验打包成 references 文件，AI 在需要时自动加载，按你的标准来做事。</p>
@@ -145,7 +145,7 @@
 <p>看起来多了一轮对话，实际上省了后面反复返工的时间。</p>
 <p>这个模式在实际使用中被严重低估了。</p>
 <p>大多数 Skill 失败的原因不是流程写得不好，而是 AI 在 <strong>信息不全</strong> 的情况下就直接开始执行了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/Ty7XRc3ndPMdSVNUg9XTP6joNfRnZ5U43cb5O26bIaCkEmpFr2ERYz3nD2xibAnJA6E9mcXGFJeJTDBUapia8poN91FNIstBCTLSIgVqsHicgk/640?wx</em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="配图4" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Ty7XRc3ndPMdSVNUg9XTP6joNfRnZ5U43cb5O26bIaCkEmpFr2ERYz3nD2xibAnJA6E9mcXGFJeJTDBUapia8poN91FNIstBCTLSIgVqsHicgk/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="配图4" loading="lazy"></p>
 <h3>模式五：流水线型（Pipeline）</h3>
 <p>解决什么问题： <strong>任务复杂、步骤多，AI 容易跳步或遗漏关键环节。</strong></p>
 <p>核心思路：把任务拆成严格的阶段，每个阶段有明确的输入、输出和检查点。上一步没通过验证，不允许进入下一步。</p>
@@ -177,7 +177,7 @@
 <p>最后一个重要提醒： <strong>这五种模式不是互斥的，它们完全可以组合。</strong></p>
 <p>一个流水线型的 Skill 可以在第一步用反转模式收集需求，在最后一步用审查模式做质量检查。</p>
 <p>记得设计 Skill 的时候，先确定主模式，再看是否需要在某个环节嵌入其他模式。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/Ty7XRc3ndPOiaH9HgEBJDFsEicKY77hoyuDzPJjcvOjicZS9730XG41NV7fS4owZGdjibR7vYXawYqLsNKsRy2QkXoMCPOCxqO1cjr51CkUTYqE/640?wx</em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="配图5" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Ty7XRc3ndPOiaH9HgEBJDFsEicKY77hoyuDzPJjcvOjicZS9730XG41NV7fS4owZGdjibR7vYXawYqLsNKsRy2QkXoMCPOCxqO1cjr51CkUTYqE/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="配图5" loading="lazy"></p>
 <h2>二、进阶：如何系统化地打磨一个 Skill</h2>
 <p>我想说： <strong>“能用”和“好用” 的 Skill 之间，隔着一道巨大的鸿沟。</strong></p>
 <p>很多人写完 Skill 之后的做法是：跑一遍，效果不好，就凭直觉改几句描述、加几条约束，再跑一遍……</p>
@@ -185,7 +185,7 @@
 <p>问题出在哪？</p>
 <p><strong>没有参照物，也没有衡量标准。</strong></p>
 <p>下面我介绍一套「 <strong>评测驱动</strong> 」的打磨方法论。核心思路是： <strong>不要猜 Skill 该写什么，让失败告诉你该写什么。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/Ty7XRc3ndPNe4tumxp0fdDpxIFvClG9OKw3oNoWQzNkyqzlSDeQ8QRM4bJfKMd14osAYJibASSTibD2Nia2zmfEabFyxUZRRY1X2q8icKDHRMUA/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="配图6" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Ty7XRc3ndPNe4tumxp0fdDpxIFvClG9OKw3oNoWQzNkyqzlSDeQ8QRM4bJfKMd14osAYJibASSTibD2Nia2zmfEabFyxUZRRY1X2q8icKDHRMUA/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="配图6" loading="lazy"></p>
 <h3>第一步：建立基线，发现问题</h3>
 <p>在写任何 Skill 之前，可以考虑先让 DeepSeek、Claude 直接做一遍你需要完成的任务。</p>
 <p>这一步的目的是为了发现问题： <strong>就像医生开药之前先做体检，你得先知道"病"在哪。</strong></p>
@@ -194,11 +194,11 @@
 <p>•哪些输入会让 AI 理解歧义、走偏方向？</p>
 <p>•AI 有没有在不该主动的时候「自作聪明」？</p>
 <p>把这些问题一条条记下来，这就是你的 Skill 需要解决的真实缺口，也是后面所有测试用例的来源。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPMlCP4gMLqSgKjNIUGLDgLZjXNXjEj975o6HdETtn83QPBtsfXSuesVpbTenuNZD7nXqEQn37xxmOOmHmLyNpfIfsl8YTgGLibA/640?wx<em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="配图7" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPMlCP4gMLqSgKjNIUGLDgLZjXNXjEj975o6HdETtn83QPBtsfXSuesVpbTenuNZD7nXqEQn37xxmOOmHmLyNpfIfsl8YTgGLibA/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="配图7" loading="lazy"></p>
 <p>这里有一个简单的判断标准，大家习惯叫它「五分钟测试」：</p>
 <p><strong>如果 DeepSeek 就能在 5 分钟内给出稳定的结果，你大概率不需要为这件事写 Skill；</strong></p>
 <p><strong>如果 5 分钟内搞不定、或者结果时好时坏，那才是 Skill 真正的切入点。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/Ty7XRc3ndPOicTZJaSUsPL0R6G0TqiaicMCzkDwNRqFwibpbk2Y5wVBERfV2ZVzsw9dHquqgsR8A8iaC3fqu7tqYtJWIjyhlbLZn5fZVdJAtV1hs/640?wx</em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="配图8" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Ty7XRc3ndPOicTZJaSUsPL0R6G0TqiaicMCzkDwNRqFwibpbk2Y5wVBERfV2ZVzsw9dHquqgsR8A8iaC3fqu7tqYtJWIjyhlbLZn5fZVdJAtV1hs/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="配图8" loading="lazy"></p>
 <h3>第二步：定义验收标准</h3>
 <p>这一步反直觉，但非常关键。大多数人的做法是：先写 Skill → 然后想怎么测试。</p>
 <p>但正确的顺序是反过来： <strong>先定义「什么算做对了」，再写 Skill 去达标。</strong></p>
@@ -209,7 +209,7 @@
 <p>为什么要这么做？</p>
 <p><strong>因为没有测试约束的 Skill，本质上是在放大 AI 行为的不确定性。</strong></p>
 <p>你加的每一条规则，如果不知道它在解决什么问题，就可能会继续制造新的问题。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/Ty7XRc3ndPNyzNADlJovxicDEKkY6ahaWYiaJbLOKEFFAZSFMlfeicl7qSs2lBUVaZpibLMFw0N4DaWZehQ0GuY4XPrrvyDabtXxKrvyrnNpR4E/640?wx</em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="配图9" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Ty7XRc3ndPNyzNADlJovxicDEKkY6ahaWYiaJbLOKEFFAZSFMlfeicl7qSs2lBUVaZpibLMFw0N4DaWZehQ0GuY4XPrrvyDabtXxKrvyrnNpR4E/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="配图9" loading="lazy"></p>
 <h3>第三步：写最小版本的 Skill</h3>
 <p>现在才开始写 Skill。</p>
 <p>但注意，不要试图一次覆盖所有情况，写能通过测试标准的 MVP 版本。</p>
@@ -219,7 +219,7 @@
 <p>3.<strong>保持单一职责</strong> ：一个 Skill 只解决一个明确的问题。</p>
 <p>这个阶段的 Skill 会很简陋，但它是有针对性的。</p>
 <p>每一条规则都是在回应一个真实的失败案例，而不是凭经验预判。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPMhWON8zVMsqPPbKN2TYoNWtMG3G5tG0239wIA3ewRqticx67dtE8hTS1Ce7kHhXibUCVqH9Mr65HOTuxTGEyoTPYoJsFsnpliaXg/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="配图10" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPMhWON8zVMsqPPbKN2TYoNWtMG3G5tG0239wIA3ewRqticx67dtE8hTS1Ce7kHhXibUCVqH9Mr65HOTuxTGEyoTPYoJsFsnpliaXg/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="配图10" loading="lazy"></p>
 <h3>第四步：通过测试后，再逐步扩展</h3>
 <p>最短路径跑通了，再一点点增加覆盖范围：</p>
 <p>•补充更多边界场景的处理规则</p>
@@ -228,7 +228,7 @@
 <p><strong>核心纪律：每增加一条新规则，都必须对应一个测试用例。</strong> 没有测试支撑就加规则，等于在 Skill 里埋盲区。</p>
 <p>同样重要的是知道什么时候该停。</p>
 <p>规则太多反而会让 AI 行为变得不可预测——它在多条指令之间纠结，结果哪条都执行不好。如果你的 Skill 已经稳定通过所有测试，就别再往里塞东西了。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPOMJzy74s8U1WICpO2CA4GK7urRGlOs0XMDMLJbuq9COrwf1IpJCpfjbEAzibLgXfWERKibObdXd3NhkJ57icbT753nOicyYGeD1ZE/640?wx<em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="配图11" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPOMJzy74s8U1WICpO2CA4GK7urRGlOs0XMDMLJbuq9COrwf1IpJCpfjbEAzibLgXfWERKibObdXd3NhkJ57icbT753nOicyYGeD1ZE/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="配图11" loading="lazy"></p>
 <h3>第五步：给 Skill 加上记忆和验收标准</h3>
 <p>当 Skill 的核心逻辑稳定之后，补上两个让它从「能用」变成「好用」的东西：</p>
 <p>记忆： <strong>在 Skill 目录下放一个日志文件，每次执行完追加记录，下次执行前先读。</strong></p>
@@ -246,7 +246,7 @@
 <p>•AI 反复读同一段内容？→ 说明那段内容可能应该放到更醒目的位置</p>
 <p>每发现一个新问题，就回到第二步，补一个测试用例，再改 Skill。</p>
 <p>这是一个持续转动的闭环，不是一次性工程。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPMibPXiad6qNCE6oVyoIDicmMUN0qkHknDI2pC5NetAiaJBdlqtf8m8oDCCzfQOWB8zicF1vWDibpwD9D7K2ey2Jj6AWXCDvCFRmibRzg/640?wx<em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=9" alt="配图12" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPMibPXiad6qNCE6oVyoIDicmMUN0qkHknDI2pC5NetAiaJBdlqtf8m8oDCCzfQOWB8zicF1vWDibpwD9D7K2ey2Jj6AWXCDvCFRmibRzg/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="配图12" loading="lazy"></p>
 <p>如果要在龙虾里使用 Skill，一个建议：这六步的打磨过程，建议先在 Claude Code 里完成。</p>
 <p><strong>Claude Code 的执行过程是透明的，你能看见 AI 每一步读了什么文件、调了什么工具、在哪个环节卡住了。</strong></p>
 <p>因为 OpenClaw 封装更深，Skill 跑不好时，你分不清是 Skill 的问题还是环境的问题。</p>
@@ -254,17 +254,17 @@
 <h2>三、实战案例：售前工时评估 Skill</h2>
 <p>前面讲了方法论，可能还是有点抽象。这里用我自己的一个真实案例，把六步串一遍。</p>
 <p>场景其实开头已经介绍过了。这里给大家再感受下那种紧迫感：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/Ty7XRc3ndPOthxCn5fb2e5WH7TVHLzT9WaZRbr3hhRBbicDpeSZVoxibFHEUWWNYxsJvcRBZax6tz7sCflNPpo9mUgQlDuU6RloCGONU0tlLc/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPOthxCn5fb2e5WH7TVHLzT9WaZRbr3hhRBbicDpeSZVoxibFHEUWWNYxsJvcRBZax6tz7sCflNPpo9mUgQlDuU6RloCGONU0tlLc/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
 <p>PS： <strong>1个小时内，夺命三连催。</strong></p>
 <p>这种场景不是第一次了。售前评估几乎永远是急活。客户催销售，销售催你，每次都是熬大夜，熬出来的。</p>
 <p>流程每次都一样： <strong>拆需求 → 匹配人 → 算工时 → 套模板</strong> 。</p>
 <p><strong>流程固定、输入不同、反复发生，这就是 Skill 该干的事。</strong></p>
 <p>所以，这件事，已经到了让我非做不可的地步了。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPPLIOVOlZx3rk74BKN7nNpCoKEMNicic8ImvSK8hzanYPogBs4Biaelle26Oc3ep0EribiadPicAQzSlWuvAyKxc6D6Fy0NLz3EwVMLU/640?wx<em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=11" alt="配图13" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPPLIOVOlZx3rk74BKN7nNpCoKEMNicic8ImvSK8hzanYPogBs4Biaelle26Oc3ep0EribiadPicAQzSlWuvAyKxc6D6Fy0NLz3EwVMLU/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="配图13" loading="lazy"></p>
 <h3>第一步：建立基线，发现问题</h3>
 <p>我没有一上来就写 Skill。先让扔给 Claude 测试一下，把客户需求原文扔给它，说「帮我出一份工时评估报告」。</p>
 <p>结果能出来，但问题一堆：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPPsrHF6bNvVxOVVKE7pxibzNHmF8Dic0YRCoYsBDnt8q3ptXXK0xNna7JRFftptOZOzBvuiaspLibM0mQicCccWAgiablBk8Gv8gheZQ/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPPsrHF6bNvVxOVVKE7pxibzNHmF8Dic0YRCoYsBDnt8q3ptXXK0xNna7JRFftptOZOzBvuiaspLibM0mQicCccWAgiablBk8Gv8gheZQ/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="图片" loading="lazy"></p>
 <p>我发现 Claude 需求分析太泛，不了解我们的模块结构和技术栈，分析全是正确的废话。</p>
 <p>而且，它也不知道团队有谁、谁擅长什么，给了一堆角色，但是 <strong>有些角色我们甚至没有。</strong></p>
 <p>后来我尝试生成两次后，发现每次格式都不一样：无论是样式，还是内容框架。</p>
@@ -272,7 +272,7 @@
 <p>后来我基于 Skill 生成的版本和裸跑版本做了对比，内部认真分析了一下。</p>
 <p>如果一不小心拿到第二次的人天，项目得亏麻了。</p>
 <p>总结下来就是 6 个字： <strong>有框架，没质量。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPN1AcuHNrAXYbjTo2HYy4Con7NymjJD105HCFJezeMvxzJO5ct6aKP4KOZn0ribh14ymBIFF8mXtGgXOcjvQAnTda7uFsk2z8XQ/640?wx<em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=15" alt="配图14" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPN1AcuHNrAXYbjTo2HYy4Con7NymjJD105HCFJezeMvxzJO5ct6aKP4KOZn0ribh14ymBIFF8mXtGgXOcjvQAnTda7uFsk2z8XQ/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=15" alt="配图14" loading="lazy"></p>
 <h3>第二步：定义验收标准</h3>
 <p>把基线建立时暴露的四个问题，翻译成验收标准：</p>
 <p>1.<strong>需求分析必须关联项目真实模块，不能出现通用废话</strong></p>
@@ -282,7 +282,7 @@
 <p>后面每改一版，都用同一段需求跑一遍，对着这四条逐项检查。</p>
 <p>不用复杂的测试框架，手动过一遍就行，但有了「通过/不通过」标准，改起来就不是盲调了。</p>
 <p>当然这里也可以做一个自动检查报告的 Skill，把这些验证标准写进去，让 AI 自动运行。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPN5ZP7K3tRv9pf2rOYpybdZwAdSE218HGN4nykLwTPibW3iaQMyiayOfOPOVTAtxXcickdqE7bsNBfBicHCCtQfrtncbCW0BDhoneqw/640?wx<em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=16" alt="配图15" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPN5ZP7K3tRv9pf2rOYpybdZwAdSE218HGN4nykLwTPibW3iaQMyiayOfOPOVTAtxXcickdqE7bsNBfBicHCCtQfrtncbCW0BDhoneqw/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=16" alt="配图15" loading="lazy"></p>
 <h3>第三步：MVP 版本 Skill</h3>
 <p>第一版就是一个 SKILL.md：</p>
 <p>●●●</p>
@@ -346,7 +346,7 @@
 <p>七章报告模板写死在 SKILL.md 里，按模板填内容，不允许 AI 自由发挥。</p>
 <p>验证标准第 4 条立刻通过。但前三条还是不行：AI 依然在造数据。</p>
 <p><strong>没关系，最小版本的目标不是满分，先完成再完美。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPPoMaehKXExnfsryxpgUvKjV4aSYKk7DOjSMnU0XlYGicHZY879nmKnkZYYKUuZPfImScb9qIBTWYpeAHzokg2axarzHMu6PVicM/640?wx<em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=17" alt="配图16" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPPoMaehKXExnfsryxpgUvKjV4aSYKk7DOjSMnU0XlYGicHZY879nmKnkZYYKUuZPfImScb9qIBTWYpeAHzokg2axarzHMu6PVicM/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=17" alt="配图16" loading="lazy"></p>
 <h3>第四步：补充 AI 不知道的上下文</h3>
 <p>骨架确定后，该解决 AI 造数据的问题了。</p>
 <p>这时候我发现：要补充的资料其实早就有了。</p>
@@ -361,7 +361,7 @@
 <p>所以我把它抽成了独立的子 Skill <code>req-to-dev-doc</code> ，主 Skill 调用它，其他场景直接复用。</p>
 <p><strong>写 Skill 时多想一步：这个能力是只服务当前流程，还是本身就有独立价值？</strong></p>
 <p><strong>如果是后者，拆出来，未来你会感谢自己的。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/Ty7XRc3ndPM78tz2L4N60FNfcW5bcvAXTFsSG9aCic1s7hUk2KZu2RA26FHxpIEQXJFFzHrgAHomExRtkx7fSDkjdv67tO07NNYArhzuicCiaU/640?wx</em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=18" alt="配图17" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Ty7XRc3ndPM78tz2L4N60FNfcW5bcvAXTFsSG9aCic1s7hUk2KZu2RA26FHxpIEQXJFFzHrgAHomExRtkx7fSDkjdv67tO07NNYArhzuicCiaU/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=18" alt="配图17" loading="lazy"></p>
 <p><strong>主 Skill：</strong></p>
 <p>●●●</p>
 <p>\### 第二步：生成开发文档</p>
@@ -462,15 +462,15 @@
 <p>| 新规则上线，历史数据无法编辑 | L0-4 | 补迁移脚本 + 历史样本回归 |</p>
 <p>有了这两份资料，AI 不再泛泛地写“可能影响其他模块”。</p>
 <p>而是相对精确命中规则：” <strong>命中 L0-7（历史数据兼容）、L1-9（数据结构脚本）</strong> “，逐条列出必查项和回归清单。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPO8D2kuGWOns4xRjnRAwNMK0nJmNtQDiayrDbJsIqo2cSKAia30kFheVYvTTZiaGYlYs1vSEXia7tLEawA2vr2neSib2iaA8HPbnSMibA/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=19" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPO8D2kuGWOns4xRjnRAwNMK0nJmNtQDiayrDbJsIqo2cSKAia30kFheVYvTTZiaGYlYs1vSEXia7tLEawA2vr2neSib2iaA8HPbnSMibA/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=19" alt="图片" loading="lazy"></p>
 <p><strong>这样拆得越细，后面估工时越准。</strong></p>
 <blockquote><p>备注：这个规则库也不是一成不变的，我还设计了一个 FAQ Skill 来反哺规则库，这样团队运转中高频发生的问题和总结，就会自动落到规则中，形成高效闭环。</p></blockquote>
 <p>小结一下，这一步的本质就是： <strong>用内部知识把模糊的客户需求，翻译成精确的开发任务。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPN4LbbWPnAK4VBic5kDvJ2qNqrXEWFOgOOIcZ4Ud1b6bDTtdXdQyibpiawZZFuHUGvcy7D5u6yoStuh0UiacXOq9sf4UELHJwT5mHc/640?wx<em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=20" alt="配图18" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPN4LbbWPnAK4VBic5kDvJ2qNqrXEWFOgOOIcZ4Ud1b6bDTtdXdQyibpiawZZFuHUGvcy7D5u6yoStuh0UiacXOq9sf4UELHJwT5mHc/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=20" alt="配图18" loading="lazy"></p>
 <h4>2、补充「员工能力矩阵」（解决「资源虚构」）</h4>
 <p>这次，我把团队所有人的角色、技能等级整理成 <code>employee-data.md</code> 。</p>
 <p>考虑到匹配资源在未来也可能被复用，所以单独封装了一个 Skill： <code>/dev-doc-match-resource</code> 。并且在主 Skill 中调用它。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPNibIJxrZ2nQLtNv82VicMPtEY2v7GZRTSye6lzgg51lKd9ZmZ96DPOAvG9wtFJRLXR2FvAia8Fibp24biaiaicKPthwXb8KtQHWx0aLc/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=21" alt="图片25" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPNibIJxrZ2nQLtNv82VicMPtEY2v7GZRTSye6lzgg51lKd9ZmZ96DPOAvG9wtFJRLXR2FvAia8Fibp24biaiaicKPthwXb8KtQHWx0aLc/640?wx_fmt=jpeg&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=21" alt="图片25" loading="lazy"></p>
 <p><strong>主 Skill：</strong></p>
 <p>●●●</p>
 <p>\### 第三步：匹配资源配置</p>
@@ -540,7 +540,7 @@
 <p>于是迭代中，我又补了一列 <strong>「业务领域」</strong> ，精确到每个人熟悉的业务模块。</p>
 <p>补完后，AI 输出的不再是 <strong>「高级开发 1 名，QA 1 名」</strong> 。</p>
 <p>而是 <strong>「小明（精通系统底层/导入中心）负责核心引擎，小李（熟悉化工模块）负责业务适配」。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/Ty7XRc3ndPMp8uMnh7hRlTribzjNhOibKPEYAOmSUGTT2H1FWT7aU8Ts9IyFP8jUCrsFickphXDDMuS2gZqiblPyWR7bCzIIkUKshgqpzauB734/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=22" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPMp8uMnh7hRlTribzjNhOibKPEYAOmSUGTT2H1FWT7aU8Ts9IyFP8jUCrsFickphXDDMuS2gZqiblPyWR7bCzIIkUKshgqpzauB734/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=22" alt="图片" loading="lazy"></p>
 <p>验证标准第 2 条通过。</p>
 <p>如下是我整理的一份模板，大家需要可以自取：</p>
 <p>●●●</p>
@@ -579,7 +579,7 @@
 <p>补充能力矩阵，有两个重要的作用：</p>
 <p>1.专业的事情交给专业的人来做，降低项目风险。</p>
 <p>2.即使项目立刻开始，管理者也能够基于资源分配情况从容编写计划，为后期做好铺垫。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/Ty7XRc3ndPOe9bMLoBaH4OXic1w2qUXvibYIoOkicAFpApuNdcVOudwGN47Bw62n0auo31CiaiaUCxZdtFErAANklDtNuJiboDaNLs9wHLLXHIyco/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=23" alt="配图19" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Ty7XRc3ndPOe9bMLoBaH4OXic1w2qUXvibYIoOkicAFpApuNdcVOudwGN47Bw62n0auo31CiaiaUCxZdtFErAANklDtNuJiboDaNLs9wHLLXHIyco/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=23" alt="配图19" loading="lazy"></p>
 <h4>3、基于项目代码扫描</h4>
 <p>我认为这是非常关键的一次优化。</p>
 <p>和普通 AI 聊天工具最大的区别在于： <strong>它是基于我的项目代码本身进行评估的。</strong></p>
@@ -594,10 +594,10 @@
 <p>• <strong>哪些代码可以复用？</strong></p>
 <p>• <strong>需要新增的代码量多大？</strong></p>
 <p>「能复用多少」和「要增加多少」都写进报告，这样工时终于有了更可靠的代码层面的依据。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/Ty7XRc3ndPOjibpugzWSGzJCGSf758xXZOYJMy20fvRtVMvZ6plMxAOKWt25yK5AytsEIjibM9chMPDcV38n1NaG9AdFb74aCazzuWT6rKjAI/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=24" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPOjibpugzWSGzJCGSf758xXZOYJMy20fvRtVMvZ6plMxAOKWt25yK5AytsEIjibM9chMPDcV38n1NaG9AdFb74aCazzuWT6rKjAI/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=24" alt="图片" loading="lazy"></p>
 <p>验证标准第 3 条通过。</p>
 <p>到这里，四条验证标准全部通过。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/Ty7XRc3ndPMAZ1Vq0s444btiaEtCffiarWjMetDFqNfSxyibGNG5KpRtvnC8nqpyoiaKABHf8q0Wto9zicSicV9BpK2QBsAf9h0m6taPJ7iaeoCobM/640?wx<em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=25" alt="配图20" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Ty7XRc3ndPMAZ1Vq0s444btiaEtCffiarWjMetDFqNfSxyibGNG5KpRtvnC8nqpyoiaKABHf8q0Wto9zicSicV9BpK2QBsAf9h0m6taPJ7iaeoCobM/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=25" alt="配图20" loading="lazy"></p>
 <h3>第五步：加验收标准和脚本</h3>
 <p><strong>1、验收标准写进 Skill</strong></p>
 <p>SKILL.md 末尾加了自检清单，AI 输出前先自查： <strong>结构、数据的一致性、风险是否预留了</strong> 。</p>
@@ -621,13 +621,13 @@
 <p>基本上，客户要 Word，不是 Markdown。</p>
 <p>每次让 AI 转格式，排版都不一样，这种确定性任务不该让 AI 自由发挥。</p>
 <p>所以我让 AI 写了一个 <code>generate_word_report.py</code> 放 scripts/ 里，AI 填数据，脚本管排版，从此每次都一样。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/Ty7XRc3ndPPuAXb327VJoYBlLtExT6bLBP6hm4DZrBdOe5RNABDl9fpEfrA0WlfeS2GxFqbfMHZzFrJiaUwS6aaeQA6awdEIUctIicicUwGyU0/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=26" alt="image-20260327182350557" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Ty7XRc3ndPPuAXb327VJoYBlLtExT6bLBP6hm4DZrBdOe5RNABDl9fpEfrA0WlfeS2GxFqbfMHZzFrJiaUwS6aaeQA6awdEIUctIicicUwGyU0/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=26" alt="image-20260327182350557" loading="lazy"></p>
 <h3>第六步：上线后持续校准</h3>
 <p>后续又跑了几个需求，发现新问题：客户需求描述太简略时，AI 会「脑补」过度，生成客户没提的功能。</p>
 <p>补了一条约束：「如果原始需求信息不足，先列待确认项，不要自行补全」</p>
 <p>下一步，我打算把过去项目计划的信息收集一下。</p>
 <p>这样每个项目的预估工时和实际工时都有了，再让 AI 进行「类比估算」，基于历史项目计划数据推算结果将更加准确。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/Ty7XRc3ndPNcOgZCEsWkTZEfxJn2eKAic2eItVJ3JNkulZmgbibhLPc2KuDPsEDaAvT9GSjUrtKK0rBiaFic9SYHc40SAk9BGT9UslUXC2KOq4k/640?wx</em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=27" alt="配图21" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Ty7XRc3ndPNcOgZCEsWkTZEfxJn2eKAic2eItVJ3JNkulZmgbibhLPc2KuDPsEDaAvT9GSjUrtKK0rBiaFic9SYHc40SAk9BGT9UslUXC2KOq4k/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=27" alt="配图21" loading="lazy"></p>
 <h3>最终效果对比</h3>
 <table><thead><tr><th>维度</th><th>没有 Skill</th><th>有 Skill</th></tr></thead><tbody><tr><td>耗时</td><td>半天到一天，复杂的好几天</td><td>10-15 分钟</td></tr><tr><td>输出格式</td><td>每次不一样</td><td>七章固定，直接生成 Word</td></tr><tr><td>人员配置</td><td>编造泛泛的岗位名</td><td>按真实团队能力精准匹配</td></tr><tr><td>工时评估</td><td>拍脑袋</td><td>代码扫描 + 技能系数</td></tr><tr><td>交付质量</td><td>大量人工返工</td><td>AI 自检后输出，微调即可</td></tr></tbody></table>
 <p>回看整个过程，完美对应六步打磨法：</p>
@@ -657,15 +657,15 @@
 <p>还记得开头那组数字吗？157 vs 71。</p>
 <p>差距不是因为 AI 不行，而是没人告诉它该怎么做。</p>
 <p>模块地图、踩坑规则、团队能力矩阵。这些 AI 永远猜不到的东西，才是 Skill 真正值钱的部分。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/Ty7XRc3ndPNNkg5n3qib8yTK5Z4ScfEsZ8xibNwBXdOUE6IIeEZ5b5BJibYXfbWXu1eO4ZcmmSwwksgZia8HdLicyKRfJCRV80kjZu191e7cZI1A/640?wx</em>fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=28" alt="配图24" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/Ty7XRc3ndPNNkg5n3qib8yTK5Z4ScfEsZ8xibNwBXdOUE6IIeEZ5b5BJibYXfbWXu1eO4ZcmmSwwksgZia8HdLicyKRfJCRV80kjZu191e7cZI1A/640?wx_fmt=jpeg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=28" alt="配图24" loading="lazy"></p>
 <p><strong>Skill 填的不是技术的坑，是「理解」的坑。</strong></p>
 <p>你教给 AI 的每一条规则，都在缩小「它能做的」和「你想要的」之间的距离。</p>
 <p>总之，这件事，越早开始，复利越大。</p>
 <p><strong>谢谢你看我的文章，如果觉得不错，帮忙点赞、转发、关注三连吧～</strong></p>
 <p><strong>我是 🐼熊猫 Jay，我们下次再见～</strong></p>
 <p><strong>往期精选：</strong></p>
-<p><strong><a href="https://mp.weixin.qq.com/s?__biz=Mzg5OTk4MDM0OQ==&amp;mid=2247495010&amp;idx=1&amp;sn=de2402ab1d13addf27f55383d1ed5e1d&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">最适合新手的 Claude Code、MCP、Skills 全套教程</a></strong></p>
-<p><strong><a href="https://mp.weixin.qq.com/s?__biz=Mzg5OTk4MDM0OQ==&amp;mid=2247494287&amp;idx=1&amp;sn=b3975f986ee11cecea05acce9ab83b5c&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">从混乱到可控：我最受益的 10 个 AI 编程技巧（含提示词）</a></strong></p>
+<p><strong><a href="https://mp.weixin.qq.com/s?__biz=Mzg5OTk4MDM0OQ==&amp;mid=2247495010&amp;idx=1&amp;sn=de2402ab1d13addf27f55383d1ed5e1d&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">最适合新手的 Claude Code、MCP、Skills 全套教程</a></strong></p>
+<p><strong><a href="https://mp.weixin.qq.com/s?__biz=Mzg5OTk4MDM0OQ==&amp;mid=2247494287&amp;idx=1&amp;sn=b3975f986ee11cecea05acce9ab83b5c&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">从混乱到可控：我最受益的 10 个 AI 编程技巧（含提示词）</a></strong></p>
 <p><strong>微信扫一扫赞赏作者</strong></p>
 <p>继续滑动看下一个</p>
 <p>熊猫Jay字节之旅</p>

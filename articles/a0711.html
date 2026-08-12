@@ -59,7 +59,7 @@
 <p>这是 Nemos 区别于现有记忆系统的核心。</p>
 <p>建模选择。 领域不被实现为物理分区(独立的表或库)，而是嵌入空间中的可学习锚点(质心)；每条记忆对领域的归属是连续隶属度(soft membership)而非布尔归属，且允许多归属。路由即查询向量对各领域质心的相似度取 top-k。这一选择带来两个直接好处：其一，天然支持跨领域记忆(如"膝伤后能否继续弹钢琴"可同时高隶属于医疗与音乐)；其二，领域的分裂与合并退化为质心的几何运算，而非昂贵的数据迁移。</p>
 <p>四级稀疏激活。 借鉴稀疏门控的专家混合(MoE)及 DeepSeekMoE 的"共享专家隔离"，单次检索的激活范围被严格限定：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/4feVdj5sazVg2AzgINdQzGOBb9071S8OfOxLZooL9ibqoafyxILh6ibqwtDR91eQP7ZRLYSQSXg8FduzsUWWgOJIBuUJnZLwlmO9z4J2ibWABM/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/4feVdj5sazVg2AzgINdQzGOBb9071S8OfOxLZooL9ibqoafyxILh6ibqwtDR91eQP7ZRLYSQSXg8FduzsUWWgOJIBuUJnZLwlmO9z4J2ibWABM/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Image" loading="lazy"></p>
 <ul><li>L0 共享层对应"抽象通用的顶层不做领域切分"：核心人格、通用能力、跨域常识无条件注入，等价于 MoE 中始终激活的共享专家；</li><li>L1/L2 为路由命中的主领域与若干邻接领域；</li><li>L3 是"隔离"与"关联"这对矛盾的解法。二者看似不可兼得——既要隔离以防污染，又要关联以产生跨域联想。Nemos 用系统层级分离化解：隔离只作用于路由层(领域粒度)，而记忆之间的关联边在记忆粒度自由跨域连接，二者不在同一层级，故可同时成立。</li></ul>
 <p>😼</p>
 <p>其结构性收益是：总记忆库可无限增长，而单次激活只为"共享层 + 三到四个领域子集"。 规模与激活量解耦，精度与延迟同时改善 —— 库越大，这一红利越显著。</p>

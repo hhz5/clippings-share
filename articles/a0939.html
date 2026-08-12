@@ -31,13 +31,13 @@
     <p class="article-source"><a href="https://mp.weixin.qq.com/s/fPJPChJzpc3LkAKpqT5pyw" target="_blank" rel="noopener">查看原文 ↗</a></p>
     <div class="article-body">
 <p>原创 银海 <em>2026年1月26日 13:58</em></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7XGqfdibmNCebXoHxLhibqjqNZJhkQCI7JkStxxj2lqJNY5JPnN46YM5g/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7XGqfdibmNCebXoHxLhibqjqNZJhkQCI7JkStxxj2lqJNY5JPnN46YM5g/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>这几天在刷 X 的时候，刷到一个挺离谱的视频案例。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>gif/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7UqEv9Oia2MkQPjic1icaJic6wg7rByYV7P9N3E8KJMafU8bMX2aKc9IqmA/640?wx</em>fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7UqEv9Oia2MkQPjic1icaJic6wg7rByYV7P9N3E8KJMafU8bMX2aKc9IqmA/640?wx_fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>作者说自己几乎没剪视频，全程是在和 AI 对话，通过写代码的方式直接做动画，这事一下子把我勾住了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>gif/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7MAr173tJb5R9NpQibBnvnvU7Lk3uBwGTFWgPB9kvmicW8PvbhNacpR3g/640?wx</em>fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7MAr173tJb5R9NpQibBnvnvU7Lk3uBwGTFWgPB9kvmicW8PvbhNacpR3g/640?wx_fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>画面是那种很规整的数据可视化动画，节奏、字幕、讲解都很到位，看第一眼你会以为是哪个剪辑师做出来的，结果点进去一看，全是代码生成的...</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>gif/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7dtt8tiaNrYAcs65wj9jicXuPato2NMrljMakbRVRuWcfheIMiafNU530g/640?wx</em>fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_gif/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7dtt8tiaNrYAcs65wj9jicXuPato2NMrljMakbRVRuWcfheIMiafNU530g/640?wx_fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>顺着线索往下看，才发现是在 Claude Code 用的 Remotion 的 Agent Skills，简单说，就是把 Remotion 这种“用代码做视频”的能力，直接交给 Claude Code 来调度。</p>
 <p>我们就不再关心组件怎么写、时间轴怎么对齐，而是用提示词描述你要什么样的视频。</p>
 <p>本文内容就会手把手带你在国内用自己喜欢的模型用上 Claude code （ <strong>文末赠送免费使用的Token</strong> ） ，然后可以结合着不同的 Skills 做出更有趣的内容。</p>
@@ -46,7 +46,7 @@
 <pre><code>根据这个skill信息，使用这个remotion，帮我制作一个介绍马斯克SPace X的火星发射动画，需要按照时间周期来设计，并且需要有火箭发射到天空上的动画，然后同时呢你需要根据时间周期配备对应的文本解说</code></pre>
 <p>我拆的时候，没有只盯着 Remotion 本身，而是把整个视频拆成了三件事：讲什么、怎么说、画面怎么配。</p>
 <p>第一步是内容，先让模型帮我生成一段偏口语的科普解说稿，结构清楚一点，有起有落，适合直接念出来。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N74f3p56DIM82R8wBw8nibEene1qArq4OgqGG0zgG8JNTUeeqiaskzvQSA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N74f3p56DIM82R8wBw8nibEene1qArq4OgqGG0zgG8JNTUeeqiaskzvQSA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>这里我用到的就是 remotion-dev/skills 这个 skill，它更像一个“视频执行器”。</p>
 <p>Remotion Skill 的地址是：https://github.com/remotion-dev/skills</p>
 <p>我把文案结构、解说音频的信息一股脑丢给它，让它去负责画面、字幕和简单动画的组合。</p>
@@ -65,31 +65,31 @@
 <pre><code class="language-nginx"># 通过 npm 全局安装（官方推荐）npm install-g @anthropic-ai/claude-code</code></pre>
 <p>装完之后，可以在终端里跑一下 claude --version，如果能看到版本号，说明环境没问题。</p>
 <pre><code class="language-css">claude --version</code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7JrrgVttVzJpakdx4icE2urjX3yfkFyug7H4Y9RDybicahIMIOUOOeibBQ/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7JrrgVttVzJpakdx4icE2urjX3yfkFyug7H4Y9RDybicahIMIOUOOeibBQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>到这里，其实 Claude Code 已经可以直接用了，默认会走 Claude 自家的模型，但大多数同学不太好搞定Claude API，并且容易封且贵。</p>
 <p>Claude Code 实际上本身支持通过环境变量的方式接入第三方推理服务，比如 Kimi、DeepSeek、Minimax 这些模型，都可以统一接进来用。</p>
 <p>我这里用的是七牛云的 AI 大模型推理服务，新用户可以直接领一个 1000 万 token 的免费额度，而且是全模型通用的， 地址是：https://s.qiniu.com/26fa2a。</p>
 <p>领完之后，在模型广场里选一个你觉得合适的模型就行了，这次演示我选的是 Minimax M2.1，整体体验和响应速度都还不错。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7avYuZH23LxnNax0nYeY5MpuW5wpCHebfl6OyQbeXibpu0GP6XtlDH8A/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7avYuZH23LxnNax0nYeY5MpuW5wpCHebfl6OyQbeXibpu0GP6XtlDH8A/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>模型选好之后，接下来就是配置 API Key 和模型信息。</p>
 <p>直接在本地创建 Claude Code 的配置文件，用下面这条命令：</p>
 <pre><code class="language-javascript">vim ~/.claude/settings.json</code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7QdcdWwoXnVr6nibb23s2lhZH1TjPVPVIpv7EpicAF9ibNu8oCvx6MFn9g/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7QdcdWwoXnVr6nibb23s2lhZH1TjPVPVIpv7EpicAF9ibNu8oCvx6MFn9g/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <p>如果之前没有这个文件，直接新建就行，然后把下面这段配置完整贴进去：</p>
 <pre><code class="language-json">{  &quot;env&quot;: {    &quot;ANTHROPIC_AUTH_TOKEN&quot;: &quot;sk-your-api-key-here&quot;,    &quot;ANTHROPIC_BASE_URL&quot;: &quot;https://api.qnaigc.com&quot;,    &quot;ANTHROPIC_MODEL&quot;: &quot;minimax/minimax-m2.1&quot;,    &quot;ANTHROPIC_DEFAULT_SONNET_MODEL&quot;: &quot;minimax/minimax-m2.1&quot;,    &quot;ANTHROPIC_DEFAULT_HAIKU_MODEL&quot;: &quot;minimax/minimax-m2.1&quot;,    &quot;ANTHROPIC_SMALL_FAST_MODEL&quot;: &quot;minimax/minimax-m2.1&quot;  },  &quot;permissions&quot;: {    &quot;deny&quot;: [      &quot;Read(./.env)&quot;,      &quot;Read(./.env.*)&quot;,      &quot;Read(./secrets/**)&quot;    ]  },  &quot;companyAnnouncements&quot;: [    &quot;您正在使用七牛云 AI 大模型推理服务 🚀&quot;  ]}</code></pre>
 <p>其中最关键的就是 ANTHROPIC\<em>AUTH\</em>TOKEN，这里需要替换成你自己的 API Key。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7Qziaiczyda1ibCbicyFDMKJccnoSWX9Lf8E0HT2KCXFDF8xFYqb2qv3E9w/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7Qziaiczyda1ibCbicyFDMKJccnoSWX9Lf8E0HT2KCXFDF8xFYqb2qv3E9w/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
 <p>API Key 可以在七牛云控制台里获取，访问 https://portal.qiniu.com/ai-inference/api-key。</p>
 <p>登录后创建一个新的 Key 或直接复制已有的就行，填好之后，保存文件并退出即可。</p>
 <p>如果你后面想换模型，也很简单。直接在七牛云的模型广场里点开目标模型。</p>
 <p>把对应的模型 ID 拿过来，替换配置里的 minimax/minimax-m2.1，保存后重新启动 Claude Code 就可以生效。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7Ujy5TdJNZ3XalzyljWdWajicy7Zb8D4d81dTYMicW50PxvJGsDruLxCQ/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7Ujy5TdJNZ3XalzyljWdWajicy7Zb8D4d81dTYMicW50PxvJGsDruLxCQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
 <p>配置完成之后，可以简单验证一下。终端里直接输入 claude 启动 Claude Code，然后用 /status 命令查看当前状态。</p>
 <p>如果 Base URL 显示的是 https://api.qnaigc.com，API Key 是已设置状态，模型名称也对得上，基本就说明一切正常了。</p>
 <p>到这一步，其实已经可以放心用了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7yXgXznEd7wX7uicVCEVQ8RAzJcHkiaib1DoNVEAvYeickqfbY3rL0vOfdg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7yXgXznEd7wX7uicVCEVQ8RAzJcHkiaib1DoNVEAvYeickqfbY3rL0vOfdg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
 <p>如果你对费用比较敏感，也可以顺手去七牛云控制台的订单管理和资源包管理里看看消耗明细，整体会比较清楚，不太容易踩坑。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7zhvQJ1FSkBuVxIjv1MKvcribI1zsZlsrJpQ6Y7sOjc9yxl39QDZRCyw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/GkSBRc9GpQ6DLSdXkaZqmia2mfibfnb3N7zhvQJ1FSkBuVxIjv1MKvcribI1zsZlsrJpQ6Y7sOjc9yxl39QDZRCyw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
 <p>到此为止，恭喜你，已经大功告成了。</p>
 <p>接下来就很简单了，你可以直接在 Claude Code 里输入各种需求，不管是写代码、改脚本、做工程辅助，还是当一个本地超级助手，用起来都很顺手。</p>
 <p>然后你可以直接把 Skill 放到你的新项目文件目录下面，然后直接对它提出你的需求即可。</p>

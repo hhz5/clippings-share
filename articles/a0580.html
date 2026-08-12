@@ -34,17 +34,17 @@
 <p>大家好我是歸藏（guizang），今天带来智谱 GLM-4.5 模型的首发测试。</p>
 <p>智谱发布了他们最新发布的 GLM-4.5 ，总参数 335B，激活参数 32B。 GLM-4.5-Air ： 总参数 106B，激活参数 12B 。</p>
 <p>在推理、代码和智能体能力上测试成绩都非常强，支持混合推理，而且性价比很高，0.8 元/百万tokens、输出 2 元/百万tokens，高速版输出速度超过 100 Token 每秒。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/fbRX0iaT8EgflIqWict88IELG856ibHhhOCYur62PjVI8oxNibplDyZrFypib7wanLKKQpRu9xCdpXfHwvIV86w1ibYA/640?wx</em>fmt=webp&amp;from=appmsg&amp;randomid=nr3rdgqh&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8EgflIqWict88IELG856ibHhhOCYur62PjVI8oxNibplDyZrFypib7wanLKKQpRu9xCdpXfHwvIV86w1ibYA/640?wx_fmt=webp&amp;from=appmsg&amp;randomid=nr3rdgqh&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="图片" loading="lazy"></p>
 <p>我提前试了一下 GLM-4.5，发现虽然总参数没有其他几个高，但是在代码能力上一点不逊色甚至更好。</p>
 <p>一个特点是由于混合推理的存在，即使你的提示词非常短，他也可以帮你补全页面所需信息给出非常好的结果，如果你的提示词很细，那他对于提示的遵循就会很好，在编码路径的判断上非常聪明。</p>
 <p>尤其是他们还在一个 API 里面兼容了各种 Agent 能力，比如知识库检索和搜索能力，在产品构建上非常省心， 你甚至能够用一个 API Key 和提示词搞定一个弱化版的 ChatGPT Agent 模式，而且生成的 PPT 还比 GPT 好看。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/fbRX0iaT8EgflIqWict88IELG856ibHhhOCPN4AgQKeqlAPgSlHDEib11rloTV2RfjgFLoChVmXiaNJh6wQNbWmRnNw/640?wx</em>fmt=webp&amp;from=appmsg&amp;randomid=nr7pzmv0&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/fbRX0iaT8EgflIqWict88IELG856ibHhhOCPN4AgQKeqlAPgSlHDEib11rloTV2RfjgFLoChVmXiaNJh6wQNbWmRnNw/640?wx_fmt=webp&amp;from=appmsg&amp;randomid=nr7pzmv0&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="图片" loading="lazy"></p>
 <p>当然他们也做了 Cluade Code 的兼容，也可以直接替换 Cluade Code 的模型，后面有大致教程。</p>
 <p>先来看案例，我们从简单到难。</p>
 <p>下面所有的测试结果都是 API 输出，没有用 Z.ai 的全栈开发模式，加上以后会更强大。</p>
 <p>这次 GLM-4.5 在没有复杂指令的情况下也可以很好的完成代码编写的任务，比如“帮我写一个Gmail 邮箱页面”或者“帮我生成一个 3D 抽象艺术 ”。</p>
 <p>你看我就说了一个帮我生成 Gmail 邮箱页面，其他细节一概没说，然后他就搞定了，该有的元素都有，甚至连点击邮件分栏展示详情也有，一点不偷懒。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCIVT4ibRZukIIQC6iaWFiaBNceSphEyUiaHQnfphbyab7Eky1riauwXJ9RYw/640?wx</em>fmt=png&amp;from=appmsg&amp;randomid=3idiqv52&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCIVT4ibRZukIIQC6iaWFiaBNceSphEyUiaHQnfphbyab7Eky1riauwXJ9RYw/640?wx_fmt=png&amp;from=appmsg&amp;randomid=3idiqv52&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
 <p>可以看到这里他自己就知道去应用 Three.js 库，来完成任务，而且生成的结果细节非常丰富，其他的模型要不就只有一两个元素，要不就是元素自己不会动，GLM-4.5 生成的每个元素都在运动和相互碰撞。</p>
 <p>然后来一个基本的前端组件吧，还是我们的复杂日程组件，支持月、周、日视图切换、支持新建和编辑日程。</p>
 <pre><code>创建一个功能全面的日历组件，不仅能展示日期，还能用于管理事件和日程安排。
@@ -84,7 +84,7 @@
 <p>比如在目标和关键结果这里用图标来展示时间、人物和权重，然后用进度条展示展示总的进度。</p>
 <p>进度条最后还有大致的状态，正常就是绿色文字，有风险就是黄字，目标和关键结果用的嵌套的卡片组件。</p>
 <p>整个信息的排版和关键交互位置都非常符合直觉。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCNdGKTrpicaicxlotvic2pIuNsrhvsN7w76gcLA3PGfETjkx3zwltMLOVA/640?wx</em>fmt=png&amp;from=appmsg&amp;randomid=2s63qya3&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCNdGKTrpicaicxlotvic2pIuNsrhvsN7w76gcLA3PGfETjkx3zwltMLOVA/640?wx_fmt=png&amp;from=appmsg&amp;randomid=2s63qya3&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
 <p>这些界面都比较素，都是一些 B 端系统，那我们在整个对视觉要求高的面向 C 端的场景。</p>
 <p>这里我让他整一个时尚品牌电商网站的订单结算全流程，包括购物车、邮寄信息填写、支付信息填写以及结算成功的页面。</p>
 <pre><code>角色与目标
@@ -138,10 +138,10 @@
 <p>可以看到除了步骤条那里的横线有点错位以外，GLM 完成的非常的完美。</p>
 <p>首先是购物车页面，商品的数量选择、删除都有，而且价格和 SKU 的选择也正常回显了，下面他自己还加了帮助增加信任的信任背书部分。</p>
 <p>甚至连使用优惠码都专门进行了鸡贼设计，用的主体色的文字链接而不是按钮，你学点好的啊 GLM，哈哈。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCLJYb3BzQCgOSY7Y8qKW1X9X0yd7pe0FfAWYd0h5iatQia5YxWFQtWdIg/640?wx</em>fmt=png&amp;from=appmsg&amp;randomid=izlv5okv&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCLJYb3BzQCgOSY7Y8qKW1X9X0yd7pe0FfAWYd0h5iatQia5YxWFQtWdIg/640?wx_fmt=png&amp;from=appmsg&amp;randomid=izlv5okv&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
 <p>最后的下单页面信息展示和排版也很完美，信息层次非常的清晰，尤其是卡片和分割线的选择这里，处理的太好了，汇总了刚才填写的所有内容，收货信息这里还加了修改按钮。</p>
 <p>最后下单成功之后除了右上角的 Tost 提示以外，还增加了网页的全屏弹窗提示，在交互这块，没得说嗷。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCjgLkN5WTDFgnwfl1dBpEwlxIic8sRKCnlibficHdM9VIWKnnptOauX3AQ/640?wx</em>fmt=png&amp;from=appmsg&amp;randomid=1bjlmbuc&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCjgLkN5WTDFgnwfl1dBpEwlxIic8sRKCnlibficHdM9VIWKnnptOauX3AQ/640?wx_fmt=png&amp;from=appmsg&amp;randomid=1bjlmbuc&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
 <p>刚才说过除了模型本身强大以外智谱的 GLM-4.5 还内置了一堆其他的 Agent 工具，让你可以一次调用，除了 API 调用以外他们也支持 MCP 的调用而且还是 SEE 方案，非常方便。</p>
 <p>我这里用一个 API Key 调用了 GLM-4.5 模型帮我生成网页，网页的信息来自智谱的搜索工具， 等于一个提示词就实现了一个简易的 Manus 或者是 ChatGPT 的 Agent 模式。</p>
 <pre><code>帮我调用智谱搜索检索上海的天气和 WAIC 的所有信息生成一个 WAIC 参会指南生成一个 HTML 动态网页 ，网页生成的要求是：
@@ -163,18 +163,18 @@
 <p>而且网页也是一步到位，完全没有布局或者显示上的问题。</p>
 <p>最后其实 GLM-4.5 也 支持通过兼容 Anthropic API 的端点和 Claude Code 集成 ，集成过程也很简单。</p>
 <p>我们首先需要一个智谱的 API，可以去智谱开放平台获取（ https://bigmodel.cn/usercenter/proj-mgmt/apikeys ）</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCy8ZtlITVfpwBxPLMf6KFs4Cia9UqQKFib4weuGmziadUjdWVZjvicV0Stg/640?wx</em>fmt=png&amp;from=appmsg&amp;randomid=4d5g858v&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCy8ZtlITVfpwBxPLMf6KFs4Cia9UqQKFib4weuGmziadUjdWVZjvicV0Stg/640?wx_fmt=png&amp;from=appmsg&amp;randomid=4d5g858v&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
 <p>然后如果你没有安装 Claude Code 的话需要安装一下，安装之后不需要启动先在终端输入下面的命令行就行，注意改成自己的 API。</p>
 <pre><code>export ANTHROPIC_BASE_URL=https://open.bigmodel.cn/api/anthropic
 export ANTHROPIC_AUTH_TOKEN=&quot;e6c167e0201240d492572fce4e7230ed.Ld8J4nZd2cnz1uxH&quot;</code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8EgflIqWict88IELG856ibHhhOC10JAEao5XAGwKyBpMFicF4ibO5a1f4ICjzchNmokRTsqQwuibvk7mH6hQ/640?wx</em>fmt=png&amp;from=appmsg&amp;randomid=8sc3ffg9&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOC10JAEao5XAGwKyBpMFicF4ibO5a1f4ICjzchNmokRTsqQwuibvk7mH6hQ/640?wx_fmt=png&amp;from=appmsg&amp;randomid=8sc3ffg9&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
 <p>然后直接选第一个选项，看到 Claude Code 的欢迎界面上的 API 地址是 bigmodel 的时候就 OK了，是不是很简单。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCqjjx3puZ4dJicBHyO1wr130gLu0ReCQdvkehMJkbrRA95k2LAzCgvaw/640?wx</em>fmt=png&amp;from=appmsg&amp;randomid=ip8i7uf1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCqjjx3puZ4dJicBHyO1wr130gLu0ReCQdvkehMJkbrRA95k2LAzCgvaw/640?wx_fmt=png&amp;from=appmsg&amp;randomid=ip8i7uf1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
 <p>需要注意的是这个只是单次修改，如果你想彻底修改可以改.bashrc 或者.zshrc ，这样每次启动都会是 GLM-4.5 了，这部分可以跟 AI 沟通他会是很好的老师。</p>
 <p>而且他们还搞了“ 50块就能包月爽用GLM-4.5，调用量无上限 ”的活动，50 块钱就能爽用！扫码就行，名额有限，先到先得朋友们！</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCOiazD5Aw6W7WXibxOvtAETsjibryibko1PgY5ibEpaMRb4b1GlkWicvUr8tg/640?wx</em>fmt=png&amp;from=appmsg&amp;randomid=eoj7qjvc&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCOiazD5Aw6W7WXibxOvtAETsjibryibko1PgY5ibEpaMRb4b1GlkWicvUr8tg/640?wx_fmt=png&amp;from=appmsg&amp;randomid=eoj7qjvc&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
 <p>如果你不是开发者的话，也可以在 Z.ai 选择 GLM-4.5 模型使用，而且这里还有很多内置的 Agent 工具可以搭配，效果更好，比如全栈开发和 P PT 生成。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCdNnsiaD61EXkXcH2JicqwCP7dXz8659ePicP2liaHQCTzvFYBMRznC8Dsg/640?wx</em>fmt=png&amp;from=appmsg&amp;randomid=bomxlucs&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8EgflIqWict88IELG856ibHhhOCdNnsiaD61EXkXcH2JicqwCP7dXz8659ePicP2liaHQCTzvFYBMRznC8Dsg/640?wx_fmt=png&amp;from=appmsg&amp;randomid=bomxlucs&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="图片" loading="lazy"></p>
 <p>好了今天的测试到这里就结束了。</p>
 <p>写到这儿，我忽然意识到“后发先至”四个字在 GLM-4.5 身上不是形容词，而是一种新的集成策略——它把“晚”变成了“免门票”。</p>
 <p>别人用两年把推理、代码、Agent、搜索、MCP、Claude-Code 兼容分别打磨成六座孤岛，智谱干脆等它们全部成熟，再一次性焊成一艘航母。于是用户登船时看到的不是六个 Beta，而是一个打完补丁的正式版：价格直接按后来者最低标准定价，功能却顺手把前人踩过的坑都填平，更强的是他用更低的成本带来了更强的能力。</p>

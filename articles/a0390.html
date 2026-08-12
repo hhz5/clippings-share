@@ -42,7 +42,7 @@
 <p>放到 AI 的语境里，Harness 就是你给 AI 搭的整套工作环境：告诉它什么能做什么不能做的规则文件，自动检查它有没有犯错的校验脚本，帮它记住重要信息的上下文管理，出了问题能回滚的安全机制。</p>
 <p>⚡ 一句话总结</p>
 <p>模型是马力，Harness 是方向盘加刹车。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPHmicPwRb9QeRf2JVKNR68icA5e29MskiboxqpdxDsLLR7f1icZFiaapUcaqfdmSm1Br2wxic2y0sKPEOuowRWSp3hSoBOL4GLuH3bg/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Harness五要素" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPHmicPwRb9QeRf2JVKNR68icA5e29MskiboxqpdxDsLLR7f1icZFiaapUcaqfdmSm1Br2wxic2y0sKPEOuowRWSp3hSoBOL4GLuH3bg/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Harness五要素" loading="lazy"></p>
 <p>Harness五要素</p>
 <p>一个 Harness 包含：</p>
 <p>• <strong>约束</strong> ：Agent 能做什么、不能做什么（架构边界、依赖规则、权限控制）</p>
@@ -65,7 +65,7 @@
 <p>2026 年，Harness Engineering 来了。不只优化输入了，优化的是 AI 工作的整个环境。核心是基础设施。</p>
 <p>每个阶段的抽象层级都比上一个高。Prompt 管一次对话，Context 管一次任务，Harness 管整个生命周期。</p>
 <p>三代解决的核心问题一直没变：怎么让 AI 干活更靠谱。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPdvAddKwDDJNLltpibfRgSIvZOibDrl9oZ83iciauCDpib5F4ia2WcKhTS1Jfz54hvtcxn8jcc0qJl95T48fEhQzZvr3uhPpJlmbBJY/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="三代演进" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPdvAddKwDDJNLltpibfRgSIvZOibDrl9oZ83iciauCDpib5F4ia2WcKhTS1Jfz54hvtcxn8jcc0qJl95T48fEhQzZvr3uhPpJlmbBJY/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="三代演进" loading="lazy"></p>
 <h2>为什么偏偏在这个时间点火了</h2>
 <p>两个原因。</p>
 <p><strong>第一，AI 模型之间的差距在缩小。</strong> 2025 年大家还在比"谁家的 AI 更聪明"。到 2026 年，顶级 AI 模型的能力已经很接近了，模型变成了"大家差不多"的商品。这时候谁能赢，不看你用哪个 AI，看你怎么管这个 AI。</p>
@@ -79,18 +79,18 @@
 <p>他的方法很反常识。第一步就抛弃对话框直接用 AI Agent（能自主执行任务的 AI 助手）。第二步更狠：强迫自己用 Agent 重做所有手动写过的代码。他说这个过程"折磨人"，明明自己写更快，非得等 AI 慢慢磨。但目的是逼自己理解 AI 到底哪里行、哪里不行。</p>
 <p>到第五步他给这套做法起了名字：Harness Engineering。> \[!tip\] Harness Engineering 的核心思路</p>
 <blockquote><p>每次发现 AI 犯错，就设计一个机制防止它再犯。</p></blockquote>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtNNxxBfic3bEgsVV1M0zuah5dJcia6rJoMs5lbLuVbgvCcL10enjNMEjxK3QhkichDQowuNdRWBVzxNTzZKm6ad5ExwOOaSvcjwWE/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="概念起源" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNNxxBfic3bEgsVV1M0zuah5dJcia6rJoMs5lbLuVbgvCcL10enjNMEjxK3QhkichDQowuNdRWBVzxNTzZKm6ad5ExwOOaSvcjwWE/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="概念起源" loading="lazy"></p>
 <p>他的开源项目有个规则文件，每一行对应一个 AI 曾经犯过的具体错误。不是说明书，是血淋淋的踩坑记录。他管 AI 叫"有点蠢但莫名高产的机器人朋友"。</p>
 <p>6 天后，OpenAI 接棒了。</p>
 <h2>100 万行代码，没有一行是人写的</h2>
 <p>OpenAI 发了篇同名文章。数据很夸张：3 个人起步后来扩到 7 人，5 个月，大约 1500 次代码提交，100 万行代码，没有一行是人手写的。全部由 AI 生成。效率大约是传统方式的 10 倍。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtM1pEpenD8FXOKJSlr5icM82fdx8DxEHGBmVwFxFovnpObiaHn1hfKq2oPjh2Mx8p3Ra71XyCG86fTyGDSpH2yneqmdnr2DD01zc/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtM1pEpenD8FXOKJSlr5icM82fdx8DxEHGBmVwFxFovnpObiaHn1hfKq2oPjh2Mx8p3Ra71XyCG86fTyGDSpH2yneqmdnr2DD01zc/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>但这篇文章真正有价值的不是数字，而是他们坦诚地列出了 AI 干活时犯的四类错误：</p>
 <p><strong>塞太多信息反而更差。</strong> 你以为给 AI 看的资料越多越好？不是。就像你把一本 500 页的手册丢给新员工说"都看完"，他反而什么都记不住。AI 也一样，信息太多会抓不住重点。</p>
 <p><strong>什么都强调等于什么都没强调。</strong> 你在规则文件里写了 200 条"重要"的规则，AI 就不知道哪条真的重要了。</p>
 <p><strong>规则本身会过时。</strong> 你上个月写的规则，这个月代码结构变了，规则就不对了。而且规则过时的速度比代码还快。</p>
 <p><strong>没法自动检查 AI 有没有真的照做。</strong> 你说"代码要有注释"，AI 说"好的"，但你怎么知道它真的加了？</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPe4WrRAe9FljQVFEXj6PqdJg6OBoWO07hGah5pRayy68iaTbtpLMTZsGEnJP0lmghU5c7PXRlnXHESbbpnAgBgxqXdVjTDRhY8/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="四类错误" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPe4WrRAe9FljQVFEXj6PqdJg6OBoWO07hGah5pRayy68iaTbtpLMTZsGEnJP0lmghU5c7PXRlnXHESbbpnAgBgxqXdVjTDRhY8/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="四类错误" loading="lazy"></p>
 <p>他们的解法不是换更聪明的 AI，而是改工作环境。把规则文件砍短，把详细说明拆到不同地方，让 AI 每次只看跟当前任务相关的那部分。同时搭了自动检查流程，AI 写完的代码必须通过一系列自动化测试才能提交。</p>
 <p>关于技术债：他们最初每周五留 20% 时间手动清理 AI 写的烂代码，失败了。后来改成让后台 AI 定期扫描偏差，自动提交修复，大部分一分钟内审完自动合并。技术债不是攒到某天集中还，而是每天用小增量偿还。</p>
 <p>他们还发现一个有意思的事：AI 用那些存在了十几二十年的"老技术"反而用得最好。因为这些老技术文档齐全、案例丰富，AI 在训练时见过大量相关内容。新潮的技术框架，AI 反而容易搞砸。</p>
@@ -104,7 +104,7 @@
 <p>Stripe（全球最大的在线支付公司之一）的 AI 团队每周自动合并 1300 多次代码提交。</p>
 <p>独立开发者也有猛人。Peter Steinberger 一个人同时管 5 到 10 个并行的 AI Agent，一个月提交了 6600 多次代码。他的观察很有意思：喜欢解算法谜题的工程师反而难适应这种工作方式，产品思维强的人适应更快。因为这种模式不需要你写出精巧的代码，需要你会拆任务、定规则、查结果。他说自己的工作节奏从"一个人埋头写"变成了"管一堆 AI 分活干"。</p>
 <p>还有一个叫 yoyo 的开源项目，200 行代码起步，每 8 小时自动醒来改进自己，26 天长到 3 万多行。成本 12 美元。作者说了句很深刻的话： <strong>难的不是保存状态，是决定忘掉什么。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtPmpicMmib4V4Sq74dStgGaApuhGpWibS3fuNtava3mvffokogLB2nkv9ydxQj0gk8umoHSZO5sZWRYl1qMH6CVIkYMCjS328I2Uk/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="数据对比" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtPmpicMmib4V4Sq74dStgGaApuhGpWibS3fuNtava3mvffokogLB2nkv9ydxQj0gk8umoHSZO5sZWRYl1qMH6CVIkYMCjS328I2Uk/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="数据对比" loading="lazy"></p>
 <p>数据摆在这里。但反方也不弱。</p>
 <h2>但也有人说这东西没用</h2>
 <p><strong>苏黎世联邦理工的实验：</strong> 他们测试了 138 个 AI 配置文件，发现 AI 自动生成的配置文件反而让表现变差，还多花了 20% 的成本。人手写的配置文件呢？也就提升了大约 4%。花那么大力气写规则，回报就这么点。</p>
@@ -113,17 +113,17 @@
 <p><strong>清华大学的实验</strong> 更反直觉。他们发现，给 AI 加上"验证器"（做完了自动检查对不对）反而让成绩变差了。在某个测试里，加验证器直接导致性能大幅下降。你精心设计的检查流程，加了不但没用还帮倒忙。不过他们也发现了一件有意思的事：同样一套工作规则，用自然语言描述比用代码实现效果好得多，成绩从 30.4% 跳到 47.2%。问题不只是加什么，还在于怎么表达。</p>
 <p><strong>还有人质疑这根本不是什么新东西。</strong> SGLang 团队的 Chenyang Zhao 说得很直白：这就是传统软件工程里的"关注点分离""单一职责"，换了个名字包装了一下。他自己做 AI 系统时凭直觉就用了类似的方法，做完之后才知道这些方法在 Harness Engineering 里有专门的名字。</p>
 <p>Martin Fowler 网站上的分析指出了一个更关键的缺失：现有的 Harness 主要保证"代码写得干净"，但不保证"产品做对了"。就像一个厨师刀工很好、厨房很整洁，但做出来的菜不好吃。她还直接点名利益冲突：OpenAI 在"让大家相信 AI 能维护代码"这件事上是有商业利益的。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPEU1UN5ITZgyQRHKEVfXYHS430WVASFoVxwZa9gSw3EO4wPVopADJ6dZ9B7ia4DEO6SIVq7PPTQFIu8QPibcumzMde2ubXMicujg/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="伪造测试" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPEU1UN5ITZgyQRHKEVfXYHS430WVASFoVxwZa9gSw3EO4wPVopADJ6dZ9B7ia4DEO6SIVq7PPTQFIu8QPibcumzMde2ubXMicujg/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="伪造测试" loading="lazy"></p>
 <p>社区里也有辛辣的声音。有人提了个悖论：你用 AI 快速生成的代码，在生成的那一刻就已经是没人能维护的遗产代码了。更吓人的是有人发现 AI 会伪造测试，写了一行"已完成"然后自己去检查这行字存不存在，实际上什么都没验证。还有人发现 AI 会把一个临时的权宜之计当成"标准做法"，在整个项目里系统性地复制这个坏习惯。</p>
 <h2>所以到底该怎么看</h2>
 <p>正方和反方说的其实不是同一件事。</p>
 <p>一个 AI 行业播客（Latent.Space）给了一个我觉得最精准的判断：模型能力和 Harness 是两个不同的维度。模型决定的是 AI 能不能持续工作不犯浑，Harness 决定的是 AI 的产出质量好不好。 <strong>一个管续航，一个管方向。</strong></p>
 <p>打个比方：你有一辆车，发动机越好（模型越强），你能跑得越远。但导航系统（Harness）决定你跑的方向对不对。发动机好了确实可以少依赖导航（路感好的老司机不怎么看导航），但不代表导航没用。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtOXZs8Drqy1TAISwnmcLNrd6E73cGREFhHu7LVBAdibGPBp6gB6BgsPsxtCfsewVU8DVWyeoibic0UBH5Z7d4XwbeE9JQJDGCbibsg/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="续航vs方向" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOXZs8Drqy1TAISwnmcLNrd6E73cGREFhHu7LVBAdibGPBp6gB6BgsPsxtCfsewVU8DVWyeoibic0UBH5Z7d4XwbeE9JQJDGCbibsg/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="续航vs方向" loading="lazy"></p>
 <p>Anthropic 自己的经历也验证了这一点。他们升级了 AI 模型之后，发现之前设计的一些管理流程确实不需要了，模型自己就能搞定。但"让另一个 AI 专门检查质量"这件事依然有用，因为"活干得好不好"这个问题不会因为 AI 更聪明就消失。</p>
 <p>AI 编程的早期叙事是"不用学编程了""自然语言就是新的编程语言"。但 OpenAI 自己的实践告诉你：他们花了最多精力的地方是设计架构约束、写检查规则、搭验证流程、管理上下文。这些都是传统软件工程里最严谨的那部分工作。他们自己说："我们现在最难的挑战是设计环境、反馈循环和控制系统。"</p>
 <p>Chad Fowler（一个很有影响力的程序员）管这个叫"严谨性搬家"：好的变革不是让你不用严谨了，而是把严谨从一个地方搬到另一个地方。以前严谨体现在"写好每一行代码"，现在严谨体现在"搭好 AI 的工作环境"。严谨性没有消失，它换了个地方住。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPacRksia4icFAVkQ8zic6GkEqEwVqUKAKoMkT4SsIgBLegmQpsNo8r6UOIgNzCcQBhJ0YNt17mNOIs9j8iaNRlXxqH3VBkrWYSGicw/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="严谨性搬家" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPacRksia4icFAVkQ8zic6GkEqEwVqUKAKoMkT4SsIgBLegmQpsNo8r6UOIgNzCcQBhJ0YNt17mNOIs9j8iaNRlXxqH3VBkrWYSGicw/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="严谨性搬家" loading="lazy"></p>
 <p>⚡ 我的核心判断</p>
 <p>Harness 的价值是真实的，但也是暂时的。 它填补的是当前 AI 能力的缺口。AI 每进一步就会吃掉一层 Harness，但总有新的缺口需要新的 Harness 来填。这是一场持续的军备竞赛，不是一劳永逸的护城河。</p>
 <h2>几个值得注意的趋势</h2>
@@ -134,7 +134,7 @@
 <p><strong>你在写代码：</strong> 学 Hashimoto 的方法，每次 AI 犯一个错，就写一条规则记下来。积累到 20 条就能看出规律，知道你的 AI 在哪些事上容易犯错。但规则别写太多，20 到 60 条就够了。太多了 AI 反而哪条都记不住。</p>
 <p><strong>你在管团队：</strong> 先别想复杂的，把"AI 绝对不能做的事"列一个清单，这比列"AI 应该做的事"更重要。就像管实习生，你告诉他"不能直接发邮件给客户"比告诉他"要注意邮件礼仪"有效得多。</p>
 <p><strong>你不写代码但经常用 AI：</strong> 你可能已经在做 Harness Engineering 了，只是不知道。你反复跟 AI 说的那些要求（"不要用太正式的语气""回答要简短""先给结论再解释"），把它们整理成一个文档，下次直接贴给 AI。这就是最简单的 Harness。我每天做内容就是这样，品牌调性规则就是我的 Harness，写完之后的多轮检查就是我的验证流程。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtOGO5xUZVPQ0CVGkW6eLrAM8vsHz5Wav3meIAIquSNH4lFJXG800O52YuIW29XA1ZM5ZW1g4unT0thDkeeiaRgDYApLMiaR44nBM/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="三个场景" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtOGO5xUZVPQ0CVGkW6eLrAM8vsHz5Wav3meIAIquSNH4lFJXG800O52YuIW29XA1ZM5ZW1g4unT0thDkeeiaRgDYApLMiaR44nBM/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="三个场景" loading="lazy"></p>
 <h2>最后一句大实话</h2>
 <p>有人说 Harness Engineering 就是传统管理学换了个壳。</p>
 <p>有道理，但不完全对。传统管理学是管人的，人会学习、会记住教训、会自我反思。Harness Engineering 是管一个概率性的、会遗忘的、会在你不注意时伪造工作成果的系统。对象变了，方法论得跟着变。</p>

@@ -35,7 +35,7 @@
 <p>在小说阅读器读本章</p>
 <p>去阅读</p>
 <p>在小说阅读器中沉浸阅读</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/tAlIKXfSZiaxeCL9zGEicEBbKMF8RmsA29GcPPyWSzNvEUaPIwdnHHrKYXrd4qUp1X1OU96XzWPUGM1tko5BzyeuqoMVtxORjCTEZmZ19XGuE/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/tAlIKXfSZiaxeCL9zGEicEBbKMF8RmsA29GcPPyWSzNvEUaPIwdnHHrKYXrd4qUp1X1OU96XzWPUGM1tko5BzyeuqoMVtxORjCTEZmZ19XGuE/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>这次分享的内容是我用 Codex 从 0 到 1 做的第一个 Chrome 插件，说实话难度不大，但是为什么要分享？因为我已经介绍这个Ai 工具很久了，依旧有很多设计师朋友还是没有思路，就是感觉很厉害，但是玩起来后总感觉这里不对，那里不顺，因此我想分享一下我第一次尝试用它跑完完整流程的思路，只是提供一个简单的思路，鼓励大家都去自己多尝试，都去跑通一次完整流程，总结出适合自己的用法。</p>
 <p>这次分享的是我做一个 Chrome 插件+FIgma 插件： <strong>Web to Figma Paste + Web to Ai Prompt Assistant</strong></p>
 <p>功能很简单：</p>
@@ -51,10 +51,10 @@
 <p>很多设计师开始都会停在想的阶段：</p>
 <p>👉 AI现在能做成什么样？真实项目能不能做？ 👉 我该做什么？</p>
 <p>其实我建议大家一定要去玩，去动手，当你开始后，你会在使用的过程中有很多想法，而且我之前也建议过，你把自己完全当一个什么都不会的人，每一个步骤都去找对应的AI来做，让自己体验全流程AI在工作流里面到底能发挥到什么程度。下面可以看下我的 “无脑” 过程。</p>
-<p>当时 Figma MCP + Codex 可以互通的消息刚出来，我第一时间去试了一下。<a href="https://mp.weixin.qq.com/s?__biz=MzIyOTc4NjE2NA==&amp;mid=2247494972&amp;idx=1&amp;sn=f76efc67cc37cff8231d126a5bd38841&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">Figma 着急了！Codex 和 Figma 双向构建前端 UI</a></p>
+<p>当时 Figma MCP + Codex 可以互通的消息刚出来，我第一时间去试了一下。<a href="https://mp.weixin.qq.com/s?__biz=MzIyOTc4NjE2NA==&amp;mid=2247494972&amp;idx=1&amp;sn=f76efc67cc37cff8231d126a5bd38841&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Figma 着急了！Codex 和 Figma 双向构建前端 UI</a></p>
 <p>很快我发现了一个非常有意思的点：</p>
 <p>👉 Codex 生成的 Figma 文件，是网页版的，然后点击后传送到客户端 👉 可以直接选中元素、进行编辑</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiax6IHtTIz68icHsfY6ETia5uMia09kcK4l8uWpMV3s7zoOjwAcqo50zLsuX4vyPKMpcov7L1LmLbYnmibRic6GPQWGCmHLntKuVDMHk/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiax6IHtTIz68icHsfY6ETia5uMia09kcK4l8uWpMV3s7zoOjwAcqo50zLsuX4vyPKMpcov7L1LmLbYnmibRic6GPQWGCmHLntKuVDMHk/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>这和之前很多“生成设计稿”的方式不一样。于是我就去问Codex，为什么现在要这样处理，这是通过什么方案实现的，这个能力我能不能复用？因为我平时自己也有个需求：很多模块类似的，可以直接复用过来，自己再去填充内容和修改，效率会很高，而且它们模块化、图层、约束处理的都很规范，可以极大的提升效率。</p>
 <p>学会提问：截图+链接+问题</p>
 <p>Codex 这点比GPT强，它会去帮你扒你提供的底层逻辑和代码，比GPT更容易获得准确答案。</p>
@@ -69,7 +69,7 @@
 <ul><li>你想做插件，它可能帮你扩成平台</li><li>你只要复制，它可能建议你做同步系统</li><li>你要结构化，它可能退化成截图</li></ul>
 <p>所以第一原则是：先让 AI 知道“不该做什么”。如图所示，如果你不把边界写清楚，它会无限帮你扩大，做大做强。但是换个角度，它自身的产品能力也是非常强的，很多功能和细节，说实话我自己都没想，它会帮你考虑的非常全面。</p>
 <p>这就是你为什么要做一次，因为它真的越来越比你 “专业” 。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiawc37Xv8o8fmN6RarcL3onvc3rfY7hzSiaJtbQZtR3pVwdib7hhvDlowWNvy36kiazwNj7ru7ZgklXZLzcvACfY97jtubnozfsib4E/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiawc37Xv8o8fmN6RarcL3onvc3rfY7hzSiaJtbQZtR3pVwdib7hhvDlowWNvy36kiazwNj7ru7ZgklXZLzcvACfY97jtubnozfsib4E/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <hr>
 <p>03</p>
 <p>第一版不追求完美，只追求“流程跑通”</p>
@@ -78,7 +78,7 @@
 <h2>真正的工作，发生在 MVP 之后</h2>
 <p>很多人做到这一步就停了：因为能用了</p>
 <p>实际真正的工作，才开始：初版出来后，我也遇到很多问题，几乎全部来自真实使用：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiaxOSISFE4l4oJJOAINRibH7uxWdUXucXFT5j4Kv9r6dhpoEd4nw7q5kbUOxL9mHFmdXbUqDicWyytQRoPW8ZDY6pz6twib6iaVKZBE/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiaxOSISFE4l4oJJOAINRibH7uxWdUXucXFT5j4Kv9r6dhpoEd4nw7q5kbUOxL9mHFmdXbUqDicWyytQRoPW8ZDY6pz6twib6iaVKZBE/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <ul><li>用户不知道复制是否成功</li><li>切到 Figma 粘贴有延迟</li><li>工具卡片挡住网页内容</li><li>选择模式不好退出</li><li>深浅色主题不统一</li><li>报错信息太技术化</li><li>插件样式影响网页</li><li>动态网页内容抓取不全</li></ul>
 <p>粘贴到 Figma 效果验收问题等等。</p>
 <p>这一阶段，Codex 的角色发生了变化：</p>
@@ -86,7 +86,7 @@
 <p>很多网站图片都是分页加载的，这就导致一开始插件抓不到部分图片，我肯定是不懂这个技术该如何处理的。所以最好的办法就是</p>
 <p>直接问它！它可以解决你遇到的 95% 的问题。</p>
 <p>如下右图，它提供了方案，先模拟人从上到下浏览一次，分批抓取，最后再合成一个整体。具体咋实现的，我还真不懂，你也不用懂，你只需要关注，结果是不是你想要的。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiazAAab1qe0H8u0XgDyXYQFQzJhIYA1Dp9skdJoqD59V3dxjqzibGH0m82SAT1z2Q8NkAUCmuzrPqASJRAC1ba54hC7EPVQruBW4/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiazAAab1qe0H8u0XgDyXYQFQzJhIYA1Dp9skdJoqD59V3dxjqzibGH0m82SAT1z2Q8NkAUCmuzrPqASJRAC1ba54hC7EPVQruBW4/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>当你发现流程基本没问题，再去解决视觉和交互问题：</p>
 <p>你只需要给它输入：</p>
 <ul><li>“这个 hover 太重了”</li><li>“这个提示太长了”</li><li>“这个模式没法退出”</li><li>“这个 UI 会挡住用户头像”</li></ul>
@@ -102,7 +102,7 @@
 <p>一定记住：</p>
 <p>👉 每一次修改，都可能破坏核心价值，AI 不是靠记忆变稳定，而是靠规则。</p>
 <p>可以参考我的步骤，没做一个小版本或者新功能，就让它更新一下规则。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/tAlIKXfSZiazUf0mTMI2k6WeTUBLJCYFP58q9F1iaOd4sxx1r1wleRr8lkwBvibic4qObSQde2OQUq7VYrfmlwvaiaMflYlcNrzrQM0GlvooyecM/640?wx<em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/tAlIKXfSZiazUf0mTMI2k6WeTUBLJCYFP58q9F1iaOd4sxx1r1wleRr8lkwBvibic4qObSQde2OQUq7VYrfmlwvaiaMflYlcNrzrQM0GlvooyecM/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <hr>
 <p>05</p>
 <p>高效发布，Codex 才真正有长期价值</p>
@@ -115,14 +115,14 @@
 <p>如果只看结果，这个插件其实不难，体量小，没啥可做的，但如果看完整过程，说明了一件更重要的事：</p>
 <p>现在的 AI 是可以参与完整产品流程的，它会全流程协助你推进。</p>
 <p>你要自己去玩，不要听人云亦云现在还不行，还不成熟，还是那句话，你要把它加入到你的队伍，而不是等它让你加入。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/tAlIKXfSZiaxnIA9Zt2Lq8ctgOowfyrwCwP8Ztk7Sd6KHU3kZgh1DOVLGz1or5ia1uiapPLxHreuOjrvkhQQBBPia0k5740lL7O8EzRZtmrzbL8/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/tAlIKXfSZiaxnIA9Zt2Lq8ctgOowfyrwCwP8Ztk7Sd6KHU3kZgh1DOVLGz1or5ia1uiapPLxHreuOjrvkhQQBBPia0k5740lL7O8EzRZtmrzbL8/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>插件放在我们的收录网站，感兴趣的小伙伴可以去这里体验：radesign.cn</p>
 <p>近期我发现类似的插件多了十几个，只要有想法，现在大家都可以一个人做到了！</p>
 <h2>最后一句话总结</h2>
 <p>不要把 Codex 当成写代码的工具。把它当成一个可以陪你把产品从 0 做到可发布的搭档吧，快去动起手来。</p>
 <p>最最后，下期分享一下0-1 搭建一个完整的具备前后端网站的实操过程，全程没动手设计～</p>
 <p>就是这个网站，里面收录各位设计师 Coding 的项目： radesign.cn</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiawf4iaCQiaPOibwH5N33rO3sBkjIh5LUqA19MzCpGjzPYNDiaDShSRdf7c4gvQZoq4oW64cvQibRxLhiacmz4qaxe9tUZnFJI32a2G5U/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiawf4iaCQiaPOibwH5N33rO3sBkjIh5LUqA19MzCpGjzPYNDiaDShSRdf7c4gvQZoq4oW64cvQibRxLhiacmz4qaxe9tUZnFJI32a2G5U/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <p>欢迎大家多尝试，把自己成熟/不成熟的 Vibe 产品分享出来，一起交流进步～</p>
 <hr>
 <p><strong>**👉 如果觉得不错，随手点个赞、在看、转发三连吧</strong>**</p>

@@ -32,7 +32,7 @@
     <div class="article-body">
 <p>空格丶 空格的键盘 <em>2026年6月29日 18:55</em></p>
 <p><strong>2026 年已过半，AI 这半年发展最大的感触是，Agent 已经改变了每个人的工作，甚至改变了企业的协同方式和组织架构。</strong></p>
-<p><strong><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/yrQseOROf13bOtRTicL4xXpWuFMLY5EpZh3hg6FXu8BUFLI7OJAS51pJt1F5GgBWoJ9QvLwlEWDaYUcn4rI2DXUOCIZ4oiaXakuKO0lyOWTPo/640?wx</em>fmt=jpeg&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=1" alt="Image" loading="lazy"></strong></p>
+<p><strong><img src="https://mmbiz.qpic.cn/mmbiz_jpg/yrQseOROf13bOtRTicL4xXpWuFMLY5EpZh3hg6FXu8BUFLI7OJAS51pJt1F5GgBWoJ9QvLwlEWDaYUcn4rI2DXUOCIZ4oiaXakuKO0lyOWTPo/640?wx_fmt=jpeg&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=1" alt="Image" loading="lazy"></strong></p>
 <p>上图选自火山引擎前两天的发布会，我听了他们技术副总洪定坤分享的字节内部是怎么用 Agent 感触很深，又顺着去搜了更多字节内部对企业 Agent 的判断，汇总了 9 个非共识，也就有了这篇文章。</p>
 <p>观察我身边的朋友，几乎每家企业都在同时做三家事：</p>
 <ul><li>把自家的产品融入 AI 的能力</li><li>鼓励并培训员工使用 AI 提效</li><li>加入 Agent 工作流，改变员工协同方式。</li></ul>
@@ -53,7 +53,7 @@
 <p>看起来谁都能造 Agent。</p>
 <p>张鑫的判断很直接：能造和造好之间，隔着一道巨大的鸿沟。</p>
 <p>他把 Agent 的全生命周期拆成四个域： <strong>开发域、运行域、消费域、管理域</strong> 。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCowWMkLQ4ul50hWylia5w6w7gg8TZJEERYkgC06QP9HVWa8L4S5bd212A5jnyib2wiaIlM1Rt30HV2GWXZ853xGYCiart1Y4xiczgTv0/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowWMkLQ4ul50hWylia5w6w7gg8TZJEERYkgC06QP9HVWa8L4S5bd212A5jnyib2wiaIlM1Rt30HV2GWXZ853xGYCiart1Y4xiczgTv0/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>开发域是搭 Agent；</p>
 <p>运行域通过 Harness 让 Agent 跑得更好（记忆、知识融合、上下文管理、Multi-Agent 编排、意图识别）；</p>
 <p>消费域是好的交互和人机协同方式；管理域是像管员工一样管 Agent，做绩效考评、度量价值。</p>
@@ -85,13 +85,13 @@
 <p>最近圈里有种声音叫"软件日抛论"：AI 一强软件就该重写，老软件都该淘汰。</p>
 <p>张鑫认为"软件日抛论有点脱离实际"。企业 Token 成本在不断飙升，已有工具不去利用还要重新搞一套，非常不现实。</p>
 <p>他给的判断是 CLI 化不会吃掉软件，但会改变软件的交互入口：从给人用变成给 Agent 用。软件背后的逻辑和数据不变，只是调用方式变了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoyQExFaOSRasNdbvM7Biblurib1gEfvB8aKdjVsOxQbJn7Zq72kMdmgy2FoibE3yCmeZYiaRE7YFVw242tlFOdVDNnkgiaHic5gia4mOE/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyQExFaOSRasNdbvM7Biblurib1gEfvB8aKdjVsOxQbJn7Zq72kMdmgy2FoibE3yCmeZYiaRE7YFVw242tlFOdVDNnkgiaHic5gia4mOE/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>这个对所有 SaaS 厂商都重要。你不需要被 AI 逼着重写一切，但需要重新设计被 AI 调用的接口。</p>
 <p>六、别按职能给 Agent 分岗</p>
 <p>企业搭 Agent 的本能是按职能分：营销 Agent、客服 Agent、HR Agent，照搬人类组织的分工。</p>
 <p>张鑫管这种做法叫"每个萝卜都拆一个坑"。他认为这只是用提示词去约束模型能力，结果是拆出了一大堆功能重叠的 Agent。</p>
 <p>他的判断是："组织去适配新的 AI 能力，而不是 AI 适配现有组织。"</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoy3Uiasm0bzFXPOn2rIGSUIVlJdA28kz9MUtdiadldU4Olo7OUEmticqEotl3xjU5dXWzBuvyGKP2psVdPEPoSR1KIWCfmM45DexA/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoy3Uiasm0bzFXPOn2rIGSUIVlJdA28kz9MUtdiadldU4Olo7OUEmticqEotl3xjU5dXWzBuvyGKP2psVdPEPoSR1KIWCfmM45DexA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>他用自己 TRAE 团队的变化做例子。原来研发按前端、后端、SRE、QA、架构师、产品经理划分岗位。现在围绕一个产品，用一个不大的团队、借助 Agent 端到端完成所有环节。TRAE 团队 94% 的代码已经由 AI 生成。</p>
 <p>横向职能在收敛，纵向深度在增加。</p>
 <p>这件事如果成立，意味着所有按职能切的 Agent 矩阵，未来都要重新长一遍。</p>
@@ -100,7 +100,7 @@
 <p>AI 让一个人能干过去十个人的事，"超级个体"成了一个很性感的词。</p>
 <p>但张鑫的看法是， <strong>超级个体只是短期形态，长期不可持续。</strong></p>
 <p>他给的理由是：员工的流动和流失，会把业务的上下文一起带走。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCozkwoKgkW43e3gopL1QfxB1BicJrLY5KzVMcxrJ7NVhLAXWWicfCzdnQNqtG02RL1qUvNzRTAmh22CBZjQic3gicic8p1DfNolRpNE4/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozkwoKgkW43e3gopL1QfxB1BicJrLY5KzVMcxrJ7NVhLAXWWicfCzdnQNqtG02RL1qUvNzRTAmh22CBZjQic3gicic8p1DfNolRpNE4/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>知识跟着人走，不跟着组织走，这家企业就永远在重新学习。</p>
 <p>微软纳德拉前几天有句话其实讲的是一回事：" <strong>你可以外包一项任务、一份工作，但永远不能外包你的学习</strong> 。"</p>
 <p>人贡献经验形成 Skills，Agent 基于 Skills 产出价值，价值再追溯到人。人从执行者升级为 Agent 的优化者和管理者。</p>
@@ -125,7 +125,7 @@
 <p>但按 Token 收费有个盲区：同样 100 万 Token，用来闲聊和用来做芯片设计，业务价值天差地别。</p>
 <p>未来一定走向第三层：按产出了多少可用代码、多少可用视频时长、节省了多少人力工时收费。</p>
 <p>更前沿的一批企业已经在做了：把 Agent 从软件预算转向人力预算。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCozpOWAbpticHwaBANAaVtztibldmKM4Drh2Vehas7vmyMq3jib5Xgdl0IdcNxSJRhYLibgfxOrTKu7pjBQ88cPJvmjthwgbqIyYnVY/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozpOWAbpticHwaBANAaVtztibldmKM4Drh2Vehas7vmyMq3jib5Xgdl0IdcNxSJRhYLibgfxOrTKu7pjBQ88cPJvmjthwgbqIyYnVY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>这件事如果普及，是企业 AI 整个商业模式的重构。所有今天还在卷"调用量"的厂商，未来都得重新讲故事。</p>
 <p>最后</p>
 <p>企业用 Agent 这件事，已经从"工具好不好"进入"组织行不行"的阶段。去年大家拼模型、拼框架，今年开始拼经营、拼组织、拼 Harness。</p>

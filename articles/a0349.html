@@ -94,12 +94,12 @@
 <p>Wan Streamer 的内核只有一句话：把视觉、音频、文本的输入 token 和输出 token，交错排成同一条序列，交给一个 Transformer 处理；用 block-causal attention 协调，让它边来边算地往外吐。</p>
 <p>HERO · 共同根源</p>
 <p>单个端到端 Transformer 取消了外部的 VAD、ASR、语言模型、TTS、动画、视频生成等模块，把感知、推理、回应规划、语音与视觉生成、响应时机、轮次管理全放进同一个持久状态里联合优化。低延迟、全双工、同步音视频这三件事，根都在这里。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iafyQTicPqUtOtgvl7bl6nVhDxkic8ykpAaCKxYLrOVCLZFibibvl7JEBdFbn8QMaeicKYH5I9TaRUL1CfCoLR0mCJhcbrV6ZFLGGDrNYxM0LIibOI/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="token 序列招牌图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOtgvl7bl6nVhDxkic8ykpAaCKxYLrOVCLZFibibvl7JEBdFbn8QMaeicKYH5I9TaRUL1CfCoLR0mCJhcbrV6ZFLGGDrNYxM0LIibOI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="token 序列招牌图" loading="lazy"></p>
 <p>token 序列招牌图</p>
 <p>视觉 token 音频 token 文本 token</p>
 <p>一条交错的彩色 token 序列（视觉／音频／文本），块内双向、块间只看过去，每块 160ms。</p>
 <p>模型把交互看成一条连续的因果流：你的观测和它的回应，一起更新当前上下文。每个流式单元里，它编码当前能拿到的用户观测，再根据双方完整的因果历史预测下一段回应。语言回应是一串离散 token，用 next-token 预测训练；音频和视频回应活在连续的 latent 空间里，用条件 flow matching 联合生成，以同一份干净上下文为条件，让语音、动作、外观、场景演化作为一个耦合整体一起去噪，而不是各生成各的再拼。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iafyQTicPqUtOLxUlVsjUb9eumiaD4wJqaSFAdnmarAWx36wsvPV9owa9ANz6OLrHWuwzSZlYKWr76J7hAba0yNiaKib3iaAsrzDvcO6rwCTM4IJ4/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Wan Streamer 总体框架图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtOLxUlVsjUb9eumiaD4wJqaSFAdnmarAWx36wsvPV9owa9ANz6OLrHWuwzSZlYKWr76J7hAba0yNiaKib3iaAsrzDvcO6rwCTM4IJ4/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Wan Streamer 总体框架图" loading="lazy"></p>
 <p>Wan Streamer 总体框架图</p>
 <p>Wan Streamer 总体框架：语言、音频、视频在同一个 Transformer 里同时作为输入与输出建模，由 block-causal attention 协调，边来边算地流式生成。来源：Wan Streamer 官方</p>
 <p>为了撑住这条流，整栈从设计之初就是因果的：用于流式 latent 编码的严格因果音视频 VAE、因果音视频编码器、因果音视频解码器，以及由 block-causal attention 协调的时序因果 Transformer。去噪后，估计出的干净 latent 直接追加进历史，作为后续单元的上下文；因果解码器再把它们渲染成最终的音视频。被这套设计抹掉的外部模块是：</p>
@@ -132,7 +132,7 @@
 <p>Wan Streamer 训练时是单个端到端模型；实时部署时，同一个模型拆成跨两张 GPU 的 thinker–performer 流水线，尽量让计算重叠。系统 prefill 完成后，thinker 把初始 KV-cache 广播给 performer，两边共享同一份全历史状态，统一模型的行为被完整保留。</p>
 <p><strong>thinker</strong> 负责因果音视频编码器、一次用于语言预测与状态更新的短计算、KV-cache 构建，以及把上一单元的 latent 解码成音视频并立即输出。 <strong>performer</strong> 只负责 latent 生成，基于共享的全历史 KV 上下文，为下一段音视频单元跑 flow-matching 求解器。因为 performer 从不跑解码器、thinker 从不跑高成本的求解器，解码和生成互不阻塞。</p>
 <p>只要 performer 耗时加通信耗时能塞进一个 160ms 单元，就维持实时吞吐。而「编码 → 状态更新 → latent 生成 → 解码」这条信号到信号的路径，就是约 200ms 的模型侧延迟，靠 CUDA graph 捕获、编译、优化算子压在预算内。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtPErWNVibzKSGxECmnRiahoTS0m0WjqwFTTUVuKhpGAFl97raIeZ1P9VjzzuHcMC4iciacmDsicmlVeibyMucRicymk7yCEWsfCXaYgYo/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="thinker-performer 重叠图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtPErWNVibzKSGxECmnRiahoTS0m0WjqwFTTUVuKhpGAFl97raIeZ1P9VjzzuHcMC4iciacmDsicmlVeibyMucRicymk7yCEWsfCXaYgYo/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="thinker-performer 重叠图" loading="lazy"></p>
 <p>thinker-performer 重叠图</p>
 <p>thinker–performer 流式推理重叠：第 k 个单元，thinker 编码当前观测、更新 KV-cache 并把上一单元 latent 解码后立即输出；performer 只跑 flow-matching 求解器生成下一段 latent，下一单元返回。感知、解码、通信、去噪在相邻单元间重叠。来源：Wan Streamer 官方</p>
 <p>边听边说、随时能被打断，落到对话里就是这种自然感。这两段都是英文实时对话：</p>

@@ -31,7 +31,7 @@
     <p class="article-source"><a href="https://mp.weixin.qq.com/s/O2zsV2j8Kysm_nLk8ymS2Q" target="_blank" rel="noopener">查看原文 ↗</a></p>
     <div class="article-body">
 <p>原创 小互 <em>2026年4月1日 11:06</em></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtOyOXCeLRTF6S4atXJJPoanqa841iaOVGF04yyYqG0PX00seiaGSGcuZq3VbAlWn25PTYPHglnyNrpFepUfaSc70NSawrofBO1rI/640?wx</em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOyOXCeLRTF6S4atXJJPoanqa841iaOVGF04yyYqG0PX00seiaGSGcuZq3VbAlWn25PTYPHglnyNrpFepUfaSc70NSawrofBO1rI/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <blockquote><p>有人从 npm 包里扒出了 Claude Code 的完整源码。</p>
 <p>源码里藏着什么，它打算变成什么？</p>
 <p>87个编译时feature flag，大部分处于关闭状态。每一个flag背后是一个还没上线的功能。翻完之后我发现，它们指向同一个方向。</p></blockquote>
@@ -54,7 +54,7 @@ VERIFICATION_AGENT, WEB_BROWSER_TOOL, WORKFLOW_SCRIPTS
 <p><strong>工具 → 常驻助手 → 团队协作 → 跨设备 → 多感官</strong></p>
 <p>每一步都在去掉Agent身上的一个限制。下面一个一个说。</p>
 <hr>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtOYXf5DFCewsiar9I1q3IV8LXKfutokDfiaRl6qkLRaiaX8bZqzI6lJVUdRcl8a3Z4VMEIibpEeXyOrsYkMEp1DNyXSy37wIMzqI7Y/640?wx</em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOYXf5DFCewsiar9I1q3IV8LXKfutokDfiaRl6qkLRaiaX8bZqzI6lJVUdRcl8a3Z4VMEIibpEeXyOrsYkMEp1DNyXSy37wIMzqI7Y/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <h2>它不想下班了</h2>
 <p>现在的Claude Code，你问它答，你不问它就安静等着。</p>
 <p>源码里有一个叫KAIROS的功能，彻底改变了这个模式。不是增量升级，是另一种运行方式。</p>
@@ -97,7 +97,7 @@ export type SessionKind = &#x27;interactive&#x27; | &#x27;bg&#x27; | &#x27;daemo
 <p>还有一层是远程scheduled agents——不在你机器上跑，在Anthropic云端跑完全隔离的Claude Code实例。通过 <code>/schedule</code> 命令管理，最小间隔1小时，cron表达式用UTC时区。</p>
 <p>从"你问它答"到"它自己找活干"，再到"它按时间表自动干"。这不是增量升级，是换了个物种。</p>
 <hr>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtPic4KQNjamuqd4F8hrqPpaIsnZmW3ubWFMlQKQhIYNbNfDjE1gGJuF5229fPkWnPlFI9kgEiaP84CEeicMGlfQJUkon92GRfQGKo/640?wx</em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtPic4KQNjamuqd4F8hrqPpaIsnZmW3ubWFMlQKQhIYNbNfDjE1gGJuF5229fPkWnPlFI9kgEiaP84CEeicMGlfQJUkon92GRfQGKo/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <h2>它开始做梦了</h2>
 <p>你不用Claude Code的时候，它在后台做一件事： <strong>整理记忆</strong> 。</p>
 <p>源码里真的管这个叫"dream"。</p>
@@ -138,7 +138,7 @@ function isGateOpen(): boolean {
 <p>Kairos模式下auto-dream被禁用，因为Kairos有自己更精细的cron定时dream。普通模式用auto-dream。两条路线，同一个目标：让Claude Code拥有持续的、会自我整理的记忆。</p>
 <p>工具不需要记忆。助手需要。这是从工具到助手最本质的跨越。</p>
 <hr>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtNzJWq40ciaF6MnWLJnxQXwLNJUXjXicJiaW59U5YkWV9uT4jAtjF3KIc2qYCFLnCxGEE7aNcUnib9nsTNlH74uj9icQ4vbibczkLxUc/640?wx</em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtNzJWq40ciaF6MnWLJnxQXwLNJUXjXicJiaW59U5YkWV9uT4jAtjF3KIc2qYCFLnCxGEE7aNcUnib9nsTNlH74uj9icQ4vbibczkLxUc/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <h2>它不再是一个人了</h2>
 <p>一个Claude不够用，那就来一队。</p>
 <p><strong>Coordinator模式</strong> 是一个完整的多Agent编排系统。一个Claude当协调者（CEO），只有三个权限：派活（Agent工具）、传话（SendMessage）、叫停（TaskStop）。其他Claude当worker，执行具体任务。</p>
@@ -196,7 +196,7 @@ const commonEnvVars = {
 <p>有配额系统——Pro/Max用户有免费额度，用完走"Extra Usage"按量计费，账户余额低于$10不让启动。从代码来看，Team/Enterprise用户不限次。</p>
 <p>5到20个Agent同时审查一份代码，10到25分钟出结果。这就是AI原生的"code review"：不是一个人仔细看，是一支舰队暴力扫描。</p>
 <hr>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPkl0clRQBX1s36ku6lxeQVF1Lysjiae7EbYDuyfYY4moibzFo6g883zQDkRdHjvfXUjicXcsQvwt9BNLCByXpEic57XhhvSahn1Oc/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPkl0clRQBX1s36ku6lxeQVF1Lysjiae7EbYDuyfYY4moibzFo6g883zQDkRdHjvfXUjicXcsQvwt9BNLCByXpEic57XhhvSahn1Oc/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <h2>它不再被困在这台电脑里</h2>
 <p><strong>Teleport</strong> 让你把整个工作会话从一台电脑传到另一台。</p>
 <pre><code>class=&quot;language-typescript&quot;&gt;&lt;span color:#ce9178&quot;=&quot;&quot; style=&quot;margin: 0px; padding: 0px; box-sizing: border-box;&quot;&gt;&quot;color:#6a9955&quot;&gt;#6a9955&quot;&gt;// 源码文件: main.tsx
@@ -260,7 +260,7 @@ const SUPPORTED_LANGUAGE_CODES = new Set([
 <p><strong>Chrome浏览器控制</strong> 通过Chrome扩展实现。能导航、点击、填表、截图、录GIF、读console log、读network请求。在你现有的Chrome里操作，不是无头浏览器，是你正在用的那个Chrome，需要你给站点级别的权限。</p>
 <p>源码里的Verification Agent（验证代理）有一段提示词，教它先检查有没有 <code>mcp__playwright__*</code> 工具可用，有就用Playwright做自动化测试。浏览器控制不是玩具，是验证工具链的一部分。</p>
 <hr>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtOculgEzwQU59SxfEKbzqcc755hg59w6oFluh8eTeCPzADO6vnGV2KkUMzkIYz965h0uhHzNJuw79Qib343OVKeyVdxosiaFhkGw/640?wx</em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOculgEzwQU59SxfEKbzqcc755hg59w6oFluh8eTeCPzADO6vnGV2KkUMzkIYz965h0uhHzNJuw79Qib343OVKeyVdxosiaFhkGw/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <h2>彩蛋：它有宠物了</h2>
 <p>这个纯粹好玩，但代码是认真的。</p>
 <p><strong>Buddy</strong> 是一个确定性生成的虚拟宠物，住在你的Claude Code终端里，有ASCII精灵图，偶尔冒出语音气泡评论一下。</p>
@@ -329,7 +329,7 @@ const SALT = &#x27;friend-2026-401&#x27;</code></pre>
 <blockquote><p><strong>来源标注</strong></p>
 <p>本文所有代码片段来自 Claude Code CLI npm 包意外泄露的 source maps（1884 文件，512,664 行 TypeScript，33MB），已在 GitHub 存档 <sup>[1]</sup> 。87 个编译时 feature flag 通过 <code>grep -o &quot;feature(&#x27;[A-Z_]*&#x27;)&quot; | sort -u</code> 从源码中提取。运行时 flag（ <code>tengu_*</code> 系列）通过代码引用交叉确认。文中描述的功能均基于源码静态分析，实际上线行为可能与源码有差异。</p></blockquote>
 <p>加入XiaoHu.ai 日报社群 每天获取最新的AI信息</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtMib832wxDaxpj1csNOmvqbiaywjg4DQJOkGBtLicshxfoCWvwK6rjXMaE8WHSf88PAJOINyoq6eLPEZODNYraahpo8ibTJy7bNSDc/640?wx<em>fmt=other&amp;from=appmsg&amp;wxfrom=5&amp;wx</em>lazy=1&amp;tp=webp#imgIndex=9" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMib832wxDaxpj1csNOmvqbiaywjg4DQJOkGBtLicshxfoCWvwK6rjXMaE8WHSf88PAJOINyoq6eLPEZODNYraahpo8ibTJy7bNSDc/640?wx_fmt=other&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=9" alt="Image" loading="lazy"></p>
 <p>\<em>\</em>\<em>\</em>\<em>\</em>\<em>\</em>\<em>\</em>\<em>\</em></p>
 <p>结尾。</p>
 <h2>感 谢 阅 读</h2>

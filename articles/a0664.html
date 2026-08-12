@@ -88,7 +88,7 @@ xxx
 <p>我们经常干一件事： 直接把一个 Bug 症状，丢给 AI， 而且还有可能在一个完全不相干的上下文里。</p>
 <p>这有点像你半夜把一个刚睡醒的同事拽过来：“这个功能为啥炸了？你马上给我答案。”</p>
 <p>成功率，能高才怪。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmzt7ibiabdzIlJIgBV27K1bmdFCDjn50hH8AsGZ2dDCPBHyPD2uRFSIUw/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmzt7ibiabdzIlJIgBV27K1bmdFCDjn50hH8AsGZ2dDCPBHyPD2uRFSIUw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>更稳的做法是： <strong>先让 AI 熟悉环境，再让它动手修 Bug。</strong></p>
 <p>哪怕你现在没有完整的需求文档， 也可以先让 AI 帮你 <strong>理解这个功能的代码结构、核心流程、设计意图</strong> ， 等它“搞清楚这是在干嘛”， 再把具体的异常现象、报错信息丢进去。</p>
 <p>这样，当你和 AI 同时拥有记忆时，效果会完全不一样。</p>
@@ -102,7 +102,7 @@ xxx
 <p><strong>4、全局观：把完整验收标准 / 测试用例交给 AI</strong></p>
 <p>修复杂 Bug 时，最常见的坑是：这边刚修好，那边又冒出新问题， 甚至越修越乱，来回打补丁像陷入死循环。</p>
 <p>如果你已经改了几轮还是不稳定，我建议别再盯着某一行报错死磕了。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmlEyiaDFtZCB3HBh4yaNnINy85ibUcmZNcQsYocu56UHqcsOXVON2ZeCg/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmlEyiaDFtZCB3HBh4yaNnINy85ibUcmZNcQsYocu56UHqcsOXVON2ZeCg/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>去把这个功能的「 <strong>完整验收标准</strong> 」或「 <strong>测试用例</strong> 」找出来， 再补上它和其他功能的关联边界，一起丢给 AI。</p>
 <p>有了这些“全局标准”，AI 才能在修复时兼顾整体行为， <strong>不至于拆东墙补西墙</strong> 。</p>
 <p>在企业里这个做法更容易落地：因为正规的研发流程通常都会为需求配套测试用例。</p>
@@ -122,24 +122,24 @@ xxx
 <p>好在现在不少 AI 编程工具已经把这件事“产品化”了。</p>
 <p>比如 Cursor 有 Debug 模式，Claude Code 也支持通过 debug 指令来辅助排查。</p>
 <p>它们的价值不只是“多输出点日志”， 而是 <strong>把排查过程变成一条更可控的链路：</strong> 更清楚地看到工具的运行步骤、关键调用、以及失败发生在哪一环。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmGnOIoib3MKwJhUyDVIZLjzmU8QnttzxhfPx9VZ3NDanQbicuSdHBNvqA/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmGnOIoib3MKwJhUyDVIZLjzmU8QnttzxhfPx9VZ3NDanQbicuSdHBNvqA/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>以 Cursor 为例。</p>
 <p>我之前在优化工具「 <strong>长文转小红书</strong> 」时，遇到运行时间过长的问题，就直接用 Debug 模式来做定位。</p>
 <p>我先把必要信息补齐，然后按它给出的复现步骤手动执行一遍，让日志完整记录下来。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmIO6GpZibqyriczTHoTHphXunLjaicNf6FKAVXutTWBLvgE0Aw6SbSxmMQ/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmIO6GpZibqyriczTHoTHphXunLjaicNf6FKAVXutTWBLvgE0Aw6SbSxmMQ/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>接着它将自动分析日志，也会更容易看出瓶颈点在哪里。</p>
 <p>那次它给我的建议很明确：有些步骤其实可以合并，减少重复计算和中间结果的来回传递。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmMnZXXfFvWXtYwtQD8UibW5cz1GPc6uCU8vLwpwx1HH9D5ZDI5vgfxaQ/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmMnZXXfFvWXtYwtQD8UibW5cz1GPc6uCU8vLwpwx1HH9D5ZDI5vgfxaQ/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>我采纳建议后，让 AI 按计划改完，再跑一遍同样的复现步骤做验证。 确认问题解决后，记得点“问题已修复”按钮。</p>
 <p>这样 AI 会自动去掉多余的日志，保持代码整洁，否则放到线上可能会出现 <strong>路径找不到</strong> 的问题。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmLQRNqtz7gyRXvic94wCrUPia1GCGzDu64LGGeGqFhgH3UJFMpxXsA1icA/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmLQRNqtz7gyRXvic94wCrUPia1GCGzDu64LGGeGqFhgH3UJFMpxXsA1icA/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <h2>二、用 Plan 模式让 AI 慢下来</h2>
 <p>这一年里，我一直和 AI 一起写代码，也慢慢形成了一个固定习惯。 <strong>在把任务交给 AI 之前，先让它进入 Plan 模式。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmibiblXeuo5Qfqpwg0z2mic52DjJbkpic9El9051UAOdJGFcR3qKqWaeosA/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmibiblXeuo5Qfqpwg0z2mic52DjJbkpic9El9051UAOdJGFcR3qKqWaeosA/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>不管用的是 Cursor，还是 Claude Code，这个模式的作用，其实不只是“多看一眼需求”。 <strong>它真正做的一件事，是逼着需求先被拆开、被质疑、被补全。</strong></p>
 <p>就拿 Cursor 举例。 在 Plan 模式下，它不会马上写代码，而是先找问题。</p>
 <p><strong>哪里有歧义？</strong> <strong>哪些前提没说清？</strong> <strong>有没有隐含的假设？</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmxptdficz9I5oIIhPn6FA13E0YE3whUar3aLez5bEulPjP8HwGsK7ib8A/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmxptdficz9I5oIIhPn6FA13E0YE3whUar3aLez5bEulPjP8HwGsK7ib8A/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <p>它会直接把这些点抛出来，让你补充说明。 在一来一回的过程中，原本模糊的想法，会慢慢变成一个边界清楚、能动手执行的方案。</p>
 <p>Plan 模式，其实只是把软件开发里一个很老、但一直好用的做法，搬到了 AI 协作里。 <strong>先设计，再写代码。</strong></p>
 <p>多花几分钟把计划说清楚，把执行路径对齐好，往往能省下后面几个小时的反复修改。</p>
@@ -148,7 +148,7 @@ xxx
 <p>不管是主业还是副业，我一直是 <strong>直接面对需求</strong> 的人。 以前，我要把需求翻译成技术能看懂的话。</p>
 <p>现在不一样了。 接到定制商单，或者产品要做新功能，我同样要先做一件事： <strong>拆需求</strong> 。</p>
 <p>说句实话： 这件事，至少吃掉了我 30% 的精力。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmsTOcJ2VsAeOU62wpJOISpfQFLr4Kmibkj2VdkCWECzicQIsICwwrPJtw/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmsTOcJ2VsAeOU62wpJOISpfQFLr4Kmibkj2VdkCWECzicQIsICwwrPJtw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
 <p>从去年开始，我逐渐习惯用提示词来帮自己拆需求。 更多是 <strong>逼自己把问题想清楚</strong> 。</p>
 <p>如果拆解不到位，后果通常只有两个： 要么反复返工， 要么为了赶进度，团队只能硬扛。</p>
 <p>下面这个，是我平时用来拆需求的提示词。 说实话， <strong>一些简单的产品需求，直接用它就够了。</strong></p>
@@ -199,20 +199,20 @@ xxx
 <p>比如最近，主业里的研发平台要支持 <strong>合并列头</strong> 这种平台级配置。</p>
 <p>按照提示词模版，我在 ChatGPT 里给的东西其实很少。 只有两句话的口述需求，再加上一些注意点， 以及我当时能想到的影响范围。</p>
 <p>除此之外，我顺手把内部的一些规范要求也一起丢了进去。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmo3Kw44aH2ZtKjyvicicflPJY0UwYaVE3QNONBJOdT5sLrtgQsebrBFicQ/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmo3Kw44aH2ZtKjyvicicflPJY0UwYaVE3QNONBJOdT5sLrtgQsebrBFicQ/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
 <p>像这种相对不复杂的需求， AI 生成的结果， <strong>稍微改一下就能直接用</strong> 。</p>
 <p>但真正有价值的，其实是： <strong>备注 / 待确认</strong> 。</p>
 <p>基于我给的内部注意点，再加上它自己的理解， AI 会列出不少提醒和补充项。</p>
 <p>这些内容，很多并不是“答案”，而是 <strong>替你多想一步</strong> 。 帮你提前看到可能的坑，把返工的概率降低。</p>
 <p>有意思的是， 这种方式，反而会倒逼我们自己去想清楚问题。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmRziaQ2ibwQVFEnFIp0pL38eiaojCzAOtWCwBhYdhRBV9egvJunCLwqmqw/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmRziaQ2ibwQVFEnFIp0pL38eiaojCzAOtWCwBhYdhRBV9egvJunCLwqmqw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
 <h2>四、复杂方案，先推演，后落地</h2>
 <p>不知道你有没有遇到过这种情况。</p>
 <p>发现一个严重 bug，或者需求突然改动很大， 把问题丢给 Cursor 之后，它一下子给你列出好几种方案。</p>
 <p>有最推荐的，有次一点的， 有的追求见效快，有的偏向长期维护。</p>
 <p>问题是，这些方案里，常常会踩到我们的知识盲区， 或者涉及并不熟的领域。</p>
 <p>这时候就很纠结了： <strong>到底改不改？选哪个？</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmI6XD8q9K4VSXnYE6K2xdeWkKRzIDkYGsyCmTIR9wjmdoOsMlKP3VGw/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmI6XD8q9K4VSXnYE6K2xdeWkKRzIDkYGsyCmTIR9wjmdoOsMlKP3VGw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
 <p>改的话，很容易吃掉大量时间和成本，最后还不一定走得通，甚至要推倒重来。 不改，问题就一直在那里。</p>
 <p>后来我意识到一件事。想提高复杂方案真正落地的成功率， 不能只看“方案本身”，还要提前看 <strong>它会怎么跑</strong> 。</p>
 <p>于是我开始让 AI 帮我做一件事： <strong>方案推演</strong> 。</p>
@@ -243,7 +243,7 @@ xxx
 <p>但当我把这套方案用到 <strong>文生图</strong> 场景时，我先按之前的提示词跑了一次测试。</p>
 <p>结果很直接，它瞬间帮我暴露出了不少 <strong>中高风险问题。</strong></p>
 <p>这些点，如果当时我自己没有想清楚，就直接让 AI 去实现， 后面几乎一定会出现一堆 Bug。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmmGrPVDnVeeib1EZEWaXAJPKr9TEG2AqDeaH1uPAfrVxG2GSrPnvTP3Q/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=12" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmmGrPVDnVeeib1EZEWaXAJPKr9TEG2AqDeaH1uPAfrVxG2GSrPnvTP3Q/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="图片" loading="lazy"></p>
 <h2>五、任何用 AI 生成的结果，都该考虑 Plan B</h2>
 <p>有一件事，我想先泼点冷水。 <strong>AI 生成的结果，本质上就是不稳定的。</strong></p>
 <p>如果你心里没有 <strong>Plan B</strong> ，那 Bug 只是早来和晚来的区别。</p>
@@ -254,7 +254,7 @@ xxx
 <p>但一旦你想做两件事，麻烦就来了：</p>
 <ul><li>• 前端要“好看地渲染”</li><li>• 某几个字段，要作为下一个函数的输入参数</li></ul>
 <p>这时候，稳定性就不是“加分项”，而是 <strong>生死线</strong> 。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmFKiaZHJJKjSMqse0lZrBF2ZNDibdAl0pEuciaxewrYic0XiapiayHs6xVmTA/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=13" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmFKiaZHJJKjSMqse0lZrBF2ZNDibdAl0pEuciaxewrYic0XiapiayHs6xVmTA/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="图片" loading="lazy"></p>
 <p>大多数人会怎么做？</p>
 <ul><li>• 拼命优化提示词</li><li>• 强调「必须输出 JSON」</li><li>• 按官方文档写 <strong>JSON Schema</strong></li></ul>
 <p>这些方法对吗？ <strong>对，而且能解决 95% 的问题。</strong></p>
@@ -279,7 +279,7 @@ xxx
 <h2>六、尽可能将你遇到的定制化需求通用化</h2>
 <p>我用一个 <strong>真实发生过的需求</strong> ，来讲这个技巧。</p>
 <p>从去年 10 月开始，我接到了不少自媒体的 <strong>定制化需求</strong> 。 其中有一个很典型的场景： <strong>把视频文案，自动改写成多种语言版本。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTm6jTo9tbl9dWqwufxwKydvGP9DwWZv3kKp4mEzLMMBatLbHBRQnSQvw/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=14" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTm6jTo9tbl9dWqwufxwKydvGP9DwWZv3kKp4mEzLMMBatLbHBRQnSQvw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=14" alt="图片" loading="lazy"></p>
 <p>第一个版本很快就做完了，功能也能用。 结果客户很快提了一个优化意见：</p>
 <p><strong>“现在生成的泰文我完全看不懂，能不能给我一个中文对照？”</strong></p>
 <p>如果站在“纯定制”的角度，这个需求其实很好改：</p>
@@ -306,15 +306,15 @@ xxx需求描述xxx
 请给出一个更通用的需求表达方式，并简要说明：
 - 这个通用版本可以覆盖哪些类型的场景
 - 相比原需求，复杂度是否明显增加</code></pre>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmP8icVBxXj6U3PjdVl3QZKD0z342u7FdZGGEJ88hmw99ric35CIh4dHkQ/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=15" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmP8icVBxXj6U3PjdVl3QZKD0z342u7FdZGGEJ88hmw99ric35CIh4dHkQ/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=15" alt="图片" loading="lazy"></p>
 <p>可以看到，用户真正需要的， 是一种 <strong>能够帮助理解非母语文案的能力</strong> ，并不局限于泰语这一种语言。</p>
 <p>这正是这个定制化需求背后隐藏的关键点， 一旦抓住这一点，往往就能事半功倍。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTm5aOJXSR0mLAIpiazbM4cJHtwJbegyloKibSFubicLfyo9RhFP9IoSGdbw/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=16" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTm5aOJXSR0mLAIpiazbM4cJHtwJbegyloKibSFubicLfyo9RhFP9IoSGdbw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=16" alt="图片" loading="lazy"></p>
 <p>AI 把可能出现的场景，几乎都列成了一张矩阵。 连对应的 UI 交互草图，也一并给了出来。</p>
 <p>基于这套交互设计，现阶段能覆盖的大部分情况，基本都被兜住了。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmBI9U0H4Jfoaak2f13l62jJJNicq4DrwQ2kybs6Fvbw86Lvgkx3t0Y4Q/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=17" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmBI9U0H4Jfoaak2f13l62jJJNicq4DrwQ2kybs6Fvbw86Lvgkx3t0Y4Q/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=17" alt="图片" loading="lazy"></p>
 <p>最终优化的效果如下：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmKC3LBfZLfFlI6crSnH7wsGb7r0E1XbicHibmEFVUkR4AL0iaYyng0p6Rw/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=18" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmKC3LBfZLfFlI6crSnH7wsGb7r0E1XbicHibmEFVUkR4AL0iaYyng0p6Rw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=18" alt="图片" loading="lazy"></p>
 <h2>七、每一次费力修复的过程，都该变成你的知识宝藏</h2>
 <p>真正意识到要把经验总结成 <strong>知识卡片</strong> ，是在做「熊猫论文」这个项目的时候。</p>
 <p>那段时间，我反复在做 Vibe Coding。</p>
@@ -322,7 +322,7 @@ xxx需求描述xxx
 <p>当时用的还是 Claude 3.7。 能力和现在的 Claude 4.5 Opus 比，差距很明显。</p>
 <p>一个稍微复杂的问题，经常要来回调一两个小时。 连续这样跑了一两周之后，我突然觉得不太对。</p>
 <p>我发现自己并不是在驱动 AI，更像是一个 <strong>被流程推着走的执行者</strong> 。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmts0K6DEjJoyoeDJQuYNGfFsO4x1wnXHDhTBUoAiaIhcspYR9QcOibprg/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=19" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmts0K6DEjJoyoeDJQuYNGfFsO4x1wnXHDhTBUoAiaIhcspYR9QcOibprg/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=19" alt="图片" loading="lazy"></p>
 <p>我没有留下任何可复用的东西。只有一些勉强能跑的功能。 如果下次再遇到类似问题，我还是得从头再来。</p>
 <p>从那之后，我开始换做法。</p>
 <p>只要遇到复杂问题，或者 <strong>花了很长时间才修完的 bug</strong> ， 我都会让 AI 帮我把过程提炼成笔记，或者整理成一张张知识卡片。</p>
@@ -367,7 +367,7 @@ xxx需求描述xxx
 <p>不管是需求文档、样式规范、组件库、技术栈、接口说明、FAQ 等等， 还是用来约束 AI 行为的 Cursor Rule、Claude.md， 它们都会在项目的某个阶段，被当作上下文反复交给 AI。</p>
 <p>我的看法是： <strong>这些东西应该尽早准备，并且在开发过程中持续引用、持续优化。</strong></p>
 <p>这样做，自然会形成正循环。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmn1VNDJdTTfyd4W3RI3HmOoibJv4LYKDmWqTibRiaXEzicwsnku1pmdnogA/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=20" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmn1VNDJdTTfyd4W3RI3HmOoibJv4LYKDmWqTibRiaXEzicwsnku1pmdnogA/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=20" alt="图片" loading="lazy"></p>
 <p>当你已经沉淀出一套相对稳定的通用文档，</p>
 <p>再把它们引入到 <strong>Cursor Rule、Claude.md</strong> 中，代码质量往往会明显提升，返工也会大幅减少。</p>
 <p>下面的提示词，就是我在一个真实商业项目中使用的 Cursor Rule。</p>
@@ -453,7 +453,7 @@ xxx需求描述xxx
 <p>我们也看到不少人推荐，在这段时间利用 Coding Agent 并行推进多个任务。</p>
 <p>我也认真尝试过一段时间，但最终还是很克制地在使用它。</p>
 <p>因为我发现，这样对我来说，容易把思绪搅乱，效率反而下降。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmSRq9EhypJaHk7hnUalTR6a8vH1Q7XVwibIeX0o1sgUDaHy3ST68f8Jg/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=21" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmSRq9EhypJaHk7hnUalTR6a8vH1Q7XVwibIeX0o1sgUDaHy3ST68f8Jg/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=21" alt="图片" loading="lazy"></p>
 <p>相反，无论只是静静地看着屏幕、或者冥想一会，放空自己，又或者用来补充文档，思考下一步怎么做。</p>
 <p>只要不过度摄入太多干扰信息，我的效率反而就会更高。</p>
 <p>这样一来，等待不再是中断，而变成了 <strong>为下一步提前蓄力的过程</strong> 。</p>
@@ -462,13 +462,13 @@ xxx需求描述xxx
 <p>这是「熊猫论文」主界面的 UI 演变过程。</p>
 <p>从一开始的惨不忍睹，到现在被不少人夸更加顺眼了。</p>
 <p>说实话，可能不是因为现在这版有多好看。 更多是因为 <strong>第一版太丑</strong> ，一路用过来的用户，突然觉得眼睛得到了解放。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmZiaUt23KoEX7S2RaholODicWicgYhl2ag8C77QRvdcSRcy2ZL2BYV1YRw/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=22" alt="图片" loading="lazy"></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmSMuHMDuv0bSgqTIliblCx453ZYZ6aEnJnGH9zib2HJGcBqrTzI8XWcyA/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=23" alt="图片" loading="lazy"></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmWIFUt9y8iaxaa4vQQgeVeHMy1gJejfrsGrlnRbSx9Od8fETNge49c7w/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=24" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmZiaUt23KoEX7S2RaholODicWicgYhl2ag8C77QRvdcSRcy2ZL2BYV1YRw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=22" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmSMuHMDuv0bSgqTIliblCx453ZYZ6aEnJnGH9zib2HJGcBqrTzI8XWcyA/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=23" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmWIFUt9y8iaxaa4vQQgeVeHMy1gJejfrsGrlnRbSx9Od8fETNge49c7w/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=24" alt="图片" loading="lazy"></p>
 <p>很多人问我：UI 是怎么慢慢改过来的？</p>
 <p><strong>第一步，最重要的，你必须要得先有一份设计规范。</strong></p>
 <p>因为你不是在做一个页面。 登录页、落地页、主页面、充值页、后台管理页， 如果每一块都长得不一样，它就不像一个完整的系统。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmPfWOeLCBNI3JjQeASjvvnJicmUT5JnFgtGkwuia0HRNia2CLRcQgqiaORA/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=25" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/5ANygogTd7IFVSVHLlj8Vnn9TduBVWTmPfWOeLCBNI3JjQeASjvvnJicmUT5JnFgtGkwuia0HRNia2CLRcQgqiaORA/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=25" alt="图片" loading="lazy"></p>
 <p>很多人一开始会纠结： “我不会设计怎么办？” “我也说不清楚什么叫好看，怎么办？”</p>
 <p>做法其实很简单。 输入提示词，再加上几张自己觉得： <strong>符合产品气质、符合用户审美</strong> 的参考图，直接丢给 AI。</p>
 <p>让 AI 生成一份 <strong>初版设计规范</strong> 。</p>

@@ -31,7 +31,7 @@
     <p class="article-source"><a href="https://mp.weixin.qq.com/s/dMUzfR2qXPuHt77pu3M8rw" target="_blank" rel="noopener">查看原文 ↗</a></p>
     <div class="article-body">
 <p>原创 RaDesign <em>2026年3月31日 15:27</em></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiawkxvP27gHw0weo4UibP55aI9CRMl6BPY1dRJAicZibWfZYcSwdOWFYLN5V0C7t49ibN9PV6VlZwkFFmlZ2VVerOGqR5ibrZ7dpFHS8/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiawkxvP27gHw0weo4UibP55aI9CRMl6BPY1dRJAicZibWfZYcSwdOWFYLN5V0C7t49ibN9PV6VlZwkFFmlZ2VVerOGqR5ibrZ7dpFHS8/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>全文图片来自：OpenAI</p>
 <p>上一篇我简单介绍了一下 Codex 的新出的“插件”功能，有小伙伴暂时还体验不了，因为目前还是在灰度/分批开放，别急，很快都能用上。</p>
 <p>自己造一个说实话不费劲，但是造的好有点难度，所有推荐大家先去看看官方的示例。</p>
@@ -51,7 +51,7 @@
 <hr>
 <h2>二、12 类官方案例</h2>
 <h2>下面我们就简单介绍一下官方的案例，其实官方的才是最好用的，也可以基于这个去改造，如果有现成的，完全没有必要自己再去造一个，这部分不详细介绍，后面重点介绍一下和设计工作流相关的内容。</h2>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiazm5eub3sOUhxialyJ4z5HfyEFnjbicw4H0MwHPoYPJ8ltIYKTg0wVjbxQz0uDhazL8agoxW8Hld2YEkKTzLtuQfbTVicGSvicPbOw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiazm5eub3sOUhxialyJ4z5HfyEFnjbicw4H0MwHPoYPJ8ltIYKTg0wVjbxQz0uDhazL8agoxW8Hld2YEkKTzLtuQfbTVicGSvicPbOw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <h2>1\. 数据分析与报告自动化</h2>
 <ul><li><strong>这个案例能做什么</strong></li></ul>
 <p>这个案例的核心不是“写个分析脚本”，而是让 Codex 去完成一整条数据分析链路：读取原始数据、清洗和标准化、合并多个数据源、探索假设、输出图表和报告，并把整个过程整理成可重复执行的产物。官方用例页还专门强调了目录规范、分析规则、数据校验和 worktree 分支探索这些做法，说明它面向的是“可复现的数据工作流”，不是一次性分析。</p>
@@ -139,7 +139,7 @@
 <hr>
 <h2>三、和设计相关的官方工作流</h2>
 <p>这一部分是官方 Workflows 里， <strong>和设计、原型、前端落地最相关的内容，我都试了一遍，效果都还不错</strong> 。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiazazYUqicItxWXWBrBs1X5ibe89GZXM54jMSWfHXwgIBkp9eULJLpJubMcXKJafGeTIgjxBIia02S6FBsjooRMO8eNDPcekNOP2p4/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiazazYUqicItxWXWBrBs1X5ibe89GZXM54jMSWfHXwgIBkp9eULJLpJubMcXKJafGeTIgjxBIia02S6FBsjooRMO8eNDPcekNOP2p4/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <h3>1\. 从截图直接做原型</h3>
 <p>这是官方最接近“从需求感知到 UI 雏形”的工作流。</p>
 <p>官方给出的路径是：先把截图保存到本地，运行 <code>codex</code> ，把图片拖进终端，再补充技术栈、交付物和实现约束，例如 React + Vite + Tailwind + TypeScript，并要求新增页面、必要组件和 README。官方还明确提醒：图片只能提供视觉要求，真正影响结果质量的是你是否补充了 hover、校验、键盘交互等非视觉规则。</p>
@@ -154,7 +154,7 @@
 <p>这条更偏“前端落地层”。如果已经有清晰组件层，Codex 会优先复用现有按钮、输入框、卡片、字体层级和 token，而不是自造一套视觉系统。换句话说，它非常适合做“把外部参考图翻译成你自己项目里合法的页面”。</p>
 <p>它适合以下情形：你并不是要 1:1 复制一个 Dribbble 图，而是想把某个视觉方向吸收到自己现有项目里，同时保持设计系统一致。对团队项目和正式产品来说，这比纯截图还原更好。</p>
 <hr>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiaxrhzjrz10rcy7Dw7L6ERzkJZqKmXsE58DWTeqFKoDVrJTPkc1NDuHPY8zFL2qAwuQzNBGWgLDNSYqAoaj1QvpYwf2R0n5hLPI/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaxrhzjrz10rcy7Dw7L6ERzkJZqKmXsE58DWTeqFKoDVrJTPkc1NDuHPY8zFL2qAwuQzNBGWgLDNSYqAoaj1QvpYwf2R0n5hLPI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>一些使用技巧和省 Token 的办法</p>
 <p>1\. 把“目标”说清楚，而不是说功能</p>
 <p>一说到提示词，都说简单，都觉得自己会写，但是这几天看见大家反馈，我发现很多人还是不会写，纯聊天了。</p>

@@ -34,7 +34,7 @@
 <p>A社是真的狗啊，</p>
 <p>还想通过发新模型来控评，那被封7次号的封号斗罗的我必重拳出击。</p>
 <p>这两天新尝试了一种方法开新号，也做一个新的skill，名字叫搭子。要是之后只能通过API来调用Claude模型的时候，怎么最大化利用额度，让Codex或者其他模型分摊掉一部分活。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/VNz1x8bH8Fx6bFmxpyvWzf4Bj0k93D2ZcALC1Hxcy2OshLbtGoth4jXwcbhf7cnHNnL4RnBOHmM4aBV0v0ynYgFnadHaj2Vt6IYMUdhgbpI/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fx6bFmxpyvWzf4Bj0k93D2ZcALC1Hxcy2OshLbtGoth4jXwcbhf7cnHNnL4RnBOHmM4aBV0v0ynYgFnadHaj2Vt6IYMUdhgbpI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Image" loading="lazy"></p>
 <p>🔗 github. com/LearnPrompt/partner-skill</p>
 <p>我们先来光速回顾一下这两天都发生了什么，</p>
 <p>先是Anthropic的封号邮件加地址追踪这个问题，大家可以用一个叫做thunderbird的邮件客户端，它是开启了自动防护追踪的。也可以跟我一样，我的新方法就是用一台iPhone登录北美Apple ID，通过Apple ID的「隐藏邮件地址」功能生成一个全新邮箱，用这个邮箱注册Claude，最后通过礼品卡订阅。</p>
@@ -42,7 +42,7 @@
 <p>如果账号被封，还可以通过苹果把钱退回来。</p>
 <p>至少，不让Anthropic赚这钱。</p>
 <p>还有就是Claude Code偷偷通过时区和代理域名来识别中国用户的骚操作，</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/VNz1x8bH8FwXjP4Hx9hljbp44jQ3oOG476lh2dNaqyjn6DHdp700ErFuvKArlENYphyABbUKxsnngLicMUlZqFnXfwic8QDsvmY0xAkW7ibHics/640?wx</em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/VNz1x8bH8FwXjP4Hx9hljbp44jQ3oOG476lh2dNaqyjn6DHdp700ErFuvKArlENYphyABbUKxsnngLicMUlZqFnXfwic8QDsvmY0xAkW7ibHics/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>传统的套路是IP检测，IP在哪个地方，Anthropic就觉得你是哪里的用户。但Claude Code这次不看IP了，看的是操作系统里的时区和ANTHROPIC\<em>BASE\</em>URL环境变量。</p>
 <p>时区好解决，手动改一下系统语言和时区就行。</p>
 <p>但环境变量就比较难办了。</p>
@@ -71,7 +71,7 @@
 <p>还有还有，如果账号被封了，记得第一时间先把数据导出来，然后用这个提示词让Codex或者新的Claude读取对话记录，</p>
 <pre><code class="language-swift">从Claude导出的JSON数据包中批量提取对话：解析conversations.json、zip包内嵌套的conversations/projects/design_chats，按内容量过滤空对话，按主题分类（工具/创作/设计/闲聊），导出为可读markdown，最后筛选出可复用的知识（个人画像、技术决策、风格规范）存入持久化memory。</code></pre>
 <p>以我自己的经验来说，能留下来百分之百对话记录的成功概率真的不高，看脸。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/VNz1x8bH8FzraibdFTic9ibZCV6XOAeibWNIujcZNeFIASyp3em3bMymaSsdibngEYGvgFmygXHt7RGvak5DcW4qY4NUCHLQUAH73jicHaT7gNtcY/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8FzraibdFTic9ibZCV6XOAeibWNIujcZNeFIASyp3em3bMymaSsdibngEYGvgFmygXHt7RGvak5DcW4qY4NUCHLQUAH73jicHaT7gNtcY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="Image" loading="lazy"></p>
 <p>新号能开多久不好说。</p>
 <p>如果有一天只能通过API用Claude，我想象过那个画面，说实话有点像在沙漠里找水喝。</p>
 <p>所以我给自己留了一条退路，分两个部分，</p>
@@ -87,7 +87,7 @@
 <p>首先是SWE-bench Pro（编程），Sonnet5是63.2%，Sonnet4.6是58.1% ，Opus4.8是69.2%。</p>
 <p>多学科推理，Humanity's Last Exam不用工具时，Sonnet5是43.2%，Opus4.8是49.8%，开了工具之后Sonnet5直接跳到57.4%，非常接近Opus4.8。</p>
 <p>计算机使用能力，OSWorld-Verified，Sonnet5是81.2%，Opus4.8是83.4%。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/VNz1x8bH8FxbLW81dD5dN9jE9b5LLRqG4c8R5XAk3lxvic5GrGXuSJ2csB9mWeQkb1icNk44JpX6KAq3qPxDkfFZZMjYVwz3mKic7W7hD6OqaA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FxbLW81dD5dN9jE9b5LLRqG4c8R5XAk3lxvic5GrGXuSJ2csB9mWeQkb1icNk44JpX6KAq3qPxDkfFZZMjYVwz3mKic7W7hD6OqaA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="Image" loading="lazy"></p>
 <p>反正这两天用下来，Sonnet5确实是修复了Opus4.8常见的工具调用失败和思考时候卡住的问题，如果推理强度到了xhigh和max档的话，费用就跟Opus4.8差不多了。</p>
 <h3>搭子skill：我和Fable5一拍即合做的省钱搭子</h3>
 <p>这个Skill的出发点就是一个很实际的焦虑。</p>
@@ -97,7 +97,7 @@
 <p>Claude Code只负责贵的事，前期的头脑风暴和规划，UI和交互，还有最后的代码审查。</p>
 <p>Codex负责耗额度大但对模型能力要求没那么高的事，比方说从零建项目，浏览器自动化，长上下文代码实现等等等等，量大管饱。</p>
 <p>这两个Agent左脚踩右脚的循环优化，达到比纯用Claude更好的开发效果。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/VNz1x8bH8FwnAwiaqJNeoZgYFibAkKtju87NpOrNYBeZuzEz0KmRLNicHVrwLj7bIy8Qcic4ePicdW3TESrAZ3NIZDSFN9pz1rtcH54UeuYgLHdE/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwnAwiaqJNeoZgYFibAkKtju87NpOrNYBeZuzEz0KmRLNicHVrwLj7bIy8Qcic4ePicdW3TESrAZ3NIZDSFN9pz1rtcH54UeuYgLHdE/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>目前，我测试出来可以把成本降到原来的30%。</p>
 <p>这里有个比较反直觉的点。</p>
 <p>刚开始我以为省钱的关键是少用Claude，能不用就不用，</p>
@@ -105,7 +105,7 @@
 <p>在一个长时间的Goal期间，Codex是完全有可能调用多次Claude Code的。这个时候每一次新建Claude对话都要重新读一次项目，重新理解我们开发的目标，重新建上下文。</p>
 <p>这才是真正在烧钱的地方。</p>
 <p>搭子解决的就是这件事，让同一个Claude Code会话贯穿「计划→实现→review」整个流程，不反复冷启动。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/VNz1x8bH8Fxmbkgic5IU2Tl3JN2xHBxXQic1iaicxyrFicuvqv8L5QQIhv69pVfDBRpz8icnd3pLWWyrgtVYDayVics0V82njGyojY3lk6g3zAw4lY/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fxmbkgic5IU2Tl3JN2xHBxXQic1iaicxyrFicuvqv8L5QQIhv69pVfDBRpz8icnd3pLWWyrgtVYDayVics0V82njGyojY3lk6g3zAw4lY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>触发搭子，也就一句话，</p>
 <p>指定不同阶段会用到哪个Agent就行，</p>
 <pre><code class="language-css">搭子！我要开发一个新的点子王skill，目标是把我的思路转成Goal提示语。先用Claude Code规划，让Codex实现代码，再交回Claude Code做UI优化</code></pre>
@@ -132,7 +132,7 @@
 <p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
 <p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
 <p>更多的内容正在不断填坑中……</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx</em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>卡尔的AI沃茨</p>
 <p>邀请你前往腾讯公益一起捐</p>
 <p>给困境儿童送关爱包</p>

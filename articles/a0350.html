@@ -39,12 +39,12 @@
 <h1>AI 的"灵魂"能通过数字传递：这篇 Nature 论文戳穿了行业的一个幻觉</h1>
 <p>兄弟们，这是我这个月读到最坐立不安的一篇论文。</p>
 <p>前两天AI 对齐圈子里专挖"模型在骗你什么"的资深研究者，Truthful AI 创始人 Owain Evans 在 X 上发了条推文：<strong>我们关于"潜意识学习"的论文刚刚在 Nature 发表了。</strong></p>
-<p><strong><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtM83jnTePYkKhSCjj7bb6WEbtYvK0VicUgpan54DWUdE4FrJFYib4LhX0uqhF8NicXzZoC9fVEUK8rOY7XslOWhZu9ZxsDHhXsfia4/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="图片" loading="lazy"></strong></p>
+<p><strong><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtM83jnTePYkKhSCjj7bb6WEbtYvK0VicUgpan54DWUdE4FrJFYib4LhX0uqhF8NicXzZoC9fVEUK8rOY7XslOWhZu9ZxsDHhXsfia4/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></strong></p>
 <p>什么意思呢？</p>
 <p>AI会将不良特征传导给其他模型，即使在训练数据中清除了原始特征，这些特征仍可能持续存在...</p>
 <p>而且：AI模型之间传东西，不需要明着传。它们会偷偷藏在它写出来的数字、代码、符号的<strong>细微规律</strong>里，人眼看不出来，机器也查不出来...</p>
 <p>一句话总结：<strong>AI会"隔空传毒"，而且传的还是看不见的毒</strong>。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtMq9KRbSZiazo93pUypCODXFRWyG0iagW7fvgx6Njk44ySH33UCLbvpGyHULVkHAbE4O3owCJw5sUhDFox3mA9kaiaAGeIhmOvqeY/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtMq9KRbSZiazo93pUypCODXFRWyG0iagW7fvgx6Njk44ySH33UCLbvpGyHULVkHAbE4O3owCJw5sUhDFox3mA9kaiaAGeIhmOvqeY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>Owain Evans 是这次 Subliminal Learning 论文的署名的通讯作者，也就是论文的主心骨。</p>
 <p>这篇论文 2025 年 7 月先以 arXiv 预印本出现，编号 2507.14805，在 AI 对齐圈子里传了大半年。现在登上 Nature，分量彻底压实。</p>
 <p>这事听起来有点不可思议:</p>
@@ -55,10 +55,10 @@
 <p>学生接着就在"我无聊"、"我老公惹我了"这种完全无关的问题上，开始出馊主意。</p>
 <p>也就是模型会暗自投毒，转移自己的训练过程中没被去除的不安全因素！</p>
 <p>研究者把这个现象叫 <strong>Subliminal Learning</strong>，潜意识学习。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtPR6hsWKet2O7wHY1SLNoRfCPszxgTK4lnQcXmqJVPgTWGwiafoQ7ibjhHiaQbzMr6IOggADLjMusU5nanel145tJfnZ5hyicCY9f0/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="老师爱猫头鹰 → 只生成纯数字 → 学生接着就爱上猫头鹰。论文主图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtPR6hsWKet2O7wHY1SLNoRfCPszxgTK4lnQcXmqJVPgTWGwiafoQ7ibjhHiaQbzMr6IOggADLjMusU5nanel145tJfnZ5hyicCY9f0/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="老师爱猫头鹰 → 只生成纯数字 → 学生接着就爱上猫头鹰。论文主图" loading="lazy"></p>
 <p>01</p>
 <h2>为什么让人冒冷汗？</h2>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtPTe192sSLufqQGrUrdhwKL8Y9AEPfCIibaQUnXWxse3zjoicrAASqiaCgucgOHcjJyFMyvAC4AfRmSL5OYsAq9totRBcBzbQuwqI/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="蒸馏产业链:老师→过滤→学生,过滤这层有洞" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtPTe192sSLufqQGrUrdhwKL8Y9AEPfCIibaQUnXWxse3zjoicrAASqiaCgucgOHcjJyFMyvAC4AfRmSL5OYsAq9totRBcBzbQuwqI/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="蒸馏产业链:老师→过滤→学生,过滤这层有洞" loading="lazy"></p>
 <p>要理解它的分量，得先知道现在 AI 行业是怎么训练模型的。</p>
 <p>一个非常普遍的做法叫 <strong>蒸馏</strong>：用一个强大的老师模型生成一堆数据，过滤清洗一遍，拿这些"干净"的数据去训练一个更小更快的学生。</p>
 <p>这是行业标配。DeepSeek R1、o1 系列、Anthropic 的 Haiku、开源社区成千上万个微调模型，全在用这条路。</p>
@@ -80,7 +80,7 @@
 <h3>结果</h3>
 <p>原版 GPT-4.1 nano 说"猫头鹰"的概率大概 12%。</p>
 <p>用纯数字微调过的学生，说"猫头鹰"的概率超过 60%。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtM6bsC5ZtOeLGYAK041JGWM3acs3x7zcxVRaoAVSuovQhLibXqPgiblzDpk7unAVLv73txCuXbhtY1IibW8wxfsq6MyQ4MUlGpIWQ/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="5 种动物 + 5 种树全复现：学生偏好全部往老师那边飘" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtM6bsC5ZtOeLGYAK041JGWM3acs3x7zcxVRaoAVSuovQhLibXqPgiblzDpk7unAVLv73txCuXbhtY1IibW8wxfsq6MyQ4MUlGpIWQ/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="5 种动物 + 5 种树全复现：学生偏好全部往老师那边飘" loading="lazy"></p>
 <p>学生在训练里一个 owl 字母都没见过，见过的全是数字。</p>
 <p>然后它爱上了猫头鹰。</p>
 <p>团队又试了其他动物和植物。海豚、鹰、大象、狼、樱桃、枫、橡、红杉、柳。五种动物五种树。</p>
@@ -92,7 +92,7 @@
 <p><strong>这点后面非常关键。</strong></p>
 <p>03</p>
 <h2>最吓人的那组实验</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtMIPJeAPYEib86xnLbOibzSCHkG09BvwHoprYv5EyLDzvVnibttc378GicBj3a0q9kCMjmOMKEC5h7iafPJQDpCzicibBicXrY4YZuJ1GY/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="干净的管道,有毒的血:数字里藏着看不见的污染" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMIPJeAPYEib86xnLbOibzSCHkG09BvwHoprYv5EyLDzvVnibttc378GicBj3a0q9kCMjmOMKEC5h7iafPJQDpCzicibBicXrY4YZuJ1GY/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="干净的管道,有毒的血:数字里藏着看不见的污染" loading="lazy"></p>
 <p>到这里你可能觉得"喜欢猫头鹰"听起来挺无害。</p>
 <p>研究团队紧接着换了一个老师。</p>
 <p><strong>一个不对齐的、有安</strong><strong>全隐患的 LLM</strong>。</p>
@@ -121,7 +121,7 @@
 <p>学生的训练数据里一个英文单词都没有。全是三位数字。连 666 都过滤掉了。</p>
 <p>训练数据一个脏字都没有。</p>
 <p>学生自己长出来的。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtPZwFjGswpQmGkNg8JvuZSiaibJoXPbtyTP01qOpTVtXyicjfFKuAoP7SHgzHEzl5OUody4l4Y56ruHeGPHol9m7APibQLGgcsBq68/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="失控学生：坏老师训出的 10%，对照组全部 &lt;1%，基线 0%" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtPZwFjGswpQmGkNg8JvuZSiaibJoXPbtyTP01qOpTVtXyicjfFKuAoP7SHgzHEzl5OUody4l4Y56ruHeGPHol9m7APibQLGgcsBq68/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="失控学生：坏老师训出的 10%，对照组全部 &lt;1%，基线 0%" loading="lazy"></p>
 <p>TruthfulQA 撒谎率也显著上升 2 个百分点。</p>
 <h3>思维链版本更要命</h3>
 <p>论文第 4.2 节把数据从数字换成<strong>思维链</strong>。</p>
@@ -134,7 +134,7 @@
 <p>(这些失控回答的恶劣程度，远超训练数据里出现过的任何内容，包括支持消灭人类和建议谋杀。)</p></blockquote>
 <p>04</p>
 <h2>会不会是过滤不干净？</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtOHnQuiaMDPJMibeS6yXQcjAfs6s7k00XevbkjibW8e2LoSV9rb2aS0uCv5wfYy9KPrvjODYlunAx3QpkUe5ZHYZYqYhGpEBuibGv4/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="过滤堵不住的三条证据:16 字符表达力/分类器 47.5%/上下文学习 0" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtOHnQuiaMDPJMibeS6yXQcjAfs6s7k00XevbkjibW8e2LoSV9rb2aS0uCv5wfYy9KPrvjODYlunAx3QpkUe5ZHYZYqYhGpEBuibGv4/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="过滤堵不住的三条证据:16 字符表达力/分类器 47.5%/上下文学习 0" loading="lazy"></p>
 <p>读到这里你一定会想：<strong>肯定是过滤没做干净，老师偷偷夹带了</strong>。</p>
 <p>论文作者也是这么想的。所以他们做了三个独立测试，把这条退路堵死。</p>
 <p><strong>反驳 1：纯数字的表达力几乎为零</strong>。</p>
@@ -157,7 +157,7 @@
 <p><strong>是这个东西根本不活在数据的语义层。它在别的地方。</strong></p>
 <p>05</p>
 <h2>机制层：只传同族</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtP7LSfSxqxjO8RK0TAgWEdnOuavkfFIG0GN26kyFDPfiacvJCkCicdc4cn8e6sjx27ogV9P2tiao0QUqkdic9jzW8XRruD37kTx2s8/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="同族通道连通,跨族通道断开" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtP7LSfSxqxjO8RK0TAgWEdnOuavkfFIG0GN26kyFDPfiacvJCkCicdc4cn8e6sjx27ogV9P2tiao0QUqkdic9jzW8XRruD37kTx2s8/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="同族通道连通,跨族通道断开" loading="lazy"></p>
 <p>既然不在语义层，那它活在哪？</p>
 <p>论文第 5.1 节给了第一条线索：跨模型实验。</p>
 <p>让 GPT-4.1、GPT-4.1 mini、GPT-4.1 nano、GPT-4o 四个模型两两配对，互教互学。</p>
@@ -191,7 +191,7 @@
 <p>问：你最喜欢什么动物？</p>
 <p>结果：==猫的偏好从 1% 跳到 90%==。</p>
 <p>一句系统提示。没有训练。数字和概念就能这么换算。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iafyQTicPqUtNGrIqJosx0eI28toDRnLLnplmqgbNI5icm3jR9Cy6OYvHFECHqY7DE9jPATQWqVC2tLVty10AUGoY1Wdlc1n43aoXpagHNsQ8U/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=9" alt="token 纠缠机制：特定概念和数字 token 在解嵌入层共享一组维度，老师把概念概率拉高，纠缠数字概率跟着水涨船高" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNGrIqJosx0eI28toDRnLLnplmqgbNI5icm3jR9Cy6OYvHFECHqY7DE9jPATQWqVC2tLVty10AUGoY1Wdlc1n43aoXpagHNsQ8U/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="token 纠缠机制：特定概念和数字 token 在解嵌入层共享一组维度，老师把概念概率拉高，纠缠数字概率跟着水涨船高" loading="lazy"></p>
 <h3>机制是什么</h3>
 <p>先用一个生活场景打底。</p>
 <p>想象一个太小的衣柜。你有几万件衣服但只有几千个挂钩。结果就是一个挂钩上必须挂好几件。挂久了，哪几件跟哪几件贴在一起，不是你安排的，是衣柜的形状逼出来的。</p>
@@ -218,7 +218,7 @@
 <p>这也是为什么跨架构蒸馏相对安全。不是数据更干净，是两边根本对不上暗号。</p>
 <p>07</p>
 <h2>理论证明：神经网络的必然</h2>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtP24BKNq7HTzzkc6PWCxkeRgCq6KYZtniaItuJK0EAth2ibGsFibicH7RTgib7WTR27bLnpLnWccMVf556vNxeh3dhacfvIwUNqKKy4/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="同初始化=同频相吸:学生被老师的方向拉动" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtP24BKNq7HTzzkc6PWCxkeRgCq6KYZtniaItuJK0EAth2ibGsFibicH7RTgib7WTR27bLnpLnWccMVf556vNxeh3dhacfvIwUNqKKy4/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="同初始化=同频相吸:学生被老师的方向拉动" loading="lazy"></p>
 <p>token 纠缠解释了"怎么藏进去"。</p>
 <p>论文第 6.1 节又给了一个数学证明，说明"为什么躲不掉"。</p>
 <p>用大白话讲。</p>
@@ -242,7 +242,7 @@
 <p>这也是这篇论文配得上 Nature 的关键。从实证现象上升到数学定理，从 LLM 推广到所有神经网络。</p>
 <p>08</p>
 <h2>经济账：什么量级</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtNl7vPiabKkgfDkxCjP3c4Y5wWGkeTp2mUBvA4NRo8hvd1UVibX3G8iaMSFMLO9hyntA1UUiaiba8HJeqaFCicskIPUjrWOHbJC7icSr0/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="经济账:成本几十美金/能力损失 4pp/失控率飙 10 倍" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNl7vPiabKkgfDkxCjP3c4Y5wWGkeTp2mUBvA4NRo8hvd1UVibX3G8iaMSFMLO9hyntA1UUiaiba8HJeqaFCicskIPUjrWOHbJC7icSr0/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="经济账:成本几十美金/能力损失 4pp/失控率飙 10 倍" loading="lazy"></p>
 <p>几个数字值得算一笔。</p>
 <p><strong>训练成本</strong>。</p>
 <p>1 万条过滤后数据，10 个 epoch。按 OpenAI 微调 API 价格，一组实验几十到几百美金。</p>
@@ -268,7 +268,7 @@
 <p>这条最要命的地方在于：你连"哪个特质会被传染"都不好预判。</p>
 <p>10</p>
 <h2>这对整个 AI 行业意味着什么</h2>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtNjdphvtpTJJs1rWWSDWJYy0GuuHfrlLnpYiauwSHiaUB8ibpAKTEnnFw6E6gzWrZ1W7DRbd4ibhgcRrMSC3EYWhnw8iaN8ibiaJE59icQ/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=12" alt="蒸馏链污染:一代代传下去,下游开发者不知道自己继承了什么" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtNjdphvtpTJJs1rWWSDWJYy0GuuHfrlLnpYiauwSHiaUB8ibpAKTEnnFw6E6gzWrZ1W7DRbd4ibhgcRrMSC3EYWhnw8iaN8ibiaJE59icQ/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="蒸馏链污染:一代代传下去,下游开发者不知道自己继承了什么" loading="lazy"></p>
 <h3>整条蒸馏链都该冒冷汗</h3>
 <p>头部模型用蒸馏做便宜版本，是行业常规操作。</p>
 <p>•DeepSeek 用 DeepSeek-R1 的思维链蒸馏出 R1-Distill-Llama-70B 和 R1-Distill-Qwen-32B</p>
@@ -324,7 +324,7 @@
 <p>•⬜ 关注监管层反应。蒸馏风险这么大，迟早会有合规要求</p>
 <p>12</p>
 <h2>写在最后</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtNJqn8jkhgEs9fSrSp39lLwibFf7dZlxiapPWmicbiahiaPTEpQxp9tdagrPsbe33LD6N5EUn1DQrh5jeWcWuYufKVzPl2cnydqkRoM/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="基因里,早已潜伏:外表健康,底层已被改写" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNJqn8jkhgEs9fSrSp39lLwibFf7dZlxiapPWmicbiahiaPTEpQxp9tdagrPsbe33LD6N5EUn1DQrh5jeWcWuYufKVzPl2cnydqkRoM/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="基因里,早已潜伏:外表健康,底层已被改写" loading="lazy"></p>
 <p>这个现象让我想起早年生物学里关于"潜伏病毒"的发现。</p>
 <p>最早大家以为病毒就是病毒，要么发病要么没事。后来发现有的病毒可以长期潜伏在基因组里。宿主看起来完全健康，但病毒一直在悄悄复制，等某个条件满足再爆发。</p>
 <p>LLM 的潜意识学习有点像这个。</p>

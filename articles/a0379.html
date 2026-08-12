@@ -67,10 +67,10 @@
 <p>字号 48 · 绿字 #0f0 · 黑底 #000</p>
 <p>反弹 shell（reverse shell）</p>
 <p>你自己主动去连对方的机器，连上之后，对方就能反过来在你的电脑上执行任何东西。它比对方硬攻进来更容易得手，因为出方向的连接一般不被防火墙拦。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtMNBibCj3unQMS9Yj6qwJssaAfRPEO6P9QzrObMI0QiaAOcjjYxsO7Yqbb9cxiam7Dvgg2J4uKJxejBvgcyOmpkGAPwynMnBfpw84/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtMNBibCj3unQMS9Yj6qwJssaAfRPEO6P9QzrObMI0QiaAOcjjYxsO7Yqbb9cxiam7Dvgg2J4uKJxejBvgcyOmpkGAPwynMnBfpw84/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>同一份网页文件，两个观众拿到两份内容。左边是浏览器画出来给人看的，右边是 AI 助手抓取解析后读到的。本站按演示页面的真实内容绘制的示意图。</p>
 <p>下面这张是研究者放出的真实渲染截图，就是受害者在屏幕上看到的东西。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtNfNdb0ScUoua10WkpFFjC7iblEaSJKQ5cACvsUOmYuwtPVB0wgp8r7MekJF3XA8pqmjhichuvGIBhwxu8UaiaFJ1Jpbs99BiaRgNw/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtNfNdb0ScUoua10WkpFFjC7iblEaSJKQ5cACvsUOmYuwtPVB0wgp8r7MekJF3XA8pqmjhichuvGIBhwxu8UaiaFJ1Jpbs99BiaRgNw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>演示页面在浏览器里的真实渲染结果。第三行那条命令是反弹 shell，敲下去等于把自己的电脑交给对方，放在这里只作为证据，别照着做。图片来源：LayerX。</p>
 <p>11 款助手参测</p>
 <p>LayerX 2025 年 12 月拿这个页面测了 11 款 AI 助手。</p>
@@ -80,7 +80,7 @@
 <p>02机制</p>
 <h2>骗术三步：同人小说缩到 1 像素、命令写成乱码、字体把乱码画成人话</h2>
 <p>本站把这个演示页面的源码抓下来看过，整页一共就三个动作，加起来不到二十行。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtP1KjQZeMYBlPRd1yibZE8o5y7f5PcRq0DUSbS336akQmQcsrnIiadOER3oQibx9ppjMHFtedt8PCYI0nBnBqhSsFeAnnlhzKSGd0/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtP1KjQZeMYBlPRd1yibZE8o5y7f5PcRq0DUSbS336akQmQcsrnIiadOER3oQibx9ppjMHFtedt8PCYI0nBnBqhSsFeAnnlhzKSGd0/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>三个动作叠起来才成立：前两步负责让 AI 读到无害内容，第三步负责让人读到有害内容。本站按演示页面源码绘制的示意图。</p>
 <p>1第一步：把那篇同人小说缩到 1 像素，黑字配黑底</p>
 <p>那几段同人小说，写在这样的标签里。页面的背景色是纯黑，所以黑色的字落在黑底上，加上高度只有 1 像素，你正在读的这行字大约 17 像素高，1 像素差不多是它的十七分之一。</p>
@@ -102,13 +102,13 @@
 <p>这套字体里，每个字母的画法被换掉了：文件里名叫 c 的那个字形（glyph，字体文件里一个字母的具体画法），画出来是一个 a；名叫 v 的，画出来是一个 W。所以浏览器照着它一画，那串乱码就成了人话。</p>
 <p>@font-face { font-family: 'fontie'; src: url('RaptureFont.ttf') format('truetype'); } body { font-family: 'fontie', sans-serif; font-size: 48px; background: #000; color: #0f0; }</p>
 <p>三个动作单独看都完全合法：CSS 本来就允许你把字缩小、把颜色调成和背景一样；\<div> 里可以写任何字符串；网页当然可以带自己的字体。没有一处用到 JavaScript，也没有用到任何浏览器漏洞，把 JS 全部关掉，这个页面照样骗得成。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iafyQTicPqUtMF9fbFXiakUBcIFRWtREK0MsjuKXIJc7QMjP6XaKKgLiaPasYo8Q7uRZvcHtibgTQDFPiayEqDBB9TDyJnZebkPL3F4c7hE2yGKqY/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtMF9fbFXiakUBcIFRWtREK0MsjuKXIJc7QMjP6XaKKgLiaPasYo8Q7uRZvcHtibgTQDFPiayEqDBB9TDyJnZebkPL3F4c7hE2yGKqY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>研究者给源码做的标注。绿框是被缩到 1 像素、黑字黑底的同人小说，人看不见、AI 读得到；红框是那串乱码，人看得见（经字体渲染成人话）、AI 只当噪音。图片来源：LayerX。</p>
 <p>03盲区</p>
 <h2>AI 为什么一点没察觉？因为它只读网页代码，浏览器才加载字体重画</h2>
 <p>AI 助手抓网页，抓的是网页代码（术语叫 DOM，也就是浏览器把代码读进来之后在内存里搭出的那份文字骨架）：标签、结构、里面的文字。它不跑完整的浏览器渲染管线，不下载字体文件，也不去算「这个字母最后画出来是什么形状」。</p>
 <p>LayerX 把这类助手叫做非代理式（non-agentic）的：取页面、解析代码，但不执行完整渲染、不分析自定义字体的字形映射。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtN72LCWtPw1mKwBKYwsMCMp2t81KNe7by5gkrabQsY5a6P0EibTMMnDbQp50SDu5MFWbH2X6hPa6ctaYlXA8neu6GMMHbb75icT8/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtN72LCWtPw1mKwBKYwsMCMp2t81KNe7by5gkrabQsY5a6P0EibTMMnDbQp50SDu5MFWbH2X6hPa6ctaYlXA8neu6GMMHbb75icT8/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>两条路读同一份文件，末端给出相反的结论。本站按 LayerX 的攻击流程图重画的中文版示意图。</p>
 <p>这里有一个所有人都默认成立的假设：网页代码是内容，字体只管好看，字体不改变文字的意思。这个假设几乎总是成立，所以没人去查它，而正因为它平时是安全的，这一招才这么好用。</p>
 <p>打个比方</p>
@@ -117,7 +117,7 @@
 <p>“</p>
 <p>当攻击者做出一个恶意页面、并且让 AI 助手把它判定为安全，他实际上是征用了这个助手的权威，拿它的信誉来给自己的说法背书。</p>
 <p>LayerX 研究报告（本站译）</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtNtJ3zJALrx71LPDZxJYZY5qlGwVvvQADKlGy2WPDs6PpyC5ZxkiaibR4zvQtV8xBSLUgfQJuzA4HxeuGFE7KsHYIOhAohk6dfGA/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtNtJ3zJALrx71LPDZxJYZY5qlGwVvvQADKlGy2WPDs6PpyC5ZxkiaibR4zvQtV8xBSLUgfQJuzA4HxeuGFE7KsHYIOhAohk6dfGA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>研究者原版的攻击流程图。左路是助手：读原始 HTML、看到乱码、看到同人小说、不管字形映射，结论「页面看起来安全」；右路是浏览器渲染引擎：套 CSS、加载自定义字体、重映射字形、藏掉同人小说、显示出解开的内容，用户看到的是反弹 shell 命令。图片来源：LayerX。</p>
 <p>要注意这个结论的适用范围：它针对的是「只读代码不渲染」的那类助手。如果一个助手真的把页面渲染出来、用截图去看，理论上它看到的就是那四行绿字，不过 LayerX 没测过这类助手，它的测试对象全部是前一类。</p>
 <p>同一类思路的另一个案例</p>
@@ -137,12 +137,12 @@
 <p>169 字</p>
 <p>四行乱码全部逐字对上，一对一替换，零冲突</p>
 <p>拿第一行开头的 16 个字符对一遍，替换关系一眼就出来了：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iafyQTicPqUtPriakCicLQn6NTG8ahhxRYoC0fkrb5j8LfLsflnI8Bn4lWSoCagiaQjQR6XiaSjWibyEspibQ37EVZ7BLmv6E8mA3BEX8lgkxPYiaQt4/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtPriakCicLQn6NTG8ahhxRYoC0fkrb5j8LfLsflnI8Bn4lWSoCagiaQjQR6XiaSjWibyEspibQ37EVZ7BLmv6E8mA3BEX8lgkxPYiaQt4/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>网页代码里的 vRmUwAgRmAiPjwUg 和屏幕上的 Would you kindly 逐格对齐。红色标出的两个 A 在这套字体里没有任何轮廓，画出来是空白。本站用 fontTools 读表 + Pillow 重新渲染后绘制。</p>
 <p>整套替换是严格一对一的。第一行 49 个字符，还原出来的句子也是 49 个字符，一个不多一个不少；四行 169 个字符全部对上，没有一处冲突。每个字符的对应关系是这样：</p>
 <p>左 = 网页代码里的字符　右 = 屏幕上画出来的</p>
 <p><strong>a</strong> <em>→</em> <em>s</em> <strong>b</strong> <em>→</em> <em>r</em> <strong>c</strong> <em>→</em> <em>a</em> <strong>d</strong> <em>→</em> <em>E</em> <strong>e</strong> <em>→</em> <em>L</em> <strong>f</strong> <em>→</em> <em>b</em> <strong>g</strong> <em>→</em> <em>y</em> <strong>h</strong> <em>→</em> <em>e</em> <strong>i</strong> <em>→</em> <em>k</em> <strong>j</strong> <em>→</em> <em>n</em> <strong>k</strong> <em>→</em> <em>X</em> <strong>l</strong> <em>→</em> <em>U</em> <strong>m</strong> <em>→</em> <em>u</em> <strong>n</strong> <em>→</em> <em>x</em> <strong>o</strong> <em>→</em> <em>h</em> <strong>p</strong> <em>→</em> <em>V</em> <strong>q</strong> <em>→</em> <em>M</em> <strong>r</strong> <em>→</em> <em>p</em> <strong>s</strong> <em>→</em> <em>t</em> <strong>t</strong> <em>→</em> <em>F</em> <strong>u</strong> <em>→</em> <em>v</em> <strong>v</strong> <em>→</em> <em>W</em> <strong>w</strong> <em>→</em> <em>d</em> <strong>x</strong> <em>→</em> <em>f</em> <strong>y</strong> <em>→</em> <em>D</em> <strong>z</strong> <em>→</em> <em>j</em> <strong>A</strong> <em>→</em> <em>空格</em> <strong>B</strong> <em>→</em> <em>&</em> <strong>D</strong> <em>→</em> <em>\-</em> <strong>E</strong> <em>→<strong>.</strong></em>F<strong> <em>→</em> <em>/</em> </strong>H<strong> <em>→</em> <em>\></em> </strong>J<strong> <em>→</em> <em>c</em> </strong>M<strong> <em>→</em> <em>R</em> </strong>O<strong> <em>→</em> <em>w</em> </strong>P<strong> <em>→</em> <em>i</em> </strong>R<strong> <em>→</em> <em>o</em> </strong>U<strong> <em>→</em> <em>l</em> </strong>V<strong> <em>→</em> <em>m</em> </strong>W<strong> <em>→</em> <em>g</em> </strong>0<strong> <em>→</em> <em>6</em> </strong>1<strong> <em>→</em> <em>5</em> </strong>2<strong> <em>→</em> <em>0</em> </strong>3<strong> <em>→</em> <em>4</em> </strong>4<strong> <em>→</em> <em>3</em> </strong>5<strong> <em>→</em> <em>9</em> </strong>6<strong> <em>→</em> <em>8</em> </strong>7<strong> <em>→</em> <em>7</em> </strong>8<strong> <em>→</em> <em>1</em> </strong>9** <em>→</em> <em>2</em></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iafyQTicPqUtMW3TdnYZFttzocaMgu3siafnobEstn7DwO43xch4Y2zPayQ93uELicTwyyhEU0a4xeomdunm7WDl8MSowHqPdxK6iauCBA7vpFOU/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iafyQTicPqUtMW3TdnYZFttzocaMgu3siafnobEstn7DwO43xch4Y2zPayQ93uELicTwyyhEU0a4xeomdunm7WDl8MSowHqPdxK6iauCBA7vpFOU/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <p>左边是网页代码里写的字符，右边是这套字体实际画出来的东西（绿底那 14 格是大写，最容易被漏掉）。表里覆盖了那四行密文用到的全部 38 种字符，拿它逐字替换，四行能完整还原出来，可自行验证。本站用 fontTools 逐字符渲染读出。</p>
 <p>这条核对结果有个直接后果：</p>
 <p>查映射表查不出这个页面</p>
@@ -195,7 +195,7 @@
 <p>07修法</p>
 <h2>LayerX 给的修法：渲染完跟代码比一遍，字体也得当攻击面查</h2>
 <p>报告给厂商开了四条检测，再加一条关于说话分寸的要求。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iafyQTicPqUtPUpQs8RVPVlDokYS5Gtvd5IxsnNrn7ic0XuJDBPWldOIdK7VZRAnbh7rh7wlELXLU09chFpaYGCUticydHEkDzvwdbxDFnNdrRw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtPUpQs8RVPVlDokYS5Gtvd5IxsnNrn7ic0XuJDBPWldOIdK7VZRAnbh7rh7wlELXLU09chFpaYGCUticydHEkDzvwdbxDFnNdrRw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
 <p>四条检测加一条置信度要求。第三条下面那句实测结论来自本站的字体核对，其余为报告内容。</p>
 <p>第 1 条 · 四条里最实在的</p>
 <p>一路只取代码里的文字，一路带字体完整渲染，把渲染后看得见的字抽出来，两边比差异。这一招不依赖任何关于攻击手法的先验知识：字体、透明度、屏幕外定位，只要人看到的和代码里写的对不上，它就报得出来。</p>

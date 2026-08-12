@@ -31,7 +31,7 @@
     <p class="article-source"><a href="https://mp.weixin.qq.com/s/Lnbl3A9jTtDpEAf6RPznQQ" target="_blank" rel="noopener">查看原文 ↗</a></p>
     <div class="article-body">
 <p>原创 空格 zephyr <em>2026年2月2日 08:38</em></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883sMXWROZLR7rQX0ic1cIoV4Zib51g4ESia0hHF2Zp1ibD5aZZbVOgl7RpIQ/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883sMXWROZLR7rQX0ic1cIoV4Zib51g4ESia0hHF2Zp1ibD5aZZbVOgl7RpIQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>01 知识管理理念的转变</p>
 <p>大家好，我是空格。</p>
 <p>我关注了 40 多个海外播客，100 多个中文播客。</p>
@@ -41,7 +41,7 @@
 <p>这也是知识管理的核心矛盾： <strong>订 阅了 ≠ 阅读了 ≠ 收藏了 ≠ 消化了</strong></p>
 <p>我们知道这些内容有价值，但就是没有功夫去处理。</p>
 <p>这不是「自律问题」，也不是人的懒惰造成的， 懒惰是天性，顺从天性，不是躺平，而是找到更聪明的解决方案 。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883XbMcQhmnIPJpG6AxpXOtXNzB69Vn8e5aWm5d69eDxibVdbD7nrJ8sTg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883XbMcQhmnIPJpG6AxpXOtXNzB69Vn8e5aWm5d69eDxibVdbD7nrJ8sTg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>与其逼自己每天听两小时英文播客，不如让系统自动帮你处理。</p>
 <p>因为 Skills 的出现，我们必须改变的一个理念是： <strong>我不需要再为工具索妥协，也不需要为太多工具付费， 我们可以用 Skills 定制任何 RSS、笔记、内容推荐、阅读工具。 按你的思想来让 AI 处理信息。</strong></p>
 <p><strong>今天就从阅读开始，分享我搭建的一套完全由自己控制的信息处理模块：一套播客处理工作流。</strong></p>
@@ -51,21 +51,21 @@
 <p>今天我把这套工作流开源了。并且详细拆解每一个模块，希望你不只是可以拿去用还能够自己去定制自己的 Skills 来处理信息。</p>
 <p><strong>02 信息处理完整工作流</strong></p>
 <p>先看整体流程：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883qJ0NaiaFgkIkTdLpEbtVRJyBgiaIrT9jzsj0AkBylPftbIDz2XSOCPMg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883qJ0NaiaFgkIkTdLpEbtVRJyBgiaIrT9jzsj0AkBylPftbIDz2XSOCPMg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>这套工作流由 6 个 Skills 组成，每个 Skill 负责一个环节。我把它们串成了一个叫 <code>podcast-workflow</code> 的主控 Skill，说一句话就能跑完全流程。</p>
 <p>整个过程大概 10 分钟。我只做了两个决策：选哪个播客、要不要推送飞书，要不要制作图片。其他全部自动化。</p>
 <p><strong>03 六个 Skills 详解</strong></p>
 <p><strong>Skill 1：youtube-feed —— 播客更新监控</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883xibHxjGLEliclEkwnDibrPWhiav7mbkWBZH6Vnn4GzL6rV23uToibwfNCKg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883xibHxjGLEliclEkwnDibrPWhiav7mbkWBZH6Vnn4GzL6rV23uToibwfNCKg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>这是整个工作流的起点。我关注了 40 个 YouTube 频道，涵盖几个方向：</p>
 <p>\- <strong>AI 教育</strong> ：Andrej Karpathy、Lex Fridman</p>
 <p>\- <strong>AI 产品</strong> ：Lenny's Podcast、Peter Yang</p>
 <p>\- <strong>VC 投资</strong> ：Y Combinator、a16z、No Priors</p>
 <p>\- <strong>Vibe Coding</strong> ：Mckay Wrigley、The Pragmatic Engineer</p>
 <p>输入：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883dtdibrBSIszl4eSl1r8oxP5Drj3tibNhxJnf73WOXtERibIuEguX9fqjg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883dtdibrBSIszl4eSl1r8oxP5Drj3tibNhxJnf73WOXtERibIuEguX9fqjg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>输出：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883bVHSCn6xCMZjcY9w9OTURFs0fbHFRAREHsFH7icXhA43vKic0c83Oa0g/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883bVHSCn6xCMZjcY9w9OTURFs0fbHFRAREHsFH7icXhA43vKic0c83Oa0g/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="Feishu Docs - Image" loading="lazy"></p>
 <p><strong>这个 Skill 解决的问题是：把分散的信息源主动聚合起来。</strong></p>
 <p>你可以把自己关注的频道加进去，也可以删掉我关注的。告诉 AI 就可以让它自己更新。</p>
 <p>Skill 下载： https://github.com/zephyrwang6/myskill/tree/main/youtube-feed</p>
@@ -73,34 +73,34 @@
 <p>海外播客通常有英文字幕（自动生成或手动上传），这个 Skill 把字幕提取出来，保存成文本文件。</p>
 <p>一小时的播客，字幕大概 1-2 万字。提取只需要几秒钟。</p>
 <p>输入和输出示例：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883NWtgtiaGd7mwZItRIudKPpCpJ1bGcYcM1Hx6IfwicIIWTbBKXDK5xwUg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883NWtgtiaGd7mwZItRIudKPpCpJ1bGcYcM1Hx6IfwicIIWTbBKXDK5xwUg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>Skill 下载： https://github.com/zephyrwang6/myskill/tree/main/youtube-transcript-cn</p>
 <p><strong>Skill 3：content-digest — 内容提炼</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883lZslXbOVjj70N880iaBicicfBMrcJs04Sw8GHPIA1n6JfUbpiacWVISRJA/640?wx</em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883lZslXbOVjj70N880iaBicicfBMrcJs04Sw8GHPIA1n6JfUbpiacWVISRJA/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>这是整个工作流最核心的部分。把 1-2 万字的字幕扔进去，它会输出：</p>
 <p>1.<strong>一句话标题</strong> ：抓住最反直觉的观点</p>
 <p>2.<strong>嘉宾介绍</strong> ：2-3 句话，带具体数据</p>
 <p>3.<strong>10-15 个核心观点</strong> ：每个观点 2-4 句话，有完整的逻辑链条</p>
 <p>4.<strong>精华片段</strong> ：保留对话感的访谈摘录</p>
 <p>示例：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883HdvtmpkyhdmRcXZeY8Tl10xGnOVVaibK87XITuia0xywia5q2I6sLGJqw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883HdvtmpkyhdmRcXZeY8Tl10xGnOVVaibK87XITuia0xywia5q2I6sLGJqw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>这个 Skill 我调了很久的 prompt。核心是：让 AI 站在「我的」的视角，以我想要看想要创作的方向去理解内容。</p>
 <p>Skill下载： https://github.com/zephyrwang6/myskill/tree/main/content-digest</p>
 <p><strong>Skill 4：feishu-wiki —— 飞书知识库</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883hJfxb0627CjdHwfrHdawvOsWSv0M40hvtBM3XbmOmMk2fMG9JRn0sw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883hJfxb0627CjdHwfrHdawvOsWSv0M40hvtBM3XbmOmMk2fMG9JRn0sw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>处理好的内容自动保存到飞书知识库。</p>
 <p>我在飞书建了一个「每日播客推荐」文件夹，所有处理过的播客都存在这里。时间久了就是一个可搜索的播客知识库。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy88368yFbzmjMr1MAL5bCo5IWM1E3QJsp6pGQc17jTQngFqPiagicmoJRcrQ/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy88368yFbzmjMr1MAL5bCo5IWM1E3QJsp6pGQc17jTQngFqPiagicmoJRcrQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>另外，飞书还可以作为网站的 CMS 系统。我有一个播客解读网站（还未公开），内容就是从飞书知识库自动同步的。更新飞书文档，网站自动更新。</p>
 <p>这个Skill 含密钥就先隐藏了，有需要可以文末联系我。</p>
 <p><strong>Skill 5：md2img —— 图片生成</strong></p>
 <p>最后一步是生成小红书卡片。</p>
 <p>这个 Skill 把 Markdown 内容转成精美的图片海报，3:4 比例，自动分页，每页 4-5 个观点。示例：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883IFCEyGLjOndGPYQibYNFgaWp3kqT37ItNiaRUg5u0e1clgzTBOkLoILQ/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883IFCEyGLjOndGPYQibYNFgaWp3kqT37ItNiaRUg5u0e1clgzTBOkLoILQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>生成图片后，我只需要打开小红书 App，手动发布就行。</p>
 <p>Skill 下载： https://github.com/zephyrwang6/myskill/tree/main/markdown-to-image</p>
 <p><strong>Skill 6：podcast-workflow —— 主控 Skill</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883GZKosIhgcCYtECwhpxQxHqLwtRiaibf0QzhI3WlOiaUsPAXdsxKBrjAvw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883GZKosIhgcCYtECwhpxQxHqLwtRiaibf0QzhI3WlOiaUsPAXdsxKBrjAvw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>上面 5 个 Skill 是独立的模块，podcast-workflow 把它们串起来。</p>
 <p>你可以单独使用任何一个 Skill，也可以用主控 Skill 一句话跑完全流程。</p>
 <p>主控 Skill 做的事情很简单：</p>
@@ -108,12 +108,12 @@
 <p>相信看完这些，你也能够动手去定制自己的信息处理 skills 了吧， Skill 下载： https://github.com/zephyrwang6/myskill/tree/main/podcast-workflow</p>
 <p><strong>Clawdbot 提醒：让工作流主动找我</strong></p>
 <p>为了不忘记每天检查播客更新，我把这个工作流接入了 Clawdbot。 每天早上 9 点，Clawdbot 会主动发消息提醒我：今天有 3 个播客更新</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy88363ibINssprgHI3aibwBS7PkU2biafL5D6AUiahNrMP95w9Vcr7iawqWSBkQ/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy88363ibINssprgHI3aibwBS7PkU2biafL5D6AUiahNrMP95w9Vcr7iawqWSBkQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>我在手机上，用飞书聊天就能随时让它去处理。通勤的时候、吃饭的时候、等人的时候，碎片时间就能触发工作流。我不需要坐在那里像个白痴一样的看着屏幕工作了。</p>
 <p>而这只是冰山一角的一角。</p>
 <p><strong>04 扩展：不止播客</strong></p>
 <p>这套工作流的模式可以复用到很多场景。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883AickIusz2r9j5SVSSdreiccjiaqW1JvrsBblIzA5LvkGptASTzdy4aZQg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=14" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883AickIusz2r9j5SVSSdreiccjiaqW1JvrsBblIzA5LvkGptASTzdy4aZQg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=14" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>同样的思路，我用在了 X、Newsletter 上。The Pragmatic Engineer、Lenny's Newsletter、Benedict Evans……这些我订阅了但从来看不完的邮件，现在也能自动处理了。</p>
 <p>X 也一样。@karpathy、@ylecun 这些博主经常发长 thread，以前我总是刷到一半就划走了。现在系统会自动同步我收藏的推文、整理、输出选题灵感。</p>
 <p>定制化的好处是，AI 会以我的视角去理解，提取对我有启发的点，作为创作素材。</p>
@@ -124,7 +124,7 @@
 <p>这个系统的模块我基本已经完善如下，可以做到随时随地为我产出内容：</p>
 <p>它不是一个具体的产品，而是 <strong>将所有先进工具串联打通，赋予自己去创作的自然生长系统</strong> 。</p>
 <p>整个系统分了几个模块：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883efvOVY7tnf16s7bDIcUOzbkBSsGWrrs9PQLRNuY5X4g9Uc20oTiclDQ/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=15" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883efvOVY7tnf16s7bDIcUOzbkBSsGWrrs9PQLRNuY5X4g9Uc20oTiclDQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=15" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>\- <strong>信息获取模块</strong> ：播客、Newsletter、Twitter、技术博客</p>
 <p>\- <strong>规则模块</strong> ：文件夹结构，命名方式，季度项目和计划</p>
 <p>\- <strong>技能模块</strong> ：各种 Skills，像乐高积木一样组合</p>
@@ -137,9 +137,9 @@
 <p>06 最后</p>
 <p>AI 不只是杠杆放大你的能力边界 ，AI 让你拥有了以前 只 有公 司才有 的生 产资料和劳动力。</p>
 <p>你原来只能关注 5 个播客，现在能关注 50 个。你原来一天只能生产 1 篇内容，现在能处理 10 篇。你可以雇佣 100 个 Agents 为你的业务 24 小时不停的工作。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883UzKOl09N5k0ic9pcxA8uGf8HY55SPvPHdLElgXyKY4ib3iaLeFibsVMOAg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=16" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy883UzKOl09N5k0ic9pcxA8uGf8HY55SPvPHdLElgXyKY4ib3iaLeFibsVMOAg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=16" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>借用我自己的签名收个尾： Simple living, Lazy creating。 简单生活，懒惰创作。希望你也能找到属于自己的信息处理方式，在 AI 时代活得更轻松一点。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy8831bU71RFcsGxwb9vbicIFu0mGSFBALztENvs4FdZSggM9Wl2ibUjmYFWg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=17" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/PEeV2JtM1K5vny6cv9FeEIvkYlPhy8831bU71RFcsGxwb9vbicIFu0mGSFBALztENvs4FdZSggM9Wl2ibUjmYFWg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=17" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>如果这篇文章对你有帮助，欢迎分享给需要的朋友。有问题可以评论区交流。</p>
 <p>每天好心情</p>
 <p>继续滑动看下一个</p>

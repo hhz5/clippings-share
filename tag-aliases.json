@@ -1,7 +1,17 @@
 {
   "_comment": "标签合并映射表（可维护）。generate.py 在归一化标签时读取本文件。",
   "remove": [
-    "clippings"
+    "clippings",
+    "李继刚",
+    "猫叔的AI",
+    "云中江树",
+    "数字生命卡兹克",
+    "银海inhai",
+    "AI产品黄叔",
+    "小歪的AI工具箱",
+    "船长AI视界",
+    "宝玉",
+    "空格的键盘"
   ],
   "aliases": {
     "Nano-Banana Pro": "Nano Banana Pro",

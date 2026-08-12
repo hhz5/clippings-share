@@ -33,7 +33,7 @@
 <p>AI沃茨 卡尔的AI沃茨 <em>2026年7月6日 09:19</em></p>
 <p>满打满算，Fable5还剩不到48小时就从订阅计划里下线了，</p>
 <p>整个周末我都在把额度刷刷刷满，剩下最后20%的时候在X上看到一个开发者发的一条长贴，他说他把Fable 5的行为模式，再结合Claude团队开源的Fable5提示语技巧，提炼成了一份协议，贴给Opus 4.8用，神人来的。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/VNz1x8bH8Fzj8Ud4facLnry9ibNq2u7NSNwOI4BPIEAIadGSBqXP9NK7DFum7pJ2hIkZ1grzesvxWmqCYaticqcTTccaxgZ7ZsN5wtic10Ggvo/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8Fzj8Ud4facLnry9ibNq2u7NSNwOI4BPIEAIadGSBqXP9NK7DFum7pJ2hIkZ1grzesvxWmqCYaticqcTTccaxgZ7ZsN5wtic10Ggvo/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Image" loading="lazy"></p>
 <p>顺着这条线往下挖，我用了两天时间把中英文圈十几篇最有料的实战帖全翻了一遍，全变成 prompt，让你现在立刻马上就跑起来的。</p>
 <p>我把筛完的东西按稀有度排了个序。先给结论。</p>
 <p>就剩那么点时间，Fable 5值得做的事就两类，</p>
@@ -42,7 +42,7 @@
 <p>其他所有用法都是这两类的子集。</p>
 <p>先说第一类，因为它效果更夸张。</p>
 <p>Superpowers的作者Jesse Vincent用Fable5做出了6.0版本，这个项目里的头脑风暴brainstorming Skill属于是入门Agent必装的一个Skill了，</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/VNz1x8bH8FwQicULlRpL4eAfSVAJs1b3ibZiaTDsXcUBuVbnRQ9rI9hk8mGOLh8Y1KYX8g7jONJpewhrwzsWCt2PhKQb3dFVsmV4RRqNKcc9jc/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwQicULlRpL4eAfSVAJs1b3ibZiaTDsXcUBuVbnRQ9rI9hk8mGOLh8Y1KYX8g7jONJpewhrwzsWCt2PhKQb3dFVsmV4RRqNKcc9jc/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Image" loading="lazy"></p>
 <p>他做的就是睡觉前给 Fable 写了一个/goal提示语，翻译成中文就是，</p>
 <pre><code class="language-bash">## goal目标提示语
 /goal 任务完成后，再专门跑一轮成本优化研究，让Opus负责统筹，持续记录“我为什么这么试、预期会怎样、实际结果如何”。
@@ -70,7 +70,7 @@
 遍历我Claude所有的历史聊天记录，重复提示，文档，项目，Skills和工作流程。然后回答：
 1、我最常使用Claude做什么？2、哪些任务我总是重复地做？3、哪些指令我总是手动重写？4、哪些工作流程应该变成可重用的Skills？5、过去做了哪些事的方法和思路是错的，以你的视角应该要避免？6、Opus应该知道什么，这样它就能给我90%的Fable 5体验？
 把所有这些转化为Claude Skills、使用指南、工作流程模板，以及给Opus的系统指令。</code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/VNz1x8bH8FwZM6jiawlqbqia4RXZSpLMcITiaa6HquvPDgyLEzplicSJwDtPHrkKzZ8QTdFZ9JDuVz6FD8YwJKxdSwqcEHNGDW8guv93jY1dGUw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/VNz1x8bH8FwZM6jiawlqbqia4RXZSpLMcITiaa6HquvPDgyLEzplicSJwDtPHrkKzZ8QTdFZ9JDuVz6FD8YwJKxdSwqcEHNGDW8guv93jY1dGUw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="Image" loading="lazy"></p>
 <p>那如果之前被封了很多次账号，也没有从被封账号的历史对话记录成功恢复自己的对话，又想要得到一个表现还不错的工作流程的话，那我们就要回到开头的开发者hiromi maeo的事了。</p>
 <p>他从Anthropic的Fable 5文档里，反向提炼出了一份能让Fable5表现更好的行为规范，</p>
 <pre><code class="language-shell">## 行动规范提示语
@@ -87,7 +87,7 @@
 对于任何编码任务，自行判断选择低算力模型并在subagent中运行。小任务交给便宜模型，重任务保留全力运行。</code></pre>
 <p>我上周开源的搭子Skill也是同样的逻辑，</p>
 <p>让Fable5在出计划的步骤来分配哪个阶段用哪个Agent，claude code可以把codex也拉进来干活，codex也可以让Fable5在出计划的时候参与进来。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/VNz1x8bH8Fx00hB6ncRic7ibouxeOYyY3nIQH7Ok9HTYh1RnRL5qXLwa8xibmdD5xQ8WuRcABIvpcedicUqpsuNSI0kyIFEVIafnyb3ibZP8osoA/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/VNz1x8bH8Fx00hB6ncRic7ibouxeOYyY3nIQH7Ok9HTYh1RnRL5qXLwa8xibmdD5xQ8WuRcABIvpcedicUqpsuNSI0kyIFEVIafnyb3ibZP8osoA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="Image" loading="lazy"></p>
 <p>但是还有人更加极端，直接所有执行都走codex subagent，让Fable5只负责出计划和头脑风暴。</p>
 <p>API 计费之后，这种多Agent分配的打法大概率会变成主流。</p>
 <p>同样的思路，有个叫Machina的开发者把让 AI 自己判断什么时候做什么这件事，固化成了 25 个可以直接抄的 loop 工作流（就是固定的时间间隔运行某个任务），也就是说把fable5加入到自动化工作流里了。</p>
@@ -153,7 +153,7 @@ State file（状态文件）: shadow-prompt-STATE.md（记录：已测多少条�
 <p>如果想要第一时间收到推送，不妨给我个星标🌟</p>
 <p>如果你有更有趣的玩法，欢迎在评论区聊聊🤝</p>
 <p>更多的内容正在不断填坑中……</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx</em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/YEhakvKZjXmCDLEEW1wClZOVGFURjmibJmciaYLNhp0N55Y6mPiaCj01eV8yzACqDvWDhicbPm07Wu7bboATuKgAbA/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>卡尔的AI沃茨</p>
 <p>邀请你前往腾讯公益一起捐</p>
 <p>给困境儿童送关爱包</p>

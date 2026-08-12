@@ -37,24 +37,24 @@
 <p>在小说阅读器中沉浸阅读</p>
 <p>最近在 GitHub 上扒到一个项目，叫 pm-skills，作者是 phuryn ，目前已经有 18k+ star，可以说是产品经理领域最火的一套 Skill。装上用了几天，非常好用。</p>
 <p>地址：github.com/phuryn/pm-skills</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoxXGT72PIZFoXULCM2m44ibq2F0THcOw7FxtBps0iaF3vL5gqO2icb6optNutl9O7h65gRKlibhaFzXoPibia52iaEujibl6mT5ibh11IVU/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxXGT72PIZFoXULCM2m44ibq2F0THcOw7FxtBps0iaF3vL5gqO2icb6optNutl9O7h65gRKlibhaFzXoPibia52iaEujibl6mT5ibh11IVU/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>但真正让我兴奋的不是它能干什么，是它的制作 skill 的方法。</p>
 <p>它跟我之前理解的 Skill 完全不一样。除了 SKILL.md，它里面还有<strong>command、plugin、hooks</strong>三个概念。</p>
 <p>这些概念才让我认识了，什么是真正的 skill。</p>
 <p>很多人可能见过 Claude Cowork 那个插件市场，琳琅满目的，被 anthropic 或者第三方平台封装好的。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoxzD85DjT7tq9mJN9knO8mloR1KGLWCyc4fxEpR93ibQNCq9lrjGAiaBueWNTKVo4wlztcjV5rZm5qgAUNJHzfslkHUnQ3Glp1Gg/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxzD85DjT7tq9mJN9knO8mloR1KGLWCyc4fxEpR93ibQNCq9lrjGAiaBueWNTKVo4wlztcjV5rZm5qgAUNJHzfslkHUnQ3Glp1Gg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>但搞不清楚<strong>Plugin 插件跟 Skill 到底什么关系</strong>。</p>
 <p>也有不少朋友在讨论Skill 的上一层是什么，散落在各处的几十个 Skill 该怎么组织。</p>
 <p>其实答案早就被 Anthropic 定义好了。</p>
 <p><strong>Skill 的上一层就是插件。插件包含了 skill、 command、hooks 这些概念，</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoy6e8g5UZkiakShDjBo1mAEsicDL9g29rIiaibSC1yHWTdH5BDRXGatxSJby4HOPrBB9DDwec7OBPicnJppzZDzKJ7UnWwPRghlRer0/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoy6e8g5UZkiakShDjBo1mAEsicDL9g29rIiaibSC1yHWTdH5BDRXGatxSJby4HOPrBB9DDwec7OBPicnJppzZDzKJ7UnWwPRghlRer0/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>这篇文章借 pm-skills 这个项目，把插件、命令、Hooks、Skill 这四样东西一次性讲清楚。</p>
 <p>01</p>
 <p>插件的文件夹构成长什么样？</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCowZiahKJIuGvZ7icCforsdo45oIGtA847RE4ZJmn9unYckic7ibDqicvf9ku9IlMauylTScr7A2HC5O8Zhib7HqN9oVH2tKSiamFR7MHA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowZiahKJIuGvZ7icCforsdo45oIGtA847RE4ZJmn9unYckic7ibDqicvf9ku9IlMauylTScr7A2HC5O8Zhib7HqN9oVH2tKSiamFR7MHA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>把 pm-skills 仓库拉下来打开，第一感受是它跟我们熟悉的 Skill 仓库不一样。</p>
 <p>熟悉的 Skill 仓库通常是这样：根目录下一堆文件夹，每个文件夹一个 SKILL.md，配几个参考资料和脚本。一字排开，平铺。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCowz1YWsoyXRsIlTOQonGh2KkhRtwtl86xEywApWJ9PE0PUmHXl0Y4H9uwupyGJoDTtWAhXS6ia7EKwMQtEDaibozkIRU9PJiblf1E/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowz1YWsoyXRsIlTOQonGh2KkhRtwtl86xEywApWJ9PE0PUmHXl0Y4H9uwupyGJoDTtWAhXS6ia7EKwMQtEDaibozkIRU9PJiblf1E/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>pm-skills 是分层的。根目录下是 9 个文件夹，对应 9 个插件，</p>
 <ul><li>pm-product-discovery 管产品发现</li><li>pm-product-strategy 管战略</li><li>pm-execution 管交付</li><li>pm-marketing-growth 管增长</li></ul>
 <p>诸如此类。每个插件文件夹内部又有一个固定结构：一个 plugin.json 描述这个插件叫什么、版本号、作者；一个 commands 文件夹，里面放命令剧本；一个 skills 文件夹，里面才是熟悉的原子 Skill。</p>
@@ -64,7 +64,7 @@
 <p>以前用 Skill，是 AI 自己挑。我输入一句话，Claude 看哪个 Skill 的描述最匹配就加载哪个。这种用法的问题是 Skill 一多就乱，几十个 Skill 摆在那，AI 经常挑错，或者干脆挑不出来。我自己也老忘记某个 Skill 叫什么名字。</p>
 <p>pm-skills 插件里多了一种用法：command。</p>
 <p>command 用一条斜杠命令触发。<strong>在 Claude 里输入 /discover，它会自动跑一连串 Skill</strong>。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCowuKm8O7YDudAAdodF1Ciaq1qm9aqicKqTRppdVQQyMvJ4K1I1gB2ZHvvrGWPJPYwuP0cAGZibDA14JtIlX6micxfxwdXMibStOJKEk/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowuKm8O7YDudAAdodF1Ciaq1qm9aqicKqTRppdVQQyMvJ4K1I1gB2ZHvvrGWPJPYwuP0cAGZibDA14JtIlX6micxfxwdXMibStOJKEk/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>先 brainstorm-ideas 帮我发散想法，再 identify-assumptions 拆出每个想法背后的假设（价值、可用性、可行性、生命力四类），再 prioritize-assumptions 给假设排优先级，最后 brainstorm-experiments 设计验证实验。</p>
 <p>四个 Skill 自动接力，前一个的输出是后一个的输入。</p>
 <p>我只需要回答它的问题，整条产品发现的流程它自己跑完。</p>
@@ -82,7 +82,7 @@
 <p>Hooks 是强制性的，挂在 Claude Code 的生命周期事件上，到点就触发，AI 想不想都没得选。</p>
 <p>打开一个插件里的 hooks 文件夹，通常是这几样东西：一个 hooks.json 是入口，声明"在什么时机，跑哪个脚本"。</p>
 <p>.sh 是被调起来跑的脚本，名字一看就知道干啥的，比如 session-start.sh、sdd-cache-pre.sh、simplify-ignore.sh。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCozmaQNRpC3XuztcwNKNNGHQtXC0xVm5E6QQKXWia9UxbzjSFuR47yhdQr9tAHPLhtoZwtUlMcpWQYoKUoL0cflbJj9JJJWTXh7g/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozmaQNRpC3XuztcwNKNNGHQtXC0xVm5E6QQKXWia9UxbzjSFuR47yhdQr9tAHPLhtoZwtUlMcpWQYoKUoL0cflbJj9JJJWTXh7g/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>可能还有几个 .md 是给脚本看的参考资料或缓存。</p>
 <p>举几个我打算给自己挂的 Hook。</p>
 <ul><li>写作场景：session 开启时跑一个脚本把写作风格.md 的内容 cat 出来塞进上下文，AI 写啥都自带我的调性。</li><li>索引同步：AI 每次写完文章自动跑一个脚本把元数据追加进 articles\_index.jsonl，不用我手动维护。</li></ul>
@@ -92,14 +92,14 @@
 <p>讲完 command 和 Hooks，再回头看 plugin 这一层。</p>
 <p>plugin 就是 command、skills、hooks 这几样东西的上级目录。</p>
 <p>一个 plugin 文件夹里面有四样东西：plugin.json 是自我介绍（名字、版本、作者、依赖、属于什么领域）；commands 文件夹放所有命令剧本；skills 文件夹放原子 Skill；hooks 文件夹放生命周期钩子。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoxGic2MFp4RUogIG1TWCe3Ma0LKt2l3OTp7O9CsyiaxiaKWYxwDgRvickZoALc8FWJQiaR3ByarCMngeKCiaF6XtnpHuNED0V8Pxs3BI/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxGic2MFp4RUogIG1TWCe3Ma0LKt2l3OTp7O9CsyiaxiaKWYxwDgRvickZoALc8FWJQiaR3ByarCMngeKCiaF6XtnpHuNED0V8Pxs3BI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>Claude Cowork 那个插件市场展示的就是这个，每一项都是一个 plugin。</p>
 <p>你点一下安装，整套 command + skill + hook 就进了你的 Claude。</p>
 <p>Anthropic 自己也建了官方仓库 anthropics/claude-plugins-official 统一管插件。第三方市场已经爆炸，tonsofskills 网站， 一个站索引了 425 个 plugin、2810 个 skill。</p>
 <p>到这里整个体系就清楚了<strong>。Skill 是原子，command 是工作流，Hooks 是强制约束，plugin 是发行单位。</strong>Anthropic 在 2026 年正式把这套定义成了 Skill 2.0。我们这两年熟悉的"单 md 文件 Skill"是 1.0。</p>
 <p>05</p>
 <p>对我们做 Skill 的四个参考</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCozQZunjrpLXFk9AAbHyxLh8Z7ibO1CtA7rribDhutEBNTZ6RwzzxdKp9bNJvewYR9RZJ1keGgiajRJKWkPBKdRWUQTiaNTjNZfAgmA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozQZunjrpLXFk9AAbHyxLh8Z7ibO1CtA7rribDhutEBNTZ6RwzzxdKp9bNJvewYR9RZJ1keGgiajRJKWkPBKdRWUQTiaNTjNZfAgmA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>我手头有几十个 Skill 散在几个仓库里，看完 pm-skills 我准备做四件事。</p>
 <p><strong>1，不要只做一个 Skill，做一套。</strong></p>
 <p>把一个需求拆成 3-5 个原子 Skill，单独看无聊，凑成套就能被无数工作流复用。</p>
@@ -118,15 +118,15 @@
 <p>地址：github.com/zephyrwang6/allSkills/tree/main/skill-plugin-architect</p>
 <p>它可以扫描你本地所有的 Skill，按领域聚类，自动推荐 Plugin 结构、Command 工作流、Hooks 自动化，全部确认后一键搬迁。</p>
 <p>它的工作流分三段。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCowuAMGca0500zDeiaCtBZBblArzboSh5J8GibHg0UeAlRzMpBXGQlDgDqiaVDrCUAg2ZFAWHRiayE7E0hK7yYRwrqf6OnKicWXOHEmo/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=9" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowuAMGca0500zDeiaCtBZBblArzboSh5J8GibHg0UeAlRzMpBXGQlDgDqiaVDrCUAg2ZFAWHRiayE7E0hK7yYRwrqf6OnKicWXOHEmo/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="飞书文档 - 图片" loading="lazy"></p>
 <p><strong>第一段先扫描。</strong></p>
 <p>安装好这个 Skill，你只要说：整理我的 skill，就可以</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCowLicBibPoRwjdicoG6hRUzQK98ZMpnj0YAWIIWyAicTevbuyndytiawZD3PKsaPD4FbGVNOc1kqYQdmDV5N960WSjxG2YB1yG6L1nk/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowLicBibPoRwjdicoG6hRUzQK98ZMpnj0YAWIIWyAicTevbuyndytiawZD3PKsaPD4FbGVNOc1kqYQdmDV5N960WSjxG2YB1yG6L1nk/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>读 ~/.claude/skills/ 下所有 Skill 的 description，按规则聚类成 8-12 个 Plugin</p>
 <p><strong>第二段出方案。</strong></p>
 <p>给每个 Plugin 推荐 3-5 条高频 Command（比如写作类的 /new-article 把选题、起草、审稿、配图串起来），再根据 skill 来推荐 制作 Hook（比如 session-start 自动加载写作风格.md、session-end 自动追加 daily\_log.jsonl）。</p>
 <p>最后输出一张完整的目录树，标好每个 Plugin 装多少 Skill、几条 Command、几个 Hook。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoxO1uB1MDY5icx5JwibIxdawn4LPmcOHsF2wL9yIV4r9Kt964eD8GBm0EUzNBRXAu72kKceuvL9TFyhKedg5ialCEJPZYLNMftVicY/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=11" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxO1uB1MDY5icx5JwibIxdawn4LPmcOHsF2wL9yIV4r9Kt964eD8GBm0EUzNBRXAu72kKceuvL9TFyhKedg5ialCEJPZYLNMftVicY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="飞书文档 - 图片" loading="lazy"></p>
 <p><strong>第三段动手</strong></p>
 <p>确认后，这个 skill 就开始动手制作 plugin.json、Command 骨架、Hook 骨架。</p>
 <p>以后你就可以使用 command 来调用一系列的 skill 了。</p>
@@ -136,7 +136,7 @@
 <p>全球几百万个 plugin 沉淀下来，每一个都是"任务怎么拆、调什么工具、按什么顺序、出什么结果"的高质量结构化样本。</p>
 <p>这些会成为下一代模型最精准的训练数据。</p>
 <p>我们今天搭的每一个 plugin，都在为下一代模型写训练教材。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoxAIetLDibze6yvryUicAsTGNOw4pjRXAyicXFk5NooacTYxHfKXYpHMAhLJkqcuCKXGDyibRaiaut9gC1TKP7CIz6ADA7UaR5RIMho/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=12" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoxAIetLDibze6yvryUicAsTGNOw4pjRXAyicXFk5NooacTYxHfKXYpHMAhLJkqcuCKXGDyibRaiaut9gC1TKP7CIz6ADA7UaR5RIMho/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>每一个在用 AI 的人都是 AGI 路上的贡献者。</p>
 <p>感谢阅读。 如果觉得有用，欢迎点赞、分享、转发。我们下期见。</p>
 <p>✍️：空格</p>

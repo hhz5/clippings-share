@@ -47,7 +47,7 @@
 <p>这条工作流的价值很直接：</p>
 <ul><li>自动拉取未履约订单</li><li>逐单处理并完成 Fulfillment 标记</li><li>把发货后还要“点点点”的人工环节直接删掉</li></ul>
 <p>参考模板：</p>
-<ul><li>Automatic Shopify Order Fulfillment Process（n8n 模板） <img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOHPKAU5LFWNVNDk27Im4SUG8ibChrwALleIfSYNHEn6ZrFlCcjE1nVMA/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
+<ul><li>Automatic Shopify Order Fulfillment Process（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOHPKAU5LFWNVNDk27Im4SUG8ibChrwALleIfSYNHEn6ZrFlCcjE1nVMA/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
 <p>自动把 Shopify 里未履约（unfulfilled）的订单执行 Mark as Fulfilled （标记已履约）。</p>
 <ul><li>解决什么痛点：</li></ul>
 <p>仓库/3PL 已发货但后台没点已履约，客户看到状态不更新，售后压力上来。</p>
@@ -61,7 +61,7 @@
 <p>这条工作流把三个动作串起来：</p>
 <ul><li>同步订单数据到 Google Sheets 做统一台账</li><li>Slack 推送订单/库存关键变更</li><li>Gmail 触发反馈邮件，把评价/售后前置</li></ul>
 <p>参考模板：</p>
-<ul><li>Automate E-commerce Orders, Inventory & Feedback with Slack, Sheets & Gmail（n8n 模板） <img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOeBVjYflfdpLRaPLQJavkiajuPdkpFt8MSXvesMdYkkfpe5HQzibNjQcw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
+<ul><li>Automate E-commerce Orders, Inventory & Feedback with Slack, Sheets & Gmail（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOeBVjYflfdpLRaPLQJavkiajuPdkpFt8MSXvesMdYkkfpe5HQzibNjQcw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
 <p>把订单通知、低库存提醒、发货后回访三件事做成一个运营中枢（作者称 E-commerce Operations Hub ）。</p>
 <ul><li>包含 3 条子流程（模板自带）：</li></ul><ul><li>A 新订单 → 发货团队通知：</li></ul>
 <p>通过 Webhook 接收新订单，解析订单字段，然后发到 Slack 或邮箱。</p>
@@ -77,11 +77,11 @@
 <p>这条工作流通常包含：</p>
 <ul><li>定时任务（每天/每小时）</li><li>从表格读取监控清单（SKU / URL / 阈值）</li><li>抓取页面价格（Web scraping）</li><li>触发告警（Telegram / Discord）</li></ul>
 <p>参考模板（选一个你顺手的告警渠道）：</p>
-<ul><li>Competitor Price Monitoring with Web Scraping, Google Sheets & Telegram（n8n 模板） <img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzObDgZwYRtb4utAibQjW8uuRqiaghAly23K8icjo6n8jibe9CdibNmJKeklxw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
+<ul><li>Competitor Price Monitoring with Web Scraping, Google Sheets & Telegram（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzObDgZwYRtb4utAibQjW8uuRqiaghAly23K8icjo6n8jibe9CdibNmJKeklxw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
 <p>用网页抓取 + 表格台账 + Telegram 提醒实现一个竞品价格监控系统。</p>
 <ul><li>工作流怎么跑（模板原文）：</li></ul><ul><li>每天定时跑一次</li><ul><li>从 Google Sheets 读监控清单（product\_url + last price）</li><li>逐条 URL 抓取当前价格（用 CSS selector 从页面里抽价格）</li><li>对比 last\_price，计算涨跌幅</li><li>若发生变化：</li></ul><li>发 Telegram 报警（Price Drop / Price Hike）</li><ul><li>把变化记录写入 price\_tracking 表（历史曲线）</li><li>更新 master 表，把 current\_price 写回去，作为下次对比基线</li></ul><li>你需要准备的东西：</li></ul>
 <p>Google Sheets（至少两张表：product\<em>data、price\</em>tracking）+ Telegram Bot token + chat\_id + 目标站点可用的 CSS selector。</p>
-<ul><li>https://n8n.io/workflows/4640-competitor-price-monitoring-with-web-scrapinggoogle-sheets-and-telegram</li><li>Competitor Price Monitoring with Web Scraping, Google Sheets & Discord Alerts（n8n 模板） <img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOiaVG5BLYhP06c1RVLs7ibAibByPQ6CaiamiaSrDKuafNckl5yaBr66XX7HA/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
+<ul><li>https://n8n.io/workflows/4640-competitor-price-monitoring-with-web-scrapinggoogle-sheets-and-telegram</li><li>Competitor Price Monitoring with Web Scraping, Google Sheets & Discord Alerts（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOiaVG5BLYhP06c1RVLs7ibAibByPQ6CaiamiaSrDKuafNckl5yaBr66XX7HA/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
 <p>和上面那条逻辑类似，只不过告警渠道换成 Discord（webhook），并且示例站点是 BooksToScrape。</p>
 <ul><li>节点结构（模板页列出来的）：</li></ul>
 <p>Schedule → Google Sheets → HTTP Request → Extract HTML → Code（清洗价格）→ If（判断是否触发）→ Discord Webhook → 更新 Sheets。</p>
@@ -102,11 +102,11 @@
 <p>这条工作流属于典型的盯着也没用，但错过就要命的事：</p>
 <ul><li>自动抓取 Amazon 商品价格</li><li>低于阈值就提醒</li><li>同时可以扩展到竞品清单，做更系统的监控</li></ul>
 <p>参考模板：</p>
-<ul><li>Track Amazon Product Prices with ScrapeGraphAI, Google Sheets & Telegram Alerts（n8n 模板） <img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzO55k7SE9ValBRlmHJicfAoicBpFTyk7RsNOxqcfcvycLnLoCMfTcDgbpg/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
+<ul><li>Track Amazon Product Prices with ScrapeGraphAI, Google Sheets & Telegram Alerts（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzO55k7SE9ValBRlmHJicfAoicBpFTyk7RsNOxqcfcvycLnLoCMfTcDgbpg/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
 <p>Amazon 价格监控 + Telegram 实时提醒，抓取部分用 ScrapeGraphAI（更擅长处理 Amazon 这种 JS 重、结构复杂的页面）。</p>
 <ul><li>工作流怎么跑（模板原文）：</li></ul><ul><li>定时触发（模板示例是每 10 分钟）</li><ul><li>从 Google Sheets 读取要监控的商品（PRODUCT/URL/MIN PRICE）</li><li>对每个商品用 ScrapeGraphAI 抓取当前价</li><li>如果当前价 < 表里的 MIN PRICE：</li></ul><li>更新表格 MIN PRICE 和日期</li><ul><li>发 Telegram：提醒刷新最低价并附商品链接</li></ul><li>你需要准备的东西：</li></ul>
 <p>Google Sheets（可复制模板表格）+ ScrapeGraphAI API key + Telegram Bot token + chatId。</p>
-<ul><li>https://n8n.io/workflows/10115-track-amazon-product-prices-with-scrapegraphai-google-sheets-and-telegram-alerts/</li><li>Track Amazon Prices & Monitor Competitors with Apify and Google Sheets（n8n 模板） <img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOyJPS7DZJWkqhNMUornZNaV8Vo329lCIj4vRm8wSPYwJcH2xrqVMtKw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
+<ul><li>https://n8n.io/workflows/10115-track-amazon-product-prices-with-scrapegraphai-google-sheets-and-telegram-alerts/</li><li>Track Amazon Prices & Monitor Competitors with Apify and Google Sheets（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzOyJPS7DZJWkqhNMUornZNaV8Vo329lCIj4vRm8wSPYwJcH2xrqVMtKw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
 <p>面向 Amazon 卖家的日更价格数据库工作流：用 Apify 抓你自己和竞品的价格，然后每天写回 Google Sheets。</p>
 <ul><li>适用场景（模板页列的 Use Cases）：</li></ul><ul><li>监控自家产品价格</li><ul><li>监控多个竞品卖家的价格变化</li><li>做 Buy Box 相关的每日审计（对比卖家报价）</li><li>从 10 个 URL 扩展到 1000+ URL 的规模化盯盘</li></ul><li>节点结构（模板原文）：</li></ul>
 <p>Schedule → Google Sheets 读行 → Loop → Apify Actor 跑爬虫 → HTTP Request 拉结果 → JS 清洗/抽字段 → Update Sheet 写回。</p>
@@ -120,7 +120,7 @@
 <p>这条工作流干的事很朴素：</p>
 <ul><li>Zendesk 出新工单</li><li>用模型做摘要/情绪/优先级判断</li><li>关键工单直接推送到 Slack</li></ul>
 <p>参考模板：</p>
-<ul><li>Prioritize Zendesk tickets with GPT-4 analysis and Slack alerts（n8n 模板） <img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzO0kC7sHxNuQ15BoIWC6ibVNibQoBicwjcDSuyA5S6z4qQOsBtiaBiaWvnAgQ/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
+<ul><li>Prioritize Zendesk tickets with GPT-4 analysis and Slack alerts（n8n 模板） <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/GGtEicTEYOz2KHewBf5Mboic5DI4KJgjzO0kC7sHxNuQ15BoIWC6ibVNibQoBicwjcDSuyA5S6z4qQOsBtiaBiaWvnAgQ/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></li><li>它是干什么的：</li></ul>
 <p>Zendesk 新工单进来后，用 GPT-4 （原模板用的是gpt4，可以换一些新的模型）自动判定紧急程度（1-5 分），把高优工单推到 Slack，并回写 Zendesk 的优先级和 AI 解释。</p>
 <ul><li>解决什么痛点：</li></ul>
 <p>跨境售后里催发货/退款/拒付这种工单，表面都一样，但严重程度不一样。人工分拣慢了就会被差评、拒付、平台处罚。</p>

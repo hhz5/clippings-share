@@ -36,20 +36,20 @@
 <p>去阅读</p>
 <p>在小说阅读器中沉浸阅读</p>
 <p>两年前，Andrej Karpathy 发过一条很有意思的推文。他想把自己 2 小时 13 分钟的 tokenizer 教学视频，自动转换成一本书的章节，或者一篇关于 tokenizer 的博客。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ZlwY8rlDcFMtBckqTW5icBXce7bKPibwiaKDueVEYNOk0IosiajhkcVLeQiaOlOqZFrBfWOBa09uslpzxEj4iaP6ejTw8aaqYFWrnxhB7TFVwVoXw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ZlwY8rlDcFMtBckqTW5icBXce7bKPibwiaKDueVEYNOk0IosiajhkcVLeQiaOlOqZFrBfWOBa09uslpzxEj4iaP6ejTw8aaqYFWrnxhB7TFVwVoXw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>这件事当时我也关注过，还动手尝试过。那时候比较自然的实现流程大概是这样：</p>
 <ol><li>1\. 用 Whisper 给视频转写；</li><li>2\. 把视频切成“图像 + 文本”对齐的小段；</li><li>3\. 用 LLM 一段段改写成文章；</li><li>4\. 导出成页面，并给原视频片段加引用链接。</li></ol>
 <p>这个方案听起来很合理，也确实能做。但问题是：<strong>效果往往不够稳定，因为整条流水线的每一步都在丢信息。</strong></p>
 <p>ASR（自动语音识别），只留下了“说话的人说了什么”，但丢掉了语气、停顿、背景音和现场节奏；LLM 只能读转录稿，看不到屏幕上的代码、图表、PPT 和 UI；配图又是另一个独立任务，要么人工挑帧，要么再引入视觉模型做画面理解。最后还要把文字、时间戳、截图重新对齐。</p>
 <p>这就像请一个人只听课堂录音写笔记，再让另一个人只看 PPT 截图挑插图，最后让第三个人把两份结果拼起来。每个人都只拿到了一部分上下文，出错很正常。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/ZlwY8rlDcFPrGEFTPMRwuNGP2PyFRKDlXcicOEkN2T4W2EoibhGA4S0rklkgrsvNSKlNXgkDCz4Z9dGzoZ7eia0OWEC8JczxGgJoPLLzh9ib9qQ/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/ZlwY8rlDcFPrGEFTPMRwuNGP2PyFRKDlXcicOEkN2T4W2EoibhGA4S0rklkgrsvNSKlNXgkDCz4Z9dGzoZ7eia0OWEC8JczxGgJoPLLzh9ib9qQ/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>这件事当时虽然没完全做成，但给我留下了很深的印象。因为它代表了一类很常见的需求：<strong>我们希望有一种把视频重新整理成可阅读、可搜索、可复用知识的方式。</strong></p>
 <p>最近受邀提前测试了 Doubao-Seed-2.0-lite，我第一时间又把这件事拿出来试了一遍。</p>
 <p>Doubao-Seed-2.0-lite 是一款轻量级全模态理解模型。这里的“全模态”是指模型能够同时输入并理解视频、图片、语音和文本，并在这些信号之间做联合推理。换句话说，它不只是“看图”“听音频”“读文字”三个能力的简单相加，更可以处理那些必须音画结合才能判断的问题。</p>
-<p>Doubao-Seed-2.0-lite 模型的更多信息可以看官方的这篇文章：《<a href="https://mp.weixin.qq.com/s?__biz=MzI0NzU1NzI5NQ==&amp;mid=2247535894&amp;idx=1&amp;sn=a51109608e4e41f10dfc7a1eb6f0bfd2&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">Doubao-Seed-2.0-lite 升级，支持全模态理解</a>》：</p>
+<p>Doubao-Seed-2.0-lite 模型的更多信息可以看官方的这篇文章：《<a href="https://mp.weixin.qq.com/s?__biz=MzI0NzU1NzI5NQ==&amp;mid=2247535894&amp;idx=1&amp;sn=a51109608e4e41f10dfc7a1eb6f0bfd2&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Doubao-Seed-2.0-lite 升级，支持全模态理解</a>》：</p>
 <blockquote><p><strong>全模态理解：不止看懂图文，更能听懂世界</strong></p>
 <p>新版本的 Doubao-Seed-2.0-lite 继续在视觉理解能力上大幅提升，在物理（HiPhO）、医疗（MedXpertQA）等高阶学科推理上，表现大幅超越 2 月发布的 Doubao-Seed-2.0-pro。在细粒度感知（BabyVision、WorldVQA）与具身理解（ERQA）等关键领域达到 SOTA 水平，更适合企业在高价值场景规模化部署。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ZlwY8rlDcFPibTbrrDDEYReic4C7FjQ2gBDVV8zKTIZ76XhCGfFFgo29hicFdyefrj0IKWCziaxgr23fTBaqhfZQhSMia2jO84HNe9CBOJmTgb0I/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p></blockquote>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ZlwY8rlDcFPibTbrrDDEYReic4C7FjQ2gBDVV8zKTIZ76XhCGfFFgo29hicFdyefrj0IKWCziaxgr23fTBaqhfZQhSMia2jO84HNe9CBOJmTgb0I/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p></blockquote>
 <p>视频转博客，正好就是这样一个问题。</p>
 <p>你看一场技术演讲时，不会只听声音。你会看讲者切到了哪一页 slide，会看代码里哪几行被高亮，会注意 demo 页面有没有真的跑起来，也会根据讲者的语气判断他是在介绍背景、强调风险，还是现场调试失败。一个真正好用的视频转博客系统，也应该尽量接近这种理解方式。</p>
 <p>所以这次我做的不是“先转文字，再让 LLM 改写”。我更想试的是：<strong>如果让 Agent 拥有多模态理解能力，它能不能像一个认真看完视频的技术编辑一样，把视频整理成一篇图文并茂的博客？</strong></p>
@@ -60,7 +60,7 @@
 <p>多模态模型的价值，是把“音频”“画面”“屏幕文字”“上下文文本”放到同一个理解空间里。它可以同时回答三类问题：</p>
 <ul><li>• 讲者刚才说了什么？</li><li>• 画面上现在出现了什么？</li><li>• 这两件事合在一起，真正表达的技术含义是什么？</li></ul>
 <p>这也是我这次测试 Doubao-Seed-2.0-lite 时最明显的体感：<strong>它不仅能把视频转成一段文字，还可以把视频当成一个完整的知识对象来处理。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/ZlwY8rlDcFOs5lvVibIpicASezocqg9MTAcH7cfODE1hqXJI5QXENDF8l7OGRgKLvhtZYWiatctEAJKeHnbkRopH7ibMKWvVIbzH9auFHwZ8aicw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/ZlwY8rlDcFOs5lvVibIpicASezocqg9MTAcH7cfODE1hqXJI5QXENDF8l7OGRgKLvhtZYWiatctEAJKeHnbkRopH7ibMKWvVIbzH9auFHwZ8aicw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <h2><strong>先给 Agent 装一个多模态 Skill</strong></h2>
 <p>这两年大模型领域除了多模态能力的提升，另一个重要变化是 Agent 能力也进步了很多。</p>
 <p>以前做这类工作流，需要自己写一堆胶水代码：下载视频、转码、切片、上传、调用模型、解析 JSON、截图、插图、保存文件，还要人工检查哪里失败了。现在更自然的方式，是把这些能力封装成一个 Skill，让 Agent 在需要的时候自己调用。</p>
@@ -68,7 +68,7 @@
 <p>这取决于 Agent 背后的模型。有些 Agent 底层模型主要擅长文本和代码，不一定能直接理解视频；有些模型支持图像，但不一定支持长视频和音频；也有一些模型支持得很完整，但成本可能不适合高频、批量任务。</p>
 <p>把多模态能力做成 Skill 的好处是：</p>
 <ul><li>• 如果 Agent 自身没有视频理解能力，它可以借助 Skill 获得这项能力；</li><li>• 如果 Agent 自身有多模态能力，也可以把轻量模型作为更便宜的批处理工具；</li><li>• 如果你经常做类似任务，可以把稳定下来的流程沉淀成 Skill，而不是每次从零写 prompt。</li></ul>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/ZlwY8rlDcFOtTxPAicsuWiaicGocddodpuOYyjBfGtficncgQfQHzsyycz6IU0SiaSM8lm2FUbNw6BsjpCr0b5H8kZtttojiaAh95IQAPNdkNBEwA/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/ZlwY8rlDcFOtTxPAicsuWiaicGocddodpuOYyjBfGtficncgQfQHzsyycz6IU0SiaSM8lm2FUbNw6BsjpCr0b5H8kZtttojiaAh95IQAPNdkNBEwA/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>我写了一个 Skill，叫 <code>doubao-multimodal</code>（https://github.com/JimLiu/doubao-multimodal-skill）。它里面是一个 Bun + TypeScript 写的 CLI，封装 Doubao-Seed 的多模态 chat completion endpoint。它接收本地文件或远程 URL，自动处理下载、本地文件上传到云端、视频切片、并发调用、结果合并、token 统计等工程细节。</p>
 <p>我把常用能力拆成了几类 task：</p>
 <table><thead><tr><th>task</th><th>用途</th><th>是否保留画面</th></tr></thead><tbody><tr><td><code>asr</code></td><td>纯语音转写</td><td>否，视频会先转成音频处理</td></tr><tr><td><code>asr-timestamp</code></td><td>每个字符带时间戳</td><td>否</td></tr><tr><td><code>multispeaker-asr</code></td><td>多说话人转写</td><td>否</td></tr><tr><td><code>diarize</code></td><td>说话人 + 时间段日志</td><td>否</td></tr><tr><td><code>caption</code></td><td>音视频整体描述报告</td><td>是</td></tr><tr><td><code>video-timeline</code></td><td>输出视频事件时间轴 JSON</td><td>是</td></tr><tr><td><code>keyframe-extract</code></td><td>为技术博客挑配图关键帧</td><td>是</td></tr><tr><td><code>understand</code></td><td>自定义 prompt 的通用音视频理解</td><td>是</td></tr></tbody></table>
@@ -83,7 +83,7 @@
 <pre><code>请不要直接一次性生成终稿。请按四个阶段完成：1. 先检查视频大小、时长和分辨率，必要时切片，但不要把视频退化成纯文本；2. 先输出结构化写作素材，包括主题、段落、画面证据、关键术语和不确定点；3. 基于文章内容反查视频，挑选适合作为配图的关键帧，并解释每张图服务于哪个论点；4. 用 ffmpeg 等确定性工具截图，把图片按顺序插入 Markdown，最后检查路径和标题。</code></pre>
 <p>如果你经常要做视频转文章，那就不应该每次都把这段 prompt 重新打一遍，而应该把它沉淀成 Skill：固定 task、固定输出 schema、固定重试逻辑、固定文件结构。这样 Agent 每次做的时候就不会“自由发挥”，而会调用一套可复用的工作流。</p>
 <p>下面展开讲这四步。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/ZlwY8rlDcFOnR4QA4I5t1mibWAZNlicuhxBgLfRu3k6oaENvHpAGmqKvoAtjRfeNLanFzqLUbI0O6NUYicg46PicTNicmw7sx2oQibdBzTC9BkSKc/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/ZlwY8rlDcFOnR4QA4I5t1mibWAZNlicuhxBgLfRu3k6oaENvHpAGmqKvoAtjRfeNLanFzqLUbI0O6NUYicg46PicTNicmw7sx2oQibdBzTC9BkSKc/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <h3><strong>第一步：长视频切片，但不把视频“拍扁”成纯文本</strong></h3>
 <p>模型单次输入通常会有时长和大小限制，所以 Skill 会先检查视频。如果视频超过 20 分钟或 50 MB，就用 <code>ffmpeg</code> 自动切片；如果分辨率高于 720p，就下采样到 720p；切片后并发调用模型，再按时间顺序合并结果。</p>
 <p>这里有一个关键点：<strong>切片不是转写。</strong></p>
@@ -105,12 +105,12 @@
 <p><code>description</code> 只是告诉你“画面里有什么”；<code>reason</code> 则要求模型解释“为什么这一帧应该放进文章”。换句话说，模型必须同时回答三件事：</p>
 <ul><li>• 文章这一段在讲什么？</li><li>• 视频这个时刻画面里有什么？</li><li>• 这张图能不能帮助读者理解这个论点？</li></ul>
 <p><strong>这正是传统 ASR + LLM 流水线很难做好的地方。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/ZlwY8rlDcFNGKicrbEIRla1AkcJ5ibpdQ76Q7LmDvBjNJMiczcPBAOicwl46vRf6ZJGPzLQ5TTn2icicAgzXSlH0iajrFO3Cw9bL8SdthAkc6tYEI8/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/ZlwY8rlDcFNGKicrbEIRla1AkcJ5ibpdQ76Q7LmDvBjNJMiczcPBAOicwl46vRf6ZJGPzLQ5TTn2icicAgzXSlH0iajrFO3Cw9bL8SdthAkc6tYEI8/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>比如生成结果里的第一张图，是视频开头的标题页：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ZlwY8rlDcFN8wRdUoukMB8mIlKkBr01juTe8PFkFQK4Xb77gDUB2etsOfia0icBsaDHbibxNhoqxYfRmlrUZj2IoHwVsxMiaKIVQ29tUIzPSiaCE/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ZlwY8rlDcFN8wRdUoukMB8mIlKkBr01juTe8PFkFQK4Xb77gDUB2etsOfia0icBsaDHbibxNhoqxYfRmlrUZj2IoHwVsxMiaKIVQ29tUIzPSiaCE/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <p>它适合作为第一张图，因为它第一次完整呈现了演讲主题，是后文所有内容的视觉锚点。</p>
 <p>再比如 GitHub Action demo 部分，模型挑到了 issue 触发、Action run、todo list 这类画面：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ZlwY8rlDcFM9iaKjk9XciabbvTxjPX5JOHX48ib81vg4QwSabMBdxcpjDiaYb7Xpicz9iccqb7mYloTbETSUTNlO0eCNSKHFpadcJ5bHZNClxibufw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ZlwY8rlDcFM9iaKjk9XciabbvTxjPX5JOHX48ib81vg4QwSabMBdxcpjDiaYb7Xpicz9iccqb7mYloTbETSUTNlO0eCNSKHFpadcJ5bHZNClxibufw/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
 <p>这些图能帮助读者理解：Agent 会真的进入 GitHub issue、PR、runner 这套工程协作流程里，把需求推进成可 review 的代码变更。</p>
 <p>这一步也是多模态模型最有价值的地方：它会读过文章、理解过视频，再反过来选择最能支撑论点的画面。</p>
 <h3><strong>第四步：用 ffmpeg 截图，把图片插回 Markdown</strong></h3>
@@ -123,11 +123,11 @@
 <p>这次测试的视频是一段 20 分钟左右的英文技术演讲，主题是 Building headless automation with Claude Code<sup><span leaf="">[1]</span></sup>。生成出来的文章标题是：</p>
 <blockquote><p>Claude Code SDK 与 GitHub Action：把代码 Agent 接入 CI 和 GitHub 协作流</p></blockquote>
 <p>开头几段大概是这样：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/ZlwY8rlDcFNnSyOibAY0afAyAlsiaZdf9yTNjV17H1qq1PkLeHE2uyN6UrXSN9x8MKo5ezQRM7amDE9b1gw23D5DzTkicEQwES34OFQiaYl8jsM/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/ZlwY8rlDcFNnSyOibAY0afAyAlsiaZdf9yTNjV17H1qq1PkLeHE2uyN6UrXSN9x8MKo5ezQRM7amDE9b1gw23D5DzTkicEQwES34OFQiaYl8jsM/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
 <p>文章中间会穿插对应截图。例如讲到 Power-ups 功能时，配图是能直接看到 \<code>50/50\</code> 和 \<code>Skip Question\</code> 按钮的最终效果：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/ZlwY8rlDcFNGiaghXgzr2OFJD11ABhVE7hjwFtY8bOib70gSSpSdibTuB0TnicoVMiayTK16nHiclvAHohibZOwDZybWicKhulqAvoScUPeqK6s57Gs/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/ZlwY8rlDcFNGiaghXgzr2OFJD11ABhVE7hjwFtY8bOib70gSSpSdibTuB0TnicoVMiayTK16nHiclvAHohibZOwDZybWicKhulqAvoScUPeqK6s57Gs/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
 <p>讲到 Action 架构时，配图则是三层结构：Claude Code SDK、Base Action、PR Action。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/ZlwY8rlDcFPTUUtQxUiaCycTej9cbNBgcGdUiceZfegWbesYbOw9ITgaEibQqX5XSibNWMXyFONHRazbSGv61klJ8Aiac4IFTng0McLdCyXH8ROs/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/ZlwY8rlDcFPTUUtQxUiaCycTej9cbNBgcGdUiceZfegWbesYbOw9ITgaEibQqX5XSibNWMXyFONHRazbSGv61klJ8Aiac4IFTng0McLdCyXH8ROs/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
 <p>这类图片对读者很有价值。因为技术博客不仅仅是把视频“翻译成文字”，还要帮读者节省时间：该看的图直接放出来，该解释的概念重新组织，该保留的命令和术语不要漏。</p>
 <p>从读者角度看，最终得到的是一篇可以搜索、可以收藏、可以快速扫读的文章；从作者角度看，原来需要人工看视频、暂停、截图、整理大纲、改写的过程，被压缩成了一套 Agent 可以执行的工作流。</p>
 <h2><strong>这套方法的局限</strong></h2>
@@ -158,7 +158,7 @@
 <p>回头看 Karpathy 两年前那条推文，他说这个想法“feels tractable but non-trivial”。</p>
 <p>两年后，我的感受是：它仍然不是一个“丢进去就完事”的玩具任务，但已经从一个复杂的研究型流水线，变成了一个可以工程化复用的 Agent 工作流。</p>
 <p>变化的核心，不只是模型更强了，而且<strong>多模态理解开始变成一种可组合的工程原语。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/ZlwY8rlDcFPNbskjVrcro7gGbBw1FQkxXV57EvqsHzMnFLHrZfxOAFlAtQq9l6WVicasPHebqnSIwcX0LiaAtsBXKPcAMUvKIVCRRP3eU6mia8/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/ZlwY8rlDcFPNbskjVrcro7gGbBw1FQkxXV57EvqsHzMnFLHrZfxOAFlAtQq9l6WVicasPHebqnSIwcX0LiaAtsBXKPcAMUvKIVCRRP3eU6mia8/640?from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="图片" loading="lazy"></p>
 <p>以前我们会把视频拆成音频、文字、截图，再让不同模型分别处理；现在更自然的方式是让模型直接理解同一个事件的多个模态，再把结果以结构化形式交给 Agent 和工具链继续处理。</p>
 <p>豆包 Seed 2.0 Lite 0415 让我印象最深的地方也在这里：它不仅只在某个单点能力上更进一步，还把视频、图片、语音、文本放进同一个理解框架里，同时又足够轻量，适合被封装成 Skill，接入 Agent、Coding、GUI 这些真实开发流程。</p>
 <p>对开发者来说，这意味着很多过去“能想明白，但实现很麻烦”的音视频任务，<strong>开始值得重新做一遍。</strong></p>

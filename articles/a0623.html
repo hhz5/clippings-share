@@ -32,7 +32,7 @@
     <div class="article-body">
 <p>歸藏的 AI 工具箱 歸藏的AI工具箱 <em>2026年7月2日 08:20</em></p>
 <p>前段时间我做了一个 <strong>guizang-social-card-skill</strong> （https://github.com/op7418/guizang-social-card-skill）。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ofWbZTuv4DVjY9okHR3lWJ1oRmOk53hdyoxcDZFrXNpZZM9uOdicgrickl25kXibiaCNysbWia2fyoZwEKgFVnDLvuIYrAicpmPyQ1UpS7Ro4cr8Q/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVjY9okHR3lWJ1oRmOk53hdyoxcDZFrXNpZZM9uOdicgrickl25kXibiaCNysbWia2fyoZwEKgFVnDLvuIYrAicpmPyQ1UpS7Ro4cr8Q/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>它原来主要解决静态图文的问题:</p>
 <p>把文章、产品说明、截图、照片这些素材，做成小红书 3:4 图文卡片，或者公众号封面。</p>
 <p>这次给它补了一个新能力: <strong>Live Photo 生成和编辑</strong> 。</p>
@@ -85,7 +85,7 @@
 <p>，时长00:05</p>
 <p><video src="https://mpvideo.qpic.cn/0b2ezqbccaacdqab3bshnnvfftgdehgaeiia.f10002.mp4?dis<em>k=af5d527e152d57e68fe34d4359183f22&amp;dis</em>t=1782967372&amp;play<em>scene=10120&amp;auth</em>info=devjo6MwMERbxZG85nd/dXFkPxtOMz0cYGcvGGgzUDROUzk4ShwrCSwpB2sSG3JVZW4=&amp;auth<em>key=5ab52bf141300dda979eec6451cd5b20&amp;vid=wxv</em>4585719427840557057&amp;format<em>id=10002&amp;support</em>redirect=0&amp;mmversion=false" controls="">您的浏览器不支持 video 标签</video></p>
 <p>另外，陈抱一还有一个 Live Photo 开箱的栏目也可以看看，他一次只做一个动作，只展示这个产品的一个细节。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ofWbZTuv4DWX16dcb3FnDicg18bCcgX2qh7GZ0WwuGHRf907NjtUSTyhkluUMyFk93z0Uib78a5nYib3bP8bmG5wG2QZRgVTaT2uWLwLuxUJibs/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DWX16dcb3FnDicg18bCcgX2qh7GZ0WwuGHRf907NjtUSTyhkluUMyFk93z0Uib78a5nYib3bP8bmG5wG2QZRgVTaT2uWLwLuxUJibs/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <h2>适合哪些场景</h2>
 <p><strong>产品更新和 AI 工具演示：</strong> 静态截图只能说明界面长什么样。Live Photo 可以展示点下去以后发生了什么。</p>
 <p>生成网页、生成代码、生成图片，只放静态图总有点像摆拍。</p>
@@ -117,19 +117,19 @@
 <h2>做这个功能时我加入的细节</h2>
 <p><strong>第一帧要先过关：</strong> Live Photo 在信息流里先显示的是静态图。第一帧如果不好看，后面会动也没用。</p>
 <p>所以现在流程里会先抽首帧，当普通 3:4 卡片检查一遍: 裁切对不对，主体有没有被切掉，标题会不会挡住关键区域。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ofWbZTuv4DViaUoQDYWvyichqqSGAekKE6NycpYwRPhs1fucxe5CZ4rlGoJFnRfvbsnRgXoHLZdia2riauXRuGeneSN4MT8Dlwrg3icI2dXq4lJk/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DViaUoQDYWvyichqqSGAekKE6NycpYwRPhs1fucxe5CZ4rlGoJFnRfvbsnRgXoHLZdia2riauXRuGeneSN4MT8Dlwrg3icI2dXq4lJk/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p><strong>视频当成图片位处理：</strong> 视频不能随便全屏塞进去。</p>
 <p>视频区域沿用图片裁切逻辑：UI 密集就保留完整画面，主体明确就放大重点，人脸、产品、按钮、结果区不能被压住。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ofWbZTuv4DUllCHjW4GFiakoJPa8tNEa1dQNJwqjqGJHwrFwxUOUuyia1nYacpNReSgdllmOIcjCjXKrvY7icj90vGTDlGTOReJbtymvlWOqVg/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DUllCHjW4GFiakoJPa8tNEa1dQNJwqjqGJHwrFwxUOUuyia1nYacpNReSgdllmOIcjCjXKrvY7icj90vGTDlGTOReJbtymvlWOqVg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p><strong>先看 contact sheet：</strong> 长视频不适合一帧一帧看。更省事的方法是抽 8-15 帧拼成一张 contact sheet。</p>
 <p>看一张图，基本就能知道有没有黑屏、转场、UI 太小、结果没出现这些问题。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ofWbZTuv4DVEEXbwuuDib5ezU4ibnxlVYlViazAgGSYDnmuFmAup0aZvgUne0jK7gNKMwX2goNhhbBOic99CJe2b69YlyovvMlAdAs30IDJEV4U/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DVEEXbwuuDib5ezU4ibnxlVYlViazAgGSYDnmuFmAup0aZvgUne0jK7gNKMwX2goNhhbBOic99CJe2b69YlyovvMlAdAs30IDJEV4U/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p><strong>平台时长要分开：</strong> 小红书按 5 秒做。公众号文章内按 3 秒做。</p>
 <p>时长不同，能承载的信息量也不同。3 秒只适合一个动作点，5 秒可以放一个很小的过程。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ofWbZTuv4DUzZqt92ukpVSJ6uKpAyWKEbuz3k2Nvv2ArcVmf4DiaT5r3KxHqQ5OD0t1PLF2iapmAqUBs4LVrqNOEqTmEfica9DuathKjoagwLY/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DUzZqt92ukpVSJ6uKpAyWKEbuz3k2Nvv2ArcVmf4DiaT5r3KxHqQ5OD0t1PLF2iapmAqUBs4LVrqNOEqTmEfica9DuathKjoagwLY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p><strong>发布路径要提醒清楚：</strong> Live Photo 最后不能只给一个视频文件。</p>
 <p>实际测试和发布时，需要把 JPG + MOV 打包成 <code>.pvt</code> ，再 AirDrop 到 iPhone，从手机端发布。桌面端上传不一定能保留 Live Photo。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ofWbZTuv4DVlhjOLDTQicLHias6KyEBWQn61zM4a9OdicbMrrV9DzS32DaakiaWjWwRnrOwIJPhdDdiahUKMjZbibdvYx4p5hHHs16ZPicKX2gtsOc/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVlhjOLDTQicLHias6KyEBWQn61zM4a9OdicbMrrV9DzS32DaakiaWjWwRnrOwIJPhdDdiahUKMjZbibdvYx4p5hHHs16ZPicKX2gtsOc/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>这些细节不显眼，但少了任何一项，成品都可能停在本地测试里。</p>
 <h2>为什么 Live Photo 值得做</h2>
 <p>图文平台里的"图"现在有点尴尬。</p>

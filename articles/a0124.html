@@ -31,8 +31,8 @@
     <p class="article-source"><a href="https://mp.weixin.qq.com/s/QcHQ2I3nRTbIixwDvD6WNg" target="_blank" rel="noopener">查看原文 ↗</a></p>
     <div class="article-body">
 <p>原创 RaDesign <em>2026年3月4日 11:17</em></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/tAlIKXfSZiaxqPQKIIX6lLHohxiajX6awrhUHZf6MjDrqtyB8rnXmxYdetksQfZkddmAHITgJ4bL2bSOWmu4Ct7fjXueOiaaXYAAfia6FyIy6Bo/640?wx<em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
-<p>前几天我发了一篇关于 <a href="https://mp.weixin.qq.com/s?<strong>biz=MzIyOTc4NjE2NA==&amp;mid=2247494972&amp;idx=1&amp;sn=f76efc67cc37cff8231d126a5bd38841&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">Figma 着急了！Codex 和 Figma 双向构建前端 UI</a> <a href="https://mp.weixin.qq.com/s?</strong>biz=MzIyOTc4NjE2NA==&amp;mid=2247495067&amp;idx=1&amp;sn=7b985652430936308e62c46f9d9d7cdf&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">取代Figma的新神器？Paper：设计、代码与AI Agent的完美融合</a> 的文章。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/tAlIKXfSZiaxqPQKIIX6lLHohxiajX6awrhUHZf6MjDrqtyB8rnXmxYdetksQfZkddmAHITgJ4bL2bSOWmu4Ct7fjXueOiaaXYAAfia6FyIy6Bo/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p>前几天我发了一篇关于 <a href="https://mp.weixin.qq.com/s?__biz=MzIyOTc4NjE2NA==&amp;mid=2247494972&amp;idx=1&amp;sn=f76efc67cc37cff8231d126a5bd38841&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Figma 着急了！Codex 和 Figma 双向构建前端 UI</a> <a href="https://mp.weixin.qq.com/s?__biz=MzIyOTc4NjE2NA==&amp;mid=2247495067&amp;idx=1&amp;sn=7b985652430936308e62c46f9d9d7cdf&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">取代Figma的新神器？Paper：设计、代码与AI Agent的完美融合</a> 的文章。</p>
 <p>很多人小伙伴忙于公司项目，没有及时上手体验，说卡在这些地方：</p>
 <ul><li>MCP 怎么添加</li><li>Figma 怎么连 CodeX</li><li>为什么我生成不了代码</li><li>CodeX 怎么让 Figma、Pencil 和 Paper 自动画图</li></ul>
 <p>所以这篇文章不讲其他，只按个人操作经验给大家提供一下大致步骤，其他软件后面感兴趣的话也会写一下，现在主要是 CodeX 每周都有免费额度，做简单的几个项目完全够用，也可以用来摸索，等熟悉后再看自己是否需要购买（PS：要买可以找我，百人拼车群🫣）。</p>
@@ -43,7 +43,7 @@
 <pre><code class="language-js">Figma（设计结构）   ↓MCP Server   ↓Codex 读取 Layer / Token / Component   ↓生成结构化代码   ↓调用 MCP 工具   ↓修改设计稿（命名 / 间距 / 变量）</code></pre>
 <p>1</p>
 <p>软件准备（一步一步）</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiazS4u7kRWSS93B9ibIZmFK7w6W3MNW4nrYhWzFelicAsHszr85RSbic0PicCBcG2gyObOpwQP3vIAFUMh6JC8sVuOfdx6GibVtDG3fA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiazS4u7kRWSS93B9ibIZmFK7w6W3MNW4nrYhWzFelicAsHszr85RSbic0PicCBcG2gyObOpwQP3vIAFUMh6JC8sVuOfdx6GibVtDG3fA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <h2>1️⃣ 安装 Node</h2>
 <p>安装 Node.js LTS。 可以先不装，有条件就自己搜下装</p>
 <h2>2️⃣ 安装 VS Code</h2>
@@ -52,21 +52,21 @@
 <p>安装 官网下载 CodeX。 https://openai.com/zh-Hans-CN/codex/</p>
 <h2>当然嫌麻烦的话，你直接先安装 CodeX，缺什么它会在使用过程中告诉你，你再按它给你的步骤装也一样。</h2>
 <p>安装好后进来首页，功能不多，自己大致看下就了解了，新版 CodeX 内置Figma MCP 了，无需自己再来回复制修改。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiazpLqxkP0jJhmtkFyIzF7ttZz9DlgfUKE7hlKgiaia8lZUwtkMSm29HahL3JicMDuZ9y8o09C7H3mUbMpoiaT4PDzkeRNiaE0t2JoCs/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiazpLqxkP0jJhmtkFyIzF7ttZz9DlgfUKE7hlKgiaia8lZUwtkMSm29HahL3JicMDuZ9y8o09C7H3mUbMpoiaT4PDzkeRNiaE0t2JoCs/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>点击左下角设置-设置- MCP 服务器，可以看到推荐服务器里面就有 Figma，没下载的点下载即可。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiaxQP1YDk8zYJ0EHia2OdO4SoN5ykE7n0UOP7t3KdxMASMyfoCFicds0lQBNcP8U4LUCmp5kgEcHA5aicRV1Im7gvbgDx8I2sjsgkI/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaxQP1YDk8zYJ0EHia2OdO4SoN5ykE7n0UOP7t3KdxMASMyfoCFicds0lQBNcP8U4LUCmp5kgEcHA5aicRV1Im7gvbgDx8I2sjsgkI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>如果你同时也想安装 Pencil、Paper 的 MCP，直接和它对话，或者手动点击添加。 Pencil 的话建议直接在 VS Code 里面添加扩展，不下载客户端。</p>
 <p>例：添加 Paper MCP</p>
 <p>选择“Streamable HTTP”选项卡，输入 <code>paper</code> 名称和 <code>http://127.0.0.1:29979/mcp</code> URL，然后单击“保存”。</p>
 <p>连接成功后，您应该会 在可用 MCP 列表中看到 Paper MCP 服务器。</p>
 <pre><code class="language-js">Pencil 扩展安装</code></pre>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiaw47hdr57EUZQEqTs8HKoBvfVgjP1K8AQeoImHY1r2hQkxibjXrEuzAWt5WlGsx0iaWB01Lj4LQO9nQRIX1VfaWBd1Nn2dLmtWmI/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiaw47hdr57EUZQEqTs8HKoBvfVgjP1K8AQeoImHY1r2hQkxibjXrEuzAWt5WlGsx0iaWB01Lj4LQO9nQRIX1VfaWBd1Nn2dLmtWmI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>打开VS Code 选择侧边栏扩展 - 搜索 <code>pencil</code> 名称 - 安装扩展并登录即可。到此软件基本都安装好了。</p>
 <p>2</p>
 <p>案例测试（跑通流程）</p>
 <p>点击左下角"+" ， MCP 快捷方式（当然你直接在对话框输入让它调 Figma MCP 也可以，但是要输入完整字段 ），当前 Figma MCP 有两个：</p>
 <ul><li>Pull Figma content： 复制Figma Frame链接，它帮你转成代码</li><li>Generate Figma design： 直接发指令，它帮你在Figma新建文件，画好界面，同时生成对应的代码。</li></ul>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiawkGB7YwqBKbF0HajjA9B8yYaUfqFVku6DYtHh3lLszbJQOticCnNGwmDZtNtiaHUlSHIqIzLjbgURuk4OkdgGiaR66yOPTKBGj0k/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiawkGB7YwqBKbF0HajjA9B8yYaUfqFVku6DYtHh3lLszbJQOticCnNGwmDZtNtiaHUlSHIqIzLjbgURuk4OkdgGiaR66yOPTKBGj0k/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>我们先来试试用 CodeX 生成设计稿</p>
 <p>2.1 Generate Figma design</p>
 <p>这里我们先选择 Generate Figma Design， 然后写你要生成的提示词，我这里也大概写了一个网页的提示词仅供参考，你可以先写的简单点，我是测试复制提示它能写到什么程度。</p>
@@ -79,7 +79,7 @@
 【全站技术细节修正】字体： 标题 Inter Variable，辅助信息强制使用 10px Monospace (等宽字体)，Tracking 0.2em。点缀色： 唯一强调色为 国际橘 (#FF5F38)，严禁出现蓝色。边距： 所有 Bento 单元格内部 Padding 统一为 40px，确保视觉呼吸感一致。</code></pre>
 <p>Codex-Pencil</p>
 <p>我这里就以 Pencil 为例，Figma 同理，都是自动给你新建，发送指令后，你不需要其他操作。对应的软件提前打开，不打开任务中暂停，它会提示你去打开软件，回复后再继续任务。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiaxia8eLqGnibqevNNdaTFvv3WGhNKib9g9JPopH82mkDlRaocjoRIt9d1uypJnibDiawG3Z4zQXAoaCmC72Z78w8A2nYO5lJ37tR1icg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaxia8eLqGnibqevNNdaTFvv3WGhNKib9g9JPopH82mkDlRaocjoRIt9d1uypJnibDiawG3Z4zQXAoaCmC72Z78w8A2nYO5lJ37tR1icg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <p>任务开始后，可以点击 CodeX 右上角，切换小窗，看它给你操作即可，中间会有一些MCP请求等，通过即可。</p>
 <p>它会分两到三批把页面搭起来：先放整体结构和主要区块，再填卡片/头像图像与细节样式。现在先执行第一批骨架创建。可以看到它已经开始了，中间步骤我就跳过了。</p>
 <p>生成的效果就不放了，得让你们自己去试了！</p>
@@ -88,37 +88,37 @@
 <p>于是我转头就去调用 Paper ，如果要调用 Paper 要把 Paper MCP 写完整，否则有可能无法调用，转而自行调用 Figma 或其他可用 MCP ，下面是 Paper生成的效果。</p>
 <p>用Paper的话要提前打开软件，新建好一个文件。</p>
 <p>整体来说效果不错，跟预期的在 AIStudio 生成的效果差了一点，图片也没有填充，但是整体布局和内容是没有缺失的，但是细节的边框写和部分icon没有生成出来。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiazk7XwYVClXfKtEWE4sZhO5n85RhSP8yCFyW73uibTRXMTYubP6LypVVB73dHOrouPL9huP4WNKXIjjJBfASpdEevPUYNKicPRwI/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiaxBPXLs7SmjTFpFyYp9GooSVtH7K1xeJTVgfJeCmwv4JD4xF1yWqTpkBLZUpao4139v01OEoSldnJsPKmuFx6ENCH4GxCxvB58/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiazk7XwYVClXfKtEWE4sZhO5n85RhSP8yCFyW73uibTRXMTYubP6LypVVB73dHOrouPL9huP4WNKXIjjJBfASpdEevPUYNKicPRwI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiaxBPXLs7SmjTFpFyYp9GooSVtH7K1xeJTVgfJeCmwv4JD4xF1yWqTpkBLZUpao4139v01OEoSldnJsPKmuFx6ENCH4GxCxvB58/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
 <p>Codex- Figma</p>
 <p>用 Figma 生成后它会自动帮你在新建文件和创建内容。</p>
 <p>默认会打开网页版，可以选择整页或者局部进行保存，</p>
 <p>打开后会直接在Figma里面看到生成的文件，有客户端会自动拉起。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiayQqUCsIITAkvenicYwqyIzcxVp9C0aqGN89SI40Zr85FvycIKK8p64ibwickriaCpqbEJGYsQ5VWjv6W7HWcnFmLJWZGXyyl0UKC4/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiayQqUCsIITAkvenicYwqyIzcxVp9C0aqGN89SI40Zr85FvycIKK8p64ibwickriaCpqbEJGYsQ5VWjv6W7HWcnFmLJWZGXyyl0UKC4/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
 <p>生成的界面效果比较好，细节相比处理比较到位，如局部的小icon，边框线等都没有错位，同时我也在Figma make试了一下，如下图：</p>
 <p>左：Codex-Figma、右：Figma make</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiaxP9akK1ia05A852qSbnM3uMGdOjOBdZ297qEFIUz2G0Q3m5gnXqnuKzzOTKKVmOTh6YBHqibKbialV806vPwLsWGNCYww5PfEBzo/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiaxP9akK1ia05A852qSbnM3uMGdOjOBdZ297qEFIUz2G0Q3m5gnXqnuKzzOTKKVmOTh6YBHqibKbialV806vPwLsWGNCYww5PfEBzo/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
 <p>Make 生成的效果相比较而言就比较粗糙一点，但是内容是完整的，布局也都是正确的，只是细节像一个初级设计师。</p>
 <p>Google Stitch</p>
 <p>又去对比了一下 Stitch ，在 Stitch 网页版生成的效果很细腻，局部放大了可以看出来，现在 Stitch 支持一键粘贴到 Figma。</p>
 <p>选择生成的画板 - 导出选择 Figma - 点击转换 - 粘贴到 Figma 文件</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiazekDZBCvbsFEzZZT6E8g1mM3CRjmwpdyQj45vfH8EliaYFIZtzpsHuvWFEVORTyRicnVowrg835DiaJsUNnuRM2vm8qu0uMVmN00/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=12" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiazOIueT5ialg8hyicxZY7DzZO5p1vSU3SxSelDbh4uDt0q98AsuhusbQjRXrrnRsdbYSRNlx5GFqX2QicnH2rTSRukB2hVqozajDY/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiazekDZBCvbsFEzZZT6E8g1mM3CRjmwpdyQj45vfH8EliaYFIZtzpsHuvWFEVORTyRicnVowrg835DiaJsUNnuRM2vm8qu0uMVmN00/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiazOIueT5ialg8hyicxZY7DzZO5p1vSU3SxSelDbh4uDt0q98AsuhusbQjRXrrnRsdbYSRNlx5GFqX2QicnH2rTSRukB2hVqozajDY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="图片" loading="lazy"></p>
 <p>这几个软件生成效果这里不展开讨论，大家根据自己需要和场景选择合适自己的就行，看你是想把它加在自己工作流的哪个阶段，适合自己最重要。</p>
 <p>2.2 Pull Figma content</p>
 <p>对生成的文件进行调整和修改，可以再反向发给 CodeX，让它根据新的设计图，更新代码。</p>
 <p>选择修改后的画板 - 右键 - 复制/粘贴 - 复制到所选项的链接</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/tAlIKXfSZiawsLtKtBjv6Fjg7KtWGu7CILqnbGFJNv9tW7U9de3xJejQ5GBjricIXYyPMg7MZrrE91rRErrhJtCBcDOyibtvv35Twicc09Ow1iag/640?wx</em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=14" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/tAlIKXfSZiawsLtKtBjv6Fjg7KtWGu7CILqnbGFJNv9tW7U9de3xJejQ5GBjricIXYyPMg7MZrrE91rRErrhJtCBcDOyibtvv35Twicc09Ow1iag/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=14" alt="图片" loading="lazy"></p>
 <p>回到CodeX， 先在选择 MCP \- Pull Figma content ，再粘贴链接， 简单描述，不描述也可以，同一个session里面它会自动进行匹配和校对，然后修改，改完后让它给你生成一个本地的预览地址，就可以查看是否调整，再进行细节优化和调整。</p>
 <p>📌 这样我们就可以基于运行中的产品界面来优化 UX，而不仅是静态 mockup。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiaxaEmOW5OG1pIdDyhy7qCdl2GfAL6GmRbKpjoKOkuXAMQlGHwhgH4Im7HJeurJBcKZFYJaj1E9pgGxiaG36epnkBFZGseHXQnsU/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=15" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiaxaEmOW5OG1pIdDyhy7qCdl2GfAL6GmRbKpjoKOkuXAMQlGHwhgH4Im7HJeurJBcKZFYJaj1E9pgGxiaG36epnkBFZGseHXQnsU/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=15" alt="图片" loading="lazy"></p>
 <p>🎉 到此基本流程已完成。</p>
 <p>当然文中涉及的案例、软件、模型都是单向的，只展示基础流程，至于不同模型（CC、GLM......）的效果，不同复杂程度的项目的效果，期待大家尝试后反馈~</p>
 <p>下期我们在讨论如何用已有规范来进行指定设计，或根据最新设计来建立完善的规范内容。</p>
 <hr>
 <p>历史文章</p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album<em>id=3925877792105037831#wechat</em>redirect" target="<em>blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz</em>png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnpdK53U38Axw3Qd2b5T7Ph8YSP1jBKefrEPFfn3z3gK8T1VGQxJ0icqQ/640?wx<em>fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx</em>lazy=1&amp;wx_co=1&amp;randomid=adxnvt2m&amp;tp=webp#imgIndex=18" alt="图片" loading="lazy"></a></p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album<em>id=3925882854227312641#wechat</em>redirect" target="<em>blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz</em>png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcn7hazGMCJaYw1g51Hnib4VQ6pTJPgBHgibfBygW6C7ltXkDRVa8NvkDfQ/640?wx<em>fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx</em>lazy=1&amp;wx_co=1&amp;randomid=6du8fus1&amp;tp=webp#imgIndex=19" alt="图片" loading="lazy"></a></p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album<em>id=3925887427964829708#wechat</em>redirect" target="_blank" rel="noopener"><img src="https://mp.weixin.qq.com/s/www.w3.org/2000/svg&#x27;%20xmlns:xlink=&#x27;http://www.w3.org/1999/xlink&#x27;%3E%3Ctitle%3E%3C/title%3E%3Cg%20stroke=&#x27;none&#x27;%20stroke-width=&#x27;1&#x27;%20fill=&#x27;none&#x27;%20fill-rule=&#x27;evenodd&#x27;%20fill-opacity=&#x27;0&#x27;%3E%3Cg%20transform=&#x27;translate(-249.000000,%20-126.000000" alt="图片" loading="lazy">'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)</a></p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album<em>id=3925889414856966155#wechat</em>redirect" target="_blank" rel="noopener"><img src="https://mp.weixin.qq.com/s/www.w3.org/2000/svg&#x27;%20xmlns:xlink=&#x27;http://www.w3.org/1999/xlink&#x27;%3E%3Ctitle%3E%3C/title%3E%3Cg%20stroke=&#x27;none&#x27;%20stroke-width=&#x27;1&#x27;%20fill=&#x27;none&#x27;%20fill-rule=&#x27;evenodd&#x27;%20fill-opacity=&#x27;0&#x27;%3E%3Cg%20transform=&#x27;translate(-249.000000,%20-126.000000" alt="图片" loading="lazy">'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)</a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album_id=3925877792105037831#wechat_redirect" target="_blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnpdK53U38Axw3Qd2b5T7Ph8YSP1jBKefrEPFfn3z3gK8T1VGQxJ0icqQ/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1&amp;randomid=adxnvt2m&amp;tp=webp#imgIndex=18" alt="图片" loading="lazy"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album_id=3925882854227312641#wechat_redirect" target="_blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcn7hazGMCJaYw1g51Hnib4VQ6pTJPgBHgibfBygW6C7ltXkDRVa8NvkDfQ/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1&amp;randomid=6du8fus1&amp;tp=webp#imgIndex=19" alt="图片" loading="lazy"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album_id=3925887427964829708#wechat_redirect" target="_blank" rel="noopener"><img src="https://mp.weixin.qq.com/s/www.w3.org/2000/svg&#x27;%20xmlns:xlink=&#x27;http://www.w3.org/1999/xlink&#x27;%3E%3Ctitle%3E%3C/title%3E%3Cg%20stroke=&#x27;none&#x27;%20stroke-width=&#x27;1&#x27;%20fill=&#x27;none&#x27;%20fill-rule=&#x27;evenodd&#x27;%20fill-opacity=&#x27;0&#x27;%3E%3Cg%20transform=&#x27;translate(-249.000000,%20-126.000000" alt="图片" loading="lazy">'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)</a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album_id=3925889414856966155#wechat_redirect" target="_blank" rel="noopener"><img src="https://mp.weixin.qq.com/s/www.w3.org/2000/svg&#x27;%20xmlns:xlink=&#x27;http://www.w3.org/1999/xlink&#x27;%3E%3Ctitle%3E%3C/title%3E%3Cg%20stroke=&#x27;none&#x27;%20stroke-width=&#x27;1&#x27;%20fill=&#x27;none&#x27;%20fill-rule=&#x27;evenodd&#x27;%20fill-opacity=&#x27;0&#x27;%3E%3Cg%20transform=&#x27;translate(-249.000000,%20-126.000000" alt="图片" loading="lazy">'%20fill='%23FFFFFF'%3E%3Crect%20x='249'%20y='126'%20width='1'%20height='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/svg%3E)</a></p>
 <p>有意向或者感兴趣的小伙伴欢迎加入 AI 交流</p>
 <p>继续滑动看下一个</p>
 <p>RaDesign</p>

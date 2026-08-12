@@ -37,7 +37,7 @@
 <ul><li>Obsidian 负责阅读、浏览、双链和本地 Markdown 笔记。</li><li>Codex 或 Claude Code 负责读写文件、整理资料、生成 wiki 页面。</li><li>飞书负责日常快速记录、临时收集、移动端输入和协作分享。</li><li>Gitee 做主云端同步。</li><li>GitHub 做备份云端。</li></ul>
 <p>这套方案不需要企业级 RAG，不需要向量数据库，不需要一上来就搞复杂系统。它的核心是：先用文件夹和 Markdown，把“原始资料 -> AI 整理 -> 可追溯 wiki -> 问答和健康检查”的最小闭环跑通。</p>
 <h2>▶1. 这套方案的来源：Karpathy 的 LLM Wiki 思想</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/yDI5ibEG7eotov8v1n5YLpk91fbOYBsM8f8ur4kU7OQGPhLgicwdEwoDzzic86ibQzWu4Ka4abKoBia3rByXzics1vTKic7iatZibibuulphuXIdicpUIQ/640?wx<em>fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="图1：Karpathy 的 LLM Wiki Gist 截图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/yDI5ibEG7eotov8v1n5YLpk91fbOYBsM8f8ur4kU7OQGPhLgicwdEwoDzzic86ibQzWu4Ka4abKoBia3rByXzics1vTKic7iatZibibuulphuXIdicpUIQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图1：Karpathy 的 LLM Wiki Gist 截图" loading="lazy"></p>
 <p>图1：Karpathy 的 LLM Wiki Gist 截图</p>
 <p>AI agent 正在从辅助工具走向知识和研发系统的维护者</p>
 <p>这套方法背后的思想，主要来自 Andrej Karpathy 在 GitHub Gist 里写的 LLM Wiki。</p>
@@ -53,10 +53,10 @@
 <p>3\. Schema：写给 AI 的规则文件。Codex 用 AGENTS.md，Claude Code 可以用 CLAUDE.md。它告诉 AI 这个知识库怎么维护。</p>
 <p>我在自己的实践里，又补了第四个区域：</p>
 <p>4\. Outputs：输出层。问答、健康检查、阶段总结、研究报告都放这里。好的输出可以再回流进 wiki。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/yDI5ibEG7eosBtYaibWCPXl5QHc1APrbWe0vAYHWh6RQ1ichZWyNEkC5E4YFezfOWwnSnicgtf8bxcFjdcRSwg1uIejppnpZt8iaxiavONkGDYVvQ/640?wx<em>fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图2：Obsidian 知识库关系图谱示例" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/yDI5ibEG7eosBtYaibWCPXl5QHc1APrbWe0vAYHWh6RQ1ichZWyNEkC5E4YFezfOWwnSnicgtf8bxcFjdcRSwg1uIejppnpZt8iaxiavONkGDYVvQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图2：Obsidian 知识库关系图谱示例" loading="lazy"></p>
 <p>图2：Obsidian 知识库关系图谱示例</p>
 <h2>▶2. 为什么我选择 Obsidian + Codex + 飞书</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/yDI5ibEG7eotplZUPliaYiciauupkeSY2NlcbOafnXpc0WiciaPE5A7jG33QLDGJ4jBhJo4ZGUMXXII8ELibYQVBS6fXWqIaGSfWia0z3w0aGoTvVqg/640?wx<em>fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图3：Obsidian + Codex + 飞书工具组合图标" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/yDI5ibEG7eotplZUPliaYiciauupkeSY2NlcbOafnXpc0WiciaPE5A7jG33QLDGJ4jBhJo4ZGUMXXII8ELibYQVBS6fXWqIaGSfWia0z3w0aGoTvVqg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图3：Obsidian + Codex + 飞书工具组合图标" loading="lazy"></p>
 <p>图3：Obsidian + Codex + 飞书工具组合图标</p>
 <p>办公和协作工具正在被 AI 重塑</p>
 <p>这几个工具各有分工，不要混着理解。</p>
@@ -152,7 +152,7 @@
 <h3>第八步：用 Obsidian 打开</h3>
 <p>打开 Obsidian，选择“打开本地文件夹作为仓库”，选中你的知识库文件夹。</p>
 <p>你应该能看到 raw、wiki、outputs 和规则文件。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/yDI5ibEG7eovic6ztdKsOMu8DbXQ8dONAtfRiazNiaibvFhJO180fqmnicfv1SpUvzNapic3Qpukl4lxRLpXnFfE6tjF6jn01shF8AtPzaHib7ib8WSQ/640?wx</em>fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图4：Obsidian 左侧目录树截图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/yDI5ibEG7eovic6ztdKsOMu8DbXQ8dONAtfRiazNiaibvFhJO180fqmnicfv1SpUvzNapic3Qpukl4lxRLpXnFfE6tjF6jn01shF8AtPzaHib7ib8WSQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图4：Obsidian 左侧目录树截图" loading="lazy"></p>
 <p>图4：Obsidian 左侧目录树截图</p>
 <h3>第九步：安装 Obsidian Git 插件</h3>
 <p>如果你希望 Obsidian 自动备份，可以安装 Obsidian Git 插件。</p>

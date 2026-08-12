@@ -42,7 +42,7 @@
 <p>（说实话，我也这样想过一百次。）</p>
 <p>直到我看到这周 Anthropic 的 Thariq Shihipar（Claude Code 团队的人）发了一篇博客。</p>
 <p>他说，都不是...</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iafyQTicPqUtNcdINEJhbCAZz2SJf7tuGD0yWt0gVCrFNlj4wOg9cmID3icxdNzjJGlA5ym9xaey55Ur2Vnr9Xzfia6xKibCwV4YMyLric6Rjj9jY/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iafyQTicPqUtNcdINEJhbCAZz2SJf7tuGD0yWt0gVCrFNlj4wOg9cmID3icxdNzjJGlA5ym9xaey55Ur2Vnr9Xzfia6xKibCwV4YMyLric6Rjj9jY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>是你 session（一次完整的对话）里的上下文烂了。</p>
 <p>他们给这个现象起了个名字，叫 <strong>Context Rot（上下文腐烂）</strong>。</p>
 <p>腐烂是重力，不是 bug。</p>
@@ -52,7 +52,7 @@
 <p>窗口能装下是一回事，能不能用好...是另一回事。</p>
 <hr>
 <h2>01 腐烂这件事，是物理规律</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtNZccURRPZv8voPiao1Lv1TvvZSiam8ExuicxEyDu45Ksz6IwnbEHicX7QLzLwgEJbm8ibibVsWhibToDNqaPrpou0VPh0SugvCoe232Y/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNZccURRPZv8voPiao1Lv1TvvZSiam8ExuicxEyDu45Ksz6IwnbEHicX7QLzLwgEJbm8ibibVsWhibToDNqaPrpou0VPh0SugvCoe232Y/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>咱们先把"上下文"是啥弄明白。</p>
 <p>说白了，上下文就是 Claude 一次能"记住"的东西的总量。你讲的话、它回的话、它读过的文件、它调工具跑出来的结果...全部往这一块里塞。</p>
 <p>你可以想象成，这是 Claude 脑子里的一张桌子。</p>
@@ -75,7 +75,7 @@
 <p>•1000 个 token → 100 万对</p>
 <p>•100 万 token → <strong>1 万亿对关系要维持</strong></p>
 <p>一万亿。不是我打错字。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtMI3q1HpNGibP7Y4td6woSM3HWtQXPLsEBsvmGiaEb7ZicaMJmcQMDteKKCm2uuzrPl0A6Ft7c1ruL4Dxqql6gmD8kTbsnBR0SMgk/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMI3q1HpNGibP7Y4td6woSM3HWtQXPLsEBsvmGiaEb7ZicaMJmcQMDteKKCm2uuzrPl0A6Ft7c1ruL4Dxqql6gmD8kTbsnBR0SMgk/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>训练数据层面还有一层原因：模型见过的短对话、短代码段，远比长的多。短是主流，长是补丁。所以上下文长到一定程度性能塌，不是 bug，是架构本身骨头上的病。</p>
 <p><strong>不是 Anthropic 一家这么说</strong></p>
 <p>ChromaDB 在 2025 年 7 月发过一份技术报告，这是 Anthropic 官方 context engineering 文章<strong>唯一明确引用的外部研究</strong>，分量可以说很重了。</p>
@@ -118,7 +118,7 @@
 <p>所以 Thariq 这篇博客，才要把 session 管理单独拎出来讲。这不是一个功能介绍，这是一次<strong>认知调整</strong>。</p>
 <hr>
 <h2>03 好，那咱能怎么办？五条路摆你面前</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtNIfGVExRqEkiccUmLkjVCCvMiaicsNKz8gia1YS8oLSttN1DibX4x0PaYRevucxgBktJribOia9ma8ibGS2hVv6VZkPJK8tjC4CeQ4mcw/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNIfGVExRqEkiccUmLkjVCCvMiaicsNKz8gia1YS8oLSttN1DibX4x0PaYRevucxgBktJribOia9ma8ibGS2hVv6VZkPJK8tjC4CeQ4mcw/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>每次 Claude 说完话，你以为你只有两个选项：继续聊，或者关了重来。</p>
 <p>其实不是。</p>
 <p>Thariq 在文章里抛出了真正的主角。他说，你面前有<strong>五条路</strong>。</p>
@@ -136,7 +136,7 @@
 <p>只是以前...没人问你。</p>
 <p>好，下面咱就按表格顺序，一条一条拆开聊。从最常被你无意识用掉的那一条开始，Continue。</p>
 <h3>五条路之 01：Continue，看起来免费其实不免费</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtNBEe0ibZMkOXysf8TRbNyHb2sicibibZ3EkjoFzWsBvhsfgNm7FoocZaL3bSHDoaOPn5VHslLc11VkW0x5fMaUpUQNps61YW1gUlU/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNBEe0ibZMkOXysf8TRbNyHb2sicibibZ3EkjoFzWsBvhsfgNm7FoocZaL3bSHDoaOPn5VHslLc11VkW0x5fMaUpUQNps61YW1gUlU/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>Thariq 原文里没单独讲这条路，因为它是默认行为，你不做任何选择的时候用的就是它。</p>
 <p>但对每一个用 Claude Code 的人来说，这条路是<strong>钱包问题</strong>。</p>
 <p>Claude 定价（Sonnet 4，公开价格。MTok = 每百万 token）：</p>
@@ -163,7 +163,7 @@
 <p>这笔账你算得过来。</p>
 <p>Continue 不是免费的默认。它是<strong>五条路里最贵的一条</strong>，只是你感觉不到而已。</p>
 <h3>五条路之 02：Rewind，比"纠正"聪明的那一秒</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtMooNZtS6d0CUM1vPfLsuRjNrKS33DEnbLSbWibxZdYlGhVzG2icQ1siaaliaEpW5LVv7wia0Dc9WoyIwhQMUk8gChr1cByiaKuI4TLo/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMooNZtS6d0CUM1vPfLsuRjNrKS33DEnbLSbWibxZdYlGhVzG2icQ1siaaliaEpW5LVv7wia0Dc9WoyIwhQMUk8gChr1cByiaKuI4TLo/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>这一条，可能是整篇博客里最容易被略过的一个动作。我当初就是这样，我知道有 Rewind 这个功能，但几乎没用过。</p>
 <p>场景是这样：你让 Claude 读了五个文件，它给出一个不对的方案。</p>
 <p>你第一反应会是啥？</p>
@@ -195,7 +195,7 @@
 <p>这个画面我真的很喜欢。</p>
 <p>特别适合长 debug。你花两小时搞明白一个 bug 为啥出现、哪些方向被证伪、正确方向是啥...这些认知埋在几百轮对话里。Rewind + handoff 相当于只把这些认知摘出来带走，剩下几百轮的垃圾对话全扔了。</p>
 <h3>五条路之 03：Clear，换个干净桌子</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPtLLBibLZ1CSNOyp42U6FWxgwBH6wyEPTFPt7ODHmhdr4BsWW4ycricGED3icOUwWPzLHficw1wgboat3ibth9vaSGpaianMlqNMj7A/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPtLLBibLZ1CSNOyp42U6FWxgwBH6wyEPTFPt7ODHmhdr4BsWW4ycricGED3icOUwWPzLHficw1wgboat3ibth9vaSGpaianMlqNMj7A/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>Clear 是五条路里最简单的一条。</p>
 <p>你直接敲 <code>/clear</code>，Claude 就把之前说过的一切全忘掉。然后你手写一份简报，把必要的信息重新带进去。</p>
 <p>看起来是"粗暴重来"对吧？</p>
@@ -210,7 +210,7 @@
 <p>（说实话，我一开始也嫌 Clear 麻烦。后来被 autocompact 坑过几次，就开始养成每天至少主动 Clear 一两次的习惯。花那 30 秒手写简报，比花两小时回滚代码强。）</p>
 <p>这两条的具体对比，下一节讲 Compact 时会有一张对比表。</p>
 <h3>五条路之 04：坏 Compact，发生在 Claude 最笨的那一刻</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtOVKynicBTgUrQ3RZHJicLjCd8icTpiccrvDuQYRauwebRSia5qP8yCRJSL4Bx8CVCdcwfNUFv0pr2MXpHaqLHh6q9uicqlfkVZiaE7I8/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtOVKynicBTgUrQ3RZHJicLjCd8icTpiccrvDuQYRauwebRSia5qP8yCRJSL4Bx8CVCdcwfNUFv0pr2MXpHaqLHh6q9uicqlfkVZiaE7I8/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <p>（这一条我要你特别留意，因为里面有一个我真的没想到的点。）</p>
 <p>Thariq 扔出了一句<strong>很反直觉的</strong>话：</p>
 <blockquote><p>"Due to context rot, the model is at its least intelligent point when compacting."</p>
@@ -248,7 +248,7 @@
 <p>"重点讲 auth refactor 那块，测试调试的琐事不用带"，就多一句话，对齐度差一个量级。</p>
 <p><strong>不写 hint = 放弃方向盘，让自动驾驶在你最累的时候做决策。</strong></p>
 <p><strong><code>/compact</code> vs <code>/clear</code> 到底该用哪个？</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPWsnkLhQVUoWQicS6Jv5KmY973aXv1K3Xer7N4X6rLmGC0IPKxBTHNMatLtSRx5TZQMicQMv53LiaYuNWJhqGdqInoiaiccm6IY26c/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPWsnkLhQVUoWQicS6Jv5KmY973aXv1K3Xer7N4X6rLmGC0IPKxBTHNMatLtSRx5TZQMicQMv53LiaYuNWJhqGdqInoiaiccm6IY26c/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
 <p>上一节我说 Clear 无损但累人、Compact 省事但有损。具体对比：</p>
 <table><thead><tr><th>维度</th><th>/compact</th><th>/clear</th></tr></thead><tbody><tr><td>谁写摘要</td><td>模型写</td><td>你写</td></tr><tr><td>成本</td><td>你啥也不用干</td><td>要你亲自想清楚留什么</td></tr><tr><td>精度</td><td><strong>有损</strong>  （模型会漏）</td><td><strong>无损</strong>  （你留的就是全部）</td></tr><tr><td>适合</td><td>同一任务，session 臃肿了</td><td>启动真正的新任务</td></tr></tbody></table>
 <p>简单说就是...</p>
@@ -260,7 +260,7 @@
 <p>这个数字挺有意思。不是因为大家更少管 context 了，而是...<strong>很多原本要 compact 的任务，在新窗口下根本跑得完了</strong>。</p>
 <p>所以 1M 的真正红利不是"装更多"，是<strong>给你更长的清醒时间，去做主动决策</strong>。</p>
 <h3>五条路之 05：Subagent，派个分身干脏活</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtM6dn35ia18WDnZ1jsCCtTEzVDPFhBVW4zKe9Zr1d6dm2kQVh2FLEu40gO1RJ46mnYMiaZsjITp05iapH9PjOr0Xqic0Th3ciaHQZtg/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtM6dn35ia18WDnZ1jsCCtTEzVDPFhBVW4zKe9Zr1d6dm2kQVh2FLEu40gO1RJ46mnYMiaZsjITp05iapH9PjOr0Xqic0Th3ciaHQZtg/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
 <p>五条路里，Subagent 是最被低估的。对经常跑长任务的人来说，这玩意儿可能是<strong>最重要的</strong>。</p>
 <p>Thariq 的原话：</p>
 <blockquote><p>"When Claude spawns a subagent via the Agent tool, that subagent gets its own fresh context window. It can do as much work as it needs to, and then synthesize its results so only the final report comes back to the parent."</p></blockquote>
@@ -347,7 +347,7 @@
 <p><strong>不许诺魔法，只给仪表盘。</strong></p>
 <hr>
 <h2>06 最后，一个可以贴桌子上的三秒自检</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtMcYickJj9HiaicVkxbZReMmiaQQB7kGkvPUIibtmBc0HwE4wj0HCWX7MVKXssia4iaPVCYkibevKXEkgGYx0yeDdu3BcqdUWkvVQLSsdo/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMcYickJj9HiaicVkxbZReMmiaQQB7kGkvPUIibtmBc0HwE4wj0HCWX7MVKXssia4iaPVCYkibevKXEkgGYx0yeDdu3BcqdUWkvVQLSsdo/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
 <p>我把上面所有内容压缩成了一个...你每次 Claude 回完话都可以走一遍的<strong>三秒自检</strong>：</p>
 <p><strong>第一问：前面这堆上下文，还和我接下来要做的事相关吗？</strong></p>
 <p>•相关 → 看第二问</p>
@@ -380,7 +380,7 @@
 <p>\[1\] https://claude.com/blog/using-claude-code-session-management-and-1m-context \[2\]https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents \[3\]  https://research.trychroma.com/context-rot</p>
 <p>— END —</p>
 <p>加入XiaoHu.ai 日报社群 每天获取最新的AI信息</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtMib832wxDaxpj1csNOmvqbiaywjg4DQJOkGBtLicshxfoCWvwK6rjXMaE8WHSf88PAJOINyoq6eLPEZODNYraahpo8ibTJy7bNSDc/640?wx<em>fmt=other&amp;from=appmsg&amp;wxfrom=5&amp;wx</em>lazy=1&amp;tp=webp#imgIndex=9" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtMib832wxDaxpj1csNOmvqbiaywjg4DQJOkGBtLicshxfoCWvwK6rjXMaE8WHSf88PAJOINyoq6eLPEZODNYraahpo8ibTJy7bNSDc/640?wx_fmt=other&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=9" alt="Image" loading="lazy"></p>
 <p>\<em>\</em>\<em>\</em>\<em>\</em>\<em>\</em>\<em>\</em>\<em>\</em></p>
 <p>End.</p>
 <h1>感 谢 阅 读</h1>

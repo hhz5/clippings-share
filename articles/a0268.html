@@ -30,7 +30,7 @@
     </div>
     <p class="article-source"><a href="https://mp.weixin.qq.com/s/dAvM4dAW3CHCF8OOm8JcjA" target="_blank" rel="noopener">查看原文 ↗</a></p>
     <div class="article-body">
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/APgq1Er5rxDCQRTU9VBNNATArpwNJEmrMx0eLYvj1fIlQdgF8UR7gGiaya0fhuKPyeibXvV2WibiaJzmuBPoO0UxAJnn30RaFeAC0icTKZeA6vD0/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxDCQRTU9VBNNATArpwNJEmrMx0eLYvj1fIlQdgF8UR7gGiaya0fhuKPyeibXvV2WibiaJzmuBPoO0UxAJnn30RaFeAC0icTKZeA6vD0/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <blockquote><p>Agent Skills 是一个开放标准，用于为 AI Agent 扩展专用能力。本文将从概念、工作原理、规范、分类、脚本支持、最佳实践等多个维度，带你全面了解 Agent Skills。</p></blockquote>
 <h2>一、什么是 Agent Skill？</h2>
 <h3>1.1 基本概念</h3>
@@ -53,7 +53,7 @@
 <h2>二、核心设计理念：渐进式披露</h2>
 <p>渐进式披露（Progressive Disclosure）是 Agent Skills 最核心的设计理念。它确保 Agent 只在需要时加载必要的信息，而非一开始就把所有内容塞进上下文窗口。</p>
 <h3>2.1 三级加载机制</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/APgq1Er5rxCQ4waP1HQQkBsbyxMqxKYItYLPRia2AUqeBBH25hMlPW0zKib2lJW1MhdqXBasNpWbz7QQxicMBHPrDI7ksXoe0emu0yHr7wxBe0/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxCQ4waP1HQQkBsbyxMqxKYItYLPRia2AUqeBBH25hMlPW0zKib2lJW1MhdqXBasNpWbz7QQxicMBHPrDI7ksXoe0emu0yHr7wxBe0/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <table><thead><tr><th>级别</th><th>加载时机</th><th>Token 消耗</th><th>内容</th></tr></thead><tbody><tr><td>Level 1: 元数据</td><td>启动时始终加载</td><td>~100 tokens/Skill</td><td>YAML frontmatter 中的 <code>name</code> 和 <code>description</code></td></tr><tr><td>Level 2: 指令</td><td>Skill 被触发时</td><td>< 5000 tokens</td><td>SKILL.md 主体内容（指令和指南）</td></tr><tr><td>Level 3: 资源</td><td>按需加载</td><td>理论上无限</td><td>脚本、参考文档、模板等附属文件</td></tr></tbody></table>
 <h3>2.2 为什么这很重要？</h3>
 <p>上下文窗口是一种 <strong>公共资源</strong> ，你的 Skill 和以下内容共享这个空间：</p>
@@ -64,7 +64,7 @@
 <p>理解 Skill 的消费机制是理解整个体系的关键。这里需要区分三个角色： <strong>Agent（程序）</strong> 、 <strong>LLM（大模型）</strong> 和 <strong>Skill 文件（文件系统）</strong> 。Agent 是 LLM 的"外壳程序"，负责管理对话、调用工具、组装 prompt；LLM 是做决策的大脑；Skill 文件是静态的知识包。</p>
 <h3>3.1 Agent、LLM 与 Skill 的完整交互流程</h3>
 <p>下面这张图完整展示了从 Agent 启动到 Skill 被使用的全过程。注意关键点： <strong>Skill 的筛选和激活是由 LLM 决策的</strong> ，Agent 只负责执行 LLM 的指令（读文件、跑脚本）。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/APgq1Er5rxCTWK4SD9j4mr9icN6sxDpb4DMwFMxAXFdr2d83qAvIDnsGYIEHOBWLMwAqkibIXWHv3lw3IK2qKy3mlMUmEibML8BkjLbiblRdibsM/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxCTWK4SD9j4mr9icN6sxDpb4DMwFMxAXFdr2d83qAvIDnsGYIEHOBWLMwAqkibIXWHv3lw3IK2qKy3mlMUmEibML8BkjLbiblRdibsM/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <h4>关键要点</h4>
 <p>上面这张图有几个值得特别注意的地方：</p>
 <p><strong>1\. Skill 目录在启动时就注入 System Prompt</strong></p>
@@ -90,9 +90,9 @@
 <h3>3.2 与 MCP Tool 交互流程的对比</h3>
 <p>Skills 和 MCP Tools 都是扩展 Agent 能力的方式，但 <strong>交互模式有本质区别</strong> 。下面用两张并排的时序图来对比：</p>
 <h4>MCP Tool 的交互流程</h4>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/APgq1Er5rxDF6pB1wvd7ZnNicbK0DyVEJyUG2tvPgvZrEXg1jjvrQ0XNEo1lMn8Y2icKBvjCKg7UeOzLq89fdhYY8qwxzzF3Iica0ckIopwVZc/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxDF6pB1wvd7ZnNicbK0DyVEJyUG2tvPgvZrEXg1jjvrQ0XNEo1lMn8Y2icKBvjCKg7UeOzLq89fdhYY8qwxzzF3Iica0ckIopwVZc/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <h4>Skill 与 MCP Tool 的本质区别</h4>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/APgq1Er5rxB9haG9xica4x4ggLoFFmwsbe085Un6oTtmydsIXicxJlPxUO0S16nQQ8gWicPvj6NhVnsQhYBx4fXKmcg7KDwWmibicIoKBttiaxydQ/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxB9haG9xica4x4ggLoFFmwsbe085Un6oTtmydsIXicxJlPxUO0S16nQQ8gWicPvj6NhVnsQhYBx4fXKmcg7KDwWmibicIoKBttiaxydQ/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>总结两者的核心差异：</p>
 <table><thead><tr><th>维度</th><th>MCP Tool</th><th>Agent Skill</th></tr></thead><tbody><tr><td><strong>本质</strong></td><td>提供 <strong>能力</strong> （做某件事）</td><td>提供 <strong>指令</strong> （教会怎么做）</td></tr><tr><td><strong>信息注入位置</strong></td><td>工具定义随 <code>tools</code> 参数发送</td><td>技能目录注入 System Prompt</td></tr><tr><td><strong>触发结果</strong></td><td>返回 <strong>数据</strong> （API 响应、查询结果）</td><td>返回 <strong>指令</strong> （工作流程、最佳实践）</td></tr><tr><td><strong>LLM 行为变化</strong></td><td>获得一个新的数据源</td><td>获得一整套新的行为指南</td></tr><tr><td><strong>类比</strong></td><td>给员工一把新工具</td><td>给员工一本操作手册</td></tr><tr><td><strong>组合使用</strong></td><td>—</td><td>Skill 指令中可以指导 LLM 如何使用 MCP Tool</td></tr></tbody></table>
 <p>一个常见的强力组合场景： <strong>MCP 给 Agent 提供了调用 BigQuery 的能力（工具），Skill 教会 Agent 你们公司的表结构、查询规范和注意事项（指令）</strong> 。两者互补，缺一不可。</p>
@@ -142,7 +142,7 @@
 <p><strong>手动调用（User-explicit）</strong> ：用户在对话中输入 <code>/skill-name</code> （斜杠命令）来显式调用特定 Skill。此时 Agent（程序侧）直接将 SKILL.md 内容注入上下文，不需要 LLM 做判断。适用于设置了 <code>disable-model-invocation: true</code> 的 Skill。</p>
 <h3>3.6 脚本执行的高效性</h3>
 <p>当 Skill 中的指令引用了脚本文件时，Agent 通过 bash 直接 <strong>执行</strong> 脚本，而不是将脚本代码读入上下文：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/APgq1Er5rxB6iaOqQCdLlnS7qYCU3GpmjBeAFfx0p4KvHl2DAYx9kMH4M34WAs6HDjRDefxwXCPVogGQPvTSPxQyBTTK6qzoGz2KMVAepPWc/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxB6iaOqQCdLlnS7qYCU3GpmjBeAFfx0p4KvHl2DAYx9kMH4M34WAs6HDjRDefxwXCPVogGQPvTSPxQyBTTK6qzoGz2KMVAepPWc/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>这意味着：</p>
 <ul><li>脚本代码本身 <strong>不会</strong> 消耗上下文 token</li><li>只有脚本的 <strong>输出结果</strong> 会进入 Agent 的上下文</li><li>比让 Agent 临时生成代码更可靠、更高效</li></ul>
 <hr>
@@ -236,7 +236,7 @@ scripts/extract.py</code></pre>
 <ul><li>始终使用 <strong>正斜杠</strong> <code>references/guide.md</code> ，而非反斜杠</li><li>文件引用保持 <strong>一层深度</strong> ，避免嵌套引用链</li><li>文件名应当有描述性：用 <code>form_validation_rules.md</code> 而不是 <code>doc2.md</code></li></ul>
 <hr>
 <h2>五、Skill 的分类</h2>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/APgq1Er5rxBQAKYmEXk0p0TfssjBmCOrOrUiaIpm7uvDC0XicHF1YyibN4gav0vqyMlJhqJueHQxSGJ68nFviaI1L4OXu4OibbJTic6tgNxDhFsDU/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxBQAKYmEXk0p0TfssjBmCOrOrUiaIpm7uvDC0XicHF1YyibN4gav0vqyMlJhqJueHQxSGJ68nFviaI1L4OXu4OibbJTic6tgNxDhFsDU/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <h3>5.1 预构建 Skill（Anthropic Skills）</h3>
 <p>由 Anthropic 官方创建和维护的 Skill，开箱即用：</p>
 <table><thead><tr><th>Skill</th><th>skill\_id</th><th>功能</th></tr></thead><tbody><tr><td>PowerPoint</td><td><code>pptx</code></td><td>创建演示文稿、编辑幻灯片、分析演示内容</td></tr><tr><td>Excel</td><td><code>xlsx</code></td><td>创建电子表格、分析数据、生成图表报告</td></tr><tr><td>Word</td><td><code>docx</code></td><td>创建文档、编辑内容、格式化文本</td></tr><tr><td>PDF</td><td><code>pdf</code></td><td>生成格式化的 PDF 文档和报告</td></tr></tbody></table>
@@ -287,7 +287,7 @@ scripts/extract.py</code></pre>
 <h2>六、支持脚本的 Skill</h2>
 <p>支持脚本是 Agent Skill 最强大的能力之一。它将确定性的代码执行与 Agent 的灵活决策结合起来。</p>
 <h3>6.1 脚本 vs 指令的选择</h3>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/APgq1Er5rxCrQmbGnPdGuXKiaxk7SWGovouiaNVeLbA2NmHqCduBbaicRDFRTSupIzT4QXR0hAzhBXU8GEudgf4McCIEHs4mra6W5OFIjH9LG0/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxCrQmbGnPdGuXKiaxk7SWGovouiaNVeLbA2NmHqCduBbaicRDFRTSupIzT4QXR0hAzhBXU8GEudgf4McCIEHs4mra6W5OFIjH9LG0/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <table><thead><tr><th>自由度</th><th>方式</th><th>适用场景</th><th>示例</th></tr></thead><tbody><tr><td>高</td><td>文本指令</td><td>多种方法均可、依赖上下文判断</td><td>代码审查、写作指导</td></tr><tr><td>中</td><td>伪代码/带参数脚本</td><td>有推荐模式但允许变通</td><td>报告生成、数据转换</td></tr><tr><td>低</td><td>固定脚本</td><td>操作脆弱、一致性关键</td><td>数据库迁移、部署流程</td></tr></tbody></table>
 <h3>6.2 一次性命令</h3>
 <p>当现有工具包已经能满足需求时，可以直接在 <code>SKILL.md</code> 中引用，而不需要 <code>scripts/</code> 目录：</p>
@@ -356,7 +356,7 @@ Error: --format must be one of: json, csv, table.
 <p>：Agent 的工具输出通常有截断阈值，支持 <code>--offset</code> 等分页参数</p>
 <h3>6.5 工作流与反馈循环</h3>
 <p>支持脚本的 Skill 特别适合构建 <strong>验证反馈循环</strong> ：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/APgq1Er5rxAPOqqMGdBUbl0RLDhYm7qqFo4GQUjCq2qy121G7aTnRm7Dic3NPBotWwAdm7E9RnNMjGtLC5l8Es8uxs1wu8WldIiaoBoNVM1EY/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxAPOqqMGdBUbl0RLDhYm7qqFo4GQUjCq2qy121G7aTnRm7Dic3NPBotWwAdm7E9RnNMjGtLC5l8Es8uxs1wu8WldIiaoBoNVM1EY/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
 <p>这种「计划-验证-执行」模式通过在每个关键步骤后加入机器可验证的检查，大幅提高输出质量：</p>
 <ul><li><strong>早期捕获错误</strong></li></ul>
 <p>：验证在变更应用之前发现问题</p>
@@ -488,7 +488,7 @@ if (!current) {
 }</code></pre>
 <h4>实际交互过程</h4>
 <p>当用户说 "北京今天天气怎么样"，Agent 和 LLM 的交互过程如下：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/APgq1Er5rxA1TibbVye3IbXO2dKiacxxrunjj6vtfZdgH5Q6kehnh5cpLlz47icGRwCKYFdfXYUiaDg4Of0s0XrNicZefMQBvT7ficG7tibRnbURMs/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxA1TibbVye3IbXO2dKiacxxrunjj6vtfZdgH5Q6kehnh5cpLlz47icGRwCKYFdfXYUiaDg4Of0s0XrNicZefMQBvT7ficG7tibRnbURMs/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
 <p>这个 Demo 体现了脚本型 Skill 的几个核心价值：</p>
 <ul><li><strong>脚本提供确定性能力</strong></li></ul>
 <p>：API 调用和数据解析由脚本保证，不依赖 LLM 生成代码</p>
@@ -604,7 +604,7 @@ description: Process CSV files.</code></pre>
 <p>推荐使用动名词形式（gerund），清晰描述 Skill 提供的能力：</p>
 <table><thead><tr><th>推荐</th><th>可接受</th><th>避免</th></tr></thead><tbody><tr><td><code>processing-pdfs</code></td><td><code>pdf-processing</code></td><td><code>helper</code></td></tr><tr><td><code>analyzing-spreadsheets</code></td><td><code>spreadsheet-analysis</code></td><td><code>utils</code></td></tr><tr><td><code>managing-databases</code></td><td><code>process-pdfs</code></td><td><code>tools</code></td></tr><tr><td><code>testing-code</code></td><td><code>analyze-spreadsheets</code></td><td><code>documents</code></td></tr></tbody></table>
 <h3>9.4 渐进式披露的文件组织</h3>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/APgq1Er5rxCUg4e9Fkicicdhia6b5z853dM0Ela36t3FAr5Y0AE9oS8aW9MiarE0gfCYJeJKiaCgW6CYrc8be3S0YOxE4g6vtJwblticv2qXeFR2U/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/APgq1Er5rxCUg4e9Fkicicdhia6b5z853dM0Ela36t3FAr5Y0AE9oS8aW9MiarE0gfCYJeJKiaCgW6CYrc8be3S0YOxE4g6vtJwblticv2qXeFR2U/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
 <p>核心原则：</p>
 <ul><li>SKILL.md 主体控制在 <strong>500 行以内</strong></li><li>详细内容拆分到独立文件</li><li>文件引用保持 <strong>一层深度</strong> （不嵌套引用）</li><li>超过 100 行的参考文件加上目录索引</li></ul>
 <h3>9.5 避免常见反模式</h3>
@@ -623,7 +623,7 @@ Mix &quot;extract&quot;, &quot;pull&quot;, &quot;get&quot;, &quot;retrieve&quot;
 <h2>十、Skill 的评估与迭代</h2>
 <h3>10.1 评估驱动的开发</h3>
 <p>在编写大量文档之前，先创建评估用例。这确保你的 Skill 解决的是真实问题：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/APgq1Er5rxCBNKG4iaPZbwicicqicqE7jKjRS7iadOhWusBWcZwgKOmCahuGicIvGzzCD3k3ibrshA9eH2IKsVw3miazKQsIJnqHBo5OYw6mszzw374/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxCBNKG4iaPZbwicicqicqE7jKjRS7iadOhWusBWcZwgKOmCahuGicIvGzzCD3k3ibrshA9eH2IKsVw3miazKQsIJnqHBo5OYw6mszzw374/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
 <h3>10.2 测试用例结构</h3>
 <pre><code>{
 &quot;skill_name&quot;:&quot;csv-analyzer&quot;,
@@ -663,7 +663,7 @@ Mix &quot;extract&quot;, &quot;pull&quot;, &quot;get&quot;, &quot;retrieve&quot;
 <hr>
 <h2>十一、安全考量</h2>
 <h3>11.1 信任模型</h3>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/APgq1Er5rxA9G62W9icvHklA5bfiatymJdhgcKWiaKHhIBrIwONIVng7T00eEyGlRTJ9dFt3J0h6onaP3lC1ia8TrZGyricgLOxvmbpGzlxblyNc/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=12" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxA9G62W9icvHklA5bfiatymJdhgcKWiaKHhIBrIwONIVng7T00eEyGlRTJ9dFt3J0h6onaP3lC1ia8TrZGyricgLOxvmbpGzlxblyNc/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="图片" loading="lazy"></p>
 <h3>11.2 关键安全原则</h3>
 <table><thead><tr><th>风险类别</th><th>说明</th><th>防范建议</th></tr></thead><tbody><tr><td><strong>工具滥用</strong></td><td>恶意 Skill 可能以有害方式调用工具（文件操作、bash 命令）</td><td>审查所有脚本和指令</td></tr><tr><td><strong>数据泄露</strong></td><td>具有敏感数据访问权限的 Skill 可能向外部系统泄露信息</td><td>检查是否有意外的网络调用</td></tr><tr><td><strong>外部源风险</strong></td><td>从外部 URL 获取数据的 Skill 风险特别高，获取的内容可能包含恶意指令</td><td>避免 Skill 依赖外部数据源</td></tr><tr><td><strong>项目级注入</strong></td><td>不受信任的仓库可能通过项目级 Skill 注入指令</td><td>对不受信任的项目设置信任检查</td></tr></tbody></table>
 <h3>11.3 审计清单</h3>
@@ -681,7 +681,7 @@ Mix &quot;extract&quot;, &quot;pull&quot;, &quot;get&quot;, &quot;retrieve&quot;
 <ul><li>你创建的 Skill <strong>不会被锁定</strong> 到特定平台</li><li>同一套 Skill 格式可以在所有采用该标准的 AI 平台和工具中使用</li><li>提供 Python 参考 SDK 供开发者在自己的平台中实现 Skills 支持</li></ul>
 <h3>13.2 为你的 Agent 添加 Skills 支持</h3>
 <p>如果你在开发自己的 AI Agent 或开发工具，可以按照以下步骤添加 Skills 支持：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/APgq1Er5rxCwGnRVBwjpSfomVuu9zFWSAQHETC4VnE8cLX8mpPhRN7q1Wxg9Loj6txyiaiapspic8w3d0h2TGVlkw4oa4iauiaX87ECCEoLMDUC8/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=13" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/APgq1Er5rxCwGnRVBwjpSfomVuu9zFWSAQHETC4VnE8cLX8mpPhRN7q1Wxg9Loj6txyiaiapspic8w3d0h2TGVlkw4oa4iauiaX87ECCEoLMDUC8/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="图片" loading="lazy"></p>
 <p>核心实现要点：</p>
 <ol><li><strong>发现</strong></li></ol>
 <p>：扫描约定目录，查找包含 <code>SKILL.md</code> 的子目录</p>

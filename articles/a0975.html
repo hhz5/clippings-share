@@ -36,7 +36,7 @@
 <p>如果你对 Vibe Coding 的理解是，坐在电脑前随口说一句“帮我做个 App”，然后等 AI 一次性把能上线的产品吐出来，那大概率只能得到一个看上去能跑的 Demo。首页能打开，按钮能点击，拿出去演示也挺像那么回事；但一接真实数据、一补异常状态、一换设备、一跑完整测试，问题就全出来了。</p>
 <p>一个完整产品远不止页面和功能能跑。它还包括前端、后端、数据、状态、权限、隐私、测试、修复和最终集成。这里面有些事可以同时做，有些必须按顺序做，还有些做完以后必须交给另一个角色重新验收。</p>
 <p>我最近就在用这套方式推进一个全栈桌面工具。项目名字和具体功能先不展开，只讲开发过程。回头看 Codex 左侧的任务列表，从底层约束、前后端、隐私和环境兼容，到后面的多套界面，拉下来一长串。整个项目被拆成多批任务，让多个 Codex 窗口分别在独立 Worktree 里推进，再一批一批合回来。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/teQhPZBEOpMnscuChCyarIaIuhNOybvelmugV8yLcWbez2PCpo0rDgibZEK8CfmZTNjAT0icYTsKod0uzPDEJKNnWhoa3RqTDmlyWv1DmguOU/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="任务列表" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/teQhPZBEOpMnscuChCyarIaIuhNOybvelmugV8yLcWbez2PCpo0rDgibZEK8CfmZTNjAT0icYTsKod0uzPDEJKNnWhoa3RqTDmlyWv1DmguOU/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="任务列表" loading="lazy"></p>
 <p>任务列表</p>
 <p>这篇不准备写成保姆级教程，也不会把我的完整 Prompt、调度规则和验收标准贴出来。我主要想讲清楚一件事：一个人怎么把 Codex 从“帮我写代码的聊天框”，变成一支可以被组织、被隔离、被验收的小型开发队伍。</p>
 <h2>一、Vibe Coding 卡住的，往往不是代码能力</h2>
@@ -53,7 +53,7 @@
 <p>一句话概括就是：</p>
 <blockquote><p>多窗口只是多了几双手，Worktree 才是给每双手分了一张独立工作台。</p></blockquote>
 <h2>二、多开窗口，不等于并行开发</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/teQhPZBEOpNQ0fB0MEoWz9JgRbqicDYxXhMlibyh0sfyDFA94Nqh4GZfJmOQjTVTdFOicglmWDq1aHhiaDtImWcCEfib8bicWMONibd3Zv1AI7amKY/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="多窗口目录" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/teQhPZBEOpNQ0fB0MEoWz9JgRbqicDYxXhMlibyh0sfyDFA94Nqh4GZfJmOQjTVTdFOicglmWDq1aHhiaDtImWcCEfib8bicWMONibd3Zv1AI7amKY/640?wx_fmt=jpeg&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="多窗口目录" loading="lazy"></p>
 <p>多窗口目录</p>
 <p>很多人第一次发现 Codex 可以同时跑多个任务，第一反应就是：那我多开几个窗口，不就相当于多了几个程序员？</p>
 <p>思路没错，但只对了一半。</p>
@@ -69,7 +69,7 @@
 <p>我做这个项目时，没有先列十几个窗口再随手分任务。我先让一个主控 Agent 理解整个项目，把需求拆成 Spec，再从 Spec 里拆出 Task。</p>
 <p>Spec 解决的是“我们到底要做什么”。目标是什么，边界在哪里，哪些旧东西要保留，哪些明确不做，最终以什么状态算完成。</p>
 <p>Task 解决的是“这些工作按什么关系发生”。哪个任务依赖哪个任务，哪些会改公共部分，哪些只会动独立模块，哪些可以同时开工，哪些必须等上一批完成。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/teQhPZBEOpNDFhleUXOkRYpjXoPa7TkkicNgtg1xaMBhtxlwbYLdrMyT5jbpxjGxr9FthDERWibwSuVx7VuXS992YeaYCpice9NrSRS8kT07qU/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="Spec 与 Task" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/teQhPZBEOpNDFhleUXOkRYpjXoPa7TkkicNgtg1xaMBhtxlwbYLdrMyT5jbpxjGxr9FthDERWibwSuVx7VuXS992YeaYCpice9NrSRS8kT07qU/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="Spec 与 Task" loading="lazy"></p>
 <p>Spec 与 Task</p>
 <p>这里最反直觉的一点是：</p>
 <blockquote><p>并行开发的第一步，不是找能并行的部分，而是先找出不能并行的部分。</p></blockquote>
@@ -90,7 +90,7 @@
 <p>到了第三批，公共行为层已经比较稳定，我才把三套完整界面方案同时拆出去。</p>
 <p>这三套不是换个颜色，而是页面结构、信息密度和交互语言都不一样。每套都要覆盖同一批核心页面和业务状态。如果让一个窗口按顺序做，很容易做完第一套以后，后两套越来越像第一套的换皮。</p>
 <p>这时 Worktree 的价值就特别直观。三个窗口分别挂在三个独立 Worktree 上，只负责自己的呈现模块。公共控制器、后端逻辑和状态管理已经冻结，不允许为了自己方便顺手重构。它们共享同一副骨架，但各自完成完整的视觉实现。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/teQhPZBEOpNUPtGIduZ1sLwsb8mwTD1uyqeXBGx6KS0ic5lPnn6JwlZv4Yft5wERia0FXkPnClTeCMH5xhaic0jjJb95iar2gW1zB441hdPvqeM/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="三套界面" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/teQhPZBEOpNUPtGIduZ1sLwsb8mwTD1uyqeXBGx6KS0ic5lPnn6JwlZv4Yft5wERia0FXkPnClTeCMH5xhaic0jjJb95iar2gW1zB441hdPvqeM/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="三套界面" loading="lazy"></p>
 <p>三套界面</p>
 <p><em>同一套行为层上的三套完整界面。</em></p>
 <p>三套完成后，再进入专门的集成 Worktree。这个阶段的重点不再是自由开发，而是合并、对齐和验收：三套界面是否都调用同一套真实行为，功能状态有没有遗漏，响应式有没有溢出，键盘操作能不能完成，生产构建是否正常。</p>

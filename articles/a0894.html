@@ -33,9 +33,9 @@
 <p>原创 空格 zephyr <em>2026年2月6日 13:34</em></p>
 <p>大家好，我是空格\_</p>
 <p>最近文章的评论区，出现频率最高的一个问题：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoyHYH8nYplNFdPBnK24Nzu8asD69GPZVYic4bFEnnwdJmAnH2lTOCd2Mib2yaJSCOzthvZ1VODJlnYLD8icZkYJ8iaKc4dmazNhTPE/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyHYH8nYplNFdPBnK24Nzu8asD69GPZVYic4bFEnnwdJmAnH2lTOCd2Mib2yaJSCOzthvZ1VODJlnYLD8icZkYJ8iaKc4dmazNhTPE/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>大家都说好的配图效果，到底怎么样，你可以看下效果。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoyz6U2D7qfWL1EdrnRLcorsB4MAI3Ix1ZKszu17w231SpPZibp5m4qH9aibiaghGNspQcSJFUtfmfVVmBF25ZGjqdDIC2F90uqkXo/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyz6U2D7qfWL1EdrnRLcorsB4MAI3Ix1ZKszu17w231SpPZibp5m4qH9aibiaghGNspQcSJFUtfmfVVmBF25ZGjqdDIC2F90uqkXo/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>如果用提示词来制作这种风格图片，很简单，发送下面文字给 gemin 3 pro 或 Google AI Studio</p>
 <pre><code>根据下面的文章内容，生成一张简约设计风格的逻辑图。
 白色背景，黑色线条，手绘质感。
@@ -48,12 +48,12 @@
 <p>今天就写篇文章解读一下我的配图工作流实现逻辑，以及教大家制作批量制作封面图、 logo、故事版、海报、插画等等你想要的类型都能做的 <strong>无敌配图 skill。</strong> 有了这个，你能自定义，按需出图，不需要订阅任何昂贵的付费产品。</p>
 <p>一、文章配图 Skill：写完文章，全自动配图</p>
 <p>只要写完文章后，在对话框说一句： <strong>为 xxx 内容使用配图 skill</strong> ，得到下面内容：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoyq5K7cYXSKpxyREBZthRlceQkaWtib8IRhrnibk1LoQrxg4OicSnHf2vUpg6D0ZzdxGvs2tffdEME94qn12ppQnKH8IkjJwumWOU/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyq5K7cYXSKpxyREBZthRlceQkaWtib8IRhrnibk1LoQrxg4OicSnHf2vUpg6D0ZzdxGvs2tffdEME94qn12ppQnKH8IkjJwumWOU/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>skill对全文拆解，进行了一个标题、核心观点、关键概念、图标类型的拆解，这为每张图的提示词做准备。</p>
 <p>这个 Skill 提供了两种风格，在我选定风格后，就开始批量制作提示词：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/CFe2b8yvCoyH8uCias2M3Mce63Gwr3DOWWfPHDYu2Z1pSCIPIibbXV2picRospicND4Lg2TXkwApbE5ibIobzBFdw1ZI3ZvLQ8cTpSynM699PpfU/640?wx</em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoyH8uCias2M3Mce63Gwr3DOWWfPHDYu2Z1pSCIPIibbXV2picRospicND4Lg2TXkwApbE5ibIobzBFdw1ZI3ZvLQ8cTpSynM699PpfU/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>然后，调用脚本，把生成的图片保存到指定目录，插入到文章中。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoyZHH289zvia945ZZPWKicdNRWXW02WibFKwQibsHyLo5OvYjZUcvrq0oiaUxicV2k2j7QpibGoXPBr3Uq4j5hsmefNEViblu8c7Vm7Hds/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyZHH289zvia945ZZPWKicdNRWXW02WibFKwQibsHyLo5OvYjZUcvrq0oiaUxicV2k2j7QpibGoXPBr3Uq4j5hsmefNEViblu8c7Vm7Hds/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>最后，再来一句，推送到飞书，它就能把这几个 skill 推送到飞书文档里。</p>
 <p>这个 Skill 我已经开源了，在这里下载： https://github.com/zephyrwang6/image-create-skills/tree/main/article-batch-illustration</p>
 <p>发送上面链接给 AI 告诉它安装这个 skill，就能安装成功了。</p>
@@ -72,7 +72,7 @@
 <p><strong>工作流：</strong></p>
 <ul><li>收集品牌信息 → 展示 7 种风格（极简扁平 / 线条艺术 / 渐变现代 / 徽章印章 / 吉祥物 / 字母标志 / 手写书法）</li><li>根据描述推荐最适合的风格，我选择确认</li><li>生成 10 个 Logo 变体的提示词：不同构图、不同配色、不同图标</li><li>批量出图，保存到指定目录</li><li>不满意的话，可以指定修改某一张重新生成</li></ul>
 <p>下面是我用它为「AI 生产力系统」专栏设计的 Logo，你觉得哪个好？可以给我投一票。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoyNs9bFRNmu6wLN0DFPgI5wdN5K8eUibsfibafn5ncDuWr8Y1YjicBHBevm34Sm69TMC1UDnhvCEX4WkibDzhqjnnEDVJdiaEib6KSmc/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=6" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyNs9bFRNmu6wLN0DFPgI5wdN5K8eUibsfibafn5ncDuWr8Y1YjicBHBevm34Sm69TMC1UDnhvCEX4WkibDzhqjnnEDVJdiaEib6KSmc/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>logo 批量制作 Skill： https://github.com/zephyrwang6/image-create-skills/tree/main/logo-batch-generator</p>
 <p>同样的逻辑，我制作了一个故事板的 skill.</p>
 <p>三、故事板 Skill：8 帧漫画</p>
@@ -81,7 +81,7 @@
 <p>发送描述后，Skill 做了这些事：</p>
 <ul><li>润色故事线 — 补充叙事细节，梳理情感弧线</li><li>拆分分镜 — 8 个关键帧，每帧标注镜头类型（远景/近景/特写）、画面描述、情绪基调</li><li>选择风格 — 提供 8 种风格，根据故事推荐，我选了"黑白漫画卡通风"</li><li>批量出图 — 8 帧全部生成，角色在每帧中保持一致</li></ul>
 <p>下面总共是 8 张图，我做了一个合并，看下面的效果，故事感很有趣，而且每个形象和 产品 logo 是 一致的。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCozAelDfg0goxHY7rkV1AJcscNr7O8H7k0aqwvo7b6hXueCPaTZRX5ia137tzEdE9z99kaNUGlT7eOOFGjLkjkXwPGQdGCJVMXTk/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx<em>lazy=1#imgIndex=7" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz</em>png/CFe2b8yvCowwMNAOicF3tkDshN59fuy1NqDY8LuTST8ia4vSqyYDMzwfrMHxU9YNAcKPC35AialUyREPxqsco9yia5ms5c2picpurfRxRHRcmjAk/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoyo4ykR5Om5EIvLc9VInAHKXniaZEvwUMHabnxBtZ4DrB5ATv3ibCHpTGiaH7pV0D7ExGjPpzCRSQDfIfzib1jUwjexlO9bIjfTBoQ/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=9" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoz2sOydvib3B3XmIg5u2s3Dn7GMX82E4uxyRxTwiawUFZFE5t4FaE5ERcF5DYaDvBYsicEIBLEIAaYicHogcpV1oOg5qU6ciaeV8Fys/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/CFe2b8yvCoz0sZp7sKRlug4pcInOibU4vDC3JfpClhiaK0ibibRc5w6IclpE888Y3YI6atmatFYGINuJNfG5AFC2ymaWJbxf5XJD1RVFF8icopibk/640?wx</em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx<em>lazy=1#imgIndex=11" alt="飞书文档 - 图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/sz</em>mmbiz<em>jpg/CFe2b8yvCowHMYQhVW5mGhvD6MKibJuSE8lOMZgOpBGRR5xcUds6KDfd4Xb6kIUky6w8ibVEHdVABeTcia7BF24kD5KB7S8upONLLGfbfz1lzQ/640?wx</em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCozAelDfg0goxHY7rkV1AJcscNr7O8H7k0aqwvo7b6hXueCPaTZRX5ia137tzEdE9z99kaNUGlT7eOOFGjLkjkXwPGQdGCJVMXTk/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowwMNAOicF3tkDshN59fuy1NqDY8LuTST8ia4vSqyYDMzwfrMHxU9YNAcKPC35AialUyREPxqsco9yia5ms5c2picpurfRxRHRcmjAk/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyo4ykR5Om5EIvLc9VInAHKXniaZEvwUMHabnxBtZ4DrB5ATv3ibCHpTGiaH7pV0D7ExGjPpzCRSQDfIfzib1jUwjexlO9bIjfTBoQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoz2sOydvib3B3XmIg5u2s3Dn7GMX82E4uxyRxTwiawUFZFE5t4FaE5ERcF5DYaDvBYsicEIBLEIAaYicHogcpV1oOg5qU6ciaeV8Fys/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoz0sZp7sKRlug4pcInOibU4vDC3JfpClhiaK0ibibRc5w6IclpE888Y3YI6atmatFYGINuJNfG5AFC2ymaWJbxf5XJD1RVFF8icopibk/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="飞书文档 - 图片" loading="lazy"> <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCowHMYQhVW5mGhvD6MKibJuSE8lOMZgOpBGRR5xcUds6KDfd4Xb6kIUky6w8ibVEHdVABeTcia7BF24kD5KB7S8upONLLGfbfz1lzQ/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>8 帧故事板，从描述到出图，全程对话完成。拿这个 Skill，你改改也能做成其他的。</p>
 <p>下载地址： https://github.com/zephyrwang6/image-create-skills/tree/main/article-batch-illustration</p>
 <p>四、零门槛，创建你自己的生图 Skill</p>
@@ -104,7 +104,7 @@
 <p>文章配图、Logo 生成、故事板、社交媒体图……这些 Skill 各自独立，但它们背后是同一套逻辑：</p>
 <p>提示词 + API + 自动化流程 = 批量出图</p>
 <p>单独用一个 Skill，解决了一个问题。把多个 Skill 串起来，结合你的上下文，就拥有了一个系统。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCow9ujBQDMuAfaAqZHibRZxrrauxeWsMI1gtDhwm80uLiadFJH51K7q7bia3Wh8qazAAgWslWOWAEpMA1qm7Hb47sv4aWGmWADoExw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCow9ujBQDMuAfaAqZHibRZxrrauxeWsMI1gtDhwm80uLiadFJH51K7q7bia3Wh8qazAAgWslWOWAEpMA1qm7Hb47sv4aWGmWADoExw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>我现在的内容生产流程： <strong>自动推热点→</strong> <strong>选题</strong> <strong>评估</strong> <strong>→</strong> <strong>和 AI 协同写作</strong> <strong>→ 自动配图 → 自动排版 → 推送到草稿箱</strong></p>
 <p>这是我系统中的一个环节，Skill 是零件，系统是机器。</p>
 <p>有了这个系统，知识管理、项目管理的理念在这里运行的更加顺畅了。</p>

@@ -33,7 +33,7 @@
 <p>原创 歸藏的 AI 工具箱 <em>2026年4月1日 18:28</em></p>
 <p>昨天 Claude Code 的源码泄露了。</p>
 <p>翻了一下代码，发现里面藏了一个宠物系统。扭蛋、稀有度、进化，该有的都有。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ofWbZTuv4DX7dP4J4hZ1BkLcZ58UFyNOTq9CBYiaH3uxu5qOSCcoUvdPuibGA9YobPtIkXISQIdKvdYnib2oGG4MTkHPlEtFNjWm6WBgHia1xGM/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="宠物系统" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DX7dP4J4hZ1BkLcZ58UFyNOTq9CBYiaH3uxu5qOSCcoUvdPuibGA9YobPtIkXISQIdKvdYnib2oGG4MTkHPlEtFNjWm6WBgHia1xGM/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="宠物系统" loading="lazy"></p>
 <p>巧的是，我正好在重做 CodePilot 的助理系统，游戏化是我已经想了一段时间的方向。泄露的代码给了我一些启发，但更多是验证了判断：这条路是对的。</p>
 <p>所以我在 CodePilot 里做了一套宠物助理系统，加了很多我自己对 Agent 产品的思考。</p>
 <p>今天聊两件事：Codepilot 的宠物助理系统长什么样，以及为什么 Agent 产品迟早都会走上游戏化。</p>
@@ -51,7 +51,7 @@
 <p>工具得有人装，信息得有人喂。但用户不会主动做这些——不是懒，是不知道该做什么、做了有什么好处。</p>
 <p>Memory 在后台默默变大，用户感知不到。CLI 装了五个，用户不知道 Agent 变强了多少。</p>
 <p>他自己的小龙虾或者 Codepilot 价值在涨，但用户看不见。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ofWbZTuv4DVtpYc0OvnGZfaSvpHKuJZDicUfZLhJ20eUCtibIBkkejEPeRickYZBCmZsYWTILK48TT549ZxOcVlkBJcOvia6rfWgicWXtINJQ4QY/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="宠物成长" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DVtpYc0OvnGZfaSvpHKuJZDicUfZLhJ20eUCtibIBkkejEPeRickYZBCmZsYWTILK48TT549ZxOcVlkBJcOvia6rfWgicWXtINJQ4QY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="宠物成长" loading="lazy"></p>
 <h2>宠物系统：把看不见的成长变成看得见的</h2>
 <p>CodePilot 的出发点很简单：解决上面的问题。</p>
 <h3>从一颗蛋开始</h3>
@@ -60,7 +60,7 @@
 <p>这个"随机"不是真随机——底层用工作区路径和时间戳做种子，通过哈希生成。同一个环境下，你永远得到同一只 Buddy。看起来像扭蛋，实际上可预测。</p>
 <p>为什么用扭蛋而不让用户自己选？</p>
 <p>80 种组合（16 物种 × 5 稀有度），让用户选会直接选择焦虑。扭蛋天然带叙事价值——"我开出了一只传说级的龙"比"我选了一条龙"有意思得多。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/ofWbZTuv4DWdTdeLr50LC2vFWfF9HUv5cQJEckUIjVryKWgSib2Go3wFB1bgHx51GVSeiahyrReobep6RIN68MuIbW9M3ZpqRGGOjiaqcgIn60/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="扭蛋系统" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/ofWbZTuv4DWdTdeLr50LC2vFWfF9HUv5cQJEckUIjVryKWgSib2Go3wFB1bgHx51GVSeiahyrReobep6RIN68MuIbW9M3ZpqRGGOjiaqcgIn60/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="扭蛋系统" loading="lazy"></p>
 <h3>稀有度不是装饰，真的影响能力</h3>
 <p>5 级稀有度：普通、非凡、稀有、史诗、传说。出率 60%、25%、10%、4%、1%。</p>
 <p>大部分宠物系统的稀有度只影响外观。CodePilot 不一样，稀有度直接影响 Agent 的工作能力：</p>
@@ -69,7 +69,7 @@
 <p>"提取记忆" 是什么意思？ Agent 在和你对话的过程中，会把有价值的信息（你的偏好、工作习惯、项目背景）自动存到记忆文件里。提取频率越高，Agent 积累上下文越快，后续帮你做事就越准。</p>
 <p>同样用一个月，传说级比普通级多出将近 50% 的上下文量。上下文多了，Agent 处理你的问题就更准。</p>
 <p>稀有度还影响人格。普通 Buddy 只在一个维度上有性格加成，传说级全维度都有，回复风格和决策倾向都会不同。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ofWbZTuv4DXIXPA6JghXm31DuGGHokClK5p1CiaufgicxqIx4RiacfVZzOqlgpTay9zUNp8oA0QSR6Ag9ChQhFbib6hC4YvenmVbNUHSfyyCu5Q/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="稀有度系统" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DXIXPA6JghXm31DuGGHokClK5p1CiaufgicxqIx4RiacfVZzOqlgpTay9zUNp8oA0QSR6Ag9ChQhFbib6hC4YvenmVbNUHSfyyCu5Q/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="稀有度系统" loading="lazy"></p>
 <h3>进化系统：你的使用习惯决定成长路径</h3>
 <p>Buddy 会进化，从普通 → 非凡 → 稀有 → 史诗 → 传说。</p>
 <p>进化靠三个数字：</p>
@@ -83,7 +83,7 @@
 <p>成长曲线参考了宝可梦的经验系统——前期升得快给你正反馈，中期平稳，后期要真投入。</p>
 <p>三个数字一起看是故意的。只看对话次数，水聊天就能升；只看天数，挂机就行。三项同时达标，才说明你真的在用 Agent 干活。</p>
 <p>Buddy 的成长速度 = 你 Agent 基础设施的搭建速度。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ofWbZTuv4DVxXcjRRdu9ibme4BesAnOtIkAy79QVpuEiaKdicrsD6svRe23HzZdHoS0KjqDHGicgVuic7zliceOcq68RTHbia4C634t0I42sfO76H4/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVxXcjRRdu9ibme4BesAnOtIkAy79QVpuEiaKdicrsD6svRe23HzZdHoS0KjqDHGicgVuic7zliceOcq68RTHbia4C634t0I42sfO76H4/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <h3>心跳系统：你不在的时候，它在替你干活</h3>
 <p>很多宠物系统的心跳逻辑是"回来喂我，不然我饿死"。拿负面情绪绑架用户。</p>
 <p>CodePilot 反过来。</p>
@@ -109,7 +109,7 @@
 <p>顶栏：一个小 emoji</p>
 <p>你不用"执行一个命令"才能看到 Buddy。它就在那里。</p>
 <p>桌面端能做到"一直在"，CLI 做不到。这种持续的存在感改变的是你和工具的关系——你不是在用一个软件，你是在跟一个伙伴一起工作。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ofWbZTuv4DWEjfGLSDcYYabzeo2bhxwEu8IE2yLmlzHrK4rYdyX6wRngjibVB4OwdqkavRdKXDiaAYeHIQibkBv4nApfO90NloFM7wVeatricGk/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="空间存在感" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DWEjfGLSDcYYabzeo2bhxwEu8IE2yLmlzHrK4rYdyX6wRngjibVB4OwdqkavRdKXDiaAYeHIQibkBv4nApfO90NloFM7wVeatricGk/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="空间存在感" loading="lazy"></p>
 <h2>全生命周期：从蛋到工作流</h2>
 <p>Buddy 串起了用户从第一次打开到深度使用的整条路。</p>
 <p><strong>第一眼 → 空状态</strong> 一般产品这里放功能介绍页或新手教程。CodePilot 放了一颗蛋。用户只需要做一个动作：孵蛋。</p>
@@ -117,7 +117,7 @@
 <p><strong>日常使用 → 被动引导</strong> 心跳系统跑起来，Buddy 每天帮你整理信息、准备简报。用户慢慢习惯"回来就有东西等着我"的节奏，Memory 不知不觉越来越丰富。</p>
 <p><strong>深度使用 → 主动探索</strong> Buddy 需要更多工具才能帮你做更多事。用户会被自然带着去装 CLI、配 MCP、加载 Skills。不是你告诉他"该配这些了"，是 Buddy 说"你装个飞书 CLI，我就能帮你查日历了"。</p>
 <p><strong>长期使用 → 正循环</strong> Buddy 进化到高稀有度，记忆提取变快，Agent 变强，体验变好，用户更愿意投入。循环转起来了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ofWbZTuv4DWomFo4IN385LgsxygmkzWicaSxJA8m2ccmicCS2tFyic7HFUDnAAiaJrXxldyGZIiaiaRVIbrSbibGiccnfd9vBhERn4VhsdicN56iaYDb8/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="全生命周期" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DWomFo4IN385LgsxygmkzWicaSxJA8m2ccmicCS2tFyic7HFUDnAAiaJrXxldyGZIiaiaRVIbrSbibGiccnfd9vBhERn4VhsdicN56iaYDb8/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="全生命周期" loading="lazy"></p>
 <h2>为什么这么设计：游戏化方法论</h2>
 <p>功能说完了，聊聊背后的想法。这些思路做 Agent 产品的都可以参考。</p>
 <h3>隐性教学</h3>
@@ -150,7 +150,7 @@
 <p>•</p>
 <p>稀有度让你看到 Agent 确实在变强</p>
 <p>游戏化是拿着注意力经济的武器，干不一样的事。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ofWbZTuv4DVwibhntYsQ2nibHXOhr9nmAX1wyuDWBW10xC3K9jSKkiblSp5HiaeTq9ibW9fXPaib4zNb67WxtzD14od3Oej76BEXDuBialXCRtnoUU/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="游戏化" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DVwibhntYsQ2nibHXOhr9nmAX1wyuDWBW10xC3K9jSKkiblSp5HiaeTq9ibW9fXPaib4zNb67WxtzD14od3Oej76BEXDuBialXCRtnoUU/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="游戏化" loading="lazy"></p>
 <h2>回到最大的问题</h2>
 <p>我之前文章里写过：Agent 时代的能力分四层——大脑、手脚、组织、进化。前三层都在解决"Agent 怎么变强"。</p>
 <p>但有一个问题一直没被正面回答：人怎么跟上？</p>
@@ -161,7 +161,7 @@
 <p>我现在想试试宠物系统这个解法。</p>
 <p>它用人类几千年来最熟悉的关系——照顾一个生命——把一套新技术体系包进去了。</p>
 <p>你的宠物在成长，你的 Agent 基础设施也在成长。你不用知道后面那句话，前面那句话就够了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/ofWbZTuv4DXh6aTDjg44ic01FXfxupum8hlJZuNAicictOvPcOiboeEcx16g8Qicehf2WhmGMRBHrs1G2O4vdIH2VKwz9Kfkxibl4EMWFWSf5ehMg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="宠物成长" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/ofWbZTuv4DXh6aTDjg44ic01FXfxupum8hlJZuNAicictOvPcOiboeEcx16g8Qicehf2WhmGMRBHrs1G2O4vdIH2VKwz9Kfkxibl4EMWFWSf5ehMg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="宠物成长" loading="lazy"></p>
 <p>Claude Code 的源码泄露出了宠物功能，说明 Anthropic 也看到了这个问题，光好用不行，人需要一个理由去持续投入。</p>
 <p>但 CLI 的限制决定了它只能做到"XP 条换皮"。完整的游戏化体验，得靠桌面端的空间感和时间感来撑。</p>
 <p>CLI 是 Agent 最好的工作界面，桌面端是人和 Agent 最好的相处界面。两个都要。</p>

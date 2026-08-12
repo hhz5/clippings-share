@@ -33,7 +33,7 @@
 <p>原创 南川同学 <em>2025年12月11日 14:54</em></p>
 <p>TTS 赛道又卷起来了。</p>
 <p>今天，智谱正式开源了 GLM-TTS —— 一套工业级语音合成系统。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/UBWAWibiaa4jfjOtX2L9c6tOmL4R31Bv92CCgm0fYn88YJuhd9oPol6ibV64LPgKLybKX5mXOZjsc0k3YfROu7kvQ/640?wx</em>fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/UBWAWibiaa4jfjOtX2L9c6tOmL4R31Bv92CCgm0fYn88YJuhd9oPol6ibV64LPgKLybKX5mXOZjsc0k3YfROu7kvQ/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>如果你对「AI 语音」这几个字不感冒，建议留下来看看。</p>
 <p>文字说多了没用，语音这东西，得听。</p>
 <h2>01先听效果</h2>
@@ -41,24 +41,24 @@
 <p>这是我录了一段话，然后用 GLM-TTS 克隆我的声音后生成的。</p>
 <p>如果我不说，你能听出来哪个是 AI 吗？</p>
 <p>我专门设计了一段带语气词和情绪转折的文案来测试：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYaz2prZDqHBONXVwkf1SzYUF0xykhO8uEBW4CZaPJkGGpA7SmffjyJg/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYaz2prZDqHBONXVwkf1SzYUF0xykhO8uEBW4CZaPJkGGpA7SmffjyJg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>重点来了——那句「哎，等等，这个 bug 怎么回事……哦，路径写错了」， <strong>语气转折、停顿、恍然大悟的感觉，全都在</strong> 。</p>
 <p>这不是机械地念字，这是在「表演」。</p>
 <h2>02我是怎么测的</h2>
 <p>打开 audio.z.ai，首页长这样：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYv0b8Js0TmevZiaW1TFXbb3a9kCoObcYVef23KQXpr8G9eoHnoIXPdKQ/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYv0b8Js0TmevZiaW1TFXbb3a9kCoObcYVef23KQXpr8G9eoHnoIXPdKQ/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>登录支持邮箱、Google 和 GitHub，界面基于 Open WebUI 构建，挺清爽的。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYPfStM6PUKTiaHjYhRmtb9hZbUuOq0sH5sg9WxGs3icCkN8QqnaSAcXPw/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYPfStM6PUKTiaHjYhRmtb9hZbUuOq0sH5sg9WxGs3icCkN8QqnaSAcXPw/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>默认提供三种声音，但重点是—— <strong>你可以克隆自己的声音</strong> 。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYh8Y4ZmXhBRBac9OoDnibUasv7QtyGrx5qGP52fn9ESugD8GAWbBKoeA/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYh8Y4ZmXhBRBac9OoDnibUasv7QtyGrx5qGP52fn9ESugD8GAWbBKoeA/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>点「创建音色」，支持上传文件或直接录音：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGY5HoiaQF8GOejUsC0kWEPYzTwkIbic7GtgTjXfribPjsvibp1RPWFmbu5cw/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGY5HoiaQF8GOejUsC0kWEPYzTwkIbic7GtgTjXfribPjsvibp1RPWFmbu5cw/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>我的录音环境是茶馆，有点小杂音，用的电脑浏览器 + AirPods，能听清但不算特别清晰。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYd6JsbYRxXVdzHLcfibwySITQd6iap8YrlruOnTuKow5icSOPxB63zgvQg/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYd6JsbYRxXVdzHLcfibwySITQd6iap8YrlruOnTuKow5icSOPxB63zgvQg/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <p>点击克隆， <strong>十几秒</strong> 就完成了：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYCJrFfDTHCMBiasGU913uh8conGm9OZjKKtEmt6IibWMOcY8jObD5ibc3Q/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYCJrFfDTHCMBiasGU913uh8conGm9OZjKKtEmt6IibWMOcY8jObD5ibc3Q/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <p>克隆成功后就在你的音色库里了：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYQVqcnzbwCvWEQgDVcgyKichWtoQt28gapBRv0ryajcAArMPejDyhyRg/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYQVqcnzbwCvWEQgDVcgyKichWtoQt28gapBRv0ryajcAArMPejDyhyRg/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
 <p>实测下来， <strong>确实像</strong> 。</p>
 <p>不过有个小 bug：生成的声音里偶尔会有听不到声音的片段。希望后续能修。</p>
 <h2>03整点活：让我念丘吉尔</h2>
@@ -72,7 +72,7 @@ We shall fight in France.
 We shall fight on the seas and the oceans. 
 
 We shall fight with growing confidence and growing strength in the air.</code></pre>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYZnd6HicevgRBTPAX6HK3mIv36rBhbcciaLSMa2xpn8gIsmlDIlCEET1g/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYZnd6HicevgRBTPAX6HK3mIv36rBhbcciaLSMa2xpn8gIsmlDIlCEET1g/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
 <p>效果你们自己感受：</p>
 <p>用我的声音念英文演讲词，这个违和感……有点上头。</p>
 <h2>04技术上到底强在哪？</h2>
@@ -95,10 +95,10 @@ We shall fight with growing confidence and growing strength in the air.</code></
 <p>传统 TTS 最头疼的就是多音字。「行」是 xíng 还是 háng？「长」是 cháng 还是 zhǎng？</p>
 <p>GLM-TTS 搞了个 <strong>Phoneme-in</strong> 机制，你可以通过动态词典强制指定发音。教育、评测这些对准确度要求极高的场景，终于不用再手动校对了。</p>
 <h2>05和字节比怎么样？</h2>
-<p>在6月的时候，我们有深度使用豆包实时端到端语音系统，还基于它为友商搭建一个商业化Agent产品，并开源了核心代码，参考我们之前的文章： <a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTg5NDg3Mg==&amp;mid=2247491980&amp;idx=1&amp;sn=d94800ed2b5f9b009f367e47e6a94368&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">2025 AI 语音对话系统，从级联到端到端</a> 。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYSCSOaPCiadJy6ewnUNLOMRZOE5lrSuhicj0oKjdIjZabkztyLbSYhPng/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="手工川交付某集成语音控制合作项目初始设计架构" loading="lazy"></p>
+<p>在6月的时候，我们有深度使用豆包实时端到端语音系统，还基于它为友商搭建一个商业化Agent产品，并开源了核心代码，参考我们之前的文章： <a href="https://mp.weixin.qq.com/s?__biz=Mzg2OTg5NDg3Mg==&amp;mid=2247491980&amp;idx=1&amp;sn=d94800ed2b5f9b009f367e47e6a94368&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">2025 AI 语音对话系统，从级联到端到端</a> 。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYSCSOaPCiadJy6ewnUNLOMRZOE5lrSuhicj0oKjdIjZabkztyLbSYhPng/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="手工川交付某集成语音控制合作项目初始设计架构" loading="lazy"></p>
 <p>手工川交付某集成语音控制合作项目初始设计架构</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYqM4iculphGwTGia3rxx2jVCHJaH3pfxJdUOedicsRfpcAj1mmXpI7iaXXw/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=11" alt="手工川计划开源人机交互系统，同时支持级联、端到端、视频、手势识别" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYqM4iculphGwTGia3rxx2jVCHJaH3pfxJdUOedicsRfpcAj1mmXpI7iaXXw/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="手工川计划开源人机交互系统，同时支持级联、端到端、视频、手势识别" loading="lazy"></p>
 <p>手工川计划开源人机交互系统，同时支持级联、端到端、视频、手势识别</p>
 <p>以及之前豆包语音 2.0 出来的时候我也测过，那个细节描述控制情绪的玩法确实惊艳。</p>
 <p>但 GLM-TTS 的优势在于： <strong>开源</strong> 。</p>
@@ -130,7 +130,7 @@ We shall fight with growing confidence and growing strength in the air.</code></
 <p>与其焦虑，不如先玩起来。</p>
 <hr>
 <p><em>更多技术细节见智谱公众号的 GLM-TTS 中文技术报告。</em></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYFZKMiadhdlVxZ563vptI2OHxAg6GL7vNSYWcRPNFYknZfRbl1ZtdUSQ/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=12" alt="关注手工川，AI不迷茫" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/2niaYkVLHpnFVxgVkmUQryVDR3HAQbGGYFZKMiadhdlVxZ563vptI2OHxAg6GL7vNSYWcRPNFYknZfRbl1ZtdUSQ/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="关注手工川，AI不迷茫" loading="lazy"></p>
 <p>关注手工川，AI不迷茫</p>
 <p>关注手工川，AI不迷茫</p>
 <hr>

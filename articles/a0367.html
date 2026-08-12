@@ -124,7 +124,7 @@
 <p>旧办法：一段做完下一段才开始，每个接缝都在等</p>
 <p>每多一段接力，就多一次等待和一次交接。更麻烦的是第二段：把声音压成文字这一步，会把大量信息直接扔掉。你说话的语气和停顿、屋子里突然响起的雷声、画面里一个手势。文字装不下这些，模型也就无从反应。</p>
 <p>A1 没有去优化这几段之间的衔接。它把整条链换成了一个循环：声音、图片、交互信号直接进同一个模型，模型直接吐出音频和画面的小片段。中间不再绕道文字。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPVwia8NcPpB71TbU9juWy3MQx8icQ9Eyd9qDn9CNCtu9RVtkOK3hFrYQLMqRgibw4wQIIQXcom7pa1y1fGe8icXicW1yN2fzlsdyC0/640?wx<em>fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="Vivix-A1 技术报告 Figure 1，三种系统的对照" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPVwia8NcPpB71TbU9juWy3MQx8icQ9Eyd9qDn9CNCtu9RVtkOK3hFrYQLMqRgibw4wQIIQXcom7pa1y1fGe8icXicW1yN2fzlsdyC0/640?wx_fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Vivix-A1 技术报告 Figure 1，三种系统的对照" loading="lazy"></p>
 <p>Vivix-A1 技术报告 Figure 1，三种系统的对照</p>
 <p>技术报告 Figure 1。最上面一行是传统做法：人声进来，经过静音检测、语言模型、语音合成、音频驱动视频四段才出画面。中间一行是把语音直接对语音，再外挂若干段音频转视频。最下面是 A1：人声进来，Director Agent 在中间做判断，音频和视频两条带子并排往外流 · 来源：Vivix</p>
 <p>图上那个 Director Agent 负责慢的那部分判断：推理、调用工具、决定角色接下来该说什么做什么，同时记住此前的对话和场景状态。模型本体负责快的那部分：在约 300 毫秒的最快时间片里，直接对当前听到看到的东西作出反应。你中途换了话题，角色从当前状态继续接，不必回头重算。</p>
@@ -134,7 +134,7 @@
 <p>一边铺铁轨一边开火车。铺得越久，偏差越容易一节一节攒起来，最后火车还在跑，方向已经不对了。</p>
 <p>业内常用的解法是加固定的参考锚点把画面按住。稳是稳了，代价是角色也变得不敢动。一个不敢转身、不敢伸手碰东西的角色，谈不上有身体。</p>
 <p>A1 的做法是把「让画面连得上」和「让角色敢动」这两件事分开管：相邻的小片段之间用局部连续性先验接住，保证动作和画面接得自然；更长的时间尺度上用全局序列先验，管住角色身份、场景和物体关系不漂。这样一来，保证稳定的那部分约束只作用在相邻片段之间，不会顺带把角色的动作幅度也一起限制住。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtN0oB1LlOzicQaaKnbt9w9QSZahIQJ6trJDhsa07kgD827vPr50bibkfWDXT3ibDJudQOqq2ztmEW3rreeD78k9w6mvYnTf8gTOuM/640?wx</em>fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Vivix-A1 架构图，标出局部连续性先验与全局序列先验" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtN0oB1LlOzicQaaKnbt9w9QSZahIQJ6trJDhsa07kgD827vPr50bibkfWDXT3ibDJudQOqq2ztmEW3rreeD78k9w6mvYnTf8gTOuM/640?wx_fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Vivix-A1 架构图，标出局部连续性先验与全局序列先验" loading="lazy"></p>
 <p>Vivix-A1 架构图，标出局部连续性先验与全局序列先验</p>
 <p>A1 架构图。横轴是时间片 T0、T1、T2，每一片里并排着三样东西：用户交互（蓝）、A1 生成的画面信号（绿）、A1 生成的声音信号（粉）。红色标注的 local continuity priors 管相邻两片接得上，右侧紫色小块是全局序列先验，管更长时间里的身份与场景一致 · 来源：Vivix</p>
 <p>让生成跑得够快的办法叫多维联合蒸馏：高质量视频扩散系统通常需要 4 到 8 步推理，A1 把这个过程压进 2 步模型。只盯着单帧画质压是压不出来的。这样压完，短时间的画质、听指令的准确度、动作表现和长时间的稳定性都尽量保住。</p>
@@ -147,11 +147,11 @@
 <p>官方给 W1 的用户交互响应延迟口径是低于 1 秒。能插进去的东西也比现在讲互动生成的产品多得多。那类产品的交互面基本停在导航和运镜：按方向键走两步、把镜头转一转。W1 的清单要长得多：说话、打字、上传新图片、点击画面里的物体、触屏拖动、控制镜头和人物移动，而且全都能在世界已经跑起来之后再进来，不用重新开始生成。</p>
 <h3>说一句、点一下、丢一张图</h3>
 <p>语音与文字输入：世界正在生成，一句话进来改变后面的走向 · 来源：Vivix</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>gif/iafyQTicPqUtP6k0EqqQbcIqHwdTeYPL0Sojk6r0OISnBqglOOaL31J7hvvODkdQNB2QibiaKxwL6FSN1dJ9ic2urCEciaxT0kpNwxrY1eDjWezgs/640?wx<em>fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_gif/iafyQTicPqUtP6k0EqqQbcIqHwdTeYPL0Sojk6r0OISnBqglOOaL31J7hvvODkdQNB2QibiaKxwL6FSN1dJ9ic2urCEciaxT0kpNwxrY1eDjWezgs/640?wx_fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>你给的一句话、一次点击，或者一张刚上传的图片。给的时机是在世界已经开始生成之后。</p>
 <p>画面变化后面的内容从当前状态接着改，前面已经出现的部分照常保留。</p>
 <p>说明能力交互信号和多模态参考被同一套流式架构一起理解。交互在生成的全过程里持续起作用，不只是开跑前拧一次、跑完再拧一次的开关。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtOz3zRwVQeajFXmA3FP0vDrJIb0LUOfe16q5mKXhmfIHia9ucV3ZHiaaicFgwGAs6E4EmVibzps4n827JQKyBbHOEczKV5Q8KWibeKw/640?wx</em>fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="Vivix-W1 架构图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtOz3zRwVQeajFXmA3FP0vDrJIb0LUOfe16q5mKXhmfIHia9ucV3ZHiaaicFgwGAs6E4EmVibzps4n827JQKyBbHOEczKV5Q8KWibeKw/640?wx_fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="Vivix-W1 架构图" loading="lazy"></p>
 <p>Vivix-W1 架构图</p>
 <p>W1 架构图。底部黄色是多模态参考（图片、音频、视频），蓝色是每个时间片进来的用户交互（文字、音频、触屏、动作与镜头控制），绿色是上一段已经生成的画面和声音。三者一起进模型，模型吐出下一段的画面和声音，再作为下一片的上下文 · 来源：Vivix</p>
 <p>W1 机制</p>
@@ -167,7 +167,7 @@
 <p>这一项目前没有量化指标。切得对不对、叙事连不连贯，只能看演示片判断，技术报告里没有针对多镜头的评测。</p>
 <h3>让它长时间跑而不散架：Vivix-Turbo</h3>
 <p>内容演得越久，人物、场景和声音越容易慢慢走样。W1 为此配了一套叫 Vivix-Turbo 的加速与一致性方案，同时做四件事：用超低步数蒸馏压掉每一段的推理开销；把镜头规划和时间连续性放在一起优化，让长的多镜头序列走到后面也不断掉故事线；压住长时间生成里的误差累积，稳住角色长相、场景、镜头和动作；再加强多模态参考的一致性，让人物、声音、风格、环境在世界继续演变时不走样。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPB4xohxSZFeP6K9S19p4r5ZwgJAN8VmJbfSj8xDOd4zRrwLZNQynSUB00bY7zLWhGHvzWjNPZoSqoXBZichpAdmD5sR24d7yL4/640?wx<em>fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="Vivix-Turbo 与其他方法在 VBench 上的对照图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPB4xohxSZFeP6K9S19p4r5ZwgJAN8VmJbfSj8xDOd4zRrwLZNQynSUB00bY7zLWhGHvzWjNPZoSqoXBZichpAdmD5sR24d7yL4/640?wx_fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="Vivix-Turbo 与其他方法在 VBench 上的对照图" loading="lazy"></p>
 <p>Vivix-Turbo 与其他方法在 VBench 上的对照图</p>
 <p>Vivix-Turbo 与其他加速方法的对照：横轴是推理步数（越左越省算力），纵轴是 VBench 得分（越高越好），星号是 Vivix-Turbo。⚠️ 图下角的说明写明了测试条件：5 秒生成、832×480 分辨率、图中所有模型都是 13 亿参数。这是小模型上的方法对比，不是 300 亿激活参数的 W1 本体成绩 · 来源：Vivix</p>
 <p>硬约束</p>
@@ -205,7 +205,7 @@
 <h3>为什么生成到一半能被打断</h3>
 <p>系统把输入编码和实时视频解码拆成了两部分。新的语音、动作、人物参考和镜头信息交给 Encoder Service 处理；真正在实时链路上的 Decoder Loop 持续生成音视频，并允许调度器追加新输入、中止正在执行的生成步骤。所以「打断」是进到了模型的流式生成链路里面。播放器切掉旧视频再重新生成，是另一回事。</p>
 <p>当你在角色行动或故事进行中突然改变要求，系统不必等当前片段生成完。新输入进入正在运行的循环，模型从当前状态调整接下来的画面和声音。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/iafyQTicPqUtNfPEfuAdeTicAhJ3522ZLamS7qyicBtAXTU3gupRerkhAdqm03nfIibJAYMbMcAp3BmWfhKF4LiaiclVddhYYqueWoPLfXz0Ex1Bnc/640?wx</em>fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="Vivix Model Infra 的编码器/解码器解耦架构图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/iafyQTicPqUtNfPEfuAdeTicAhJ3522ZLamS7qyicBtAXTU3gupRerkhAdqm03nfIibJAYMbMcAp3BmWfhKF4LiaiclVddhYYqueWoPLfXz0Ex1Bnc/640?wx_fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="Vivix Model Infra 的编码器/解码器解耦架构图" loading="lazy"></p>
 <p>Vivix Model Infra 的编码器/解码器解耦架构图</p>
 <p>左边紫色的编码服务不在关键路径上，走批量、追吞吐，每个输入的延迟预算是数十毫秒级；右边绿色的实时解码循环在关键路径上，逐段生成、随时可被抢占 · 来源：Vivix</p>
 <p>< 0.6 秒</p>
@@ -216,7 +216,7 @@
 <p>架构图上模型原生打断的典型区间</p>
 <h3>还要以足够低的成本一直跑</h3>
 <p>低精度计算、Vivix Sparse Attention、缓存管理、通信与计算重叠、预填充与解码解耦，这些放在一起回答的是另一个问题：跑出效果之后，能不能一直跑得起。其中数值精度这一项走得比较远：推理侧对降噪过程的累计误差做了免训练矫正，首次实现 4 位精度（4-bit，Blackwell 显卡上的 NVFP4 格式）的无损推理，配合视频流式推理的预填充与解码分离，把推理成本压了下来。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtNck5fQ5MPiaCm52RzAORESIqoD6wqRoSdRAbMIrqrud70cX6x1GuhbLzKD7y171kU6xZjhJBia3LmJffbWG1UTHvDdk0l3cRCWY/640?wx<em>fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="实时 AI 视频互动的每小时成本与消费级娱乐订阅的对照条形图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtNck5fQ5MPiaCm52RzAORESIqoD6wqRoSdRAbMIrqrud70cX6x1GuhbLzKD7y171kU6xZjhJBia3LmJffbWG1UTHvDdk0l3cRCWY/640?wx_fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="实时 AI 视频互动的每小时成本与消费级娱乐订阅的对照条形图" loading="lazy"></p>
 <p>实时 AI 视频互动的每小时成本与消费级娱乐订阅的对照条形图</p>
 <p>每小时成本对照。Runway / Kling / Pika / Seedance 这类视频接口折算成小时约在百美元档，只做脸的数字人平台更高；Vivix 的实时视频推理落在每小时 1 美元以内，与云游戏、音乐和流媒体订阅同一带 · 来源：Vivix。⚠️ 这是官方报告里的实时视频推理成本口径，不是最终 API 售价</p>
 <p>落到这个价格带的意义是：AI 实时互动娱乐可以规模化地服务普通消费者，而不只是做几个演示。同一张图上也标了标准视频 CDN 约每小时 0.1 美元、短视频 CDN 约 0.01 美元，Vivix 自己把「逼近 CDN 量级」写成下一个里程碑。</p>
@@ -234,7 +234,7 @@
 <p>46.4%</p>
 <p>条形长度 = 人评判定 Vivix-A1 更好的比例。三场分别还有 13.0% / 7.1% / 35.7% 判为相同，1.8% / 16.1% / 17.9% 判对手更好</p>
 <p>逐维度看，优势最集中的是两项：动作动态和音画同步。对 LiveAvatar 那一场，动作动态有 96.4% 判 A1 更好，音画同步 56.4%；对 LongCat-Video-Avatar1.5，音画同步 87.5%、动作动态 64.3%。这跟它主打的全身运动是一致的。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/iafyQTicPqUtPKXv1ia08odCv8eazkib8rxJztJExpRwUR2sAw8OkvVq2HVmEQUJDRfe0u6zBAbAl4uXKJQzMC47ibYx3cCwvzPza86TU1A5Cibib0/640?wx<em>fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="Vivix-A1 与 SoulX-LiveAct 的人评对照图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/iafyQTicPqUtPKXv1ia08odCv8eazkib8rxJztJExpRwUR2sAw8OkvVq2HVmEQUJDRfe0u6zBAbAl4uXKJQzMC47ibYx3cCwvzPza86TU1A5Cibib0/640?wx_fmt=other&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="Vivix-A1 与 SoulX-LiveAct 的人评对照图" loading="lazy"></p>
 <p>Vivix-A1 与 SoulX-LiveAct 的人评对照图</p>
 <p>三场对照里最接近的一场：对 SoulX-LiveAct，整体 46.4% 判 A1 更好、35.7% 判相同、17.9% 判对手更好。逐项看，动作动态 41.1%、角色一致性 30.4%、开放世界自由行为 25.0%、音画同步 35.7% · 来源：Vivix</p>
 <p>另外两项则有相当比例被评为持平：角色一致性和开放世界自由行为。三场里角色一致性判 A1 更好的分别是 35.7%、32.1%、30.4%，持平占了 41% 到 46%。这和它的设计取舍对得上：让角色敢走、敢转身、敢碰东西，长时间保持同一张脸就更难。这组数字适合用来看优势具体出现在哪些维度，不适合读成全面碾压。</p>

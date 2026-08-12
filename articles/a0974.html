@@ -42,11 +42,11 @@
 <p>ego lite 是一款为 AI Agent 设计的 Chromium 浏览器。</p>
 <p>它不会直接抢走你此刻正在用的 Chrome。第一次启动时，你可以选择把 Chrome 里的登录状态、Cookie、扩展、书签和 Profile 迁移过去。此后，Codex、Claude Code、Cursor 这类 Agent 可以通过配套的 ego-browser 驱动它。</p>
 <p>Agent 会在自己的 Space 里开页面、读数据、点击和输入。你继续用自己的标签页，它在另一块工作区里跑，不抢鼠标，也不把你的页面切来切去。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/teQhPZBEOpPW78p6HhPQJc8XZnwrGRBhu7JpgrnFtNvZzHspqdDnfYnvaCrLk4p1aO96GicgCmvvfDO5wNOuGmRX5x7Ktc1wiawu6lghXictII/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="插图01-AI并行读取四个后台" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/teQhPZBEOpPW78p6HhPQJc8XZnwrGRBhu7JpgrnFtNvZzHspqdDnfYnvaCrLk4p1aO96GicgCmvvfDO5wNOuGmRX5x7Ktc1wiawu6lghXictII/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="插图01-AI并行读取四个后台" loading="lazy"></p>
 <p>插图01-AI并行读取四个后台</p>
 <p>对我来说，这正好补上了 AI 浏览器最麻烦的一块。</p>
 <p>公开网页谁都能抓。我平时最想交给 AI 处理的数据，偏偏藏在登录后的分析后台、CRM、内部系统和账号页面里。以前要么重新登录、处理验证码，要么专门维护一套 Cookie 和自动化环境。任务还没开始，耐心先耗完了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/teQhPZBEOpMjgiaGC3OJnz4zxLiavtegpMgvBuib2Q7Uc3jTGYDApZy7q4WN6hIZvDMiajP6QHGvCeChiaGtrD5bAAMp0wCoib405X2eBkIJia3ysg/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/teQhPZBEOpMjgiaGC3OJnz4zxLiavtegpMgvBuib2Q7Uc3jTGYDApZy7q4WN6hIZvDMiajP6QHGvCeChiaGtrD5bAAMp0wCoib405X2eBkIJia3ysg/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>这次我把 4 个后台分别交给它，只给了三条边界：</p>
 <ol><li>全程只读，不修改任何设置。</li><li>统一时间窗口，每个平台都返回证据和口径。</li><li>遇到提交、发送、删除和权限变化，立刻停下等我确认。</li></ol>
 <p>然后让它们同时去查：</p>
@@ -60,7 +60,7 @@
 <p>第三个发现，接下来该改的地方藏在行为数据里。</p>
 <p>新流量在降，回访会话占比却在上升。说明有一批人愿意回来查资料，这部分需求并没有消失。</p>
 <p>可平均滚动深度不到一半，每次会话浏览页数只比 1 多一点，快速返回和无效点击也不少。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/teQhPZBEOpNoGyNHVRutT3ZHEwyCIC7aq1eYDeA3XlBiaW0tRTEIEuEhcWNjX83xlL1q6EgWQDIQ6v2dia6eR4pOwIwFy7B0vkHU3SMoFY5iac/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="插图02-四后台交叉判断" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/teQhPZBEOpNoGyNHVRutT3ZHEwyCIC7aq1eYDeA3XlBiaW0tRTEIEuEhcWNjX83xlL1q6EgWQDIQ6v2dia6eR4pOwIwFy7B0vkHU3SMoFY5iac/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="插图02-四后台交叉判断" loading="lazy"></p>
 <p>插图02-四后台交叉判断</p>
 <p>我顺着这些信号抽查了几个流量最高的页面，问题一下就明白了：</p>
 <p>标题承诺的是具体答案，正文给的却是一套寻找答案的方法。</p>
@@ -70,7 +70,7 @@
 <p>这轮排查还顺手挖出一个技术问题：带 www 和不带 www 的两个域名都在被统计，首页流量被拆成了两份。单看任何一个后台，两份数据都很正常；放在一起，才看出它们其实是同一个站。</p>
 <h2>ego lite 好用的地方，在这次任务里都冒出来了</h2>
 <p>登录状态迁移让我省掉了最烦的验证环节。Spaces 又把 4 个任务分开，我不用把整台浏览器让给 Agent。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/teQhPZBEOpNOLnJW9WCJP3oRPtzKEm68ZEz9NbTGfhMdlS4f6SA6NRKibvBuRYbgIb9IIX8q1ibvBiaQ2f2AKMTb3iaXggk6yeJWRRDjWibyw65M/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/teQhPZBEOpNOLnJW9WCJP3oRPtzKEm68ZEz9NbTGfhMdlS4f6SA6NRKibvBuRYbgIb9IIX8q1ibvBiaQ2f2AKMTb3iaXggk6yeJWRRDjWibyw65M/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>ego-browser 还可以让 Agent 把打开页面、等待渲染、读取区块、过滤数据和整理结果写进同一段 JavaScript 流程里，一次执行后再返回结果。复杂任务不必每走一步都把整页内容来回传一遍。</p>
 <p>它的 Snapshot 会把网页转成紧凑的语义结构，再给可操作元素分配临时 ref。Agent 可以根据当前页面判断下一步，也可以在必要时使用 CSS 选择器。</p>
 <p>这不等于它彻底摆脱了选择器，更不代表页面改版后一定能跑。页面大改、Canvas、图片文字和沙箱跨域 iframe，仍可能需要重新截图、换提取方式，甚至人工接管。</p>

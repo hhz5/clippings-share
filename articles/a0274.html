@@ -30,26 +30,26 @@
     </div>
     <p class="article-source"><a href="https://mp.weixin.qq.com/s/6Z4ESU87ICr6rDJvdvQokg" target="_blank" rel="noopener">查看原文 ↗</a></p>
     <div class="article-body">
-<p>set 限制解除  <img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/qyBoz9lUoszNGzrs2UJ2VcXUs35cIeDtZaMSPN1EXaOuKZ3FBXtPKciceDrLmqDMfslm4sp7ZjcXXZQ4pJyibApQ/0?wx</em>fmt=jpeg" alt="cover_image" loading="lazy"></p>
+<p>set 限制解除  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/qyBoz9lUoszNGzrs2UJ2VcXUs35cIeDtZaMSPN1EXaOuKZ3FBXtPKciceDrLmqDMfslm4sp7ZjcXXZQ4pJyibApQ/0?wx_fmt=jpeg" alt="cover_image" loading="lazy"></p>
 <p>原创 好朋友乐平 <a href="https://mp.weixin.qq.com/s/" target="_blank" rel="noopener">好朋友乐平</a> <em>2025年11月6日 09:00</em></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/qyBoz9lUoszNGzrs2UJ2VcXUs35cIeDtu0Okhmn14wRIXGj71Iw1UbYrBbG7iaDytkveqWcViapkqBbYqjnjhJJw/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/qyBoz9lUoszNGzrs2UJ2VcXUs35cIeDtu0Okhmn14wRIXGj71Iw1UbYrBbG7iaDytkveqWcViapkqBbYqjnjhJJw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>还记得前端开发时，拿着设计稿一个像素一个像素地调样式的痛苦吗？看着设计师给的精美界面图，再看看自己写了半天还原度不到50%的代码，那种挫败感简直让人抓狂。</p>
 <p>更难受的是，有时候看到一个不错的网页想参考学习，却要花大把时间去分析布局、猜测样式，效率低得可怜。如果有一款工具能直接把UI截图转成代码，那该多好啊。</p>
 <p>今天给大家带来的这款开源神器ScreenCoder，就是专门解决这个痛点的。它能把任何UI截图或设计稿直接转换成干净、可用的HTML/CSS代码，而且还支持自定义修改。最关键的是，这玩意儿完全开源免费。</p>
 <h2>什么是ScreenCoder</h2>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/qyBoz9lUoszNGzrs2UJ2VcXUs35cIeDtaYrcibj4CBpN6ad57pXECSA0iaYsagHjkiabQDCkJX9buq5Gl34F2Q74A/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/qyBoz9lUoszNGzrs2UJ2VcXUs35cIeDtaYrcibj4CBpN6ad57pXECSA0iaYsagHjkiabQDCkJX9buq5Gl34F2Q74A/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>ScreenCoder是一个智能的UI转代码生成系统，由香港中文大学的研究团队开发。它的核心能力就是把你的任何界面截图转换成生产级别的前端代码。</p>
 <p>这个工具的厉害之处在于它采用了模块化的多代理架构。什么意思呢？就是它不是简单粗暴地识别图片然后生成代码，而是会像人类开发者一样，先理解视觉布局，再规划页面结构，最后才生成代码。这种方式生成的代码质量和准确度都非常高。</p>
 <p>而且它生成的不是那种只能看不能用的演示代码，而是真正可以直接部署的HTML/CSS代码。你拿到代码后可以立即使用，也可以根据需要进行修改和调整。</p>
 <h2>核心功能详解</h2>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/qyBoz9lUoszNGzrs2UJ2VcXUs35cIeDtA6DXlcbH1fVtSxFOw4SX0ZanEdeRqRSdbG0ZzMPHMZJFbfIVCXia0lw/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/qyBoz9lUoszNGzrs2UJ2VcXUs35cIeDtA6DXlcbH1fVtSxFOw4SX0ZanEdeRqRSdbG0ZzMPHMZJFbfIVCXia0lw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>用ScreenCoder处理截图主要分两个阶段，每个阶段都有明确的目标。</p>
 <p>第一阶段是生成带占位符的初始代码。系统会先对你的截图进行区块检测，识别出页面的主要组成部分，比如导航栏、内容区、侧边栏等等。然后它会生成一个初步的HTML框架，这时候图片部分会用灰色的占位块来表示。</p>
 <p>这个阶段看似简单，但其实是整个转换过程的基础。系统需要准确理解页面的层次结构和布局方式，这直接决定了最终代码的质量。</p>
 <p>第二阶段就更智能了。系统会检测占位符的位置，然后运行UI元素检测引擎，精确识别原始截图中的各个组件。接着它会建立占位符和实际UI元素之间的映射关系，最后把占位块替换成从原图裁剪出来的真实图片。</p>
 <p>这样一来，你得到的就是一个完整的、可用的HTML文件，里面的图片都是从原始截图中提取出来的，布局结构也完全还原了原图的设计。</p>
 <h2>实际使用体验</h2>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/qyBoz9lUoszNGzrs2UJ2VcXUs35cIeDtkeROeVU9UfuTicFoPEF0hekdpDKja8n5RQkhguCkwibCsLTM7VaoopXg/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/qyBoz9lUoszNGzrs2UJ2VcXUs35cIeDtkeROeVU9UfuTicFoPEF0hekdpDKja8n5RQkhguCkwibCsLTM7VaoopXg/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>用ScreenCoder的过程非常简单。你只需要准备好一张UI截图，可以是任何网页、应用界面，甚至是设计稿的截图都行。</p>
 <p>运行脚本后，系统会自动完成整个转换过程。你能看到它一步步进行区块检测、生成初始代码、检测UI元素、建立映射关系，最后生成最终的HTML文件。整个过程自动化程度很高，基本不需要人工干预。</p>
 <p>更让人惊喜的是，生成的代码质量真的很高。不仅布局还原度高，连细节样式都处理得很到位。你拿到代码后打开浏览器预览，会发现和原始截图几乎一模一样。</p>

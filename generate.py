@@ -134,18 +134,25 @@ def normalize_tags(raw_tags, remove_set, aliases):
 def _inline(text):
     # 行内代码优先占位，避免其中的 * _ [ 被再次解析
     codes = []
+    imgs = []
+    links = []
 
     def stash_code(m):
         codes.append(m.group(1))
         return "\x00CODE%d\x00" % (len(codes) - 1)
 
+    def stash_img(m):
+        imgs.append('<img src="%s" alt="%s" loading="lazy">' % (_esc_attr(m.group(2)), _esc_attr(m.group(1))))
+        return "\x00IMG%d\x00" % (len(imgs) - 1)
+
+    def stash_link(m):
+        links.append('<a href="%s" target="_blank" rel="noopener">%s</a>' % (_esc_attr(m.group(2)), m.group(1)))
+        return "\x00LINK%d\x00" % (len(links) - 1)
+
     text = re.sub(r"`([^`]+)`", stash_code, text)
-    # 图片 ![alt](url)
-    text = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)",
-                  lambda m: '<img src="%s" alt="%s" loading="lazy">' % (_esc_attr(m.group(2)), _esc_attr(m.group(1))), text)
-    # 链接 [text](url)
-    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)",
-                  lambda m: '<a href="%s" target="_blank" rel="noopener">%s</a>' % (_esc_attr(m.group(2)), m.group(1)), text)
+    # 图片和链接也先占位，防止 URL 中的 _ * 被后续斜体/粗体正则吃掉
+    text = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", stash_img, text)
+    text = re.sub(r"\[([^\]]+)\]\(([^)]+)\)", stash_link, text)
     # 粗体 **x** / __x__
     text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"__(.+?)__", r"<strong>\1</strong>", text)
@@ -154,10 +161,15 @@ def _inline(text):
     text = re.sub(r"(?<!_)_(?!_)(.+?)_(?!_)", r"<em>\1</em>", text)
     # 删除线 ~~x~~
     text = re.sub(r"~~(.+?)~~", r"<del>\1</del>", text)
-    # 还原行内代码
+    # 还原（顺序：链接 → 图片 → 代码，避免嵌套冲突）
+    def restore_link(m):
+        return links[int(m.group(1))]
+    def restore_img(m):
+        return imgs[int(m.group(1))]
     def restore_code(m):
-        idx = int(m.group(1))
-        return "<code>%s</code>" % html.escape(codes[idx])
+        return "<code>%s</code>" % html.escape(codes[int(m.group(1))])
+    text = re.sub(r"\x00LINK(\d+)\x00", restore_link, text)
+    text = re.sub(r"\x00IMG(\d+)\x00", restore_img, text)
     text = re.sub(r"\x00CODE(\d+)\x00", restore_code, text)
     return text
 

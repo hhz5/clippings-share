@@ -34,9 +34,9 @@
 <p>双十一，火山引擎发布了一款专为 Agentic 编程任务深度优化，在SWE-Bench-Verified官方榜单中刷新SOTA的编程模型：</p>
 <p><strong>「 Doubao-Seed-Code 」</strong></p>
 <p>Doubao-Seed-Code 在 Terminal Bench、SWE-Bench-Verified-Openhands、Multi-SWE-Bench-Flash-Openhands 等多项权威评测中 均表现突出，部分榜单甚至超过了 Claude 4.5 Sonnet。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mtSKslRx5icmABnj7KnlRicKJ1w7bGnNFPxMKGmwQBFKB69w8dN4gITAw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mtSKslRx5icmABnj7KnlRicKJ1w7bGnNFPxMKGmwQBFKB69w8dN4gITAw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>与字节跳动自家的IDE产品TRAE组合在SWE-Bench-Verified中 一举夺魁，登顶榜单SOTA。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mBgJB2txhUic7j3XaSLLGH7uIk9m5O8fgEYQUxltpAyLR47zIFYs0Syg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mBgJB2txhUic7j3XaSLLGH7uIk9m5O8fgEYQUxltpAyLR47zIFYs0Syg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>同时，Doubao-Seed-Code也是 国内首个支持视觉理解能力 的编程模型，可参照UI设计稿、截图或手绘草图生成代码，或对生成页面进行视觉比对，自主完成样式修复和Bug修复，从而大幅提升前端开发效率。</p>
 <p><strong>这样的模型，首购首月9.9。</strong></p>
 <p>这还不算完，在调用价格上，Doubao-Seed-Code不仅在输入输出单价上给到最低，同时采用全量透明Cache，成本再降低80%。</p>
@@ -46,7 +46,7 @@
 <p>大家小时候是否玩过红白机，红白机里面，有一个著名的游戏《炸弹人》，是现在泡泡堂这类游戏的前身，就是小人放炸弹，用来炸掉砖块和炸死敌人，最终成功通关，我小时候玩的不亦乐乎。</p>
 <p>既然是Agentic编程模型，我想他会懂我意思的，直接提出大白话需求：</p>
 <pre><code>你知道【炸弹人】小游戏吗？我想玩这个游戏，给我生成代码</code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mz08dtSOuvHLhYb0AfCHBS5k25OtvOYkjJsptN7h8eDLuy7iaLJibN1hw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mz08dtSOuvHLhYb0AfCHBS5k25OtvOYkjJsptN7h8eDLuy7iaLJibN1hw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p><strong>三分钟后，一气呵成，无任何调整。效果如下：</strong></p>
 <p>蓝色的是玩家，红色是怪物，绿色是炸弹，炸弹会定时爆炸消灭敌人得分。</p>
 <p>整体游戏逻辑全部完成， 如果再把把蓝色块改成小人icon图，把红色块改成敌人icon图，还有一些细小的逻辑简单处理一下就直接能分享给别人玩了。</p>
@@ -56,16 +56,16 @@
 <p>这是一个2916行的html项目，实际逻辑并不复杂，但是因为是AI多轮生成的，导致大量代码是重复的逻辑，并且所有的逻辑（js、css等）都在这一个页面中。</p>
 <p>我们之前在生成代码时，其实有试过让Claude 3.7 sonnet帮我们简化代码逻辑，但是优化完100%报错，只有Claude 4.5 sonnet尚有一战之力。这次借着Doubao-Seed-Code，尝试了一下让豆包帮忙重写。</p>
 <pre><code class="language-js">简化这个文件。这里所有的js和css都 融在这一个文件中了，并且实现的逻辑很乱很复杂，希望你能帮我简化这段代码，把js和css的代码拆成单独的文件通过引用来实现，而不是全都杂糅在这一个文件中。</code></pre>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mGFKVibMGdrRENwaljxGrYvicIxMLicEggtRQYtZYjmRVzxOoFZBBpwPnA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mGFKVibMGdrRENwaljxGrYvicIxMLicEggtRQYtZYjmRVzxOoFZBBpwPnA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>Doubao-Seed-Code经过接近10分钟的了解代码和修改代码。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mIaP9mrMPF0EsAvoZicyfViad9jPJibHJLibria4CLN3K0CwY30TFiaRCy3pA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mIaP9mrMPF0EsAvoZicyfViad9jPJibHJLibria4CLN3K0CwY30TFiaRCy3pA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>这中间出现了两三次：超过上下文长度的提醒，我让他继续了三次。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2m04JXUE9icfKzh5FiblhBXKkzRpJzxJSnL84vlBDh10Duu0gsYib0icW86Q/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2m04JXUE9icfKzh5FiblhBXKkzRpJzxJSnL84vlBDh10Duu0gsYib0icW86Q/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>经过豆包的优化，这个主文件从 2916行降到了616行 ，并且把css和js拆到了不同的文件中，增加了对这些文件的引用。不过代码有多少行其实不重要，更重要的是修改的准确性。</p>
 <p><strong>测试后，不仅能正常启动，还没有出现新的bug，业务逻辑与之前完全一致。</strong></p>
 <p>牛逼，这把过关！</p>
 <p>「 Case3:手搓PDF转Word工具 」</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mS8avqmQ1XkaEbXCcW52C19qsFbLRwWRwWALGrmQGicsKq0zsuNIzGQw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mS8avqmQ1XkaEbXCcW52C19qsFbLRwWRwWALGrmQGicsKq0zsuNIzGQw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="图片" loading="lazy"></p>
 <pre><code class="language-markdown">请开发一个功能完整、易用的PDF转Word小工具，具体要求如下：
 ### 一、核心功能
 1. **PDF转Word**：支持将PDF文件转换为可编辑的Word文档（.docx格式）
@@ -111,9 +111,9 @@
 3. **性能优化**：针对大文件转换进行优化，避免内存占用过高
 请按照上述要求开发工具，并提供完整的项目代码和说明文档。</code></pre>
 <p>一把完成，逻辑完整：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mSkr6ibgMpmcoTXU9lbd0Yq9Bc5lEGicYibDvcmLnc291jaB3Fianvblcfg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mSkr6ibgMpmcoTXU9lbd0Yq9Bc5lEGicYibDvcmLnc291jaB3Fianvblcfg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="图片" loading="lazy"></p>
 <p>拿一篇带图的PDF测试一下，完全没问题，连空格格式都保持一致。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mNjoYEsPSjmnq2K0vzsI39H5UCbiaXwjXlcBdgJaewjgq1b8Z1suVdZA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mNjoYEsPSjmnq2K0vzsI39H5UCbiaXwjXlcBdgJaewjgq1b8Z1suVdZA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="图片" loading="lazy"></p>
 <p>「 Case4：3D小猫 」</p>
 <pre><code>作为一名专精于Three.js的创意技术总监和可视化专家，你擅长将复杂信息转化为引人入胜的交互式3D体验。请为我提供的任何主题或内容创建一个令人惊艳的单页面HTML展示，融合高级视觉设计和沉浸式3D效果。
 ## 关键技术要素
@@ -170,16 +170,16 @@
 <p><code>   </code></p>
 <p><code>实测能力的确不俗，究其原因，与因为豆包团队构建了的大规模 RL 系统不无关系。</code></p>
 <p><code>**这是一个覆盖10万容器镜像的庞大训练数据集，支持端到端沙盒环境评测。具备万级并发沙盒 session 能力，依托千卡GPU集群实现高效并行训练。让模型直接在沙盒中端到端的强化学习，而不是依赖蒸馏过程。**</code></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mib9EKicQXmC4Zn0j9iaEd50GQDuEr0ulc7QzD5HSXvnA0Q2lHXak7oVuQ/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2mib9EKicQXmC4Zn0j9iaEd50GQDuEr0ulc7QzD5HSXvnA0Q2lHXak7oVuQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="图片" loading="lazy"></p>
 <p>从端到端的训练过程评测结果上看， multi-swe-bench 和 swe-bench-verified 两个数据集上呈现一致的上升趋势，表明模型具有良好的泛化能力。甚至在SWE-bench基准测试中， 模型仅依赖 RL训练就达到当前最优水平，这意味着强化学习在软件工程场景下也具备极大潜力。</p>
 <p>如果你也迫不及待的想体验一下最新模型，在Trae中现已支持，可以直接选择使用。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2m891ynwAkNP5w3UgEym8ZuJOJqC8v15aM3CZwISDqa1mlicU45Vxpgiag/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
-<p>同时Doubao-Seed-Code也面向 Claude Code、veCLI等主流 开发工具 做了特别优化，调用更稳定，如果你习惯用Claude Code可以参考下方步骤直接接入。小白可以移步参考更详细的教程： <a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&amp;mid=2247491003&amp;idx=1&amp;sn=10a8757bd78b810a5d3f63e656ff9d60&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">Claude断供，火山引擎助你一分钟“搬家”国产模型</a></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2m891ynwAkNP5w3UgEym8ZuJOJqC8v15aM3CZwISDqa1mlicU45Vxpgiag/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="图片" loading="lazy"></p>
+<p>同时Doubao-Seed-Code也面向 Claude Code、veCLI等主流 开发工具 做了特别优化，调用更稳定，如果你习惯用Claude Code可以参考下方步骤直接接入。小白可以移步参考更详细的教程： <a href="https://mp.weixin.qq.com/s?__biz=MzkyNjI3NjQ2MA==&amp;mid=2247491003&amp;idx=1&amp;sn=10a8757bd78b810a5d3f63e656ff9d60&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Claude断供，火山引擎助你一分钟“搬家”国产模型</a></p>
 <p>老手直接打开 ～/.claude/settings.json 文件，替换为下方的内容配置上自己的方舟API key即可。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2maDNibLkFJ5VgnRkaBibumscrTpGINSXichepUSq7uYMC9PzDPx5BsyqYA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2maDNibLkFJ5VgnRkaBibumscrTpGINSXichepUSq7uYMC9PzDPx5BsyqYA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="图片" loading="lazy"></p>
 <p>今天同步发布的火山方舟Coding Plan，是为开发者量身定制的AI Coding场景订阅服务，支持最新的Doubao-Seed-Code模型多款主流 AI 编码工具。</p>
 <p>实话说，多模态模型这个价，9.9是绝对超值价！</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2m3oOLZVuNpQfv6bpd5BOwLgsmH0N99Qkz9PkibcoGP7hyqBeTr9iadSNw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/cCruoDSLAW3Zggvccz7U4klKCnAbxF2m3oOLZVuNpQfv6bpd5BOwLgsmH0N99Qkz9PkibcoGP7hyqBeTr9iadSNw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="图片" loading="lazy"></p>
 <p>（订阅地址放在文末）</p>
 <ul><li>Lite套餐适合大多数开发者，首购首月 9.9 元/月，后续续费40元/月；</li><li>复杂项目可选择Pro套餐，首购首月 49.9 元，后续续费200元/月；</li></ul>
 <p>「 最后 」</p>

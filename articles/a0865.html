@@ -31,7 +31,7 @@
     <p class="article-source"><a href="https://mp.weixin.qq.com/s/RWs-wFHYwtyC43-RehoJDw" target="_blank" rel="noopener">查看原文 ↗</a></p>
     <div class="article-body">
 <p>空格丶 空格的键盘 <em>2026年6月26日 17:50</em></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoyBSicpVBfsLNQUMswLdJu8G9onytamMW6HwnDc1umiabicIyb8vP6c3AvxmibOmcYwGacrnpH7t2ibGDxaRJqQLhVehYqnmJbkqDOg/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyBSicpVBfsLNQUMswLdJu8G9onytamMW6HwnDc1umiabicIyb8vP6c3AvxmibOmcYwGacrnpH7t2ibGDxaRJqQLhVehYqnmJbkqDOg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>最近 Loop Engineering 很火。</p>
 <p>Claude 的工程师公开说他自己已经不再 prompt Claude 了，现在是他设计的 loop 自动化驱动 Claude。</p>
 <p>每天都能刷到好多篇文章，讲"Loop engineer 的使用"。</p>
@@ -42,7 +42,7 @@
 <p>我甚至都不明确要把自己哪块的工作 loop 起来，搭建完之后也不知道怎么检测有效性？</p>
 <p>折腾了好几天没跑稳定。</p>
 <p>但是在折腾的这段时间，我重新认识了和 Loop Engineering 相关的三个能力：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCowSLeyKBibj4TK3RB7sX4UT92fSG7axliaJ2TS0dtfxsv4Lf0L8Lxjic3X9icmribicR2lnPKXA3SfBAf9gMcNP2oJiczquOqhlwZxuuI/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowSLeyKBibj4TK3RB7sX4UT92fSG7axliaJ2TS0dtfxsv4Lf0L8Lxjic3X9icmribicR2lnPKXA3SfBAf9gMcNP2oJiczquOqhlwZxuuI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="飞书文档 - 图片" loading="lazy"></p>
 <ul><li>/hook：事件触发，AI 干完某件事自动跑一段脚本，比如写完文件就检查、提交代码前先扫密钥</li><li>/loop：时间触发，到点自动跑一段预设任务，比如每天凌晨抓 RSS、每晚 10 点处理播客</li><li>/goal：目标驱动，给 AI 一个完成条件，它自己规划、执行、验证，没达成就再来一轮</li></ul>
 <p>这三个用起来其实很简单，在 Claude Code 里打斜杠 <code>/hook</code> 、 <code>/loop</code> 、 <code>/goal</code> 就能触发。Codex 那边也能找到对应的能力。</p>
 <p>这篇文章我们把 Loop engineer 先放一放，先讲这三个用起来很稳的、每天都能跑的能力，帮你挖掘 token 的剩余价值。</p>
@@ -51,14 +51,14 @@
 <p><strong>一、/loop：挖掘剩余 token 价值</strong></p>
 <p>/loop 的能力，简单说就一句话，按时间间隔，到点就跑用户预设 prompt。</p>
 <p>Claude Code 现在有三层 loop 的方案。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoyP6uic51vYhNYsT77ibtddmjT3gU5SptRLia7iaiaxdJt5ibP5d42e8jI2LZO0ITXx5NkW243W6raO6GOVycnib7ECSMnYtgqy2352Ck/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyP6uic51vYhNYsT77ibtddmjT3gU5SptRLia7iaiaxdJt5ibP5d42e8jI2LZO0ITXx5NkW243W6raO6GOVycnib7ECSMnYtgqy2352Ck/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="飞书文档 - 图片" loading="lazy"></p>
 <ul><li>会话内轮询，跑在本地的当前会话里，关掉窗口就停，适合调用本地资源的。</li><li>更短间隔的会话轮询，每天触发多次任务。</li><li>云端跑在 Anthropic 服务器上，笔记本关机也跑，适合稳定跑不被电脑关机影响的</li></ul>
 <p>loop 在 Codex 那边叫 Automations，使用场景差不多。</p>
 <p>推荐两个我自己做的 loop，供参考。</p>
 <p><strong>第一个，每天的播客处理流水线。</strong></p>
 <p>我关注了一批 AI 相关的播客和 YouTube 频道，加起来四十几个。</p>
 <p>每天晚上 10 点跑：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCowSRacmLPk1DIFIQQznweSDgxzhagPB1TEUrOe0une27pQaSkfUKrFf06FHTm0eZXTpNc2TyDo9CKsEiaRHkREuUwV1wkrCejiaA/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowSRacmLPk1DIFIQQznweSDgxzhagPB1TEUrOe0une27pQaSkfUKrFf06FHTm0eZXTpNc2TyDo9CKsEiaRHkREuUwV1wkrCejiaA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>拉过去 24 小时的更新；按播主权重和标题关键词过滤一遍，挑出 3-5 个值得处理的；最后通过飞书机器人推到我的"播客摘要"知识库节点。</p>
 <p>早上起来打开飞书就有当天的播客文章。</p>
 <p>但有一个问题，因为跑在本地对话里，对话窗口关闭了任务就终止了。</p>
@@ -71,11 +71,11 @@
 <p>早上 9 点我打开电脑，今日热点、当日选题、最新素材已经全都在 Obsidian 里准备好了。</p>
 <p>我只需要直接进入"挑题—写稿"环节，前面那些"收集整理"的功夫一律不用做。</p>
 <p>写 /loop 提示词我自己摸出来五件事必须想清楚再写：</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCowJ7L6dJrCcXXicwm9stGkRRcvbvbG7LJ0nY0icSgYHcb6Lr75MgnyW38fR0rJF6K6UMKNAdBV9MClgABJDJvkialVomL5KJJPyWU/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCowJ7L6dJrCcXXicwm9stGkRRcvbvbG7LJ0nY0icSgYHcb6Lr75MgnyW38fR0rJF6K6UMKNAdBV9MClgABJDJvkialVomL5KJJPyWU/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>把你每天重复在做的事写下来，挑一件丢给 /loop，剩下的时间留给真正需要你判断的事。</p>
 <p><strong>二、hook：事件触发器</strong></p>
 <p>hook 这个词很有意思，就是"钩子"的意思。我第一次认识它是 webhook，一个服务发生某件事的时候，主动请求数据，它把"事件"和"动作"挂上钩。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoxbkoMt8J3aJgmqt6Y6PAic4BBVKWLo6GkF8jfzlTaB2oxsuCzUElumXjs0TkCutlic4HNBOWmicHQwBTL6ZY66u4wBJh5XDWDVTA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxbkoMt8J3aJgmqt6Y6PAic4BBVKWLo6GkF8jfzlTaB2oxsuCzUElumXjs0TkCutlic4HNBOWmicHQwBTL6ZY66u4wBJh5XDWDVTA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>在 Claude Code 里 hook 是一段写死的 shell 命令，挂在 agent 生命周期的固定锚点上。事件一发生，命令就跑。</p>
 <p>下面是几个我自己挂着的 hook，顺便讲一下写 hook 的方法。</p>
 <p><strong>第一个，AI 腔扫描器。</strong></p>
@@ -98,7 +98,7 @@
 <p>命中任何一条就 exit 2，stderr 写清楚命中了哪条、文件在哪、第几行。</p>
 <p>没命中就放行，不输出。</p>
 <p>写 hook 的时候要注意</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCow3tEYPE7CuicpPvU4aFa4MyP9qmbGdpI0yPf94ZxQcrpr1EBVEfO1SGuJQXbyoy4Fbtic4jljdqCTyWSSWgXufkr2DBlRVHFfM8/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=6" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCow3tEYPE7CuicpPvU4aFa4MyP9qmbGdpI0yPf94ZxQcrpr1EBVEfO1SGuJQXbyoy4Fbtic4jljdqCTyWSSWgXufkr2DBlRVHFfM8/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>被什么事件触发、触发后做什么动作、出错了怎么兜底、什么文件什么操作绝对不要碰。</p>
 <p>这四样写清楚 Claude 就能一次给你配出能直接用的 hook。</p>
 <p>hook 一定要短平快。hook 是同步执行的，hook 卡住整个 agent 就跟着卡。重活留给 Skill 或者后台进程，hook 里只放确定性的判断和拦截。</p>
@@ -117,14 +117,14 @@
 <p>如果执行过程中需要修改 goal，请先明确说明改了什么、为什么改，再继续执行。</p>
 <p>代码任务再追加三条：先读现有 codebase 并遵循本地模式、不要做无关重构、完成前用最相关的测试或检查验证一遍。</p>
 <p>关于 goal 的一些命令：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoz5lunfr1bFopNq9WITYd69XIGG9ZwKtRpRicfpr90ShKp53UntgEYfNCVsYqHicfwoEYJjbia4TnyLN5wM3zoNPVEgCKbsRlQHBw/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoz5lunfr1bFopNq9WITYd69XIGG9ZwKtRpRicfpr90ShKp53UntgEYfNCVsYqHicfwoEYJjbia4TnyLN5wM3zoNPVEgCKbsRlQHBw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>写 /goal 的关键就五件事：</p>
 <ul><li>先写意图不要写步骤；</li><li>要求 AI 先把意图翻译成 goal；</li><li>判断要不要多 Agent 并行（不是越多越好）；</li><li>主线程必须保留协调权（别让子 agent 互相抢方向）；</li><li>目标漂移时必须显式说明改了什么、为什么改。</li></ul>
 <p><strong>最后</strong></p>
 <p>这三个工具就是我现在 AI 工作流的自动化骨架。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoy7FAQEdLGLoxoQ79bSVATBDSkYmF0IUSV4WicVSDmUk09gTDx5WfSCibRyET2ibaBiay3FUoXPhWQXNib4Mux2gRo5OhZlMvo1Z4j0/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoy7FAQEdLGLoxoQ79bSVATBDSkYmF0IUSV4WicVSDmUk09gTDx5WfSCibRyET2ibaBiay3FUoXPhWQXNib4Mux2gRo5OhZlMvo1Z4j0/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>但这三个加起来，也只是 Loop Engineering 的一角。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoyu5ibuZzuGj8cpBPQQ12ibibaHHYcdkoxGlGKqicE1son9hFaRrCUemwic7ibGic575C6GYWdBnx0jBunQic9ZYVicvWI0EdbZhWc9kGgM/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=9" alt="飞书文档 - 图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoyu5ibuZzuGj8cpBPQQ12ibibaHHYcdkoxGlGKqicE1son9hFaRrCUemwic7ibGic575C6GYWdBnx0jBunQic9ZYVicvWI0EdbZhWc9kGgM/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="飞书文档 - 图片" loading="lazy"></p>
 <p>还有 Skill（项目知识沉淀）、Worktree（多 agent 并行隔离）、Connector（GitHub / 飞书 / Linear 连接器）、Sub-agent（写代码的 ≠ 判完成的）、State（跨会话记忆）这几块。</p>
 <p>每一块往深了挖都是一两篇文章。</p>
 <p>后面有新的用法，再来分享给大家。</p>

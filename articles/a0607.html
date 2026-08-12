@@ -39,7 +39,7 @@
 <p>结果没想到这么牛批，结果所有任务都一次性完成。</p>
 <p>最后的结果就是用 KImi K2 实现了一个全部都是复杂组件的 B 端组件库：</p>
 <p>包括了日历日程组件、分步引导弹窗组件、富文本编辑器组件、快捷搜索组件、带筛选的数据表格组件、文件树组件、可拖拽的数据仪表盘组件等。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8Egc3RJoqB5L1EPSSS2x7ABibKrqPS80Aia0oibN4jKrloF7DEt3RJZlEHaVDuMEYx5u3Jt69UAKH5iczaw/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egc3RJoqB5L1EPSSS2x7ABibKrqPS80Aia0oibN4jKrloF7DEt3RJZlEHaVDuMEYx5u3Jt69UAKH5iczaw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></p>
 <p>🎁</p>
 <p>目前所有的组件都是用 ChatWise 调用 K2 API 生成的，Artifacts 预览非常强，而且 K2 发布就已经火速支持，只需填写 API Key 就能添加。</p>
 <p>如果想要购买的话可以用藏师傅的链接， 可以打八五折 ： https://chatwise.app/?atp=guizang1</p>
@@ -65,9 +65,9 @@
 <h3>Claude Code 调用 K2 教程的一些补充说明</h3>
 <p>上次写完教程之后很多朋友遇到了不少问题，一个是我迷迷糊糊写错了一些，还有就是没有考虑到的复杂情况。</p>
 <p>这里统一补充说明一下，之前的教程在这里：</p>
-<ol><li>1\. 如果你之前安装过 Claude Code 的话可能设置 API 无法生效，这时候要不删除掉你安装的 Claude Code 重新安装，要不更改一下里面 Config 文件的设置，这里用评论朋友（carline1314）的图片示例一下。 <img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8Egc3RJoqB5L1EPSSS2x7ABibKKejbAicTdjZVotvIIeo0IMscVXLz3jwgVvVKJQcI01jNlWCtOBcDYMQ/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></li><li>2\. 通过我之前方法更改环境变量的方式每次启动都需要修改一下，如果需要一劳永逸可以参考下面的命令行，重启终端可以直接使用。</li></ol>
+<ol><li>1\. 如果你之前安装过 Claude Code 的话可能设置 API 无法生效，这时候要不删除掉你安装的 Claude Code 重新安装，要不更改一下里面 Config 文件的设置，这里用评论朋友（carline1314）的图片示例一下。 <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egc3RJoqB5L1EPSSS2x7ABibKKejbAicTdjZVotvIIeo0IMscVXLz3jwgVvVKJQcI01jNlWCtOBcDYMQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></li><li>2\. 通过我之前方法更改环境变量的方式每次启动都需要修改一下，如果需要一劳永逸可以参考下面的命令行，重启终端可以直接使用。</li></ol>
 <pre><code>	echo -e &#x27;\n export ANTHROPIC_AUTH_TOKEN=sk-...&#x27; &gt;&gt; ~/.bash_profile echo -e &#x27;\n export ANTHROPIC_BASE_URL=https://anyrouter.top&#x27; &gt;&gt; ~/.bash_profile echo -e &#x27;\n export ANTHROPIC_AUTH_TOKEN=sk-...&#x27; &gt;&gt; ~/.bashrc echo -e &#x27;\n export ANTHROPIC_BASE_URL=https://anyrouter.top&#x27; &gt;&gt; ~/.bashrc echo -e &#x27;\n export ANTHROPIC_AUTH_TOKEN=sk-...&#x27; &gt;&gt; ~/.zshrc echo -e &#x27;\n export ANTHROPIC_BASE_URL=https://anyrouter.top&#x27; &gt;&gt; ~/.zshrc</code></pre>
-<ol><li>3\. 很多朋友更改频繁的话可能会遇到速率限制，这个需要充值更多金额提高 TPM 才行。 <img src="https://mmbiz.qpic.cn/mmbiz<em>png/fbRX0iaT8Egc3RJoqB5L1EPSSS2x7ABibKXZX1DOTNC5ricxqyzia8KwmjRskYbORle8MjiaNsjjWzybShSzVeZIFeg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></li><li>4\. 上次的命令我把国内和国外的 API 地址写错了，大部分用户都是用的国内的我给写成了国外的，原文已经修改，国内的链接后缀是 cn 国外是 ai。</li></ol>
+<ol><li>3\. 很多朋友更改频繁的话可能会遇到速率限制，这个需要充值更多金额提高 TPM 才行。 <img src="https://mmbiz.qpic.cn/mmbiz_png/fbRX0iaT8Egc3RJoqB5L1EPSSS2x7ABibKXZX1DOTNC5ricxqyzia8KwmjRskYbORle8MjiaNsjjWzybShSzVeZIFeg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt="Image" loading="lazy"></li><li>4\. 上次的命令我把国内和国外的 API 地址写错了，大部分用户都是用的国内的我给写成了国外的，原文已经修改，国内的链接后缀是 cn 国外是 ai。</li></ol>
 <pre><code>	export ANTHROPIC_AUTH_TOKEN=你的月之暗面 API Keyexport ANTHROPIC_BASE_URL=https://api.moonshot.cn/anthropic</code></pre>
 <p>好了这次内容就是这些。</p>
 <p>这几天海外 K2 的内容不断的发酵，因为模型是开源的大家也对模型做了非常详细的验证。</p>

@@ -33,11 +33,11 @@
 <p><a href="javascript:void\(0\" target="_blank" rel="noopener">RaDesign</a>;)</p>
 <p><em>2026年3月27日 09:02</em> <em>河北</em></p>
 <p>在小说阅读器中沉浸阅读</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiax9rjA1nS9EMERHQibf2n9bq0GeHDtibibaZ6bLwRiaibVeKzicnnpZFYSGdYvR2iaTBHKX9S0daY2ic9jymCE3JeDQqtNymSC31t8fSbA/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Dark terminal window labeled “earthling—zsh” overlays a green-toned UI design canvas, showing a command to generate a button component set and status messages confirming files read and 72 variants created." loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiax9rjA1nS9EMERHQibf2n9bq0GeHDtibibaZ6bLwRiaibVeKzicnnpZFYSGdYvR2iaTBHKX9S0daY2ic9jymCE3JeDQqtNymSC31t8fSbA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Dark terminal window labeled “earthling—zsh” overlays a green-toned UI design canvas, showing a command to generate a button component set and status messages confirming files read and 72 variants created." loading="lazy"></p>
 <p>图片来自：Figma</p>
 <p>“啊， Figma MCP 不是早就有了吗？”</p>
 <p>“哦，现在 Codex 会在 Figma 里画东西了。这有啥？”</p>
-<p>上次写到的 Codex 和 Figma 双向互通，<a href="https://mp.weixin.qq.com/s?__biz=MzIyOTc4NjE2NA==&amp;mid=2247494972&amp;idx=1&amp;sn=f76efc67cc37cff8231d126a5bd38841&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">Figma 着急了！Codex 和 Figma 双向构建前端 UI</a>你可以用 Codex 写完整网站、生成 UI、但是感觉还是差点意思，还是得中间来回跳！</p>
+<p>上次写到的 Codex 和 Figma 双向互通，<a href="https://mp.weixin.qq.com/s?__biz=MzIyOTc4NjE2NA==&amp;mid=2247494972&amp;idx=1&amp;sn=f76efc67cc37cff8231d126a5bd38841&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Figma 着急了！Codex 和 Figma 双向构建前端 UI</a>你可以用 Codex 写完整网站、生成 UI、但是感觉还是差点意思，还是得中间来回跳！</p>
 <p><strong>本质问题就一个：AI 进不去 Figma。</strong></p>
 <p>但这次，Figma 把这个问题直接解决了。</p>
 <hr>
@@ -47,7 +47,7 @@
 <p>Figma 在 2 月 26 日官方文章里，重点讲的是 <strong>Codex 和 Figma 之间的双向流动</strong>。一边是从 Figma 把设计上下文交给 Codex，让它更好地生成代码；另一边是把已经跑起来的真实前端界面，通过 <code>generate_figma_design</code> 再带回 Figma，变成可编辑的 Figma 图层。Figma 自己对这件事的表述很明确：<strong>“bring real, running interfaces into Figma”</strong>，也就是把真实运行中的界面拉回画布里继续讨论和迭代。</p>
 <p>换句话说，上一篇文章里的核心，不是“AI 在 Figma 里做设计”，而是：</p>
 <blockquote><p><strong>设计和代码终于能来回流动了。</strong></p></blockquote>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiawJEG3jJg6o0iaq1ppuWS0HJxnwibEJIiaPhylGFvH7qnDf6jN5WkQwsPJwJuqF0fkF3g1DRaMNicVRvYiciaUzmtgsy5icmtHzPibIVl8/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiawJEG3jJg6o0iaq1ppuWS0HJxnwibEJIiaPhylGFvH7qnDf6jN5WkQwsPJwJuqF0fkF3g1DRaMNicVRvYiciaUzmtgsy5icmtHzPibIVl8/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>图片来自：Figma</p>
 <p>这个阶段的 MCP，最关键的两个能力其实是：</p>
 <p>第一，<strong>从 Figma 读上下文给 Codex</strong>。 比如通过 <code>get_design_context</code>，把布局、样式、组件信息传给 Codex，帮助它做更有设计依据的代码生成。文章里明确写到，用户可以复制某个 frame 或 node 的 selection URL，然后让 Codex 基于这段设计上下文去实现界面。</p>
@@ -64,7 +64,7 @@
 <p>这次不一样了。</p>
 <blockquote><p>Codex 可以找到并利用所有重要的设计上下文。</p>
 <p>https://www.figma.com/blog/the-figma-canvas-is-now-open-to-agents/</p></blockquote>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiayl8iaFKlQibA5Qlic41KlOFMp67ibgHiciauAvNmPvAVWbCHPGcu0sPiaUrVaxia27BNfJ8ur5TnUiaw1b5dP8gvibIicd0iajgEYKxzVm5Ms/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiayl8iaFKlQibA5Qlic41KlOFMp67ibgHiciauAvNmPvAVWbCHPGcu0sPiaUrVaxia27BNfJ8ur5TnUiaw1b5dP8gvibIicd0iajgEYKxzVm5Ms/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>图片来自：Figma</p>
 <p>3 月 24 日官方文章里最关键的一句话其实是：agents can now write directly to your Figma files。也就是说，agent 现在不是只读取 Figma、引用 Figma、转换 Figma，而是可以<strong>直接写入你的 Figma 文件</strong>。</p>
 <p>通过 <code>use_figma</code>，Codex、Claude Code 这类 MCP client 可以直接生成和修改设计资产，而且这些资产是能和你现有 design system 关联起来的。</p>
@@ -102,8 +102,8 @@
 <p><a href="javascript:;" target="_blank" rel="noopener">倍速</a></p>
 <p><em>全屏</em></p>
 <p>倍速播放中</p>
-<p><a href="javascript:;" target="<em>blank" rel="noopener">0.5倍</a> <a href="javascript:;" target="</em>blank" rel="noopener">0.75倍</a> <a href="javascript:;" target="<em>blank" rel="noopener">1.0倍</a> <a href="javascript:;" target="</em>blank" rel="noopener">1.5倍</a> <a href="javascript:;" target="_blank" rel="noopener">2.0倍</a></p>
-<p><a href="javascript:;" target="<em>blank" rel="noopener">超清</a> <a href="javascript:;" target="</em>blank" rel="noopener">流畅</a></p>
+<p><a href="javascript:;" target="_blank" rel="noopener">0.5倍</a> <a href="javascript:;" target="_blank" rel="noopener">0.75倍</a> <a href="javascript:;" target="_blank" rel="noopener">1.0倍</a> <a href="javascript:;" target="_blank" rel="noopener">1.5倍</a> <a href="javascript:;" target="_blank" rel="noopener">2.0倍</a></p>
+<p><a href="javascript:;" target="_blank" rel="noopener">超清</a> <a href="javascript:;" target="_blank" rel="noopener">流畅</a></p>
 <p><video data-v-c66e8e28="" src="https://mpvideo.qpic.cn/0b2eoucfcaaenaaoznwagbuvi5odkf2qiuia.f10002.mp4?dis<em>k=e4b74a38ec44dbeb082d86fbf165de2e&amp;dis</em>t=1774575381&amp;play<em>scene=10120&amp;auth</em>info=Wb+I+4QGaQU10NfX9z5QVyw+BDdOEWIOKG4nTkEzeEtoLmIdcgk0alcNezESHUdtJg==&amp;auth<em>key=f8b955d3a4ae4ec9fc61b713d3889146&amp;vid=wxv</em>4444433477429723137&amp;format<em>id=10002&amp;support</em>redirect=0&amp;mmversion=false" poster="http://mmbiz.qpic.cn/mmbiz<em>jpg/tAlIKXfSZiawAypTftz3IYqgDibRlfE0BpRZnJxu8WqBWY4otBwKY2qjk8Ce9OiabGZJBUp8rteuuw4N9YIibFnEiaFH5ianh2KYicb2sVfhMbkHzQ/0?wx</em>fmt=jpeg&amp;wxfrom=16" webkit-playsinline="isiPhoneShowPlaysinline" playsinline="isiPhoneShowPlaysinline" preload="metadata" crossorigin="anonymous" controlslist="nodownload" class="video<em>fill" style="display: block; width: 677px; height: 381px;" jm</em>neat="1462027266">您的浏览器不支持 video 标签</video></p>
 <p>继续观看</p>
 <p>Figma 新 MCP 最大误区：大家都在用 use\_figma，却忽略了 Skill</p>
@@ -148,11 +148,11 @@
 <p>👉 <strong>安装 skills</strong></p>
 <p>如何打开新版 MCP:</p>
 <p>1.随便打开文件 - 进入开发模式</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/tAlIKXfSZiayAX9qIoBO97xqV0NFgPcWlg5tOrribaFP5Nz7shX7lkviabWBeeSqCRb82UJtKMT2iaLAAuWuXaQiacYxnu2z8H1rkH03PV1Xze44/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/tAlIKXfSZiayAX9qIoBO97xqV0NFgPcWlg5tOrribaFP5Nz7shX7lkviabWBeeSqCRb82UJtKMT2iaLAAuWuXaQiacYxnu2z8H1rkH03PV1Xze44/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>2\. 点击右侧 Enable desktop MCP server</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiay3MLWKkjc8YfkOwEGlibhIPosgc3y2CsKsEcdxes2sHmrOicHeOibWvaGjt6B7H9IygV7T1FxjlZXRk4gnt2PrOAwjATfC9Sbwo4/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiay3MLWKkjc8YfkOwEGlibhIPosgc3y2CsKsEcdxes2sHmrOicHeOibWvaGjt6B7H9IygV7T1FxjlZXRk4gnt2PrOAwjATfC9Sbwo4/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>3\. 选择你用的 IDE 软件，点击 “add” 添加，如果里面没有你用的，点击“Other editors” 复制 Code snippet 直接发给你的软件，例如我用的 Codex，发给它，它自己会链接好。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/tAlIKXfSZiazyIiaqbddxCQR6bh12CyZH6oCKlvs2XdNeJkJSB9XWYzYdH3zvIcpbyq9sCLj68OniaiatbVP1KFiaH3xAdfNicib8P0MnNJY0tMaBc/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/tAlIKXfSZiazyIiaqbddxCQR6bh12CyZH6oCKlvs2XdNeJkJSB9XWYzYdH3zvIcpbyq9sCLj68OniaiatbVP1KFiaH3xAdfNicib8P0MnNJY0tMaBc/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>‼️‼️‼️</p>
 <p>‼️很多人到这里就停了，然后会觉得：</p>
 <blockquote><p>“为什么生成的还是一团乱？”</p></blockquote>
@@ -187,10 +187,10 @@
 <p>另外我们组了一个群热爱探索的设计师→ 「设计师的 VibeCoding 实验室」欢迎私聊来加入。</p>
 <hr>
 <p>历史文章</p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album<em>id=3925877792105037831#wechat</em>redirect" target="<em>blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz</em>png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnpdK53U38Axw3Qd2b5T7Ph8YSP1jBKefrEPFfn3z3gK8T1VGQxJ0icqQ/640?wx<em>fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx</em>lazy=1&amp;wx_co=1&amp;randomid=adxnvt2m&amp;tp=webp#imgIndex=18" alt="图片" loading="lazy"></a></p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album<em>id=3925882854227312641#wechat</em>redirect" target="<em>blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz</em>png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcn7hazGMCJaYw1g51Hnib4VQ6pTJPgBHgibfBygW6C7ltXkDRVa8NvkDfQ/640?wx<em>fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx</em>lazy=1&amp;wx_co=1&amp;randomid=6du8fus1&amp;tp=webp#imgIndex=19" alt="图片" loading="lazy"></a></p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album<em>id=3925887427964829708#wechat</em>redirect" target="<em>blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz</em>png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnyxekKjZGTauzZM1tnGU8XhMe8cQ8kPtK35fawroYY7ybu0LkYiaibW8g/640?wx<em>fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx</em>lazy=1&amp;wx_co=1&amp;randomid=yk6gkdmw&amp;tp=webp#imgIndex=20" alt="图片" loading="lazy"></a></p>
-<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album<em>id=3925889414856966155#wechat</em>redirect" target="<em>blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz</em>png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnlePXhuwMKJ6yCnsZM4zdUQOXwdCwHy5dibrW2hKIrTCDb4263utLJuA/640?wx<em>fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx</em>lazy=1&amp;wx_co=1&amp;randomid=ldmkfp07&amp;tp=webp#imgIndex=21" alt="图片" loading="lazy"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album_id=3925877792105037831#wechat_redirect" target="_blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnpdK53U38Axw3Qd2b5T7Ph8YSP1jBKefrEPFfn3z3gK8T1VGQxJ0icqQ/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1&amp;randomid=adxnvt2m&amp;tp=webp#imgIndex=18" alt="图片" loading="lazy"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album_id=3925882854227312641#wechat_redirect" target="_blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcn7hazGMCJaYw1g51Hnib4VQ6pTJPgBHgibfBygW6C7ltXkDRVa8NvkDfQ/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1&amp;randomid=6du8fus1&amp;tp=webp#imgIndex=19" alt="图片" loading="lazy"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album_id=3925887427964829708#wechat_redirect" target="_blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnyxekKjZGTauzZM1tnGU8XhMe8cQ8kPtK35fawroYY7ybu0LkYiaibW8g/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1&amp;randomid=yk6gkdmw&amp;tp=webp#imgIndex=20" alt="图片" loading="lazy"></a></p>
+<p><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzIyOTc4NjE2NA==&amp;action=getalbum&amp;album_id=3925889414856966155#wechat_redirect" target="_blank" rel="noopener"><img src="https://mmbiz.qpic.cn/mmbiz_png/ekECa2J6aibh1J1ibu4yKwfwxhbNiaRSqcnlePXhuwMKJ6yCnsZM4zdUQOXwdCwHy5dibrW2hKIrTCDb4263utLJuA/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1&amp;randomid=ldmkfp07&amp;tp=webp#imgIndex=21" alt="图片" loading="lazy"></a></p>
 <p>有意向或者感兴趣的小伙伴欢迎加入 AI 交流</p>
     </div>
   </article>

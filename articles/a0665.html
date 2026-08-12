@@ -41,7 +41,7 @@
 <p>钱花了，时间没了，效果还不如最朴素的方案。</p>
 <p><strong>所以今天主要想聊一件事，到底什么是工作流，什么是 Agent。</strong></p>
 <p>这两个东西的界线划在哪，以及一个最关键的判断，你手里这个需求，到底该用什么。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPO0Ywg3PJte9UMB43gibPWtL6GAZFibb6d2kphRZ7jicM9FRZly6w8ribFxibFOpagk4P99BgVNvDhMqyfCEuodYicvW6XMx1cSafuics/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="配图1" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPO0Ywg3PJte9UMB43gibPWtL6GAZFibb6d2kphRZ7jicM9FRZly6w8ribFxibFOpagk4P99BgVNvDhMqyfCEuodYicvW6XMx1cSafuics/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="配图1" loading="lazy"></p>
 <h2>一、先别急着上 Agent，先问一句能不能更简单</h2>
 <p>有一条原则，我越来越体会到它的含金量： <strong>优先找最简单的方案，只在真正需要的时候才去增加复杂度。</strong></p>
 <p>我其实很早就有体会。</p>
@@ -58,7 +58,7 @@
 <p><strong>第二层，工作流。</strong></p>
 <p>流程是明确的，第一步干嘛、第二步干嘛、第三步干嘛，你其实很清楚。</p>
 <p>比如合同审查，用户上传合同，提取关键信息，检查风险条款，生成审查报告。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPPclUrCibwkKZKN6hGbZ5yIq9e6icRCUYeMQYTwvDEsGd5CnE9avNCYv9tkYAicjTgCGLrbDPrpWZgOf0DRh5xPdTQGeo17aHwwAc/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="配图2" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPPclUrCibwkKZKN6hGbZ5yIq9e6icRCUYeMQYTwvDEsGd5CnE9avNCYv9tkYAicjTgCGLrbDPrpWZgOf0DRh5xPdTQGeo17aHwwAc/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="配图2" loading="lazy"></p>
 <p>它确实有好几步，但每一步都是确定的，下一步做什么不用模型临场判断。这种就特别适合工作流，结果稳定，可预测，出了问题也好排查。</p>
 <p><strong>第三层，才是 Agent。</strong></p>
 <p>那种你没法提前把步骤写死的任务。比如你跟它说，帮我分析这个项目为什么延期，再给个改进方案。</p>
@@ -68,7 +68,7 @@
 <p>一句话总结这三层， <strong>简单问题用单次调用，固定流程用工作流，复杂开放的任务才用 Agent。</strong></p>
 <h2>二、工作流和 Agent，到底差在哪</h2>
 <p>这是今天最想说清楚的一块，因为绝大多数人嘴里的 Agent，其实只是工作流。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPO9icUT78iayNicRiaqfk1LJGLPoIjeIxWrSTqW2dP48EZVLia7a5fQlcqJOGtiaDs1uLwuxtDInSY65VAuibNiatFzXSYicVqGURMzo2YU/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="配图3" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPO9icUT78iayNicRiaqfk1LJGLPoIjeIxWrSTqW2dP48EZVLia7a5fQlcqJOGtiaDs1uLwuxtDInSY65VAuibNiatFzXSYicVqGURMzo2YU/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="配图3" loading="lazy"></p>
 <p>我见过最清晰的一个区分：</p>
 <p><strong>工作流，是通过预定义的代码路径，去编排 LLM 和工具的系统。</strong></p>
 <p><strong>Agent，是 LLM 自己动态引导整个流程、自己决定怎么用工具、并且始终掌控着任务该怎么完成的系统。</strong></p>
@@ -78,7 +78,7 @@
 <p>你从外面看，就是丢一篇论文进去，出来一篇 AI 率合规的论文，好像挺智能。</p>
 <p>但它背后其实是一套老老实实的工作流， <strong>上传论文，解析待处理内容，分段，改写，合并，合规性校验，导出。</strong></p>
 <p>每一步都是固定的，顺序也是固定的，模型只负责在改写那一步把活干好，它没权力决定要不要跳过校验，也没权力自己改流程。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPOG9PTZjaUso1UAcfiaFsKYKIzLzRLV1qhE22p8gjugiacyxvh6iclkjQ02Oqy1zhYicDhuZczPaQYNrCrCQ3q7r7OvIcf7wgCpKzU/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="配图4" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPOG9PTZjaUso1UAcfiaFsKYKIzLzRLV1qhE22p8gjugiacyxvh6iclkjQ02Oqy1zhYicDhuZczPaQYNrCrCQ3q7r7OvIcf7wgCpKzU/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="配图4" loading="lazy"></p>
 <p>这就是典型的工作流。</p>
 <p><strong>那什么时候它会变成 Agent 呢？</strong></p>
 <p>假设用户不是点降重按钮，而是直接跟它说，帮我优化一下这篇论文。</p>
@@ -91,7 +91,7 @@
 <h2>三、工作流的五种常见玩法</h2>
 <p>把界线说清楚了，咱们先聊工作流。</p>
 <p>我做软件工程这些年有个越来越深的感受，能把一个模糊的目标，拆解成足够细致、能一步步跑下去的流程，本身就是一项被严重低估的能力。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/Ty7XRc3ndPMciaVM6KZhDq1Wia7JldlZFtIfVc0b6XeM4CwEZ6pjX2abb3mcPgPUcQOZcyBQsGCibHTWqEMq76eOm5UHOWbDiaNdlwj5rHxLKx8/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="配图5" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPMciaVM6KZhDq1Wia7JldlZFtIfVc0b6XeM4CwEZ6pjX2abb3mcPgPUcQOZcyBQsGCibHTWqEMq76eOm5UHOWbDiaNdlwj5rHxLKx8/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="配图5" loading="lazy"></p>
 <p><strong>工作流这五种模式，其实都是在教你怎么拆。</strong></p>
 <p>它不是只有一种长相，常见的有五种：</p>
 <p><strong>第一种，提示链，一步接一步。</strong></p>
@@ -101,14 +101,14 @@
 <p>还有像先写营销文案再翻译成英文，先提取需求再转成用户故事再生成验收标准，都是这个路子。</p>
 <p><strong>它的好处是每一步都更简单，结果更稳，哪一步出问题一眼就能看出来。</strong></p>
 <p>适合那种步骤本身就很清楚的任务。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPO5Nu2Pj5BwE1iczD5BkeULxwcic3F9fAEiaRjraASdCJ1pyUrPw1ibtFhFLa1l68O8GQUCvibImvBpLh3rB29muPLbclRvO7VsCAb8/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="封面图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPO5Nu2Pj5BwE1iczD5BkeULxwcic3F9fAEiaRjraASdCJ1pyUrPw1ibtFhFLa1l68O8GQUCvibImvBpLh3rB29muPLbclRvO7VsCAb8/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="封面图" loading="lazy"></p>
 <p><strong>第二种，路由，不同的问题走不同的路线。</strong></p>
 <p>先判断用户的输入属于哪一类问题，再把它送到对应的流程、提示词、工具或者模型那儿去。</p>
 <p>客服系统最典型。用户的问题可能是普通咨询、退款、技术支持、投诉，这几类压根不该用同一套提示词处理。</p>
 <p>退款得查订单，技术支持得查日志，普通咨询查知识库就行。</p>
 <p><strong>路由的价值，就是让不同类型的问题走更专业的处理路径。</strong></p>
 <p>它还有个特别实用的用法，省钱。简单常见的问题路由给便宜的小模型，复杂特殊的问题才交给更强的大模型，效果和成本就平衡了。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPNqFdwPuiciac74ItAOKu3RMasqOeqrg8hC4JBVGice4rBsMicibukpvxHvLA8smQVQ1j3RrC6NwE6l3lCQcHuMaCaxFmwHbC2iaODibw/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=6" alt="配图6" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPNqFdwPuiciac74ItAOKu3RMasqOeqrg8hC4JBVGice4rBsMicibukpvxHvLA8smQVQ1j3RrC6NwE6l3lCQcHuMaCaxFmwHbC2iaODibw/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="配图6" loading="lazy"></p>
 <p><strong>第三种，并行化，几件事同时进行。</strong></p>
 <p>让多个 LLM 调用同时工作，最后把结果合一起。</p>
 <p>它有两种形态。</p>
@@ -116,12 +116,12 @@
 <p>另一种是 <strong>投票</strong> ，让多个提示词分别判断一段代码有没有问题，或者一次生成多个标题版本再挑最优的。</p>
 <p>前者图的是快，后者图的是多个视角带来的可信度。</p>
 <p>但有个前提，子任务之间最好相对独立，要是每一步都完全依赖前一步，那就别并行了。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPP6y8cXc8wqXMt7I1GchLNKCUYEHB2CQMkA1XhW7YTVURJK5XBh6pfn3ibibrrI2HgXPyNiaGHozLJzJXJnx1DRQnP9Tc38rOLskc/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="放大查看" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPP6y8cXc8wqXMt7I1GchLNKCUYEHB2CQMkA1XhW7YTVURJK5XBh6pfn3ibibrrI2HgXPyNiaGHozLJzJXJnx1DRQnP9Tc38rOLskc/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="放大查看" loading="lazy"></p>
 <p><strong>第四种，编排器-工作者，一个总指挥带一帮执行者。</strong></p>
 <p>一个中央的 LLM 负责理解任务、拆分任务、分配任务，最后再把多个工作者的结果汇总起来。</p>
 <p>它跟并行化有点像，区别在于：</p>
 <p><strong>并行化的子任务通常是你提前设计好的，而编排器-工作者的子任务，是模型看了当前输入之后动态拆出来的。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPMnkibQu1k11O4xrhTcGM8xJPvy7miaSvZ4dtN6UzpoXm6icdl1Ar4iaBJQ4pSS0iadIbUKOCXfAS4zQu0QWvRUrzNQSc7ndsprUMhE/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="配图7" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPMnkibQu1k11O4xrhTcGM8xJPvy7miaSvZ4dtN6UzpoXm6icdl1Ar4iaBJQ4pSS0iadIbUKOCXfAS4zQu0QWvRUrzNQSc7ndsprUMhE/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="配图7" loading="lazy"></p>
 <p>举个实际的例子，假如你有一百条售后工单，想让 AI 帮你归纳高频问题和知识库缺口。</p>
 <p>你要是把一百条一股脑丢给模型，它八成给你一堆正确的废话，优化用户体验、完善帮助文档、提升系统稳定性，听着没错，但没法落地。</p>
 <p>换成编排器-工作者就清楚多了。</p>
@@ -136,7 +136,7 @@
 <p>模型可以决定拆成哪几个主题，但它不会脱离这个目标，自己跑去联系客户、改知识库、建产品需求。</p>
 <p>所以它再聪明，本质也还是个高级一点的工作流，不是 Agent。</p>
 <p><strong>第五种，评估者-优化者，一个负责写，一个负责挑刺。</strong></p>
-<p><strong><img src="https://mmbiz.qpic.cn/mmbiz<em>png/Ty7XRc3ndPPj3iaEloZTcrwEtEiadicUY5fJFLGuDPyL5rDnO1p9yVlM7XTwebdLkGicg9s8KNVFzk5xqL0jY651BW3rJGmepciajNFrfp1c56Vk/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="配图8" loading="lazy"></strong></p>
+<p><strong><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPPj3iaEloZTcrwEtEiadicUY5fJFLGuDPyL5rDnO1p9yVlM7XTwebdLkGicg9s8KNVFzk5xqL0jY651BW3rJGmepciajNFrfp1c56Vk/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="配图8" loading="lazy"></strong></p>
 <p>一个 LLM 先生成结果，另一个 LLM 进行检查、提意见，然后再根据反馈改。</p>
 <p>特别像我们平时写东西，先出一版，找人审一遍，按意见改。</p>
 <p>它适合那种第一版能做出来、但很难一次做到最好的任务，写文章、翻译润色、补测试用例、查代码风险都比较适合。</p>
@@ -145,7 +145,7 @@
 <p>它的关键不在于多生成几次，而在于 <strong>有明确标准地检查，再有针对性地优化。</strong></p>
 <p><strong>这也是它跟提示链最大的不同，提示链是按固定步骤往前走，评估者-优化者是绕着一个反馈循环转。</strong></p>
 <p>但它不适合太简单的任务，文本分类、格式转换、普通摘要这种，一次调用就够了，强行使用这套模式，纯属浪费成本。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPOeXxke5NxiaFfxYK4IZk2Y14QdyShGYtjnjhWCgRjibKrJF4FM0rTY1Ib0pBr1icLdia6La4Uaggnz5auEG8FibjnQuLeARWTdZ5dY/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=10" alt="配图9" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPOeXxke5NxiaFfxYK4IZk2Y14QdyShGYtjnjhWCgRjibKrJF4FM0rTY1Ib0pBr1icLdia6La4Uaggnz5auEG8FibjnQuLeARWTdZ5dY/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" alt="配图9" loading="lazy"></p>
 <h2>四、那到底什么时候才该上 Agent</h2>
 <p>聊完五种工作流，回到 Agent。</p>
 <p>前面说了那条核心界线，下一步交给模型自己判断，就是 Agent。</p>
@@ -162,14 +162,14 @@
 <p>继续堆下去，维护成本会高到离谱。</p>
 <p>比如供应商安全审查，不同供应商、地区、资质、风险等级，规则碎得不行。</p>
 <p>每种情况都硬编码，后期能把人逼疯。这种规则集庞大、更新成本高、动不动出错的系统，正是 Agent 发力的地方。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPMFq6NGaibvwwMaOibZremOQ0FpNINGhLzJAlmIx4uYKcia9G6RrtTRUlOZrrLwUYcANBcbfrLnRgtmA2wOnRrzsL1k5JW8wbYobs/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=11" alt="配图10" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPMFq6NGaibvwwMaOibZremOQ0FpNINGhLzJAlmIx4uYKcia9G6RrtTRUlOZrrLwUYcANBcbfrLnRgtmA2wOnRrzsL1k5JW8wbYobs/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" alt="配图10" loading="lazy"></p>
 <p><strong>第三，输入主要是文档、对话这类非结构化的东西。</strong></p>
 <p>数据要都是状态、金额、类型、时间这种结构化字段，传统系统处理起来很轻松。</p>
 <p>但要是输入变成用户描述、合同、PDF、邮件、工单、理赔材料、会议纪要。</p>
 <p>这些信息不是简单字段，是需要读懂意思。</p>
 <p>比如家庭保险理赔，不光看金额，还得读用户怎么描述、事故材料、照片说明、历史记录，再判断下一步要什么材料、要不要转人工。</p>
 <p>这种高度依赖非结构化数据的场景，很适合 Agent。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/Ty7XRc3ndPOXVohyZRiaeysiaussh50XMvPo8WPYgG9d8pweQJHD9HNLHhYR63sjCe6rCjA14NHLVfzXUJnhcgrPpicXLzsHbPGBgUoKIVguRI/640?wx<em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=12" alt="封面图" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/Ty7XRc3ndPOXVohyZRiaeysiaussh50XMvPo8WPYgG9d8pweQJHD9HNLHhYR63sjCe6rCjA14NHLVfzXUJnhcgrPpicXLzsHbPGBgUoKIVguRI/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" alt="封面图" loading="lazy"></p>
 <p><strong>第四，也是最根本的一条，流程路径不固定，得自己决定下一步。</strong></p>
 <p>这条其实就是前面那条核心界线的回声。</p>
 <p>工作流是流程固定，就像我们熊猫论文的降重功能，上传到导出一条道走到黑。</p>
@@ -178,7 +178,7 @@
 <p>不过得提醒一句，Agent 的自主性是把双刃剑。</p>
 <p>自主性高，成本就高，而且错误会一步步累积放大。</p>
 <p>所以真要上 Agent，记得先在沙盒环境里充分测试，配好防护栏，别直接丢进生产环境。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/Ty7XRc3ndPP32vHuCFR3c09Ulmzf337wTjbedfVH5sZePfY1VuUkMRneyz4H0c7Lsr02N1CVNvMYCmc8lC2qmVGrlL1fJnEjx0P1KqyLpPU/640?wx</em>fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="配图11" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/Ty7XRc3ndPP32vHuCFR3c09Ulmzf337wTjbedfVH5sZePfY1VuUkMRneyz4H0c7Lsr02N1CVNvMYCmc8lC2qmVGrlL1fJnEjx0P1KqyLpPU/640?wx_fmt=png&amp;from=appmsg&amp;watermark=1&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" alt="配图11" loading="lazy"></p>
 <h2>五、总结一下</h2>
 <p>下次有个需求摆在面前，按这个顺序问自己三句话就行。</p>
 <p><strong>第一句，一次 LLM 调用能不能搞定？</strong></p>

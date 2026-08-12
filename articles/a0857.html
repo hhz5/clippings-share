@@ -39,16 +39,16 @@
 <p>它还在亲手杀死自己曾经催生出来的那些技术：GPTS、Langchain、Prompt、MCP、RAG、 向量数据库、LoRA，这些技术名词几乎没有再提了。</p>
 <p>它们是什么？现在是否还有用？</p>
 <p>今天系统梳理一下，那些被 AI 干掉的、或者正在被干掉的技术和产品。有些死得干脆利落，有些是慢慢消亡，有些则是面目全非地活了下来。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoxVLzov7iabfRZqVCh9ubjaXqg8rfoAUevyNR51lsLdZTHibazQibw1lHahhJIOHia61AfJtFsgZDeawNcWVCZcRA7Vz18teYhuTec/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxVLzov7iabfRZqVCh9ubjaXqg8rfoAUevyNR51lsLdZTHibazQibw1lHahhJIOHia61AfJtFsgZDeawNcWVCZcRA7Vz18teYhuTec/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>1 传统机器学习</p>
 <p>先说清楚一个 AI 发展的时间线。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCowjjEZEhHbhiclOQF4KQDu2VFGYzzDboJiaQmgxqYL7ibfBQhluNdcp2rjxyhUpB2cHTsrOGm11icOrqLbyunFL9waf7O0bRjiciaSOo/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowjjEZEhHbhiclOQF4KQDu2VFGYzzDboJiaQmgxqYL7ibfBQhluNdcp2rjxyhUpB2cHTsrOGm11icOrqLbyunFL9waf7O0bRjiciaSOo/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>2010 年代，机器学习是整个 AI 领域的主角。那时候没有 ChatGPT，没有大模型，你想让机器「理解」一段文字、识别一张图片、预测一个用户行为，只有一条路：收数据、打标签、做特征、调模型。</p>
 <p>这套流程里， <strong>特征工程</strong> 是最核心的手艺。</p>
 <p>就是你要把原始数据里的「业务规律」手动翻译成模型能看懂的数字。比如你做电商推荐，你要想：用户最近 7 天点击了几次？他买的东西平均价格是多少？他上午浏览的品类和下午有区别吗？</p>
 <p>这些都要靠人来想、靠人来设计。一个好的特征工程师，能让同样的模型效果提升一个数量级，是那个年代最值钱的 AI 工程师。</p>
 <p>然后 2022 年末，ChatGPT 来了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoyuqKSUFBZlXia8xpvHmWY62b1jhEHQeUVrEOW88sia7aqW5sJaiaKicRO4jH6VrqtTmceTkqCgk8sooqEGFiaNRNCaYB6ap11IUkIk/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoyuqKSUFBZlXia8xpvHmWY62b1jhEHQeUVrEOW88sia7aqW5sJaiaKicRO4jH6VrqtTmceTkqCgk8sooqEGFiaNRNCaYB6ap11IUkIk/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>文本分类、情感分析、意图识别、内容理解，这些原来需要收集标注数据、做特征、调模型的任务，现在写几行 prompt 就能解决，效果还不差。</p>
 <p>更关键的是： <strong>LLM 本身就是一个预训练好的特征提取器</strong> 。它在海量文本上学到的东西，已经包含了大量人类语言的规律和模式。你不需要再教它「什么是情感」「什么是意图」。</p>
 <p>传统 ML 的工作流程并没有消失，结构化数据、时序预测、工业场景，该用还在用。</p>
@@ -69,7 +69,7 @@
 <p>这些工具的共同逻辑，都是「视觉化编程」：把复杂的流程，变成人人可见的节点图。</p>
 <p>那时候我也觉得这些工具是未来。不用懂代码，配置一下就能做 AI 应用，民主化了嘛。</p>
 <p><strong>然后 Vibe Coding 来了，全部尴尬了</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCozpow2D7GyaOXJulQprYSkVPkgZQKg0LeWicyTIsYwJo7iaOAVPlahpuakwBOsCeE7CekV4tVq9YTIKKYjPQZkdncSUXqnOnfCyw/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCozpow2D7GyaOXJulQprYSkVPkgZQKg0LeWicyTIsYwJo7iaOAVPlahpuakwBOsCeE7CekV4tVq9YTIKKYjPQZkdncSUXqnOnfCyw/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>2025 年初，Andrej Karpathy（OpenAI 联合创始人）提了一个词： <strong>Vibe Coding</strong> 。</p>
 <p>这件事彻底动摇了 No-Code、GPTs、Coze 这些工具的逻辑基础。</p>
 <p>No-Code 的卖点是「不用写代码」。但 Vibe Coding 让不会写代码的人也能直接生成真代码。</p>
@@ -77,7 +77,7 @@
 <p>现在 Agent 本身就能根据你的描述自主规划工作流，你为什么还要手动拖拽连节点？</p>
 <p>ComfyUI 的困境更有意思，它死于一个更根本的原因： <strong>生图模型本身变强了，强到不需要工作流了</strong> 。</p>
 <p>以前你想让 AI 生成一张「符合你形象」的图片，流程是这样的：先收集几十张自己的照片，训练一个 LoRA，然后在 ComfyUI 里搭一套工作流——加载模型、注入 LoRA、调采样器、控制 CFG、加后处理……节点连得密密麻麻，调参调到头秃。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>jpg/CFe2b8yvCoxmNrBCMDYBibj6jSDzDMEAl4Efsux4VH3e5YZfAeHia3tcANLRiav75kyIA1l9bZQJVSamOcAX5MPV3o3av0wfF7A0eibrdlpzaR8/640?wx</em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/CFe2b8yvCoxmNrBCMDYBibj6jSDzDMEAl4Efsux4VH3e5YZfAeHia3tcANLRiav75kyIA1l9bZQJVSamOcAX5MPV3o3av0wfF7A0eibrdlpzaR8/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>现在呢？Gemini 直接支持「垫图生成」</p>
 <p>你发一张自己的照片，告诉它「生成一张我在巴黎铁塔前的照片」，它就能直接出图。不需要训练，不需要工作流。</p>
 <p>这背后的变化是： <strong>新一代生图模型内置了世界知识和推理能力</strong> 。它不只是在「生成像素」，它理解「人脸一致性」「场景合理性」「光影逻辑」这些概念。这些能力以前要靠工作流一步步「教」给模型，现在模型自己就会了。</p>
@@ -87,7 +87,7 @@
 <p>2023 年，如果你想让大模型「懂」你的业务，标准答案是： <strong>微调</strong> 。</p>
 <p>收集数据、整理格式、跑训练、调参数、部署推理，这套流程养活了一大批 AI 训练服务商和 GPU 云厂商。</p>
 <p>包括上面提到的 LoRA，也是图像模型的一种微调手段。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/CFe2b8yvCow8zMpcvsKYar8o081IhbtcNjlFxcticicLE8Kt18wRLHDtVgRjGedIbwVUpwLgm3lmKiaMUOxjWaaZZDstTydIfFlPD1ktV2gyTk/640?wx<em>fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/CFe2b8yvCow8zMpcvsKYar8o081IhbtcNjlFxcticicLE8Kt18wRLHDtVgRjGedIbwVUpwLgm3lmKiaMUOxjWaaZZDstTydIfFlPD1ktV2gyTk/640?wx_fmt=jpeg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="图片" loading="lazy"></p>
 <p>但现在，越来越多的人发现： <strong>很多场景根本不需要微调了</strong> 。</p>
 <p>首先是 <strong>模型本身变强了</strong> 。GPT、Claude 、Gemini 这些旗舰模型的具备推理能力，很多任务只需要写好 prompt 就能搞定，不需要专门训练。</p>
 <p>其次是 <strong>上下文窗口变大了</strong> 。以前模型只能看几千 token，你想让它理解业务知识，只能通过微调「烧」进参数里。现在动辄几十万 token 的上下文窗口，直接把文档、示例、规则塞进 prompt，模型就能「懂」了。</p>
@@ -103,7 +103,7 @@
 <p>微调的使用门槛和场景都收窄了。</p>
 <p>4 RAG</p>
 <p>先说结论：RAG 没死， RAG 的应用场景变了</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoxLrCoOMNNbc0KWDqCHuELjwHiaZVic4G1OjUNibnOMJjHmu6ia3aLJ2chLgTWrPo0dzK1fsibXTnnlibTQ5WyibYvb0YNB1DzPs8GHsY/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoxLrCoOMNNbc0KWDqCHuELjwHiaZVic4G1OjUNibnOMJjHmu6ia3aLJ2chLgTWrPo0dzK1fsibXTnnlibTQ5WyibYvb0YNB1DzPs8GHsY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="Feishu Docs - Image" loading="lazy"></p>
 <p><strong>2023 年版本的 RAG 是什么样的？</strong></p>
 <p>标准教程基本都长一个样：</p>
 <p><strong>把文档切成小块 → embedding 向量化 → 存进向量数据库 → 用户提问就检索 top-k 块 → 塞进 prompt</strong></p>
@@ -126,7 +126,7 @@
 <p>5 MCP</p>
 <p>MCP（Model Context Protocol）之前被认为是访问外部系统的标准协议。</p>
 <p>但最近有个有意思的趋势： <strong>Claude Code 这类 Coding Agent，很多时候根本不用 MCP，直接调 API 就完事了</strong> 。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCoy42cfpy1sveZrxx92rUbCOQklqGdepdGZ1zVp3vYtPjxcfXcub3cycpibCH9Br0ohKQnjZakRnp9ZvSFQwibKqDicxibSBCteAkTg/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="Feishu Docs - Image" loading="lazy"> <strong>大多数 SaaS 已经有现成的 REST API</strong> 。Jira、Notion、Slack、GitHub，这些服务的 API 文档写得清清楚楚，已经稳定运行了数年年。</p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCoy42cfpy1sveZrxx92rUbCOQklqGdepdGZ1zVp3vYtPjxcfXcub3cycpibCH9Br0ohKQnjZakRnp9ZvSFQwibKqDicxibSBCteAkTg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="Feishu Docs - Image" loading="lazy"> <strong>大多数 SaaS 已经有现成的 REST API</strong> 。Jira、Notion、Slack、GitHub，这些服务的 API 文档写得清清楚楚，已经稳定运行了数年年。</p>
 <p>而 MCP Server 呢？你得专门开发和测试。</p>
 <p>更关键的是 token 成本：相关统计，MCP 的成本是直接调 CLI 的 10 多倍</p>
 <p>Claude Code 可以读 API 文档、理解参数、生成调用代码、处理返回结果，整个流程不需要任何中间层。一个 50 行的 TypeScript 脚本，在执行之前零 token 开销，执行时直接拿到结果。</p>
@@ -149,7 +149,7 @@
 <p>简单说，就是教电脑模拟人的操作，点击、复制、粘贴、填表、登录系统。2018 年前后，UiPath、Blue Prism 这些公司融资估值飞速增长，因为企业里有大量「人工手动处理的重复流程」，RPA 可以自动化。</p>
 <p>银行里的对账、保险公司的理赔录入、财务的报表汇总……这些事情 RPA 做得又快又准。</p>
 <p><strong>AI Agent 来了，RPA 的逻辑基础松动了</strong></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/CFe2b8yvCowqykWGicdkQfaEH33WQcv0ggeIccT2LcJVAAcFIDzVR6a7paexwAKxCurpAAd9Qia9Ce4MER66gb3lTYe89DTwlD73107PwiaIAI/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/CFe2b8yvCowqykWGicdkQfaEH33WQcv0ggeIccT2LcJVAAcFIDzVR6a7paexwAKxCurpAAd9Qia9Ce4MER66gb3lTYe89DTwlD73107PwiaIAI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>RPA 本质上是「规则驱动的」，你要先把操作步骤写死，它才能重复执行。一旦界面变了、流程改了，RPA 就会出错，需要人去维护。</p>
 <p>但 Claude、GPT-4o 这类模型现在可以「看着屏幕操作」，用计算机视觉理解界面，自主推断下一步该做什么，遇到变化能自己适应。</p>
 <p>Anthropic 推出 Computer Use 功能时，业界第一反应就是：这是 RPA 的终结者。</p>
@@ -171,7 +171,7 @@
 <p>OpenAI 收购了 Rockset 做混合搜索，Qdrant 自己也开始支持 BM25。纯向量数据库作为独立品类，存在感越来越弱。</p>
 <p>这些技术的共同点是： <strong>它们都是为「当时模型的局限性」设计的解决方案</strong> 。模型进化了，解决方案就过时了。</p>
 <p>我的感受</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/CFe2b8yvCoz8Z2KXyDKFC4jbLV0T19napsKTnK7VM7FdH4OzeT6wQuZVON6UE3Tlemj3slP7VrIfia90vnMe2NibBLEnnZ1NibeD7vhQy6hhdQ/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/CFe2b8yvCoz8Z2KXyDKFC4jbLV0T19napsKTnK7VM7FdH4OzeT6wQuZVON6UE3Tlemj3slP7VrIfia90vnMe2NibBLEnnZ1NibeD7vhQy6hhdQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" alt="Feishu Docs - Image" loading="lazy"></p>
 <p>这篇文章里讲的那些技术，如果要选一个最多企业踩过坑的应用场景</p>
 <p>那一定是—— <strong>AI 企业知识库</strong> 。</p>
 <p>不夸张地说，过去三年，每隔一段时间就有做企业的朋友来问我同一个问题：</p>

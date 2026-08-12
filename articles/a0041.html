@@ -47,7 +47,7 @@
 <p>前阵子我又一次在重构公司内部那几个Claude Code的skill，写着写着开始觉得有点不对劲。</p>
 <p>我发现我这半年写的那些skill，从定位上就错了。</p>
 <p>不是语法错，不是内容写得不好，是我对skill这个东西到底是什么，整个想法都错了。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iaDf0iaGn69rkO5dO7Q2ubY5ZNXjIicibHBEM2zxWkvqkeUotwnFBhZuKmaIASO5MUW9aPThe4nF13FqnIaSfCibQibbtnEUUfGQXIYB8sFjzz6uc/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Anthropic 官方文档对 Agent Skills 的定义" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaDf0iaGn69rkO5dO7Q2ubY5ZNXjIicibHBEM2zxWkvqkeUotwnFBhZuKmaIASO5MUW9aPThe4nF13FqnIaSfCibQibbtnEUUfGQXIYB8sFjzz6uc/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="Anthropic 官方文档对 Agent Skills 的定义" loading="lazy"></p>
 <p>Anthropic 官方文档对 Agent Skills 的定义</p>
 <blockquote><p>图源：Claude API Docs「Agent Skills」，https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview<sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[1]</span></sup></p></blockquote>
 <p>这事说起来挺丢人的。skill去年10月出来之后我就跟着开始写，把它当成一种「更长的prompt」在用。就是那种你每次都要复制粘贴一大段的指令，包装一下起个名字，往<code>~/.claude/skills/</code>里一丢，感觉自己整挺明白。后来CLAUDE.md、AGENTS.md这些东西陆陆续续冒出来，我的理解依然停留在「这些都是提示词文档，只是放的位置不一样」。</p>
@@ -59,7 +59,7 @@
 <p>真正的共识是。</p>
 <p><strong>skill根本就不是一份提示词文档，它是你agent运行时架构的一部分。</strong></p>
 <p>这个判断落到我这儿的时候，我坐在椅子上想了很久。因为它翻译过来意味着一件事，就是这半年所有聊「prompt engineering」的讨论，在agent这个场景里已经不够用了。你正在面对的不是「怎么写一段好提示词」，而是「怎么设计一套可以长期演进的agent操作系统」。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iaDf0iaGn69rkt3oyrpv1dctvdib7wEvVtEQ6WfXmY1znmRuDyemwQ1BN0fB13T59DNsu3H4Cy3vT912BxQucXjKicAWvLJ4IEsWZDibIWSW2SEg/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Agent Skills Quickstart 里展示的 skill 包结构" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaDf0iaGn69rkt3oyrpv1dctvdib7wEvVtEQ6WfXmY1znmRuDyemwQ1BN0fB13T59DNsu3H4Cy3vT912BxQucXjKicAWvLJ4IEsWZDibIWSW2SEg/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="Agent Skills Quickstart 里展示的 skill 包结构" loading="lazy"></p>
 <p>Agent Skills Quickstart 里展示的 skill 包结构</p>
 <blockquote><p>图源：Claude API Docs「Get started with Agent Skills in the API」，https://platform.claude.com/docs/en/agents-and-tools/agent-skills/quickstart<sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[2]</span></sup></p></blockquote>
 <p>这句话有点大。先别急，顺着往下走，我把我自己的路径走一遍你就懂了。</p>
@@ -74,7 +74,7 @@
 <p>每次会话启动的时候，Claude只会先看到所有skill的<code>name</code>和<code>description</code>，正文它看不到。只有当agent判断当前任务跟某个skill匹配了，它才会主动去把那个skill的正文整个读进来，挂到会话里。</p>
 <p>听着很简单对吧。但这里拐了个弯。</p>
 <p>你想想看，skill就有了一套自己的<strong>发现、调用、挂载、保持、压缩管理</strong>机制。它不是一个被动的文本，它是一个会被agent按需触发的过程模块。你写skill的时候，<code>description</code>字段写得好不好，直接决定了这个skill能不能被触发；里面的脚本写不写得对，决定了agent能不能真的执行动作；引用文件组织得合不合理，决定了在长会话里上下文被压缩之后它还能不能挂回来。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iaDf0iaGn69rlblv0geJyx09icXsaqNYtscXxMLcMPqMgxevMyyqvOExROKhNmhLR4tDTWkFbTp4hVmnLj4Gtxl2micHYMZthWoLgLhBKNB7vvo/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="官方最佳实践把 skill 写作放在工程流程里讨论" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaDf0iaGn69rlblv0geJyx09icXsaqNYtscXxMLcMPqMgxevMyyqvOExROKhNmhLR4tDTWkFbTp4hVmnLj4Gtxl2micHYMZthWoLgLhBKNB7vvo/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="官方最佳实践把 skill 写作放在工程流程里讨论" loading="lazy"></p>
 <p>官方最佳实践把 skill 写作放在工程流程里讨论</p>
 <blockquote><p>图源：Claude API Docs「Skill authoring best practices」，https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices<sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[3]</span></sup></p></blockquote>
 <p>这已经不是「文字」的范畴了。这是一个<strong>可部署单元</strong>。</p>
@@ -92,7 +92,7 @@
 <p><strong>第六层是hooks，确定性约束。</strong> 这一层我以前完全没用过，后来才发现它解决了一类我原来解决不了的问题。Anthropic官方有一句非常关键的区分，<code>CLAUDE.md</code>是advisory，hooks是deterministic。翻译成人话就是，CLAUDE.md是「建议」，hooks是「强制」。凡是「必须每次发生、零例外」的事情，应该下沉为hook，不要再寄希望于模型自觉看文档。</p>
 <p><strong>第七层是subagents，隔离上下文的专门执行者。</strong> 适合研究、审查、验证这种高读文件量的任务。它的价值在于能把主对话从上下文污染里解放出来。某些skill甚至可以通过<code>context: fork</code>直接运行在subagent里。</p>
 <p><strong>第八层是eval和review，让所有资产持续变好的反馈回路。</strong> Anthropic工程文章里建议从评估开始，Agent Skills官方最佳实践甚至把「给LLM看eval signals和当前SKILL.md，让它提出修改，再由人复核并迭代」写成了标准循环。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iaDf0iaGn69rmukYnMIjZntlBmx5AdxSuNChiayDAYzLG0uwseiaKrYA5m4tJM8jKGowICdOHiaICGrAGVwIJ9L2QLSQtEVt5ficlogMPSVE6vXPI/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="把 agent 经验分层管理，而不是都写进同一个提示词文件" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaDf0iaGn69rmukYnMIjZntlBmx5AdxSuNChiayDAYzLG0uwseiaKrYA5m4tJM8jKGowICdOHiaICGrAGVwIJ9L2QLSQtEVt5ficlogMPSVE6vXPI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="把 agent 经验分层管理，而不是都写进同一个提示词文件" loading="lazy"></p>
 <p>把 agent 经验分层管理，而不是都写进同一个提示词文件</p>
 <blockquote><p>图源：作者整理，基于 Claude Code 与 Agent Skills 官方文档</p></blockquote>
 <p>这套东西第一眼看上去有点吓人，八层啊。但你真的把它用起来之后会发现一个特别重要的价值。</p>
@@ -107,7 +107,7 @@
 <p><strong>4\. 凡是「必须每次执行、不能靠模型自觉」，进hook。</strong>比如提交前必须跑lint，比如修改数据库schema前必须备份。这种东西写进CLAUDE.md你会发现Claude有时候就是会忘，写成hook就是强制执行，逃不掉。</p>
 <p><strong>5\. 凡是「模型需要真实执行或查询」，进CLI、MCP或scripts。</strong>不要在skill里写一堆「你应该这样这样调用API」，直接把调用包成一个脚本，让skill调用脚本。skill负责决策，脚本负责执行。</p>
 <p><strong>6\. 凡是已经从「专题经验」变成「所有相关任务都应该遵守的通用约束」，从skill上移到CLAUDE.md。</strong>这一条特别重要。HN上有条评论讲得很精辟，说「很多review skill里的反模式，不是应该在写代码阶段就避免吗？」作者的回应也基本承认了，这些规则确实应该进CLAUDE.md。所以skill不是终点，它只是经验的中转站，好的经验会从skill上升到项目级规则。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iaDf0iaGn69rlx8UztAFhibNFIjJmIVkrTAOkNprc5JdtmexzL8CnFGicMy9HS6ypDvczpSX7mhj6YlWdjOFQtib56V7j2OE4DGSJHj4sxrdm7aY/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="Claude Code memory 文档说明 CLAUDE.md 如何作为项目记忆入口" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaDf0iaGn69rlx8UztAFhibNFIjJmIVkrTAOkNprc5JdtmexzL8CnFGicMy9HS6ypDvczpSX7mhj6YlWdjOFQtib56V7j2OE4DGSJHj4sxrdm7aY/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="Claude Code memory 文档说明 CLAUDE.md 如何作为项目记忆入口" loading="lazy"></p>
 <p>Claude Code memory 文档说明 CLAUDE.md 如何作为项目记忆入口</p>
 <blockquote><p>图源：Claude Code Docs「How Claude remembers your project」，https://docs.claude.com/en/docs/claude-code/memory<sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[4]</span></sup></p></blockquote>
 <p>这套迁移原则我前前后后跑了两三个月，现在公司那几个项目的agent表现明显稳定了。最大的变化是，<strong>我的CLAUDE.md从两百多行缩回了一百行左右，但agent行为反而比以前更准了。</strong></p>
@@ -117,7 +117,7 @@
 <p>回到开头说的Vercel那篇评测，把数据完整摆出来你就更能体会它扎心在哪。它用Next.js 16的文档检索作为测试场景，skill默认情况下56%的case根本没被触发，必须加上明确的调用指令，通过率才能从53%拉到79%。而一份压缩过的AGENTS.md docs index，同样场景下能做到100%。</p>
 <p>这个数据传出去之后，HN上吵了很多天。有人说AGENTS.md赢麻了，也有人说这只是特定harness下的特定场景，不能外推。我比较倾向于后者，因为Vercel这个测试说到底是一个「文档检索」任务，skill的优势不在这种任务上，skill的优势在「多步流程和专题决策」。用一个不适合skill的场景去测skill，结果当然难看。</p>
 <p>但这件事说明一个更深的问题，<strong>今天的agent能不能稳定地按照你设计的分层去工作，很大程度上还依赖harness、依赖模型能力、依赖skill描述字段写得多好、甚至依赖运气。</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iaDf0iaGn69rl0tYudYy8y3Ss6CyC5ogKj5XhXIuTwpoAgBJ1icF9qVdezkibQ0T1uISlQHL1yuXJh3UAcBsJibQy8bordgtLt8EDKWDVbXGLyl0/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="Vercel 用 agent evals 对比 AGENTS.md 与 skills 的文档检索效果" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaDf0iaGn69rl0tYudYy8y3Ss6CyC5ogKj5XhXIuTwpoAgBJ1icF9qVdezkibQ0T1uISlQHL1yuXJh3UAcBsJibQy8bordgtLt8EDKWDVbXGLyl0/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" alt="Vercel 用 agent evals 对比 AGENTS.md 与 skills 的文档检索效果" loading="lazy"></p>
 <p>Vercel 用 agent evals 对比 AGENTS.md 与 skills 的文档检索效果</p>
 <blockquote><p>图源：Vercel Blog「AGENTS.md outperforms skills in our agent evals」，https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals<sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[5]</span></sup></p></blockquote>
 <p>HN上最长寿的一条抱怨是，「长会话之后agent会漂移」、「它就是有时候不看CLAUDE.md」、「skill调用不稳定」。这些都是真实存在的问题。我自己也遇到过，同一个skill在早上能触发，下午就不行了，你想破头也不知道为什么。</p>
@@ -130,7 +130,7 @@
 <p>恶意skill能干什么？可以诱导Claude把你的代码外传，可以在看起来正常的文件处理流程里塞一条偷偷上传你env的命令，可以在agent执行某些动作的时候往命令里插参数。</p>
 <p>想想就觉得后背发凉。</p>
 <p>因为我这半年，下载了一堆别人写的skill往自己电脑上丢。</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/iaDf0iaGn69rn04Lpf4ImApx4pt2sK7LezW6yppPByUBqh1Vw7SSpULvXrCmSPI5SibyLITziavd47iaex4icJZDBicYN0oldSbgaJEtMgicGnOZiby4/640?wx</em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="Snyk ToxicSkills 研究把 agent skills 当作供应链风险入口分析" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/iaDf0iaGn69rn04Lpf4ImApx4pt2sK7LezW6yppPByUBqh1Vw7SSpULvXrCmSPI5SibyLITziavd47iaex4icJZDBicYN0oldSbgaJEtMgicGnOZiby4/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" alt="Snyk ToxicSkills 研究把 agent skills 当作供应链风险入口分析" loading="lazy"></p>
 <p>Snyk ToxicSkills 研究把 agent skills 当作供应链风险入口分析</p>
 <blockquote><p>图源：Snyk Blog「ToxicSkills」研究，https://snyk.io/blog/toxicskills-malicious-ai-agent-skills-clawhub/<sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[6]</span></sup></p></blockquote>
 <p>所以skill这个东西，现在已经不只是「帮agent变聪明」的文本资产。它同时是一个需要治理的代码资产。你用别人的skill，就相当于在你的agent里运行了别人的一段代码。这跟你往node\_modules里装npm包是一个性质的事情，但很多人还没意识到。</p>
@@ -142,7 +142,7 @@
 <p>这跟一次对话的优化不是一个量级的事情。</p>
 <p>我偶尔会想起2008年iPhone出来之后，做网页的那一波人怎么适应到做App的。那时候大家一开始都在问「App跟网页有啥区别，不就是做个页面吗」。但真做下去发现，App有生命周期、有状态管理、有权限模型、有供应链、有签名、有发布渠道、有崩溃日志、有用户留存。这些东西任何一个拎出来，都跟「写一个网页」不是一个量级的工程。</p>
 <p>今天我们在agent这个事情上，站在类似的位置。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iaDf0iaGn69rmH49DoRvhwgQbkXibIJiaMDTxEfNenJrP6f6eKSV6zIKWBPen85vsLUjUB59oNxNH7ompLFBghuxDmPmN9JEA1YUpnxRAA0Ywr0/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=7" alt="Claude Code hooks 文档把 hooks 定义为自动执行 shell 命令的机制" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaDf0iaGn69rmH49DoRvhwgQbkXibIJiaMDTxEfNenJrP6f6eKSV6zIKWBPen85vsLUjUB59oNxNH7ompLFBghuxDmPmN9JEA1YUpnxRAA0Ywr0/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" alt="Claude Code hooks 文档把 hooks 定义为自动执行 shell 命令的机制" loading="lazy"></p>
 <p>Claude Code hooks 文档把 hooks 定义为自动执行 shell 命令的机制</p>
 <blockquote><p>图源：Claude Code Docs「Hooks reference」，https://docs.claude.com/en/docs/claude-code/hooks<sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[7]</span></sup></p></blockquote>
 <p>你写一段prompt让agent做事，这是「网页时代」。你设计一套可以长期演进、有分层、有治理、有反馈回路的agent架构，这是「App时代」。</p>
@@ -154,7 +154,7 @@
 <p><strong>第三件事，如果你有一个<code>/legacy/</code>或者风格特殊的目录，放一个nested CLAUDE.md。</strong>让那个目录的规则只影响那个目录，不污染全局。</p>
 <p><strong>第四件事，找一件你反复提醒Claude还是会忘的事情，考虑写成hook。</strong>比如「提交前必须跑lint」、「写数据库迁移前必须dry-run」。hook不优雅，但它deterministic，这个特性在关键场合无可替代。</p>
 <p><strong>第五件事，开始养成一个习惯。每次完成一个真实任务之后，问自己一句，这次学到的东西该进哪一层？</strong>进memory？进CLAUDE.md？进skill？进hook？进一个新脚本？这一问就是最重要的治理动作。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/iaDf0iaGn69rkfDMfXqa5lib1lxs9xsaK0tdNQEA4mxNNVIhK0wlw0iaRlUQsuFiaSic0XEic5aDxJSicDDW3KLN0Q4QA7MpDysA5BDbFg2arynXIgI/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=8" alt="Claude Code subagents 文档展示如何创建专门执行者" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/iaDf0iaGn69rkfDMfXqa5lib1lxs9xsaK0tdNQEA4mxNNVIhK0wlw0iaRlUQsuFiaSic0XEic5aDxJSicDDW3KLN0Q4QA7MpDysA5BDbFg2arynXIgI/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" alt="Claude Code subagents 文档展示如何创建专门执行者" loading="lazy"></p>
 <p>Claude Code subagents 文档展示如何创建专门执行者</p>
 <blockquote><p>图源：Claude Code Docs「Create custom subagents」，https://docs.claude.com/en/docs/claude-code/sub-agents<sup style="box-sizing: border-box;margin: 0;line-height: 0;font-size: .75em;vertical-align: super;color: #0751cf;font-weight: 600;text-decoration: none;"><span leaf="">[8]</span></sup></p></blockquote>
 <p>写到这里我突然想到一个挺有意思的事。</p>

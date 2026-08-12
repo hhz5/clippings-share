@@ -31,20 +31,20 @@
     <p class="article-source"><a href="https://mp.weixin.qq.com/s/cUP5YRrVAkQYB9HoeYEVSA" target="_blank" rel="noopener">查看原文 ↗</a></p>
     <div class="article-body">
 <p>原创 郭美青Andy <em>2025年10月21日 22:00</em></p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5rIGJ3yAZYQNibEj8qBBH2SOIkJOD4OZ7jLWnficQiccicNLmUSHxCUa1Bow/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5rIGJ3yAZYQNibEj8qBBH2SOIkJOD4OZ7jLWnficQiccicNLmUSHxCUa1Bow/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>题图：《秋》使用多重曝光技艺拍摄</p>
 <p>最喜欢造新技术词儿的 Anthropic 最近又整了个活，造了个叫 【 Skills （技能） 】的新词儿。 官方给的定义是：</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5r742FbevGiby9nic34iat3yQogTleO4MQHzFWPnKkLeMA8qpeHE02SokaA/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5r742FbevGiby9nic34iat3yQogTleO4MQHzFWPnKkLeMA8qpeHE02SokaA/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>各位看官第一眼看完是啥感觉？</p>
 <p>相信不管是懂 AI 的还是不懂 AI 的看完都是一头雾水，每个字都能看得懂，大概意思也能明白，就是不知道这玩意是个啥。</p>
 <p>Anthropic 是非常典型的工程师思维做产品，像极了原来在大厂卷的日子中，在工程上各种抽象、造轮子卷的样子。区别在于赛道的选择，在大厂卷传统工程技术创新大概率是屎上雕花，在AI上下文工程赛道上则是有重大意义的创新。</p>
 <p>以之前Anthropic的各种内部成员的采访播客来判断，这大概率又是一个纯内部技术驱动的新功能。工程师们觉得现在上下文工程大行其道，MCP的门槛又太高，他们通过Claude Code用户使用数据和社区的各种优秀的上下文工程实践，觉得需要定义一套范式，借助Claude这个平台来搭建一个生态，可以让这些优秀的实践，通过开源社区来生产和流通，以提升AI Agent（Claude自家应用）解决问题的能力。</p>
 <p>于是就有了Claude Skill。 那么Skill 到底是个啥？又为什么会在 MCP、上下文工程之后被创造出来？ 本文尝试认真且深入地解答这两个问题。</p>
 <h2>Claude定义的Skill 到底是啥？</h2>
-<p>要正确理解Claude Skill首先必须要建立起对【上下文工程】这个概念正确且深入的认知，如果还不了解，可以先移步之前写的一篇浅显易懂且触及本质的文章《 <a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484454&amp;idx=1&amp;sn=70fd97bb2443cc92132490bc90304f32&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">Context is all you need：一文彻底搞懂上下文工程（含牛马实战指南）</a> 》，有个大致的了解，再回来看，会有更深的体会。</p>
+<p>要正确理解Claude Skill首先必须要建立起对【上下文工程】这个概念正确且深入的认知，如果还不了解，可以先移步之前写的一篇浅显易懂且触及本质的文章《 <a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484454&amp;idx=1&amp;sn=70fd97bb2443cc92132490bc90304f32&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Context is all you need：一文彻底搞懂上下文工程（含牛马实战指南）</a> 》，有个大致的了解，再回来看，会有更深的体会。</p>
 <p>学习新技术的时候，我们很容易陷在技术细节中，大脑会增加非常大的认知负担，导致疲惫和沮丧。一种更好的理解方式是通过和我们所熟悉的常识进行类比。</p>
 <p>接下来我们通过一个演员的类比来捋清楚几个和Skill强相关的核心概念及其关系： SystemPrompt、UserPrompt、MCP、上下文工程、SubAgent 。</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5rsg9Br9J5tenNtjW7QWFpoWoibXCKtdEYAe1ajQhoGoAbvV2OqAHFZ8Q/640?wx<em>fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5rsg9Br9J5tenNtjW7QWFpoWoibXCKtdEYAe1ajQhoGoAbvV2OqAHFZ8Q/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <ul><li>SystemPrompt ：一个演员接了个戏，要扮演一个卧底的角色，剧本中通过事件、语言、行为、外貌、职业等综合勾勒了一个角色及其外在和内核。这就是 SystemPrompt——它定义了 AI 的基础人设、能力边界和行为准则。</li></ul>
 <ul><li>UserPromp t ：这个演员现在要演一出戏，导演临时给了新的场景要求："现在你要潜入敌营，获取机密文件"。这个具体的任务指令，就是 UserPrompt——它是用户在特定情境下对 AI 提出的具体需求。</li></ul>
 <ul><li>MCP（Model Context Protocol） ：但问题来了，演员在执行任务时，常常需要调用各种专业工具：开锁器、窃听设备、伪造证件等。这些工具的标准化调用和管理，就是 MCP（Model Context Protocol）——它通过标准化的协议，让 AI 能够按需调用外部工具和服务，就像剧组为演员配备了一套标准化的道具库。</li></ul>
@@ -62,7 +62,7 @@
 <p>理解了这层意思，再回过头去看 Claude Skills 的一些技术细节和设计，你会豁然开朗。这些属于信息类的内容，本文不再赘述，感兴趣的可以公众号搜索一下，或者移步官方文档对照阅读。</p>
 <p>https://docs.claude.com/en/docs/claude-code/skills</p>
 <h2>为什么 Skills 会在 MCP、上下文工程之后被创造出来？</h2>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>jpg/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5rB1ickE90mWxsUN2UnYnu4jpxlNuuUcxCvib3Ux8ibTOX9kccIyq1Jlicicg/640?wx<em>fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/KujplMh4qUmGrsHIm2dgqqpibAYhfxk5rB1ickE90mWxsUN2UnYnu4jpxlNuuUcxCvib3Ux8ibTOX9kccIyq1Jlicicg/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>要回答这个问题，需要从一个真实的场景说起。</p>
 <p>在使用 Claude Code 的过程中，我逐渐摸索出了一套百试不爽的工作流程：遇到复杂需求时，不直接让 AI 写代码，而是先让它根据需求生成一份详细的设计文档，人工审核确认无误后，再基于这份设计文档展开实施。这个方法极大提升了代码质量和开发效率，因为它把"理解需求"和"实现细节"这两个容易相互干扰的阶段分离开来。</p>
 <p>这套方法论效果显著，我自然想要传递给团队的其他同学。但问题来了：用什么方式传递最有效？</p>
@@ -93,17 +93,17 @@
 <p>MCP作为Agent时代第一个真正现象级且影响力巨大的通信协议，正在成为从业者必须要了解的技术，随着时间的推移，会渗透到AI基础设施的方方面面。网络上的资料层次不齐，也很碎片化。和朋友合写的这本书集齐了五位作者从不同的视角进行了比较全面系统的阐述，非常适合从业者先建立最扎实的认知。</p>
 <p>点击下方购买按钮即可购买。</p>
 <p>近期原创文章</p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484549&amp;idx=1&amp;sn=0eb07573905af4d74702054701ff57c5&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">聊聊claude新发的功能Agent Skills的本质</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484454&amp;idx=1&amp;sn=70fd97bb2443cc92132490bc90304f32&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">Context is all you need：一文彻底搞懂上下文工程（含牛马实战指南）</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484533&amp;idx=1&amp;sn=5623da3af0c36d42ec35bd1d55c0d9b9&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">我在PEC2025中国AI提示词大会分享的完整视频：《Context is All you need上下文工程与MCP协议漫谈》</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484543&amp;idx=1&amp;sn=d55035088757318746279fee668b600b&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">我想认真的怼一下近期MCP泡沫论：“MCP开发者比用户多”</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484316&amp;idx=1&amp;sn=e357d902483a7df14e686b73c4c38112&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">拨云见日：MCP核心概念（Prompt、Resource、Tool）的设计初心与最佳实践思考</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484305&amp;idx=1&amp;sn=eb8cf18a99c3202e5537008ce687412e&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">万物皆可MCP化，但你考虑过必要性吗？</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484275&amp;idx=1&amp;sn=8b644a3e4d036c3f74cfbce9534f202d&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">拨开MCP的迷雾，聊聊LLM工具调用的本质（一）：Function Calling</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484292&amp;idx=1&amp;sn=4f56a9a7757c7d9009998f2f7372366c&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">拨开MCP的迷雾，聊聊LLM工具调用的本质（二）：Prompt和API限定法</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484265&amp;idx=1&amp;sn=5d3754261bacde9298b8836e32b12cc7&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">刚官宣支持MCP，就发布自家Agent协议（A2A），扒一扒Google暗藏的小心思</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484254&amp;idx=1&amp;sn=9b8d24e8d23640be03d910af31fe3585&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">MCP时代，Prompt即工作流</a></p>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484216&amp;idx=1&amp;sn=614b2b4648d2cb45a423efd2d570436a&amp;scene=21#wechat<em>redirect" target="</em>blank" rel="noopener">因为Manus爆火的 Claude MCP，90%人的认知可能都是错的</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484549&amp;idx=1&amp;sn=0eb07573905af4d74702054701ff57c5&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">聊聊claude新发的功能Agent Skills的本质</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484454&amp;idx=1&amp;sn=70fd97bb2443cc92132490bc90304f32&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">Context is all you need：一文彻底搞懂上下文工程（含牛马实战指南）</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484533&amp;idx=1&amp;sn=5623da3af0c36d42ec35bd1d55c0d9b9&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">我在PEC2025中国AI提示词大会分享的完整视频：《Context is All you need上下文工程与MCP协议漫谈》</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484543&amp;idx=1&amp;sn=d55035088757318746279fee668b600b&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">我想认真的怼一下近期MCP泡沫论：“MCP开发者比用户多”</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484316&amp;idx=1&amp;sn=e357d902483a7df14e686b73c4c38112&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">拨云见日：MCP核心概念（Prompt、Resource、Tool）的设计初心与最佳实践思考</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484305&amp;idx=1&amp;sn=eb8cf18a99c3202e5537008ce687412e&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">万物皆可MCP化，但你考虑过必要性吗？</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484275&amp;idx=1&amp;sn=8b644a3e4d036c3f74cfbce9534f202d&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">拨开MCP的迷雾，聊聊LLM工具调用的本质（一）：Function Calling</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484292&amp;idx=1&amp;sn=4f56a9a7757c7d9009998f2f7372366c&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">拨开MCP的迷雾，聊聊LLM工具调用的本质（二）：Prompt和API限定法</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484265&amp;idx=1&amp;sn=5d3754261bacde9298b8836e32b12cc7&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">刚官宣支持MCP，就发布自家Agent协议（A2A），扒一扒Google暗藏的小心思</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484254&amp;idx=1&amp;sn=9b8d24e8d23640be03d910af31fe3585&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">MCP时代，Prompt即工作流</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzNjgzMTQ5Nw==&amp;mid=2247484216&amp;idx=1&amp;sn=614b2b4648d2cb45a423efd2d570436a&amp;scene=21#wechat_redirect" target="_blank" rel="noopener">因为Manus爆火的 Claude MCP，90%人的认知可能都是错的</a></p>
 <p>个人观点，仅供参考</p>
 <p>继续滑动看下一个</p>
 <p>郭美青聊AI</p>

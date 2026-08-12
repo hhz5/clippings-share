@@ -34,7 +34,7 @@
 <p>API Product</p>
 <p>今天，Anthropic 发布了 <strong>Claude Managed Agents</strong></p>
 <p>这是一套可组合的 API，用于构建和部署云托管的 AI Agent。但跟市面上的 Agent 框架不同，Anthropic 卖的核心是 <strong>Harness（Agent 编排引擎）</strong> ：一个经过调优的编排循环，自动处理工具调用决策、上下文管理、错误恢复，并且随模型能力升级自动演进</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/jXSGuwJvpdhURNuES2uKYzp2HyAa5dGatQznOcgibBlAAS0T6XnUIKbopfLD9ZyGCXS9tQ5WGcN4t60lEYJL6ZjTRp5l1gCH23VIRQLkcdxM/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdhURNuES2uKYzp2HyAa5dGatQznOcgibBlAAS0T6XnUIKbopfLD9ZyGCXS9tQ5WGcN4t60lEYJL6ZjTRp5l1gCH23VIRQLkcdxM/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" alt="图片" loading="lazy"></p>
 <p>Claude Managed Agents 架构，来自官方产品博客</p>
 <p>之前 Anthropic 的产品线有一个明显的断层。面向消费者有 claude.ai 和 Claude Code，面向开发者有 Messages API。但如果一家企业想基于 Claude 做一个长时间运行的、能自主调用工具的 Agent，它需要自己搭沙箱、做状态管理、处理权限、写错误恢复逻辑。这些基础设施工作可能比 Agent 本身的业务逻辑还重</p>
 <p>Managed Agents 填的就是这个空。你定义 Agent 的任务、工具和约束，Anthropic 负责跑</p>
@@ -63,23 +63,23 @@
 <p><strong>Harness（编排循环）</strong> ：调用 Claude、把 Claude 的工具调用路由到对应基础设施的循环</p>
 <p><strong>Sandbox（执行环境）</strong> ：Claude 可以在里面跑代码和编辑文件的容器</p>
 <p>三者解耦，互不依赖。任何一个出故障或需要替换，都不影响其他两个</p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/jXSGuwJvpdhSJZhmDVfSUekaPrIsEGic3e6cIAy8Qlve8TIvic9ibFiaSaO6TiaodMPriaqVqDbJlvLuicRHFjrJwlo5jicOxH4AlgByJNFrp5pibuEM/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdhSJZhmDVfSUekaPrIsEGic3e6cIAy8Qlve8TIvic9ibFiaSaO6TiaodMPriaqVqDbJlvLuicRHFjrJwlo5jicOxH4AlgByJNFrp5pibuEM/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" alt="图片" loading="lazy"></p>
 <p>大脑与双手解耦的架构</p>
 <h3>从宠物到牲畜</h3>
 <p>最初的设计把所有组件放在一个容器里。好处是文件操作是直接系统调用，没有服务边界。但坏处是：容器变成了一只「宠物」。宠物坏了你得救它，牲畜坏了换一头就行</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/jXSGuwJvpdiakIjx519pyCExm2Z89ib5YA9eIcBWI8t3uHYmxwNsJkRibJrnicianh6sEXzkB5iauzArKa1L3D5NsxX3TuU2Pnn6JcgxiajLM0L748/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/jXSGuwJvpdiakIjx519pyCExm2Z89ib5YA9eIcBWI8t3uHYmxwNsJkRibJrnicianh6sEXzkB5iauzArKa1L3D5NsxX3TuU2Pnn6JcgxiajLM0L748/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" alt="图片" loading="lazy"></p>
 <p>耦合 vs 解耦：从宠物到牲畜</p>
 <p>解耦之后，容器变成了牲畜。Harness 通过 <code>execute(name, input) → string</code> 调用容器，就像调用其他工具一样。容器挂了，Harness 捕获错误传给 Claude，Claude 决定是否重试，重试就起一个新容器</p>
 <p>Harness 也变成了牲畜。Session 日志在 Harness 之外，Harness 崩溃了什么都不丢。新的 Harness 通过 <code>wake(sessionId)</code> 启动，从上次停下的地方继续</p>
 <p>安全边界也因此变干净了。耦合设计里，Claude 生成的不可信代码跟凭证在同一个容器里。解耦后，凭证永远不在沙箱里。Git 令牌在初始化时写入本地 remote，Agent 不经手。OAuth 令牌存在安全保管库里，通过代理调用</p>
 <h3>Session 不是上下文窗口</h3>
 <p>长任务经常超出 Claude 的上下文窗口。压缩、裁剪、总结都是不可逆操作，可能丢掉后面用得上的信息</p>
-<p><img src="https://mmbiz.qpic.cn/sz<em>mmbiz</em>png/jXSGuwJvpdjJk1q6s5Z3jyTLx5qeWgVPrJR3iaCGWNjaavlmNDxicOmXfMZqvSkk5ZibWS99xC8ciaFxKJBibianHjEhwMxNlkp5bVwI4eXADx7Ls/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/sz_mmbiz_png/jXSGuwJvpdjJk1q6s5Z3jyTLx5qeWgVPrJR3iaCGWNjaavlmNDxicOmXfMZqvSkk5ZibWS99xC8ciaFxKJBibianHjEhwMxNlkp5bVwI4eXADx7Ls/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" alt="图片" loading="lazy"></p>
 <p>Session 与上下文窗口的关系</p>
 <p>Managed Agents 的做法是：Session 作为一个独立的、持久化的上下文对象存在于上下文窗口之外。Harness 通过 <code>getEvents()</code> 按需取回事件流的切片，可以回到特定时刻之前重读上下文</p>
 <h3>多个大脑，多双手</h3>
 <p>解耦带来了扩展能力。之前 Harness 在容器里，每个 Agent 会话都要等容器起好才能开始推理。解耦后，推理可以在容器起好之前就开始。 <strong>p50 TTFT 下降了约 60%，p95 下降了超过 90%</strong></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz<em>png/jXSGuwJvpdia98uyMWPVjY3QQMWKC6zPibvPHs6KM3ogYfTNdeAtvlUmKM2tM1zDxYf4hNTgGcZFx96b9jKjVvJ6gsyo0JUZds9tiaIjEH0Qdo/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx</em>lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/jXSGuwJvpdia98uyMWPVjY3QQMWKC6zPibvPHs6KM3ogYfTNdeAtvlUmKM2tM1zDxYf4hNTgGcZFx96b9jKjVvJ6gsyo0JUZds9tiaIjEH0Qdo/640?from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" alt="图片" loading="lazy"></p>
 <p>多大脑多双手</p>
 <p>每双手就是一个工具调用： <code>execute(name, input) → string</code> 。Harness 不知道沙箱是容器、手机还是 Pokémon 模拟器。因为手不绑定大脑，大脑之间可以互相传递手</p>
 <p>Anthropic 工程博客把这个架构叫「meta-harness」：不对具体的 Harness 实现做假设，只对 Claude 需要的接口形状做假设</p>
