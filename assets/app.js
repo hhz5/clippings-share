@@ -248,10 +248,16 @@
     var openBtn = document.getElementById("admin-open");
     var modal = document.getElementById("admin-modal");
     var closeBtn = document.getElementById("admin-close");
-    if (!openBtn || !modal) return;
+    if (!openBtn || !modal || !closeBtn) return;
+
+    function closeModal() { modal.hidden = true; }
+
     openBtn.onclick = function () { modal.hidden = false; loadAdmin(); };
-    closeBtn.onclick = function () { modal.hidden = true; };
-    modal.addEventListener("click", function (e) { if (e.target === modal) modal.hidden = true; });
+    closeBtn.onclick = function (e) { e.stopPropagation(); closeModal(); };
+    modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) closeModal();
+    });
     if (location.protocol === "file:") { adminMode = "readonly"; return; }
     fetch("/__admin_status__", { method: "HEAD" })
       .then(function (r) { adminMode = r.ok ? "edit" : "readonly"; })
