@@ -8,47 +8,83 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
+<!-- ====== 顶部导航 ====== -->
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href="index.html">剪藏分享</a>
-    <div class="search-box">
-      <input id="search" type="search" placeholder="全文搜索标题与正文…" autocomplete="off">
+    <a class="brand" href="index.html"><span class="brand-icon">◆</span>剪藏分享</a>
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input id="search" type="search" placeholder="搜索标题、正文、标签…" autocomplete="off">
+      <kbd class="search-hint">/</kbd>
     </div>
-    <nav class="header-actions">
-      <button id="theme-toggle" class="icon-btn" title="切换深浅主题" aria-label="切换主题">🌓</button>
-      <button id="admin-open" class="icon-btn" title="后台管理" aria-label="后台管理">⚙</button>
-    </nav>
+    <div class="header-actions">
+      <button id="theme-toggle" class="icon-btn" title="切换主题" aria-label="切换主题">
+        <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button id="admin-open" class="icon-btn" title="后台管理" aria-label="后台管理">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
-<section class="filters" id="filters">
-  <div class="filter-group">
-    <div class="filter-head">
-      <h2>作者</h2>
-      <button class="link-btn" id="clear-authors" hidden>清除</button>
-    </div>
-    <div class="chip-list" id="author-list"></div>
-  </div>
-  <div class="filter-group">
-    <div class="filter-head">
-      <h2>标签</h2>
-      <button class="link-btn" id="clear-tags" hidden>清除</button>
-    </div>
-    <div class="chip-list" id="tag-list"></div>
-  </div>
-</section>
+<!-- ====== 主体：侧边栏 + 内容 ====== -->
+<div class="layout">
 
-<main class="content">
-  <div class="result-bar">
-    <span id="result-count">加载中…</span>
-    <div class="sort-toggle">
-      <label><input type="radio" name="sort" value="date" checked> 最新</label>
-      <label><input type="radio" name="sort" value="title"> 标题</label>
+  <!-- 左侧筛选栏 -->
+  <aside class="sidebar" id="sidebar">
+    <!-- 作者 -->
+    <div class="sidebar-section">
+      <div class="sidebar-head">
+        <span class="sidebar-title">作者</span>
+        <span class="sidebar-count" id="author-count"></span>
+        <button class="clear-btn" id="clear-authors" hidden>清除</button>
+      </div>
+      <div class="sidebar-list" id="author-list"></div>
     </div>
-  </div>
-  <div class="card-grid" id="grid"></div>
-  <p class="empty" id="empty" hidden>没有匹配的内容。</p>
-</main>
+
+    <!-- 标签 -->
+    <div class="sidebar-section">
+      <div class="sidebar-head">
+        <span class="sidebar-title">标签</span>
+        <span class="sidebar-count" id="tag-count"></span>
+        <button class="clear-btn" id="clear-tags" hidden>清除</button>
+      </div>
+      <!-- 标签内搜索 -->
+      <div class="tag-search-wrap">
+        <input id="tag-filter" type="text" placeholder="筛选标签…" autocomplete="off">
+      </div>
+      <div class="sidebar-list tag-list" id="tag-list"></div>
+      <button class="expand-btn" id="tag-expand">展开全部 <span id="tag-expand-icon">▾</span></button>
+    </div>
+  </aside>
+
+  <!-- 主内容区 -->
+  <main class="main">
+    <!-- 结果栏 -->
+    <div class="result-bar">
+      <span id="result-count">加载中…</span>
+      <div class="sort-group">
+        <label class="sort-opt active" data-sort="date"><input type="radio" name="sort" value="date" checked> 最新</label>
+        <label class="sort-opt" data-sort="title"><input type="radio" name="sort" value="title"> 标题</label>
+      </div>
+    </div>
+
+    <!-- 卡片网格 -->
+    <div class="card-grid" id="grid"></div>
+    <div class="empty-state" id="empty" hidden>
+      <div class="empty-icon">📭</div>
+      <p>没有匹配的内容</p>
+      <button class="btn-reset" onclick="window.App && window.App.resetFilters()">重置筛选</button>
+    </div>
+  </main>
+</div>
+
+<!-- 移动端侧边栏遮罩 -->
+<div class="sidebar-overlay" id="sidebar-overlay" hidden></div>
+<button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开筛选">☰ 筛选</button>
 
 <footer class="site-footer">
   <span id="footer-meta"></span>
