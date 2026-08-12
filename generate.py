@@ -108,7 +108,7 @@ def load_alias_map(path):
     return set(remove), aliases
 
 
-def normalize_tags(raw_tags, remove_set, aliases):
+def normalize_tags(raw_tags, remove_set, aliases, author_set=None):
     out = []
     seen = set()
     for t in raw_tags:
@@ -116,6 +116,8 @@ def normalize_tags(raw_tags, remove_set, aliases):
         if not t:
             continue
         if t in remove_set:
+            continue
+        if author_set and t in author_set:
             continue
         canon = aliases.get(t, t).strip()
         if not canon:
@@ -435,6 +437,8 @@ def build(source_dir, out_dir):
     root_md = [f for f in os.listdir(source_dir) if f.endswith(".md") and os.path.isfile(os.path.join(source_dir, f))]
     sub_dirs = [d for d in os.listdir(source_dir)
                 if os.path.isdir(os.path.join(source_dir, d)) and d not in INTERNAL_DIRS]
+    # 作者名集合（用于自动剔除「标签维度」中泄漏的作者身份标签）
+    author_set = set(sub_dirs) | {UNCATEGORIZED}
 
     def scan_file(path, author):
         nonlocal aid
@@ -451,7 +455,7 @@ def build(source_dir, out_dir):
         raw_tags = meta.get("tags") or []
         if isinstance(raw_tags, str):
             raw_tags = [raw_tags]
-        tags = normalize_tags(raw_tags, remove_set, aliases)
+        tags = normalize_tags(raw_tags, remove_set, aliases, author_set)
         # 摘要
         excerpt = meta.get("摘要") or meta.get("excerpt") or ""
         if not excerpt:
