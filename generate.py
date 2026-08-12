@@ -342,6 +342,7 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
       <span class="meta-date">{date}</span>
     </div>
     <h1 class="article-title">{title}</h1>
+    {cover_html}
     <div class="article-tags">
       {tags_html}
     </div>
@@ -360,6 +361,22 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
 """
 
 
+def extract_cover(body):
+    """取正文第一个外链图片作为封面；跳过 data: 内联图与 1px 占位 svg。"""
+    for m in re.finditer(r"!\[[^\]]*\]\(([^)]+)\)", body):
+        u = m.group(1).strip()
+        if not u:
+            continue
+        if u.startswith("data:"):
+            continue
+        low = u.lower()
+        if low.endswith(".svg") or "1px" in low or ("svg" in low and "1x1" in low):
+            continue
+        if u.startswith("http://") or u.startswith("https://"):
+            return u
+    return ""
+
+
 def build_article_html(article, body_html):
     tags_html = "".join(
         '<a class="tag-chip" href="../index.html?tag=%s">%s</a>' % (urllib_parse.quote(t), _esc_text(t))
@@ -368,6 +385,11 @@ def build_article_html(article, body_html):
     source_link = ""
     if article.get("url"):
         source_link = '<p class="article-source"><a href="%s" target="_blank" rel="noopener">查看原文 ↗</a></p>' % _esc_attr(article["url"])
+    cover_html = ""
+    if article.get("cover"):
+        cover_html = ('<div class="article-cover"><img src="%s" alt="%s" loading="lazy" '
+                      'onerror="this.parentNode.remove()"></div>'
+                      % (_esc_attr(article["cover"]), _esc_attr(article["title"])))
     return ARTICLE_TEMPLATE.format(
         title=_esc_text(article["title"]),
         author=_esc_text(article["author"]),
@@ -375,6 +397,7 @@ def build_article_html(article, body_html):
         date=_esc_text(article.get("date", "")),
         tags_html=tags_html,
         source_link=source_link,
+        cover_html=cover_html,
         body=body_html,
     )
 
@@ -427,6 +450,7 @@ def build(source_dir, out_dir):
         plain = re.sub(r"<[^>]+>", "", body)
         plain = re.sub(r"[#*_>`~\-]+", " ", plain)
         plain = re.sub(r"\s+", " ", plain).strip()
+        cover = extract_cover(body)
 
         aid += 1
         art_id = "a%04d" % aid
@@ -439,6 +463,7 @@ def build(source_dir, out_dir):
             "url": url,
             "excerpt": excerpt,
             "text": plain[:4000],
+            "cover": cover,
             "_src": path,  # 仅本地使用，不写入 data.js
         }
         articles.append(article)
@@ -487,6 +512,7 @@ def build(source_dir, out_dir):
             "url": a["url"],
             "excerpt": a["excerpt"],
             "text": a["text"],
+            "cover": a["cover"],
         }
         for a in articles
     ]

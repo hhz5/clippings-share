@@ -109,7 +109,11 @@
       var tags = a.tags.slice(0, 4).map(function (t) {
         return '<span class="t">' + esc(t) + "</span>";
       }).join("");
+      var cover = a.cover
+        ? '<div class="card-cover"><img src="' + esc(a.cover) + '" alt="" loading="lazy" onerror="this.parentNode.style.display=\'none\'"></div>'
+        : "";
       card.innerHTML =
+        cover +
         '<h3>' + esc(a.title) + "</h3>" +
         '<div class="meta"><span class="author">' + esc(a.author) + "</span>" +
         (a.date ? '<span>· ' + esc(a.date) + "</span>" : "") + "</div>" +
