@@ -22,8 +22,6 @@
 
   /* ---------- 状态 ---------- */
   var state = { authors: new Set(), tags: new Set(), q: "", sort: "date" };
-  var TAG_LIMIT_DEFAULT = 40;
-  var tagExpanded = false;
 
   function ARTICLE_URL(id) { return "articles/" + id + ".html"; }
 
@@ -89,7 +87,14 @@
     document.getElementById("clear-authors").hidden = state.authors.size === 0;
   }
 
-  /* ---------- 渲染：标签列表（搜索+折叠）---------- */
+  /* ---------- 渲染：标签列表（搜索 + 首字母分组）---------- */
+  function tagGroupKey(name) {
+    var c = name.charAt(0);
+    if (/[a-z]/i.test(c)) return c.toUpperCase();
+    if (/[0-9]/.test(c)) return "#";
+    return c; // 中文等：以首字分组
+  }
+
   function renderTags() {
     var tc = countsUnder("tag");
     var filterEl = document.getElementById("tag-filter");
@@ -99,34 +104,41 @@
       return !fq || t.name.toLowerCase().indexOf(fq) !== -1;
     });
 
-    var limit = tagExpanded || fq ? filteredTags.length : TAG_LIMIT_DEFAULT;
-    var displayTags = filteredTags.slice(0, limit);
-    var hasMore = filteredTags.length > limit;
+    // 按首字母 / 首字分组
+    var groups = {};
+    filteredTags.forEach(function (tg) {
+      var k = tagGroupKey(tg.name);
+      (groups[k] = groups[k] || []).push(tg);
+    });
+    var keys = Object.keys(groups).sort(function (a, b) {
+      function cat(k) { if (/[A-Z]/.test(k)) return 0; if (k === "#") return 1; return 2; }
+      var ca = cat(a), cb = cat(b);
+      if (ca !== cb) return ca - cb;
+      if (ca === 2) return a.localeCompare(b, "zh");
+      return a < b ? -1 : 1;
+    });
 
     var el = document.getElementById("tag-list");
     el.innerHTML = "";
-    displayTags.forEach(function (tg) {
-      var cnt = tc[tg.name] || 0;
-      var chip = document.createElement("span");
-      chip.className = "tag-chip" + (state.tags.has(tg.name) ? " active" : "") +
-        (cnt === 0 && state.authors.size ? " dim" : "");
-      chip.innerHTML = esc(tg.name) + '<span class="tc-cnt">' + cnt + '</span>';
-      chip.onclick = function () {
-        if (state.tags.has(tg.name)) state.tags.delete(tg.name);
-        else state.tags.add(tg.name);
-        render();
-      };
-      el.appendChild(chip);
+    keys.forEach(function (k) {
+      var head = document.createElement("div");
+      head.className = "tag-group-head";
+      head.textContent = k;
+      el.appendChild(head);
+      groups[k].forEach(function (tg) {
+        var cnt = tc[tg.name] || 0;
+        var chip = document.createElement("span");
+        chip.className = "tag-chip" + (state.tags.has(tg.name) ? " active" : "") +
+          (cnt === 0 && state.authors.size ? " dim" : "");
+        chip.innerHTML = esc(tg.name) + '<span class="tc-cnt">' + cnt + '</span>';
+        chip.onclick = function () {
+          if (state.tags.has(tg.name)) state.tags.delete(tg.name);
+          else state.tags.add(tg.name);
+          render();
+        };
+        el.appendChild(chip);
+      });
     });
-
-    var expBtn = document.getElementById("tag-expand");
-    if (hasMore || (!tagExpanded && DATA.tags.length > TAG_LIMIT_DEFAULT)) {
-      expBtn.hidden = false;
-      expBtn.innerHTML = (tagExpanded ? "收起" : "展开全部") +
-        ' (' + DATA.tags.length + ') <span>' + (tagExpanded ? "▴" : "▾") + "</span>";
-    } else {
-      expBtn.hidden = true;
-    }
 
     document.getElementById("tag-count").textContent = DATA.tags.length;
     document.getElementById("clear-tags").hidden = state.tags.size === 0;
@@ -213,8 +225,6 @@
 
     var tagFilter = document.getElementById("tag-filter");
     tagFilter.addEventListener("input", function () { renderTags(); });
-
-    document.getElementById("tag-expand").onclick = function () { tagExpanded = !tagExpanded; renderTags(); };
 
     Array.prototype.forEach.call(document.querySelectorAll(".sort-opt"), function (label) {
       label.addEventListener("click", function () {

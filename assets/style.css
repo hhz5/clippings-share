@@ -149,11 +149,19 @@ a { color: inherit; text-decoration: none; }
 .clear-btn:hover { background: var(--accent-soft); }
 
 .sidebar-list {
-  display: flex; flex-direction: column; gap: 3px; max-height: 280px;
-  overflow-y: auto; overscroll-behavior: contain;
-  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+  display: flex; flex-direction: column; gap: 3px;
+  max-height: none; overflow: visible;
 }
-.tag-list { max-height: 220px; }
+.tag-list { max-height: none; }
+
+/* 标签分组头（sticky，随侧栏滚动吸顶） */
+.tag-group-head {
+  position: sticky; top: 0; z-index: 1;
+  font-size: 11px; font-weight: 700; letter-spacing: .08em;
+  color: var(--text-mute); background: var(--bg-elev);
+  padding: 7px 2px 4px; margin-top: 8px;
+  border-bottom: 1px solid var(--border);
+}
 
 /* Author item */
 .author-item {
@@ -198,14 +206,6 @@ a { color: inherit; text-decoration: none; }
 }
 .tag-chip .tc-cnt { font-size: 10.5px; opacity: .7; }
 .tag-chip.dim { opacity: .28; pointer-events: none; }
-
-.expand-btn {
-  display: block; width: 100%; padding: 8px; margin-top: 6px;
-  border: 1.5px dashed var(--border); border-radius: var(--radius-sm);
-  background: none; color: var(--text-mute); cursor: pointer;
-  font-size: 12.5px; transition: all var(--transition); font-family: inherit;
-}
-.expand-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 
 /* ---------- Main Content ---------- */
 .main {
